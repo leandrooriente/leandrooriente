@@ -24,7 +24,7 @@ $(document).ready(function(){
 
   $post.on('copy', function(e) {
     var _text = getSelected();
-    if (_text && _text.indexOf('uber20pratas') !== -1) {
+    if (_text && _text.toLowerCase().indexOf('uber20pratas') !== -1) {
       ga('send', 'event', 'uber', 'copy', _text);
     }
   });
