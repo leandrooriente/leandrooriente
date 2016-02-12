@@ -5,7 +5,212 @@ description: ""
 tags: javascript 
 image_thumb: "/media/guia-comovente-thumb.jpg"
 image_highlight: "/media/guia-comovente.jpg"
-comments: [comment]
+comments: 
+- author: Diogo Rodrigues
+  date: 2015-06-10T13:28:06
+  text: |
+    <p>Excelente post. Parabéns!!</p>
+
+- author: Pedro Neto
+  date: 2015-03-01T13:09:38
+  text: |
+    <p>Leandro... Incrível!!! Você acabou de falar o que realmente está acontecendo comigo!!kkk " Quanto mais vc estuda, mais vc acha coisas novas para aprender que nem estavam no plano inicial." essa foi a descrição de que acontece comigo e com todo mundo, eu acho!</p><p>É isso aí cara, continua com o blog que você é um ótimo instrutor!!!</p>
+
+- author: Pedro Neto
+  date: 2015-02-21T13:07:40
+  text: |
+    <p>Cara! Se alguém aí quer dominar JavaScript.... "JavaScript: The Definitive Guide", não tem jeito.... pra mim é realmente o que torna alguém mestre na linguagem!!!</p>
+
+- author: Rayssa Monteiro
+  date: 2015-01-28T19:53:13
+  text: |
+    <p>Valew!!!!!<br>Valew muito!! *-*</p>
+
+- author: Victor Magar
+  date: 2014-05-30T21:59:43
+  text: |
+    <p>Sigo veementemente como aspirante a front que trabalha em um dos clientes ai da Vtex ...</p><p>Show cara! Parabéns, muito bom e é o caminho das pedras.</p>
+
+- author: Breno Alves
+  date: 2014-05-02T21:30:18
+  text: |
+    <p>Vale citar também a Casa do Código:<br><a href="http://www.casadocodigo.com.br/collections/livros-de-front-end/" rel="nofollow">http://www.casadocodigo.com.br...</a></p><p>Tem livros excelentes para diversas áreas de programação!</p>
+
+- author: Anderson Nascimento
+  date: 2014-02-21T18:39:41
+  text: |
+    <p>Olá Leandro!</p><p>Execelente artigo, parabéns!</p><p>Uma fonte repleta de dicas é o Podcast do Daniel e Zeno o ZOFE "Zone Of Front-Enders"</p><p><a href="http://zofe.com.br" rel="nofollow">http://zofe.com.br</a></p>
+
+- author: Leandro Oriente
+  date: 2014-02-12T16:46:41
+  text: |
+    <p>Atualizei lá. Comecei a usar o twitter com mais frequência agora. Devo soltar algumas dicas por lá vez ou outra tb =)</p>
+
+- author: Cidcley Schmitt
+  date: 2014-02-11T19:21:59
+  text: |
+    <p>Faltou o Twitter do Oriente... ;-)</p>
+
+- author: Leandro Oriente
+  date: 2014-01-19T14:05:02
+  text: |
+    <p>Opa Jeferson Luiz bacana que tenha se aventurado por essas bandas.</p><p>Cara realmente a curva de aprendizado de JS é um pouco maior que a de HTML/CSS. JS requer sim um pouco de lógica de programação e algoritmos para não virar um monte de sintaxe jogada a esmo.</p><p>Um livro excelente que pega desde o B A BA até conceitos mais avançados é o JavaScript: The Definitive Guide da O'Reilly ou Javascript, o guia definitivo em português.</p><p>Porém recomendo pegar uma base melhor na faculdade antes de se aprofundar. Provavelmente no final do segundo período já vai ter condições de aproveitar o livro e o curso da CAELUM. Não me recordo bem, mas acho que eles tinham a política de deixar você refazer o curso em um determinado período.</p><p>Quanto ao jQuery, o melhor guia é a própria documentação. Eles são excelentes em demonstrar o funcionamento e descrever seus recursos. Porém recomendo que foque em JS antes. Vai facilitar o entendimento posterior e não vai ter deixar acomodado.</p><p>Quanto a linguagem o que está em alta no mercado atualmente é C#, Java e PHP.<br>PHP tem milhares de oportunidades mas poucas realmente boas e exigem um profissional bem diferenciado.</p><p>Se quiser algo mais divertido recomendo estudar Python, Ruby ou NodeJS. Porém não crie muita expectativa em relação ao mercado.</p>
+
+- author: Jeferson Luiz
+  date: 2014-01-19T11:38:11
+  text: |
+    <p>Leandro, bom dia</p><p>Cara achei seu blog uns meses atrás e resolvi investir na área de Front End. Faça graduação em Sistemas de Informação, mas não sei programar ainda. Fiz um investimento na formação de Front End por um curso bem conhecido e já finalizei a primeira etapa HTML5, CSS3 e Web Mobile. Agora iniciei a segunda etapa JavaScript e Jquery, mas cara por mais que o professor tenha uma boa vontade e saque pra caramba, eu não me senti bem, pois eu entendi muito pouco e não consegui acompanhar o raciocínio da turma, pois a maioria já programa em alguma linguagem.</p><p>Pensei em comprar um livro afim de semana que vem já não ir tão fraco e aproveitar mais o curso. <br>Mais um livro que faça passa a passo do básico até o avançado.<br>Pode me ajudar? Fiz uma busca e achei este livro <a href="http://www.casadocodigo.com.br/products/livro-javascript-jquery" rel="nofollow">http://www.casadocodigo.com.br...</a></p><p>Com relação outras linguagens de programação hoje qual melhor caminho: PHP ou Ruby?<br>Obrigado e no aguardo!</p>
+
+- author: Lot
+  date: 2013-12-31T00:57:07
+  text: |
+    <p>Muito bom!</p>
+
+- author: Ayres Volonte
+  date: 2013-11-26T14:03:13
+  text: |
+    <p>Ótimo artigo, gostaria de indicar dois sites para o pessoal e talvez até para ser colocado em seu post, são eles:</p><p><a href="http://api.hostinger.com.br/redir/2407331" rel="nofollow">http://api.hostinger.com.br/re...</a> - Hospedagem Gratuita de sites, ótimo para quem ta começando!</p><p><a href="http://it-ebooks.info/" rel="nofollow">http://it-ebooks.info/</a> - Site com todos os livros que vocês imaginar para baixar, o contra desde site é que os livros são todos em inglês, mas para quem sabe inglês é o melhor site que ja conheci :D</p><p>Abraços!</p>
+
+- author: Leandro Oriente
+  date: 2013-11-22T16:35:17
+  text: |
+    <p>Opa <a data-dsq-mention="ayresroux:disqus" href="https://disqus.com/by/ayresroux/" rel="nofollow">Ayres Roux</a> minha vida foi meio baseada na necessidade.<br>Conforme fui tendo dificuldades em fazer coisas novas, procurava por soluções.</p><p>Não tenho muito um caminho exato de como evolui profissionalmente e acredito que poucas pessoas tenham.</p><p>Nesse post (<a href="http://leandrooriente.com/como-me-tornar-um-desenvolvedor-front-end/)" rel="nofollow">http://leandrooriente.com/como...</a> tem um guia legal das coisas que vc precisa aprender. Cedo ou tarde.</p><p>Comece a procurar vagas (caso não trabalhe) ou observar na sua empresa o que estão usando e o que seria bom que fosse usado e vá estudando com base nisso. Quanto mais vc estuda, mais vc acha coisas novas para aprender que nem estavam no plano inicial.</p><p>O google vai ser seu maior aliado boa parte das vezes. Aqui nesse guia citei fontes confiáveis de conteúdo, mas existem milhares de outras fontes específicas para cada tecnologia nova que vc aprenda.</p><p>Resumidamente, o primeiro passo é descobrir qual é a sua necessidade agora. O que vc precisa para ontem. Em cima disso vc vai descobrir que na verdade precisa aprender o dobro disso, e quando começar a estudar esse dobro, vai ver que era o quadruplo e por ai em diante.</p><p>Só precisa dar esse ponta pé inicial.</p>
+
+- author: Ayres Roux
+  date: 2013-11-22T14:41:25
+  text: |
+    <p>Sou iniciante na area, adorie o post mas ainda ficou algumas duvidas é possivel mesmo aprender realmente lendo livros? pois parece ser tanto termo, e tanta coisa para aprender como github, framework, tanta coisa que fica meio confuso saber o passo a passo para se seguir e onde adquirir tal conhecimento.. Seria interessante um post com uma especie de "cronograma" de como chegar a um conhecimento profissional para poder trabalhar na empresa, ou relatar sobre como você por exemplo chegou a esse conhecimento, que livros leu, que sites acessou, que cursos fez, etc... Por favor ajude-nos!!! :D</p>
+
+- author: Leandro Oriente
+  date: 2013-10-18T13:18:34
+  text: |
+    <p><a data-dsq-mention="disqus_8lj6vtzpbz:disqus" href="https://disqus.com/by/disqus_8lj6VTzpBz/" rel="nofollow">Arthur</a> citado!</p><p>Vlw pela dica =)</p>
+
+- author: Leandro Oriente
+  date: 2013-10-18T13:18:09
+  text: |
+    <p><a data-dsq-mention="suissa:disqus" href="https://disqus.com/by/suissa/" rel="nofollow">Suissa</a> sei que vc tem dezenas de grupos de desenvolvimento no FB.</p><p>Me passa o nome dos principais depois preu atualizar o post =)</p>
+
+- author: Leandro Oriente
+  date: 2013-10-18T13:17:25
+  text: |
+    <p>Vlw <a data-dsq-mention="suissa:disqus" href="https://disqus.com/by/suissa/" rel="nofollow">Suissa</a>  =)</p><p>Vi que tinha uma galera boa com a mesma dúvida. <br>Tinha um template de email pronto para essa pergunta e vi que não era a solução mais inteligente rsrs.</p>
+
+- author: Suissa
+  date: 2013-10-18T12:42:37
+  text: |
+    <p>Ficou show mano! Quando alguém me perguntar ja vou ter esse link na manga!</p>
+
+- author: Arthur
+  date: 2013-10-18T06:26:48
+  text: |
+    <p>Lançado há poucos dias, vale a pena citar também o <a href="http://dash.generalassemb.ly/" rel="nofollow">http://dash.generalassemb.ly/</a> que é um curso online no estilo do code academy.</p>
+
+- author: Leandro Oriente
+  date: 2013-10-18T02:23:14
+  text: |
+    <p><a data-dsq-mention="lowpis:disqus" href="https://disqus.com/by/lowpis/" rel="nofollow">Sérgio Lopes</a> mais que merecida.</p><p>Já assisti uma palestra sua em BH, acompanho seu blog e o material é realmente fantástico =)</p>
+
+- author: Sérgio Lopes
+  date: 2013-10-18T02:14:36
+  text: |
+    <p>Artigo fantástico! Valeu a citação</p>
+
+- author: Leandro Oriente
+  date: 2013-10-17T23:29:56
+  text: |
+    <p>Vlw <a data-dsq-mention="vitorbritto:disqus" href="https://disqus.com/by/vitorbritto/" rel="nofollow">Vitor Britto</a>. <br>As referências são excelentes, vou atualizar hoje mesmo =)</p>
+
+- author: Vitor Britto
+  date: 2013-10-17T23:25:52
+  text: |
+    <p>Parabéns Leandro! Uma relação show de bola! =]</p><p>Segue algumas referências: <br><a href="https://github.com/CoffeeAndCodeProject/learning/tree/master/online" rel="nofollow">https://github.com/CoffeeAndCo...</a><br><a href="https://github.com/CoffeeAndCodeProject/topics" rel="nofollow">https://github.com/CoffeeAndCo...</a></p>
+
+- author: Leandro Oriente
+  date: 2013-10-17T14:32:58
+  text: |
+    <p>@Thiago Melo atualizado =)</p><p>O //UX Blog é bom demais mesmo e o Edu manda muito bem.</p>
+
+- author: Thiago Melo
+  date: 2013-10-17T13:01:55
+  text: |
+    <p>Excelente post, Leandro. Sensacional! Tem um blog muito bom sobre UX, do Edu Agni (@eduagni) <a href="http://www.uxdesign.blog.br" rel="nofollow">http://www.uxdesign.blog.br</a>, que, particularmente acho muito esclarecedor. Não seria interessante colocá-lo como referência também?</p>
+
+- author: Leandro Oriente
+  date: 2013-10-17T02:36:26
+  text: |
+    <p>Atualizado.</p><p>Vlw <a data-dsq-mention="brenocalazans:disqus" href="https://disqus.com/by/brenocalazans/" rel="nofollow">brenocalazans</a></p>
+
+- author: Leandro Oriente
+  date: 2013-10-17T02:30:09
+  text: |
+    <p><a data-dsq-mention="disqus_majohpi7zf:disqus" href="https://disqus.com/by/disqus_MAjOHPI7Zf/" rel="nofollow">Marcelo Brito</a> aborda o básico sim.</p><p>Inclusive o Jaydson Gomes do Terra já recomendou no blog dele também. Coisa fina =)</p><p><a href="http://jaydson.org/javascript-o-guia-definitivo/" rel="nofollow">http://jaydson.org/javascript-...</a></p>
+
+- author: Leandro Oriente
+  date: 2013-10-17T02:26:54
+  text: |
+    <p>Atualizando aqui <a data-dsq-mention="guilhermepontes:disqus" href="https://disqus.com/by/guilhermepontes/" rel="nofollow">Guilherme Pontes</a>.</p><p>O @shiota já tinha estava =)</p>
+
+- author: Guilherme Pontes
+  date: 2013-10-16T23:49:05
+  text: |
+    <p>Na lista falta de Twitters falta: @shiota, @jcemer e @guiiipontes :P</p>
+
+- author: Marcelo Brito
+  date: 2013-10-16T22:51:10
+  text: |
+    <p>Post do caramba!! parabéns! Cara, esse livro "javascript - guia definitivo" serve para iniciantes? estou precisando aprender urgentemente essa linguagem!</p>
+
+- author: Leandro Oriente
+  date: 2013-10-16T22:37:17
+  text: |
+    <p>Atualizado =)</p><p>Não conhecia esse. Bem legal tb</p>
+
+- author: brenocalazans
+  date: 2013-10-16T22:36:29
+  text: |
+    <p>Um link que vale citar também é esse:<br><a href="http://resrc.io/list/10/list-of-free-programming-books/" rel="nofollow">http://resrc.io/list/10/list-o...</a><br>São diversos livros de programação de graça.</p>
+
+- author: Eric Vasconcelos
+  date: 2013-10-16T22:25:06
+  text: |
+    <p>Uso muito o <a href="http://overapi.com" rel="nofollow">overapi.com</a> para realizar consultas rápidas sobre algum código</p>
+
+- author: Leandro Oriente
+  date: 2013-10-16T22:01:02
+  text: |
+    <p><a data-dsq-mention="fabricionaweb:disqus" href="https://disqus.com/by/fabricionaweb/" rel="nofollow">Fabricio Augusto</a> atualizado =)</p>
+
+- author: Fabricio Augusto
+  date: 2013-10-16T21:06:14
+  text: |
+    <p>Documentação: <a href="http://devdocs.io" rel="nofollow">devdocs.io</a></p>
+
+- author: Jonathan
+  date: 2013-10-16T17:31:41
+  text: |
+    <p>Ótima iniciativa!! Parabéns!!</p>
+
+- author: João Pedro Nascimento
+  date: 2013-10-16T16:28:09
+  text: |
+    <p><a data-dsq-mention="leandrooriente:disqus" href="https://disqus.com/by/leandrooriente/" rel="nofollow">Leandro Oriente</a> Show =)</p>
+
+- author: Leandro Oriente
+  date: 2013-10-16T16:04:16
+  text: |
+    <p><a data-dsq-mention="joaopedron:disqus" href="https://disqus.com/by/joaopedron/" rel="nofollow">João Pedro Nascimento</a> atualizado =)</p>
+
+- author: brenocalazans
+  date: 2013-10-16T14:32:58
+  text: |
+    <p>Ótimo post e obrigado pela referência!</p>
+
+- author: João Pedro Nascimento
+  date: 2013-10-16T14:08:17
+  text: |
+    <p>Ótimo post Leandro, acho que seria válido colocar um bom blog para os iniciantes: <a href="http://frontendparaleigos.cc" rel="nofollow">http://frontendparaleigos.cc</a>, vale a pena ter conhecimento, ele também está no guia "keep-up-to-date-brazuca". Abraços fera !</p>
+
 
 ---
 

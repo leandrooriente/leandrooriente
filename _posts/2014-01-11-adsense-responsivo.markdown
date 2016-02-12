@@ -8,7 +8,82 @@ tags:
 - SEO
 image_thumb: "/media/adsense-responsivo-thumb.jpg"
 image_highlight: "/media/adsense-responsivo.jpg"
-comments: [comment]
+comments: 
+- author: Victor Naito
+  date: 2014-12-24T22:30:04
+  text: |
+    <p>Foi utilizado algum framework para criação deste site?<br>Obrigado.</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T21:07:30
+  text: |
+    <p>Trabalhei melhor o schema. Não acredito que vá melhorar a nível de ranqueamento, mas ao menos pode melhorar a conversão.</p><p>Vou escrever outro artigo (polêmico) hoje pra ver se alavanco uns backlinks também =)</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T21:05:28
+  text: |
+    <p>Quanto a SERP, se estiver logado com conta google, deveria aparecer algo semelhante a isso:</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T20:52:28
+  text: |
+    <p>Cara, te contar que eles criaram sem minha autorização.</p><p>Puxaram os dados do Orkut na época e criaram a conta. Alguns amigos passaram por isso tb.<br>E pra excluir é um inferno rsrs.</p><p>Vou dar uma futicada aqui, mas vai ser complicado. Estava associada ao meu falecido hotmail =(</p>
+
+- author: Matheus Kramer
+  date: 2014-01-13T20:40:53
+  text: |
+    <p>Belo artigo, mas ao pesquisar "Leandro Oriente" eu só achei um perfil do Badoo hahahahhahauhdasiuhdiuashdiusad</p>
+
+- author: Mario Ernesto
+  date: 2014-01-13T20:21:09
+  text: |
+    <p>Show vou fazer uns testes nele. se chegar a algum resultado diferente publico por aqui.</p><p>quanto ao resultado testei em aba anônima e como tenho bloqueio no pc, o google não mapeia meus gostos pessoais. mas SEO é isso mesmo uma guerra diária pra manter-se no topo, ainda mais brigando com um gigante desses, mas só de você ser o segundo em uma busca tão genérica como essa, já é um resultado surpreendente.</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T14:44:19
+  text: |
+    <p>Putz, me passou de novo.</p><p>Maldito Jimmy Wales pedinte virtual husahsuahsa.<br>Vou fazer umas ligações e ver o que resolvo aqui.</p>
+
+- author: Ricardo Arrigoni
+  date: 2014-01-13T14:31:41
+  text: |
+    <p>Mesmo anônimo a Wikipédia está na frente ainda, mas mesmo assim é um resultado excelente!</p><p>BTW, ótimo artigo!</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T13:14:20
+  text: |
+    <p>Fica a vontade. Na vdd deixei ele bem mais enxuto para o Post. Faço algumas coisas a mais aqui no blog tb.</p><p>Quanto ao resultado, pode ser pq o google oferece resultados otimizados por usuário.<br>Tenta numa aba anônima, talvez eu esteja na frente.</p>
+
+- author: Mario Ernesto
+  date: 2014-01-13T12:38:17
+  text: |
+    <p>Eu também não resisti e escrevi "desenvolvedor front end" e alguma coisa milagrosa a Wikipedia fez que voltou ao topo. se me permitir posso usar, modificar e testar seu script?</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T12:07:18
+  text: |
+    <p>Se achar algo comento sim.<br>Já estava pensando em escrever um sobre SEO para pequenos Blogs onde citaria a integração com o G+.</p>
+
+- author: Felipe Fialho
+  date: 2014-01-13T11:48:51
+  text: |
+    <p>Quanto a isso do "mini profile", também consegui fazer, achei bem interessante.</p><p>Quando tiver uma resposta a essa questão de estar logado publicar pra gente ver \o</p>
+
+- author: Leandro Oriente
+  date: 2014-01-13T11:46:02
+  text: |
+    <p>Vlw <a data-dsq-mention="felipefialho:disqus" href="https://disqus.com/by/felipefialho/" rel="nofollow">Felipe Fialho</a>  =)</p><p>Outro ajuste que fiz relacionado a SERP foi relacionar melhor o meu perfil do Google Plus ao meu site.</p><p>Ao pesquisar por "Leandro Oriente" aparece um mini profile meu.<br>Só que ele só aparece se o usuário estiver logado na conta Google. Estou pesquisando ainda o porque, mas me parece alguma restrição do próprio Google.</p><p>Abs</p>
+
+- author: Felipe Fialho
+  date: 2014-01-13T11:37:29
+  text: |
+    <p>Leandro,</p><p>Obviamente não resisti e escrevi "desenvolvedor front end"... simplesmente assustador, haha. Incrível.</p><p>Gostei muito do novo visual, que seja um ótimo 2014 para todos \o</p>
+
+- author: Mateus Avila Isidoro
+  date: 2014-01-11T04:04:33
+  text: |
+    <p>Artigo realmente interessante. Parabéns. Muitos sites quebram no celular por não oferecer essa solução para seus clientes.</p>
+
 
 ---
 

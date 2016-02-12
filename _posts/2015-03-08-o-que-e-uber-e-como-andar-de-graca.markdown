@@ -4,7 +4,7 @@ title: "O que é Uber e como ganhar uma viagem grátis"
 tags: general, startup
 image_thumb: "/media/uber3.png"
 image_highlight: "/media/uber3.png"
-comments: [comment]
+comments: 
 ---
 
 

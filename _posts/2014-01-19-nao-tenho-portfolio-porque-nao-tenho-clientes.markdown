@@ -7,7 +7,97 @@ tags:
 - general
 image_thumb: "/media/nao-tenho-portfolio-thumb.jpg"
 image_highlight: "/media/nao-tenho-portfolio.jpg"
-comments: [comment]
+comments: 
+- author: Fernando Guisso
+  date: 2015-02-27T00:01:14
+  text: |
+    <p>Vlw pela dica, estava precisando!</p>
+
+- author: Mikael Lemos
+  date: 2015-01-15T20:50:22
+  text: |
+    <p>Cara Excelente Post, Parabéns !!!!!!</p>
+
+- author: Delmondes Rodrigo
+  date: 2014-09-25T12:42:42
+  text: |
+    <p>Excelente post! Muito bom, inspirador e animador =D</p>
+
+- author: William Oliveira
+  date: 2014-07-02T17:36:29
+  text: |
+    <p>Alguns não dão certo, outros também não dão certo...</p><p>KKKKKK</p><p>Show de bola</p>
+
+- author: Matheus Souza
+  date: 2014-06-02T03:22:39
+  text: |
+    <p>Este post é muito interessante e bastante interessante... Já falei que ele é interessante? Pois é, foi muito útil e refleti bastante sobre isto. Valeu :)</p>
+
+- author: Anderson Meira
+  date: 2014-04-29T00:10:25
+  text: |
+    <p>nada mais nada menos que excelente!</p>
+
+- author: Douglas Ernesto
+  date: 2014-04-02T02:18:22
+  text: |
+    <p>Deixar meus parabéns pra ti, me ajudou bastante!!!!</p>
+
+- author: Ryan Felipe Moraes
+  date: 2014-02-21T17:21:09
+  text: |
+    <p>Po Leandro, Show de bola o conteúdo cara parabéns! Eu ja havia pensando em algumas coisas, mas o lance de experimentos e re-design me chamou muito a atenção!</p>
+
+- author: Vinícius Wachekowski Palma
+  date: 2014-01-28T13:27:03
+  text: |
+    <p>"coloca em prática tudo o que aprendeu mas na hora de trocar as imagens de placeholder pelos seus trabalhos... Nada."<br>AHhahahahahaha exato!</p>
+
+- author: Osvijamys Oz
+  date: 2014-01-25T04:34:44
+  text: |
+    <p>valeu pela dica parceiro</p>
+
+- author: fabio
+  date: 2014-01-25T03:17:47
+  text: |
+    <p>Muito bom cara, curto muito seus posts, sempre entro aqui e revejo o "como me tornar um desenvolvedor Front-End"</p>
+
+- author: Diego Soares
+  date: 2014-01-21T16:44:08
+  text: |
+    <p>Gostei do post Leandro, parabéns!! <br>Engraçado que hoje, escutei os caras do Podcast FalaFreela falar quase a mesma coisa em relação ao portfólio.</p>
+
+- author: Henrique Silvério
+  date: 2014-01-21T15:40:21
+  text: |
+    <p>O exemplo do "site que postaram no grupo e virou motivo de chacota" mostra como é importante ter um ponto de vista positivo sobre as coisas sempre. Enquanto uns apenas olham e pensam: "Que site horrível", outros enxergam nisso uma oportunidade para construir um portfólio e se destacar profissionalmente. Muito bom o post, parabéns.</p>
+
+- author: Leandro Oriente
+  date: 2014-01-21T14:50:35
+  text: |
+    <p>Vale muito a pena cara. Tanto para freelas, quanto para se candidatar a vagas em empresas maiores.</p><p>É um diferencial absurdo. Boa parte das vezes até maior do que aquele site clichê institucional para um cliente de fato.</p>
+
+- author: Matheus Kramer
+  date: 2014-01-21T14:40:49
+  text: |
+    <p>Ei Leandro, confesso que já havia pensado nisso, mas seu post foi a gota d'agua pra eu realmente e colocar em prática. Valeuzão.</p>
+
+- author: Thalles Santos
+  date: 2014-01-21T03:52:01
+  text: |
+    <p>Gostei...Parabéns man!</p>
+
+- author: Eric Douglas
+  date: 2014-01-20T17:08:54
+  text: |
+    <p>Ótimas dicas mesmo cara... Você está ajudando muito, parabéns de verdade! Continue firme gerando conteúdo pra gente :D</p>
+
+- author: Gabriel Mendes
+  date: 2014-01-20T17:03:48
+  text: |
+    <p>Sempre provocante e motivador seus posts! Parabéns! </p>
+
 
 ---
 

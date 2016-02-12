@@ -5,7 +5,82 @@ description: ""
 tags: e-commerce
 image_thumb: "/media/blackfriday-thumb.jpg"
 image_highlight: "/media/blackfriday.jpg"
-comments: [comment]
+comments: 
+- author: Marino Petrillo Neto
+  date: 2014-11-29T16:01:49
+  text: |
+    <p>Li o artigo agora, em 2014. Muito bom. Vale acrescentar o seguinte: em promoçāo de vendas a lógica do fácil e rápido é fundamental. Porém uma serie de "comentaristas" ficam alertando a galera sobre "como nāo ser enganado na black friday". Só falta sugerir que se cheque o "serasa" do vendedor, ou seja, matam totalmente a lógica de promoçāo de vendas. Nos EUA um economista observou que todos os preços praticados no black friday, em algum momento durante o ano, também serāo praticados pela mesma empresa. Entāo nāo vale a Energia física e emocional que o comprador dispense no BF. É melhor acionar alertas das lojas que, em aalgum momento durante o ano, vc terá uma oferta de preço igual a do black. Friday.</p>
+
+- author: Zane
+  date: 2014-10-29T01:10:29
+  text: |
+    <p>Será que foi por esse motivo que um refrigerador que custava 3.400,00 á dois dias no WALMART, hoje está por 3,821,00??</p><p>Estamos fazendo papel de palhaço mesmo  =(</p>
+
+- author: jesus
+  date: 2014-02-27T01:26:34
+  text: |
+    <p>acho que ainda tem muito pra evoluir</p>
+
+- author: Newton Dantas
+  date: 2013-12-04T20:01:57
+  text: |
+    <p>Excelente o artigo Leandro.<br>Eu particularmente acho que no Brasil ocorre a mesma coisa, mas em épocas diferentes. Note que aqui as liquidações acontecem mesmo após o Natal, no mês de janeiro. Li recentemente em alguns portais alguns especialistas recomendando você deixar para fazer as compras de Natal em janeiro pois os descontos podem chegar até 80%.</p>
+
+- author: Felipe Fialho
+  date: 2013-12-04T10:42:45
+  text: |
+    <p>Pensei o mesmo sobre o Node.</p>
+
+- author: Felipe Fialho
+  date: 2013-12-04T10:42:23
+  text: |
+    <p>Explicação super bacana Leandro.</p>
+
+- author: Mateus Avila Isidoro
+  date: 2013-12-04T01:00:47
+  text: |
+    <p>Poderia também rolar um artigo sobre a questão de performance das lojas. Afinal, muitas cairam aos prantos. E eu sinto cheio de node crescendo no Brasil.</p>
+
+- author: Thiago Nascimento Oliveira
+  date: 2013-12-04T00:57:39
+  text: |
+    <p>Também vi relatos sobre isso, de algumas lojas permitirem compras só através de Cartão de Crédito.<br>Os dois pedidos que fiz neste BlackFriday foram via Boleto Bancário, na Americanas e FastShop, em ambas o procedimento foi normal, agora aguardo a chegada =)</p>
+
+- author: brenocalazans
+  date: 2013-12-04T00:51:02
+  text: |
+    <p>Interessante, myth busted!</p>
+
+- author: Leandro Oriente
+  date: 2013-12-04T00:34:43
+  text: |
+    <p>Cara, achei isso também, mas tentei fazer algumas compras com boleto e em todas tive sucesso.<br>Alguns no entanto não estavam com o desconto.</p>
+
+- author: brenocalazans
+  date: 2013-12-04T00:27:19
+  text: |
+    <p>Acredito que durante a Black Friday muitas lojas não aceitem pagamento em Boleto por que o produto tem que ser reservado por alguns dias para dar tempo do cliente ir poder pagar o boleto. Com isso, o produto fica num limbo na espera de um pagamento incerto, que pode ou não pode ser feito. Com cartão de crédito ou outros meios, a loja tem a venda (e principalmente o dinheiro) garantida.</p>
+
+- author: Leandro Oriente
+  date: 2013-12-03T23:30:52
+  text: |
+    <p>É que não fazem algo unificado.</p><p>Cada loja escolhe uma data para dar a louca no patrão.<br>Quem fica monitorando com frequência acaba pegando um ou outro, mas geralmente acaba antes que os pobres mortais comprem algo bom.</p>
+
+- author: Leonardo Alberto Souza
+  date: 2013-12-03T23:23:59
+  text: |
+    <p>Podia ter citado que a época no Brasil onde rolam descontos mais ou menos bons é nas liquidações de início do ano, época que as lojas querem se livrar do estoque fora de normal do Natal.</p><p>Não é assim uma black friday, mas dá pra achar alguns bons preços ;)</p>
+
+- author: Leandro Oriente
+  date: 2013-12-03T23:17:50
+  text: |
+    <p>Opa com certeza. <br>Consegui um sensor de ré e 7 jogos na Steam e na Origin por R$ 50,00.</p><p>Da para aproveitar, mas tem que ficar de olho pra não cair em cilada.</p><p>Apesar de não ser uma queima de estoque real é bom aproveitar um descontinho.</p>
+
+- author: Thiago Nascimento Oliveira
+  date: 2013-12-03T23:15:50
+  text: |
+    <p>Ótimo artigo Leandro!</p><p>A Black Friday no Brasil é apenas (mais) um dia de promoção (normal?), não uma limpeza, um queimão um dia com preços absurdamente "mágicos" como se acontece nos EUA. Mas como disse, dá sim pra aproveitar e bem os descontos, basta acompanhar com (boa) antecedência os preços e ter muita paciência na hora de comprar!</p><p>É a segunda vez que me empenho - suo a camisa - e faço boas compras, conseguindo produtos com até 50% de desconto do valor real. Não é uma Black Friday americana, mas dá para aproveitar! ;)</p>
+
 
 ---
 

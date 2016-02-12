@@ -5,7 +5,22 @@ description: "Seguindo a onda do Loop Infinito, resolvi fazer um post com o meu 
 tags: setup
 image_thumb: "/media/workstation-thumb.jpg"
 image_highlight: "/media/workstation.jpg"
-comments: [comment]
+comments: 
+- author: Felipe Fialho
+  date: 2013-10-09T17:32:07
+  text: |
+    <p>"O mercado está cada vez mais maduro e estou muito feliz em fazer parte disso tudo."</p><p>Engraçado, disse quase a mesma coisa em um grupo do Facebook ontem, recompensadora essa sensação né?</p>
+
+- author: Lucas
+  date: 2013-09-21T11:49:30
+  text: |
+    <p>Sucesso!</p>
+
+- author: João Pedro Nascimento
+  date: 2013-08-26T20:41:58
+  text: |
+    <p>Breve no setup do loop infinito !</p>
+
 
 ---
 

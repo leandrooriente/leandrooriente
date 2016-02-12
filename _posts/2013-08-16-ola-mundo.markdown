@@ -4,7 +4,17 @@ title: "Olá mundo"
 tags: general
 image_thumb: "/media/seja-bem-vindo-thumb.jpg"
 image_highlight: "/media/seja-bem-vindo.jpg"
-comments: [comment]
+comments: 
+- author: Leandro Oriente
+  date: 2014-06-16T00:25:35
+  text: |
+    <p>Opa @Haple.</p><p>Obrigado por comentar.</p><p>Entendo bem o que sente e recomendo que continue acompanhando o blog. Não é extremamente técnico, mas vez ou outra solto alguma coisa ou uma referência. Por outro lado exponho bastante minha experiências e o que funcionou ou não para mim.</p><p>Abs</p>
+
+- author: Haple
+  date: 2014-06-15T01:44:43
+  text: |
+    <p>Cara, eu não sou muito de comentar em blogs, comunidades (tal, tal, tal), porém gostei muito dos posts que eu li no seu site, e isso me fez querer comentar(e claro, ler) cada post!<br>Agora falando um pouco sobre mim(algo desnecessário). Sou um jovem com uma vontade tremenda de criar diversas coisas na área de informática como programas realmente úteis, sites interativos, enfim. Nunca tive muita vontade muita vontade de expor a minha opinião pois achava desnecessário, porém agora vejo como é importante tanto para o autor do conteúdo lido, tanto para mim. Bem... Antes de mais nada, já lhe peço desculpas por comentários  sem sentido ou desnecessários.<br>Um abraço, e até futuros posts!</p>
+
 ---
 
 Não curto muito formalidades, mas gostaria de apresentar quem vai manter esse blog ou pelo menos tentar.

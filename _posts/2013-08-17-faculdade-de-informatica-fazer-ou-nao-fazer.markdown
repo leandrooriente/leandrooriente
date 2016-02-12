@@ -5,7 +5,322 @@ description: "Quero mostrar minha experiência atual com o mercado de trabalho e
 tags: faculdade
 image_thumb: "/media/classroom-thumb.jpg"
 image_highlight: "/media/classroom.jpg"
-comments: [comment]
+comments: 
+- author: Mariana de Fatima
+  date: 2015-04-26T15:37:44
+  text: |
+    <p>Parabéns pelo seu texto, me ajudou MUITO, eu tenho 14 anos e penso em trabalhar na área  de informática, se texto esclareceu muitas dúvida sobre o assunto. Vou fazer Ensino Médio técnico em Informática, porém vou precisar "repetir" o primeiro ano, estou em dúvida se vale a pena ou não.</p>
+
+- author: Leandro Oriente
+  date: 2015-03-09T21:14:42
+  text: |
+    <p>Opa Julio Antonio do Amaral, boa tarde.</p><p>Bem bacana seu comentário e naturalmente não tenho o que discordar dele. <br>Existem diversas áreas na informática e cada uma requer um conjunto específico de conhecimentos para que sejam executadas. A faculdade de forma geral (CComp e Engenharia da Computação) busca dar uma base sólida para todas elas.</p><p>Esse post foi escrito em 2013 e de lá para cá amadureci bastante a ideia de fazer uma faculdade. Inclusive vou ingressar agora no meio do ano em uma.</p><p>O ponto que tentei expor de forma um pouco imatura, mas que continuo concordando ainda hoje é que as faculdades tentam tocar em 'n' pontos e acabam não aprofundando nenhum.</p><p>Essa abrangência tem pontos bons e pontos ruins. Existem alunos que acabam descobrindo interesse por áreas que nunca conheceriam fora da faculdade, o que é bacana. Porém existem alguns que sabem em que área querem trabalhar e muitas vezes até atuam nessa área e acabam tendo que passar 50% do curso vendo matérias que pouco vão acrescentar no nicho de seu interesse.</p><p>Além disso tentar atacar tantos pontos pode dar uma formação tão generalista que no final das contas não atende a nenhum mercado.</p><p>Em breve pretendo reescrever esse post e com certeza levarei em consideração o seu comentário.</p><p>OBS: Não precisa usar de sua "autoridade" para ser ouvido. Leio e respeito a opinião de todos independente do currículo :)</p>
+
+- author: Julio Antonio do Amaral 
+  date: 2015-03-09T19:36:58
+  text: |
+    <p>Olá Leandro Oriente, Boa Tarde! Leandro, esta dúvida assombra a maioria dos ingressantes em cursos de computação, sobretudo nos mais teóricos e em boas Universidades, como Ciência da Computação. Bem, sou pesquisador e Professor Universitário desde 2002 e posso lhe dizer que sua linha de argumentação não está bem fundamentada e correta. Explico porque. Basta você olhar os currículos dos cursos de Ciência da Computação em Universidades como MIT, Stanford, Yale, UFRJ, ITA, USP, etc que vai perceber que a base teórica é matemática e sabe o por quê? Porque um algoritmo meu caro nada mais é do que um modelo matemático para um problema, uma da infinitas soluções, isto é quando o problema é computável. Se parar para pensar, Computação Gráfica depende, no mínimo de Álgebra Linear, Inteligência Artificial no mínimo de Processos Estocásticos, Estatística, Arquitetura de Computadores, claro da Eletrônica, e esta da Física, que por sua vez não consegue se manter se a Matemática... Business Intelligence meu caro, depende de modelos matemáticos. A Mineração de Dados (exceto para aqueles que acham que as rotinas nascem em buracos negros em galáxias distantes) necessita de fortes modelos matemáticos para identificação e correlação de padrões. Visão Artificial usada em Robôs atuais (Carros que Navegam Autonomamente, por exemplo) é um outro exemplo do uso constante de modelos matemáticos. Você sabia que uma Rede Neural que talvez já tenha usado em alguma ferramenta computacional, na verdade é um modelo matemático de uma Rede Neuronal Natural? Bem, acredito que você realmente tenha uma visão muito distorcida do que seja Computação. Computação meu caro não se resume à elaboração de procedimentos, na maioria das vezes, sem qualidade que ocupam grandes quantidades de memória e levam tempos infinitos (no sentido real da palavra) para fornecerem respostas, nem sempre certas. Ah, a propósito, é possível Analisar a Complexidade Temporal e Espacial de um Algoritmo, mas para isso é necessário MATEMÁTICA. Dê uma olhada no livro MATEMÁTICA CONCRETA do Donald Knuth, um simples Professor de Stanford, que você entenderá o que quero dizer. Abraços, Julio (Bacharel em Ciência da Computação e Mestre em Engenharia Eletrônica e Computação pelo ITA, atualmente desenvolvendo Projeto de Doutorado em Engenharia Mecânica Aeronáutica na área de Robótica Aeroespacial no ITA!)</p>
+
+- author: Luan
+  date: 2015-03-04T12:33:49
+  text: |
+    <p>Eu queria saber se uma pessoa sem conhecimento muito alem do basico na area tem que fazer um curso tecnico antes de entrar na Faculdade de TI ou la eles ensinam tudo desde o principio?</p>
+
+- author: Márcio Lima
+  date: 2015-02-21T17:51:33
+  text: |
+    <p>Seu artigo é ótimo e vem num bom momento pra mim. Estou com 25 anos e nunca tive um grande interesse em fazer faculdade. Atualmente estou cursando técnico em informática no Senac.</p><p>Nossos professores sempre falam para os alunos entrarem para a faculdade, após o término do curso. A partir daí comecei a me questionar sobre fazer ou não.</p><p>Um colega de turma, chegou a começar uma faculdade, mas também a trancou, só que no quarto período. Também por conta da matemática. Sempre ouvi falar a respeito das matérias de cálculos e fiquei um pouco preocupado de entrar pra faculdade e trancar por esse mesmo motivo.</p><p>De uns tempos pra cá, comecei a perceber que tinha interesse em assuntos relacionados a marketing. Daí a dúvida voltou, principalmente porque é outra área. Me alertaram que seria incoerente por isso, mas como meu interesse é principalmente com marketing digital, acredito que se interligam, certo?</p><p>De todo modo, minha intenção nesse momento é me preparar com TI. Decidi que vou me dedicar mais em desenvolvimento front end, porque sempre gostei. Quero entrar para o mercado de trabalho e depois decidir se entro ou não para faculdade.</p><p>Abraço!</p>
+
+- author: Bába Paes
+  date: 2015-02-19T18:20:16
+  text: |
+    <p>Poxa, eu estava lendo um post seu muito interessante, aí você escreveu: "Aperte CRTL+W" e eu fiz, agora vim parar aqui e cade a página que eu estava lendo? kkkkkk   Ainda bem que existe o histórico. =)</p><p>Excelente site! Está nos meus favoritos, com certeza! o/</p>
+
+- author: Taylan Branco Meurer
+  date: 2015-02-17T01:16:56
+  text: |
+    <p>Tem um detalhe muito importante. A classe dos formados em computação não é unida, pouco conhecimento tem de legislação e pouco faz para alterar esse cenário. O resultado dessa negligência é negativo para aqueles que aturaram e aturam os longos anos de graduação.</p><p>Por quê? O empresário nessas condições tem um poder muito grande de negociação. Qualquer pessoa pode desenvolver um programa, receber as honras e lançar no mercado. Isso não acontece com projetos que exigem um engenheiro, com cirurgias médicas, por exemplo.</p><p>Vou facilitar ainda mais, você tem mais informação e prática em medicina do que um próprio médico, mas este pode efetuar a cirurgia, mesmo não sendo capaz na prática, você não pode. A lei não o permite.</p><p>A classe médica existe, é mafiosa e defende-se com unhas e dentes. A classe dos advogados e dos engenheiros também. Cadê a dos matemáticos que se comunicam com computadores?</p>
+
+- author: Taylan Branco Meurer
+  date: 2015-02-17T01:07:20
+  text: |
+    <p>Sem sombras de dúvida. O que importa é fazer, produzir, retornar conforme as exigências do espaço, local ou empregador. O titulado leva vantagem quando não precisa comprovar na seleção algum retorno de produção.</p><p>Nós fomos condicionados a um ensino presencial, a agirmos somente após determinações de um guia, mestre, guru, líder. Em regra, não somos disciplinados para produzir ou obter por conta própria. Por essa razão, supomos que o titulado leva vantagem sobre o não titulado. Sabemos que isso é uma conjectura equivocada.</p>
+
+- author: Taylan Branco Meurer
+  date: 2015-02-17T00:55:29
+  text: |
+    <p>Pelo que entendi, você se refere a um curso voltado para o mercado de trabalho, mais curto e específico. Essa é a finalidade do curso tecnológico.</p><p>O Bacharelado tem uma finalidade praticamente contrária, longo e generalista.</p><p>Darei minha concepção do mercado. O empresário deseja alguém que resolva problemas, o maior número deles se possível. Tornar-se habilidoso apenas em front-end  pode ocasionar desvantagens.</p>
+
+- author: Amanda Santos
+  date: 2015-02-04T21:14:42
+  text: |
+    <p>Cara simplesmente adorei o seu texto, muito bom. Faço ciência da computação e vejo que as faculdades deixam muito a desejar pq o ensino é "fantasioso" longe das expectativas do mercado atual, mostram um mercado fácil pra os alunos que nunca colocaram mão na massa.Vou me formar tbm no curso de como se tornar um auditada rsrsrs, na verdade já sou uma. Parabéns pelo texto!</p>
+
+- author: Vítor Nativu
+  date: 2015-01-07T01:14:44
+  text: |
+    <p>Boa noite amigos, quero dizer que fui bastante feliz em chegar até aqui essa noite e ter a oportunidade de ler cada comentário.</p><p>Queria dizer ao garoto de 17 anos e ao rapaz de 22 que estão "sem tempo" para a escolha certa do curso que tenho 31 anos e estou bastante empolgado para o início da Faculdade de Ciências da Computação que iniciarei no próximo semestre.</p><p>Não desistam, vocês são jovens e sempre há tempo, acreditem! Sou de uma geração aonde o tempo passava mais devagar, aos 17 anos de idade eu estava preocupado em outras coisas, achava que tinha todo tempo do mundo. Hoje um garoto de 17 está preocupado com as provações da vida, com a opinião da sociedade e da família, as coisas estão mais dinâmicas e a tecnologia tem contribuído pra essa mudança de comportamento.</p><p>Acreditem, vocês podem! Não tenham medo.</p><p>Parabéns a todos pela contribuição maravilhosa e para o autor desse maravilhoso texto. Boa sorte a todos e um feliz 2015.</p>
+
+- author: Leandro Oriente
+  date: 2014-11-11T16:44:23
+  text: |
+    <p>Opa <a data-dsq-mention="caioviski:disqus" href="https://disqus.com/by/caioviski/" rel="nofollow">Caio Viski</a>.</p><p>Não fique com medo de migrar não cara. <br>Conheço um excelente profissional na área que fez direito também e que hoje está em Boston trabalhando em uma das empresas mais iradas da área.</p><p>Você ainda é bem jovem e tem muito tempo para se adequar ao mercado. Recomendo que estude em paralelo por conta própria conforme for avançando na faculdade. Estamos numa área muito dinâmica e nem sempre as Faculdades conseguem acompanhar o mercado.</p><p>Estou com 22 também e volto para faculdade semestre que vem :)<br>Só que dessa vez para Análise e Desenvolvimento de Sistemas.</p>
+
+- author: Caio Viski
+  date: 2014-11-11T16:36:00
+  text: |
+    <p>Ótimo texto. Leandro Oriente, estou preste a tomar uma decisão na minha vida, estou terminando a graduação em Direito e pretendo ingressar numa graduação em  Engenharia de Computação, tenho alguns cursos tecnicos de informática que fiz durante a minha adolescência mas nunca cheguei atuar, trabalhando e etc. Hoje tenho 22 anos, e tenho muito medo em não conseguir me aptar ao Mercado, então tá sendo uma decisão muito difícil na minha vida, to lendo diversos textos pela internet e esse foi o mais interessante até o momento. Se puder me ajudar com umas dicas na área de Engenharia de Computação ficarei muito grato. Fico muito preocupado em ter descoberto, tarde, que a minha vocação não é na área do Direito :/</p><p>Abraço</p>
+
+- author: Adems Ayez
+  date: 2014-09-21T02:26:52
+  text: |
+    <p>Você pretende obter um empréstimo? ou precisa de um empréstimo para iniciar um negócio, e se assim for, por favor contacte-nos em: jeffersoncarsonloanfirm@hotmail.com</p><p>nome:<br>Montante do empréstimo necessário:<br>estado:</p>
+
+- author: Leandro Oriente
+  date: 2014-09-15T18:15:46
+  text: |
+    <p>Olá @MaybeSick.</p><p>Acredito que o uso foi correto. Resolvi pesquisar a respeito e achei esse artigo: <a href="http://duvidas.dicio.com.br/enfim-ou-em-fim/" rel="nofollow">http://duvidas.dicio.com.br/en...</a></p><p>"A palavra enfim é um advérbio de tempo e significa, principalmente, finalmente e por fim. "</p>
+
+- author: MaybeSick
+  date: 2014-09-15T18:11:45
+  text: |
+    <p>Esse "ENFIM" no final tirou toda a credibilidade do autor! kkkkkk</p>
+
+- author: Leandro Oriente
+  date: 2014-08-25T17:17:28
+  text: |
+    <p><a data-dsq-mention="disqus_vli0ucbbre:disqus" href="https://disqus.com/by/disqus_VLi0uCbbRE/" rel="nofollow">Guilherme Costa</a> tem sim.</p><p>A UFRJ tem Ciência da Computação e Engenharia da Computação.<br>Aqui tem a lista completa <a href="https://siga.ufrj.br/sira/repositorio-curriculo/ListaCursos.html" rel="nofollow">https://siga.ufrj.br/sira/repo...</a>.</p><p>Tenho dois conhecidos que estudaram lá e um que já se formou, e todos elogiaram muito o curso.</p>
+
+- author: Guilherme Costa
+  date: 2014-08-25T08:09:41
+  text: |
+    <p>Existe "faculdade de informática" na UFRJ também? é boa? sou novo no assunto e não sei muito. Estou na dúvida sobre qual profissão seguir, mas informática parece-me interessante.</p>
+
+- author: Mariana Senne
+  date: 2014-06-26T19:31:16
+  text: |
+    <p>Primeiramente, adorei seu texto. Era exatamente minha duvida. Eu sempre fui muito ligada a área de informatica e inicialmente decidi fazer desenho industrial, porque queria focar na área de web design, mas com o tempo resolvi mudar de ideia  fazer ciência da computação. Pesquisei bem sobre e vi que tinha muita matemática e como minha nota de corte no ENEM não deu pra Ciência da Computação, então entrei em matemática, para depois pedir transferência. Minha ideia de continuar na área de Web Design continua, confesso que tenho um carinho especial pelo photoshop, mas mais ainda pelo html e css. Já mexo com códigos porque monto paginas e designer de fóruns por diversão. coisas que eu aprendi sozinha, apesar de ter feito um curso de Web Design que me ensinou quase nada. Só que estou confusa se vale apena eu mudar minha faculdade e ir fazer ciência da computação, apesar de ser a área que gosto, parece ser uma área bastante complicada de ser manter estável. E também gostaria saber se vale apena hoje em dia trabalhar na área de Web.</p>
+
+- author: Bruno Lemos
+  date: 2014-06-02T23:31:21
+  text: |
+    <p>Vlw mesmo Leandro,nem é que eu queira fugir da matemática,mas escolher um em que ela não se apresente tanto sabe rsrs,mas novamente muito obrigado pela resposta,me ajudou muito rs,já escolhi agora,espero um dia ser tão fera nisso quanto você hahahaha abração!!!!Bruno</p>
+
+- author: Leandro Oriente
+  date: 2014-06-02T14:58:54
+  text: |
+    <p>Opa <a data-dsq-mention="matheus_kramer:disqus" href="https://disqus.com/by/matheus_kramer/" rel="nofollow">Matheus Kramer</a>, perdão pela demora.</p><p>Fui certa vez a um hackaton na Thoughtworks em POA.<br>Tenho quase certeza que ficava na PUC e a estrutura de lá me pareceu fantástica.</p><p>O curso no RJ é bem legal e acredito que deva ter a mesma grade em POA. Vale uma olhada.</p>
+
+- author: Leandro Oriente
+  date: 2014-06-02T14:56:37
+  text: |
+    <p>Cara não tem muito pra onde correr não, porém Análise e Desenvolvimento de Sistemas e Sistemas da Informação puxam um pouco menos de matemática que Ciência da Computação e Engenharia da Computação.</p>
+
+- author: Leandro Oriente
+  date: 2014-06-02T14:55:40
+  text: |
+    <p><a data-dsq-mention="disqus_domt09ajdi:disqus" href="https://disqus.com/by/disqus_dOMT09ajdI/" rel="nofollow">Matheus Souza</a> se você já tem uma queda por Desenvolvimento, Análise e Desenvolvimento de Sistemas ou Sistemas da Informação podem ser a escolha ideal.</p><p>No Rio de Janeiro existem boas opções na UFF, UNIRIO e PUC.</p><p>A UERJ tem uma pegada bem mais acadêmica e eu particularmente detestei a estrutura do curso e da própria faculdade. A UFRJ se não falha a memória também é Ciência da Computação, além de ser integral e no fundão o que reduz as suas chances de estudar e trabalhar em paralelo.</p>
+
+- author: Matheus Souza
+  date: 2014-06-02T03:43:28
+  text: |
+    <p>Nossa, estou realmente no meio deste processo. Tenho dezessete anos e preciso urgentemente decidir qual curso fazer e se vou realmente fazer algum. Minha família desacredita que eu possa seguir carreira programando, é deprimente, por isto revejo meu futuro todas as horas. O curso que mais parece ser minha praia é Sistemas de Informação da UFF, mas também tenho na lista o Ciências da computação da UERJ. Eu sei muito bem que o segundo não é lá muito prático como o primeiro e também sei que ele é muito voltado aos softwares em geral. Sabendo que costumo programar para websites, sera que você poderia me dar alguma sugestão?</p>
+
+- author: Bruno Lemos
+  date: 2014-05-31T22:37:54
+  text: |
+    <p>Leandro</p><p>Gostaria muito de cursar essa faculdade de informática,porém,só estou com uma coisa na mente,eu detesto matemática,mas eu até li sobre os cálculos binários e tals,aquilo não seria difícil pra mim aprender,ai eu queria saber se existe mais matemática nesse curso além dos cálculos binários?e outra coisa,são quantos que leva esse curso?desde já agradeço,abraços!!!</p>
+
+- author: Ludmila
+  date: 2014-05-01T18:56:06
+  text: |
+    <p>Parabéns pelo Texto! Me ajudou muito!!</p>
+
+- author: Ádamo Maxwel
+  date: 2014-04-12T23:07:09
+  text: |
+    <p>Nossa, estou com a mesma ideia...</p>
+
+- author: Ricardo Silva
+  date: 2014-02-27T20:11:17
+  text: |
+    <p>Muito obrigado, poxa to muito perdido, uns falam porque você não faz engenharia de softwares outros análise de sistemas, outros indicam ciências da computação... sinceramente auhhuahuauha f............ pois não tenho noção de qual dessas é melhor, mais com sua resposta me achei aqui, vou ver sobre as faculdades. muito obrigado</p>
+
+- author: Leandro Oriente
+  date: 2014-02-27T15:58:58
+  text: |
+    <p>Opa Ricardo Silva.</p><p>O ideal é que você faça Análise e Desenvolvimento de Sistemas (Sistemas da Informação).<br>Lá você vai ter uma pegada mais voltada a desenvolvimento mesmo. Engenharia ou Ciência da Computação tem um foco mais difundido com outras áreas.</p><p>Quanto a faculdade, vale a pena dar uma olhada na Infnet também e na Unirio. Tenho conhecidos cursando e me deram excelentes recomendações.</p>
+
+- author: Ricardo Silva
+  date: 2014-02-27T15:54:44
+  text: |
+    <p>Fala Leandro muito bom seu tema abordado, estou nessa dúvida, aqui no RJ as melhores faculdades sobre pesquisa em termos de informática é a PUC RJ e UFRJ mais preciso fazer NENEM(ENEM)  pra ter um belo descontou ou até uma bolsa, mais estou nessa dúvida, quero criar programas pra empresas, e aplicativos para as plataformas de IOS e ANDROID ... o que você me recomendaria.</p>
+
+- author: Matheus Kramer
+  date: 2014-01-19T14:40:17
+  text: |
+    <p>Belo artigo Leandro. Sinto falta de bons cursos em Porto Alegre. Abraço!</p>
+
+- author: Matheus
+  date: 2014-01-14T02:20:24
+  text: |
+    <p>Obrigado pela atenção! Realmente o curso de Logística assim como a profissão ainda carece no mercado, as formações nessa área são apenas técnica, tecnóloga e depois uma área especifica em mestrado e/ou doutorado. Entrei no curso sem conhecer muito sobre a área e durante o curso fui me identificando com a profissão. No entanto, quero uma formação superior para ingressar no mercado de trabalho. Moro no interior e por aqui não temos curso de Administração em faculdades públicas (privadas não tenho condições de pagar e tbm não houve ofertas de vagas para o PROUNI) que é realmente o que eu quero, e também por proporcionar uma boa formação pra minha base que é a logística. Assim como aconteceu no curso técnico em Logística estou fazendo agora com o ingresso no curso de Sistemas de Informações. Escolhi essa área pois soube que ao término posso me cadastrar como um Administrador, mas não fiz nenhum curso técnico e tbm não tenho nenhuma experiência na área, espero que eu consiga aprender do zero quando começar, assim como foi na Logística.<br>Mais uma vez, obrigado pela atenção! =)</p>
+
+- author: Leandro Oriente
+  date: 2014-01-14T02:03:55
+  text: |
+    <p>Opa Matheus, confesso que não tenho condições de te responder essa pergunta.<br>Conheço muito pouco do campo de Logística.</p><p>Acho que vale a pena, logo no início do curso, procurar pela informação dentro da própria faculdade.<br>É uma questão bem específica e não sei se vai achar pela internet.</p><p>De qqr forma, boa sorte em sua nova jornada =)</p>
+
+- author: Matheus
+  date: 2014-01-14T01:54:58
+  text: |
+    <p>Olá, gostei muito da sua publicação! No entanto, estou aqui pra tirar uma dúvida que tenho. Sou Técnico em Logística recém formado, e durante o curso me identifiquei bastante com a disciplina de Pesquisa Operacional. Agora estou começando o curso de Bacharelado em Sistemas de Informações, gostaria de saber se com essa formação, seria aconselhável pra que eu faça mestrado em Logística e Pesquisa Operacional, ou eu devo procurar outra área de formação?</p>
+
+- author: Renan Costa
+  date: 2013-12-27T21:07:25
+  text: |
+    <p>Li todos os posts! Excelente! :D</p><p>Ah! Também trabalhei no Peixe Urbano, por 2 anos. Recebia um excelente salário, SEM formação superior =)</p><p>Eu entregava resultados. E era isso que mais importava.</p>
+
+- author: Leandro Oriente
+  date: 2013-12-27T15:53:07
+  text: |
+    <p>Opa <a data-dsq-mention="brunaediogo:disqus" href="https://disqus.com/by/brunaediogo/" rel="nofollow">Bruna EDiogo</a></p><p>Infelizmente não vou poder te recomendar muitos livros porque larguei a faculdade no segundo período, então tive pouquíssima vivência acadêmica.</p><p>O que recomendo é que não se preocupe muito com isso agora. As matérias iniciais são bem introdutórias e não ter conhecimento prévio não vai te prejudicar não.<br>Basta pegar o ritmo da faculdade e principalmente o dos professores. Eles sim vão poder recomendar os livros certos na hora certa.</p><p>Não adianta te recomendar um excelente livro de desenvolvimento em C# se só for tocar no assunto pelo quinto ou sexto período, se tocar.</p><p>Uma coisa importante. Não fique presa ao conteúdo mostrado na sala de aula. Procure sempre pesquisar mais informações por fora depois. Em alguns casos a matéria ensinada fica defasada e a faculdade não atualiza a tempo.</p><p>Espero ter ajudado, um forte abraço e boa sorte na nova jornada =)</p>
+
+- author: Bruna EDiogo
+  date: 2013-12-27T15:30:19
+  text: |
+    <p>Quais livros você sugere para quem está começando a cursar ciências da computação ?<br>Obrigada !'</p>
+
+- author: Bruno Aquino
+  date: 2013-10-14T17:24:23
+  text: |
+    <p>Uma coisa é fato! <br>Quem faz um bom profissional é o aluno, e não a faculdade. Você pode estudar na melhor faculdade da área, mas se o aluno estiver fazendo o curso só por fazer, não vai dar em nada!</p><p>Aquele cara que estudou naquela faculdade particular, e pagava do bolso, se esforçava, era dedicado... Vai ter mais sucesso que você, que estudou na melhor faculdade, mas sem foco.</p><p>Faculdade, só tira as pedras do caminho, mas quem vai trilhar ele é você! Não se esqueça disso.</p><p>Minha experiencia na faculdade, posso dizer que me formei, mas não aproveitei muito. Se tivesse a cabeça que tenho hoje, provavelmente tinha aproveitado muito mais.</p><p>Escolher o curso que vai realizar é complicado, talvez uma das escolhas mais difíceis da vida. Se você já trabalha na área ou segue o caminho do Pai, por exemplo, é mais fácil escolher o curso.</p><p>Minha mãe é Professora, Pós-Graduada, então fazer faculdade não era questão de escolha heehehe!</p><p>Eu não consegui passar em uma faculdade publica, na minha cidade só tem a UEM, que por sinal é uma faculdade muito conceituada, porém cursos de TI lá era Ciências da Computação e Informática, e de certa forma, foi até bom que não tenha passado (menos para meu bolso, pois pago minha faculdade até hoje =D ).</p><p>Na faculdade particular (CESUMAR) hoje Unicesumar, Tinha várias opções, mas o bolso pesava também, e acabei cursando Análise e Desenvolvimento de Sistemas, basicamente tudo que vi no curso na parte de programação era voltado para Back-End (Java, Delphi, PHP, Banco de Dados e etc). Nesse ponto tenho até uma base boa.</p><p>Uma dica é você escolher sua linguagem de programação (Se for ser programador) favorita ainda no primeiro ano, e praticar, pois depois de formado, além do canudo será bom em alguma coisa. Não espere o professor mostrar o conteúdo para depois começar a correr atrás, até por que a carga horaria é pouca, e o que ele passa é muitas vezes só o básico (Tirando as pedras do caminho).</p><p>Eu não acho que escolhi a faculdade errada, mas aproveitei mal o tempo que estive lá. Um detalhe muito importe é analisar muito bem o mercado na sua região, se pretende ficar na sua cidade depois de formado. Na faculdade via muito Java, pois é a linguagem do momento, mais usada no mundo e etc e tal. Porém na minha cidade, o foco ainda é Delphi para Desktop e PHP para Web. JEE e JSE ainda está mais nos grandes centros. Embora Delphi seja uma linguagem em declínio e os programadores mais trabalham dando manutenção em sistemas antigos do que criando novos, ainda na minha cidade e região, tem muita vaga de emprego.</p><p>Agora estou finalizando uma Pós-graduada em Desenvolvimento Web na UEM (Universidade Estadual de Maringá), mas depois dessa Pós, pretendo dar uma folga e fica longe da faculdade por um tempo heheheehe, irei investir mais em cursos. </p>
+
+- author: Fabio Biasi Mello Rubim
+  date: 2013-10-05T01:58:47
+  text: |
+    <p>Parabéns pelo texto! Muito bom!</p>
+
+- author: Mateus Avila Isidoro
+  date: 2013-09-09T19:08:36
+  text: |
+    <p>Um artigo muito lúcido sobre o assunto. Se tu pensar, nós front-enders somos meio escanteados nas <br>Universidades.</p><p>Mesmo linguagens em voga na internet, como javascript, ficam escanteadas nas universidades em prol de Java, C, e com muita sorte, PHP e Ruby.</p><p>Alguns tem curso superior em outras áreas, que não tem nada a ver com a Computação, e gente muito gabaritada no nosso meio não possui Diploma Superior. Eu mesmo larguei Análise e Desenvolvimento de Sistema na terceira semana de curso, pois não me via sendo back-end.</p>
+
+- author: Leandro Oriente
+  date: 2013-03-17T17:19:43
+  text: |
+    <p>Boa Léo. Bellísimo depoimento =)<br>Tive um inicio bem parecido com o seu. Antes do ensino médio da brincava num 486 e montei praticamente todos os computadores que tive até comprar o Macbook.</p><p>No momento estou cheio de dúvidas. Não sei bem o que quero a longo prazo. Gosto da ideia de investir em algum projeto pessoal. Mas estou tentado a voltar a vida acadêmica. Até pq depois de ler tudo isso tenho certeza que vai me ajudar.</p><p>Acho que vou na resposta do Akita. Na dúvida, faça. Só preciso avaliar bem agora como vou tocar isso e onde.</p>
+
+- author: Leonardo Alberto Souza
+  date: 2013-03-17T17:13:05
+  text: |
+    <p>Oriente, te contar um pouquinho da minha História:</p><p>Comecei a me interessar pela área ainda moleque. Meu pai me deu de presente um fichário da Coleção Descobrir (google it) e ela vinha com várias fichas que você podia cadastrar numa espécie de SGBD... só que esse sistema tinha que ser programado... tinha uma folha enorme que vinha com o código fonte escrito que você tinha que copiar pro computador, compilar e tal.</p><p>Eu achei aquilo mágico, e fiquei fascinado por computadores e essa fascinação me levou a desmontar o velho 386 de casa pra ver como era por dentro... ja era computador.</p><p>Meu pai ao invez de arrancar meu couro, me colocou num curso de informatica da época "vê se arende do jeito certo!"... era um daqueles cursos estilo SOS Computadores ou Microlins de hoje em dia, que ensinava de tudo... Windows 95, Office 97, Corel Draw 6.. e Internet!</p><p>Leia-se por um curso de internet: aprender a mexer no IE4, Netscape 4 e a fazer sites toscos usando tablas no Notepad e no Front Page.</p><p>Fiquei doido. Abrir o Bloco de Notas e escrever código era mágico pra mim. Mesmo sem ninguém me dizer que aquilo não prestava, o editor gráfico do Front Page não me interessava, eu queria era abrir o Bloco de Notas e escrever código!</p><p>Internet naquela época era novidade. Computadores nem vinham com MODEM. Penei pra convencer meu pai a comprar um. Enquanto não tinha, ficava indo na biblioteca pública de perto de casa acessar a web e aprender mais sobre HTML, CSS, JavaScript, PHP, ASP... Eu queria ser um Web Master!</p><p>Com esse foco, quando acabei o segundo grau, nada mais natural que inventar de fazer uma faculdade de informatica. Consegui uma bolsa integral e era o aluno mais jovem do Bacharelado de Ciência da Computação da Universidade Gama Filho.</p><p>Primeiro semestre: Algoritmos, Matematica Discreta, Introdução à Computação e Logica Matemática. Só empolgacão. Fui a maior média da turma. CR 9.8.</p><p>O tempo foi passando, fui tendo uns professores muito bons, outros muito ruins. Algumas matérias não empolgavam nenhum pouco... CR já era 7.x. Minha familia tava ruim de grana e e arrumei um estágio pra trabalhar com aquilo que eu tinha aprendido quando moleque: HTML e CSS.</p><p>Era uma start-up. Cheguei la botando banca que eu ja sabia HTML, XHTML e CSS desde moleque... e que eu era um grande programador (afinal, so tirava de 9 pra cima em qualquer prova de Prog na faculdade)... fui contratado.</p><p>Aí descobrir que eu não sabia programar porcaria nenhuma, mas que eu era muito bom em HTML/CSS mesmo.</p><p>Durante 3 anos fui sozinho o HTMLer do <a href="http://Mundi.com.br" rel="nofollow">Mundi.com.br</a> (naquela época ninguém falava de front-end)... ganhando uma merreca, mas o suficiente pra largar a faculdade que ja não me animava mais.</p><p>Foram 3 anos na Gama Filho, o último ano dividido com o estágio sendo empurrado com a barriga, do qual eu sair sem nenhuma vontade de voltar e me forma e com uma visão muito errada de faculdade.</p><p>Fiquei 4 anos sem entrar numa sala de aula, trabalhei lugares legais, e o diploma poucas vezes fez falta (teve uma vez, numa entrevista na Globosat - não confundir com <a href="http://Globo.com" rel="nofollow">Globo.com</a> - mas...). No primeiro FrontInRio descobri que eu era uma Desenvolvedor Front-end. Conheci um monte de gente, participei de um monte de eventos, e descobrir o mundo das comunidades... nelas comecei a conhecer caras fodas, que me falavam da importancia de coisas que aprenderam na faculdade. Resolvi que queria voltar e levar mais a sério a parte de aprender a aprender.</p><p>Passei pra UFF, Sistemas de Informacão. Curso com a grade bem variada, onde, pelo menos na UFF, dá pra você focar em o que você quer aprender.</p><p>Tem sido bom. Esse semestre, por exemplo, estou tendo aula com um velhinho que em uma experiência incrível com Business Inteligence, um área pela qual me interesso muito.</p><p>A UFF é bem diferente da Gama Filho. Os professores pegam mais pesado, as provas são mais puxadas e dificilmente você consegue passar sem saber algo. Mesmo que você esqueça depois, você teve que estudar e aprender pra passar. O que é importante.</p><p>Abri mão de empregos em empresas legais que me impossibilitariam de estar na UFF na hora da aula. Mas eu botei na cabeça que eu quero terminar esse curso, e terminar bem. Tenho feito questão de conhecer meus bons profesores (os ruins eu largo de mão), de pegar o máximo de experiência deles que puder. Conhecer os outros alunos, sejam meus veteranos ou os meus calouros, e aproveitar a vida de faculdade. Não tem sido fácil casar isso com a vida profissional, mas eu espero colher lá na frente coisas melhores do que eu estou deixando pra trás agora.</p><p>Negócio é você pesar agora o que você quer pro futuro e as suas necessidades hoje. Você quer continuar sendo desenvolvedor pra sempre? Voce consegue se virar bem aprendendo sozinho? Você pretende fazer mestrado/doutorado? Prefere se focar no mercado? MBA? Quer ser "gerente"? Quer um diploma so pra enfeitar a parede? Quer abrir uma startup? Quer juntar uma grana e viver de investimento depois? Quer um dia largar tudo e cuidar de uma pousada numa praia paradisiaca? Quer ter um emprego foda numa empresa foda gringa?</p><p>As suas respostas respostas, pra essas e outras questões, podem te ajudar a decidir que faculdade fazer ou não fazer faculdade. O importante é você focar naquilo que você quere seguir nessa meta, com ou sem a faculdade.</p><p>Espero ter ajudado ;)</p>
+
+- author: Leandro Oriente
+  date: 2013-03-16T22:38:20
+  text: |
+    <p>Irado =)<br>Pretendo voltar no tema e trabalhar nesse esquema meio open source. Curti o resultado final apesar de ser totalmente diferente do original.</p><p>Vou postar algumas coisas específicas para Desenvolvedores Front End e algumas mais genéricas em breve.</p>
+
+- author: Leandro Oriente
+  date: 2013-03-16T22:34:35
+  text: |
+    <p>Opa Professor. Que bom te ver por aqui =).</p><p>Acredito que tenha lido a primeira versão do post? Resolvi reformular depois de ter tido feedbacks incríveis, inclusive o seu.</p><p>No momento estou pensando em retornar a faculdade (não na UERJ).<br>Pretendo correr atrás de algum curso de Sistema da Informação por ser um pouco mais orientado ao mercado, apesar de realmente fechar algumas portas.<br>Curti a opção da CEDERJ e sei que não é fácil ou ruim. Tenho um conhecido cursando e ele gostou bastante do curso. Porém não está decidido ainda.</p><p>Talvez junte uma grana e me dedique exclusivamente a isso por um tempo e toque projetos paralelos. Na verdade estou bem indeciso, porém, abri minha mente para novas opções =)</p><p>Estou me sentindo um pouco limitado no momento. Sei bem como progredir, porém não estou muito entusiasmado com isso.<br>Acho que uma boa graduação pode me dar um leque de opções maior além de mostrar novas opções que não tenha visto ainda.</p><p>De qualquer forma muito obrigado pelo feedback. Aproveitei para deixar a mensagem. Sei que muita gente tem esse mesmo tipo de dúvida e acho que pode ser uma informação válida.</p><p>Abs,</p>
+
+- author: Leandro Oriente
+  date: 2013-03-16T22:26:20
+  text: |
+    <p>Opa amigo. Obrigado pelo feedback.</p><p>Nessas ultimas horas vi que estava no caminho certo tb. Porém me dei conta que a faculdade não é algo ruim ou um processo inútil.</p><p>O importante é achar alguma que vá te agregar valor profissional e não apenas te entregar um diploma no final do curso. Consegui finalmente enxergar isso.<br>Sinceramente o diploma não vai mudar muito a minha vida agora. Sei o que preciso aprender/estudar no momento e o que vou precisar para evoluir na minha carreira e posso chegar lá sem uma faculdade, mas depois de tudo que li, acho que é válido fazer sim e investir esse tempo em uma boa graduação. <br>Sou jovem ainda (21) e posso me dar ao luxo de tomar decisões ruins. Se for o caso, largo novamente e volto a me dedicar full time aos estudos por conta própria.</p><p>No momento estou avaliando quais se encaixam melhor nas minhas necessidades atuais e pensando seriamente em retornar aos estudos.</p>
+
+- author: jvrmaia
+  date: 2013-03-16T22:10:02
+  text: |
+    <p><a href="http://matt.might.net/articles/phd-school-in-pictures/" rel="nofollow">http://matt.might.net/articles...</a> deve te ajudar na continuação dos posts</p>
+
+- author: hlmerscher
+  date: 2013-03-16T12:24:17
+  text: |
+    <p>Grande João, excelente comentário. <br>Assim como você, a maior parte do conhecimento que tenho aprendi por mérito próprio, mas foi preciso um empurrãozinho da faculdade, na verdade de alguns professores. Nunca tinha programado na vida antes de entrar na faculdade, mas já trabalhava com TI e estava começando a usar Linux. Quando fiz meu primeiro "hello world" foi sensacional. Tive bons professores, principalmente com assuntos de programação, toda a base que aprendi com as disciplinas iniciais de programação foram importantes para eu aprender outras coisas por conta própria de uma forma mais produtiva. Tecnologia vai e vem todo o tempo, mas os conceitos e paradigmas demoram a mudar ou não mudam, e bons professores te fazem perceber isso. Quem diria que ficar manipulando ponteiro em C pra lá e pra cá iria me ajudar até hoje hehehehe.</p>
+
+- author: jvrmaia
+  date: 2013-03-16T03:13:34
+  text: |
+    <p>terminei... apertei em postar sem querer! uahua</p>
+
+- author: Leandro Oriente
+  date: 2013-03-16T03:04:11
+  text: |
+    <p>Estava curtindo a história cara. O comentário ficou cortado.</p>
+
+- author: jvrmaia
+  date: 2013-03-16T02:55:51
+  text: |
+    <p>Acho um assunto muito polêmico e todo cuidado é pouco na escrita quando pretende se manifestar sobre.<br>Antes de tudo, sou formado em Engenharia de Computação(EC) na UFES e vou contar um pouco sobre meu caso.<br>Por volta dos 12-13 anos fui introduzido ao computador com o bom e velho win 3.11, sempre fui curioso com o PC desde aquela época e aprendi várias coisas coisas que lembro até hj: cd. dir, format... mas depois pouco tempo veio a Internet. Tendo a oportunidade de me comunicar com o mundo e junto com o fato que tinha entrado no inglês conheci uma comunidade cracker de engenharia reversa. Criança, achei um barato e divertido aprender assembly e brincar de "sacanear" programas. Depois de um tempo larguei de lado e só fiquei com os jogos. Nesse tempo aprendi que gostava de matemática, física e desafios. Chegada a época do vestibular conheci o Linux (Slackware) e tive o msm feeling quando conheci o assembly e desde então passei a usar linux. Na hora do vestibular veio aquela dúvida: matemática, física, eng eletrica, cc ou ec? acabei indo para EC pela quantidade de opções a seguir depois.<br>Passei por toda minha graduação dentro da faculdade: projetos, monitoria, estágio e emprego. Aprendi mta coisa e a mais importante: "aprender sozinho!". A universidade na minha opinião não deve te formar em especialista X da tecnologia Y. Ela deve formar antes de tudo um cidadão com habilidades profissionais em área X. Basicamente, ela existe para te tirar da sua zona de conforto e te preparar para a realidade e ajudar a te guiar nessa jornada.<br>Pelo menos foi isso o que aconteceu comigo. Com esse ensino fraco que temos durante nossa formação a graduação é a última chance de vc aprender algo que deveria ser ensinado desde o princípio: aprender.<br>Depois que me formei fui para o mercado de trabalho e fui obrigado novamente a sair da minha zona de conforto e trabalhar com coisas que nunca tinha feito. Para minha quase surpresa, não foi complicado pois já tinha aprendido isso na faculdade. O quase foi por conta de um aviso de um prof no quarto semestre: "Hj vcs não percebem mas quando sairem daqui formados vão ver que td é possível com a base que vcs tem". Ele acertou!<br>Não quero agora dizer que todos devem fazer um faculdade mas acho que pelo menos devem tentar msm que seja algo diferente da sua realidade de trabalho mas algo que te traga satisfação de fazer.<br>Entrando agora no caso do trabalhador da área de TI. Acho que a área é mto vasta p/ dizer que não presta fazer CC. Veja no seu caso, pelo que vi vc é Frontend, já pensou em fazer Desenho Industrial ao invés de CC? (Aqui na UFES tem, não sei se ai tem algo do tipo). Talvez o seu perfil não se enquadre ao perfil da CC.<br>Esses são alguns dos meus pontos de visão sobre o assunto. No aguardo da continuação do seu texto.</p><p>=)</p>
+
+- author: Erick Patrick
+  date: 2013-03-15T23:43:38
+  text: |
+    <p>Leandro,</p><p>Não ter diploma, aqui no Piauí, não se aplicaria, com a rara exceção de você ter um portfolio interessante (não só de clientes, mas projetos próprios, trabalhos em open source).</p><p>Aqui, eles querem o diploma. Já vi gente sem noção de programação ser contratado enquanto um autodidata que sabia de verdade ficava a ver navios. Triste, não é?</p><p>Gostaria muito que esse panorama do Rio se espalhasse por todo o Brasil, mas, isso será meio difícil, mesmo a nossa área sendo tão propícia a essa prática.</p><p>Dentre os posts, o que acho que melhor complementa o seu é o do Akita ;P Ele mostra bem os dois lados da moeda, como ele conseguiu se sair sem completar os estudos formais, porém, mostrou também que aprendeu muita coisa lá (e recomenda completar os estudos ;P)</p>
+
+- author: Gilvan Vilarim
+  date: 2013-03-15T20:15:29
+  text: |
+    <p>Grande Leandro, desejo sucesso pra você! Do pouco contato que tivemos, você me lembra do clichê "quem faz a escola é o aluno". É isso: a escola nos coloca num ensino de massa; uns vão rápido, outros vão devagar. O professor tem que tentar ganhar pela média: puxar para cima os mais fracos e não frustar os mais fortes. Mas, pensando na vida, o aluno é quem tem que fazer o seu próprio ritmo; aluno precisa entender que não depende só da escola e do professor para estudar (se fosse assim, não haveria autodidatas).</p><p>Sobre faculdades, você só faz se quiser! Mas na área de TI eu acho importante. Você demonstra tendência pra preferir cursos para tecnólogo; beleza, tem vários por aí. O único problema é que isso pode fechar as portas pra mestrado depois, porque são mais curtos e não contemplam tudo de uma área (no caso, Computação). Você pode fazer via EAD, sim; parece interessante para quem é disciplinado com estudos e que gosta de estudar sozinho. CEDERJ parece legal, mas não é facil; um colega do trabalho fez, formou-se, mas foi o único da turma original dele.</p><p>Eu fiz Informática na UERJ, mas já faz tempo...Na época reclamávamos da mesma coisa: um monte de matemática, não vou usar isso nunca, bla bla bla. E olha que na época nosso curso era ligado ao de Matemática: eu tive 2 anos só de matemática. Mas, sabe de uma coisa? O saldo é positivo e infelizmente a gente só percebe depois de alguns anos: o pessoal de Exatas, de tanto contato com as áreas da matemática, ganha um raciocínio lógico-matemático-dedutivo muito bom. Isso ajuda em Programação, Análise, CG, etc...Pegue um cara que fez um curso de Programação e um outro que fez Programação mas tem base de Cálculo, Algebra Linear.... esse segundo cara costuma ter muito mais ideias para solucoes criativas, tem uma capacidade de abstracao maior para modelagem, e por aí vai. Uma coisa puxa a outra. Fora as aplicações matemáticas reais na computação, que outro colega citou noutro comentário.</p><p>As empresas sabem disso, pois é muito mais fácil pegar um profissional com essa cabeça e dar uns treinamentos em ferramentas (e provavelmente aprende rápido) do que alguém que sabe só uma coisa ou outra e não aprende mais nada depois. A universidade me ensinou que é preciso "aprender a aprender", e até mesmo com professores ruins vc acaba desenvolvendo isso. Vc aprende a ser "safo"; perdi a conta de quantas vezes eu saía no meio da aula para estudar na biblioteca, pois aprendia mais lendo um livro. Então, o limão acaba virando limonada. Se não fosse a UERJ, sendo bem pragmático, nem teria passado na 1a. fase da seleção pro meu 1o. estagio (na Vale), e nem teria passado nas etapas na Arthur Andersen, (multinacional, inclusive com uma entrevista em inglês).</p><p>E não se prenda só na formação técnica. Eu gostaria de ter recebido mais educação para trabalho em equipe, contato com usuários, desenvolvimento de projetos, liderança, visão empreendedora... isso ajuda na montagem de um perfil menos "escovador de bit".</p><p>Um abraço!</p>
+
+- author: Leandro Oriente
+  date: 2013-03-15T19:12:22
+  text: |
+    <p>Opa Rafael. <br>Fiz o post com base na experiência (Curta) que eu tive e no feedback de vários amigos.<br>Cheguei a comentar que existem exceções e posso até citar algumas no Rio de Janeiro.<br>UFRJ, PUC e UNIRIO são bons exemplos e meus amigos sempre falam muito bem a respeito.</p><p>Porém a grande maioria não se encaixa nesse padrão elevado. Um semestre foi mais que suficiente para perceber que não escolhi o curso certo e a Faculdade certa. Foi um erro ter entrado em Ciência da Computação (um erro meu) e um erro maior ter entrado na UERJ (um erro do governo no caso). Tive professores ruins e a estrutura é muito ruim.</p><p>O que questiono no post e pretendo deixar mais claro(vou reescrever alguns pontos que notei que estão confusos) é que não é totalmente necessário cursar uma faculdade para pegar esses pontos específicos que você citou. São 4/5 anos de estudo que você pode diluir num período maior conforme sua necessidade e selecionar melhor o que é realmente necessário.</p><p>Foi uma escolha minha e já vi excelentes profissionais que partiram pra essa abordagem. Moldar a sua "grade" e correr atrás de especialização por conta própria.</p>
+
+- author: Rafael
+  date: 2013-03-15T19:00:53
+  text: |
+    <p>Leandro, acho mt difícil vc julgar uma universidade apenas tendo cursado um período. Vc já concluiu alguma? Se tivesse concluído, poderia comentar sobre isso. Sem conhecer, não acho que sua opinião tem algum valor. Não estou sendo rude, essa não é a intenção. Você poderia ter dito que os períodos q vc cursou não te acrescentaram nada. Mas não pode dizer que SE vc terminasse isso não te acrescentaria em nada, porque vc não sabe o futuro. Vc fez uma projeção, inferiu algo com base nos poucos períodos q cursou e tomou uma decisão muito importante na sua vida. Veja se vc tem base suficiente para tomar uma decisão desse porte ou se está perdendo uma oportunidade de ouro na sua vida.</p><p>A faculdade pode não acompanhar as tecnologias mais novas do mercado, mas existem várias coisas que uma boa faculdade pode te ensinar e vou listar apenas três:</p><p>1- base: essa não muda. A base da programação, de bd, td q vc precisa para correr atrás das outras tecnologias mais novas. Ah, vc achou q era só fazer a faculdade e não teria q correr atrás? Quem não corre atrás, fica pra trás. A faculdade te direciona, mas obviamente vc precisa fazer o seu.</p><p>2- pesquisa: e com isso nao direciono só a quem quer ser pesquisador. Mas a faculdade te a ajuda a desenvolver senso crítico, capacidade de analisar, estudar...</p><p>3- futuro: na faculdade vc pode não ter contato com as linguagens mais atuais. Mas vc tem contato com as tecnologias do futuro. Sistemas para E-gov, Big Data, Gestão de conhecimento, análise de redes sociais... coisas que ainda não são realidade na maioria das empresas do brasil, mas a cada momento vc ve alguem falando delas. Sim, seus professores já trabalham com elas há séculos e ajudam a construir esse conhecimento q vai sendo consumido aos poucos pelo mercado de trabalho. Pra mim, esse é o ponto q mais me encanta. E conforme vc vai entrando no mundo acadêmico, o futuro vai se mostrando pra vc.</p><p>Sei lá, acho complicado falar do q vc não conhece, rs. Curse a faculdade e depois reveja esse post. Garanto q vc não vai se arrepender (sugiro a UNIRIO, q é ótima e é a unica q posso julgar =D).</p>
+
+- author: Leandro Oriente
+  date: 2013-03-15T17:05:07
+  text: |
+    <p>Pois é. Na minha condição é inviável dispor desse tempo.<br>Não posso me dar ao luxo de investir (meu tempo vale dinheiro) 3/4 horas diárias em algo que não vai me acrescentar valor no momento. Prefiro pegar esse tempo e focar numa nova linguagem, numa nova abordagem e etc.</p><p>Estamos contratando aqui na empresa. Aproveitei a oportunidade para perguntar para o responsável por recrutar sobre o diferencial que o diploma faz na seleção.</p><p>A resposta foi mais ou menos a esperada. <br>Nenhuma. Não faz a menor diferença se é formado e onde é formado. O importante para a empresa no momento é achar alguém capacitado. Tanto faz se o cara veio de Harvard, da Estácio de Sá ou não tem formação, ele precisa atender aos requisitos da empresa.</p><p>No Peixe Urbano não era muito diferente. Existiam profissionais com características acadêmicas das mais variadas e isso pouco influenciava no salário. O que importava era o nível técnico do cara e a maturidade enquanto profissional.</p><p>São casos no Rio de Janeio/RJ.</p><p>Mas como vc comentou e com toda razão. Isso varia muito de pessoa para pessoa. São necessidades diferentes no final das contas e não se pode dizer que uma é certa ou errada.</p><p>Meu intuito com o post foi mostrar que a faculdade não é mais algo essencial e que o diploma não vale de nada se não te trouxer novos conhecimentos (uteis).</p><p>Postei três links interessantes. Complementam bem o post =)</p>
+
+- author: Erick Patrick
+  date: 2013-03-15T16:49:45
+  text: |
+    <p>Leandro,</p><p>Como te falei, não é questão de 4~5 anos ser tempo demais. O negócio é ter tempo para fazer, além da graduação, um curso de extensão e/ou iniciação científica.</p><p>Não sei como está o panorama por aí, mas, aqui, no Piauí, pode até dobrar teu salário. Claro, o salário não é muita coisa, sai dos R$670 e vai para os R$1400, mas já é algo que faz o cara querer continuar na Universidade.</p><p>Se tu quer mesmo ter um canudo em menos tempo, faça o tecnólogo mesmo. Tem os de Análise e Desenvolvimento de Sistemas que, no geral, ensinam o programar em Java (ou .NET, outras linguagens são bastante incomuns).</p><p>Quando fiz vestibular, passei no Instituto Federal e na Universidade Estadual (por onde sou formado). Preferi a Universidade porque me provia mais coisas. Lá dentro, com os projetos de iniciação científica, descobri que queria mesmo era trabalhar com Web.</p><p>Logo, posso afirmar que depende muito da pessoa e de como ela vai aproveitar os estímulos de uma certa instituição.</p>
+
+- author: Leandro Oriente
+  date: 2013-03-15T16:00:47
+  text: |
+    <p>Então Erick, cheguei a comentar no post sobre esse aspecto, da experimentação e visão da área, mas acho que 4/5 anos é tempo demais para isso.</p><p>Tenho interesse sim em fazer algo mais específico, mais focado, mas não posso levar 4/5 anos para ver opções de algo que já escolhi.</p><p>Tanto que estou cogitando fazer CEDERJ (ensino a distância tecnologo) para poder conseguir o diploma e ai sim cair dentro de algo que vá fortalecer as skills que eu preciso e que vão abrir novas portas pra mim.</p><p>Um canudo de faculdade hoje, não acrescentaria um centavo no meu salário, mas abriria caminho para estudos mais profundos. <br>Fico chateado de ter toda essa burocracia prévia mas não tenho muitas escolhas.</p>
+
+- author: Erick Patrick
+  date: 2013-03-15T14:54:44
+  text: |
+    <p>Leandro,</p><p>Bom, particularmente, prefiro o curso assim, uma vez me permite experimentar as diversas áreas e escolher a que mais me identifico.</p><p>Para a questão dos *profissionais qualificados* e *cursos focados*, acredito que a extensão universitária sirva exatamente para isso: qualificar e começar a guiar você para uma certa área.</p><p>Os cursos de iniciação científica, também, podem ajudar nisso, já que você pode participar de projetos das mais diversas áreas e estudar, mais afundo, a área dos projetos que participar.</p><p>Claro, às vezes é complicado ser bolsista e/ou buscar um curso de extensão (universtiário ou não) e conciliar aos estudos da Universidade. Porém, esse é um dos preços que temos de pagar para descobrirmos o que realmente queremos. E isso não é só para computação, serve para qualquer curso.</p><p>Se você quer ser especialista mesmo, busque uma especialização (lato sensu) em cima da área que você mais gostou dentro do curso. Se quiser algo mais prático, de mercado, busque um MBA ou um Mestrado Profissional.</p><p>Esses dois últimos, geralmente, são ministrados por profissionais do mercado que trazem diversos insights de suas posições além de situações as quais vocês deverão buscar soluções. Alguns estudantes desses dois cursos saem muito bem cotados no mercado de trabalho, mais que os que fazem somente lato sensu.</p><p>Enfim, são as dificuldades que temos de passar para conseguir os frutos. Pode ser difícil e te deixar louco, mas, é assim mesmo. Quando os frutos começarem a chegar, você vai estar orgulhoso de si mesmo por ter enfrentado e continuado nesse caminho.</p>
+
+- author: Leandro Oriente
+  date: 2013-03-15T14:35:47
+  text: |
+    <p>Opa Erick. Conversei bastante com um amigo ontem, dois na verdade e eles mostraram esse ponto também.</p><p>Pretendo escrever em breve um post sobre os diferentes cursos de Informática. O meu problema nesse caso foi exatamente esse. Não saber qual o foco do curso de Ciência da Computação antes de entrar. Quando eu descobri já era tarde demais.</p><p>A experiência com a UERJ foi ruim em diversos aspectos, não só nesse por ter errado na escolha. A estrutura é péssima e dos poucos professores que tive boa parte era bem ruim. Enfim.</p><p>Uma coisa que não curti muito foi essa larga abrangência de assuntos. O curso de Ciência da Computação acaba tocando em tantos assuntos que no final você não domina nenhum.</p><p>Não seria mais fácil ter um curso focado em Computação Gráfica?<br>O mercado de trabalho está cobrando profissionais cada vez mais qualificados e para papéis específicos, pq a faculdade não faz isso tb? Começa a fragmentar os cursos para atender ao mercado. No final das contas não é isso que importa? Realização profissional, um bom salário, uma posição privilegiada no mercado?</p>
+
+- author: Erick Patrick
+  date: 2013-03-15T14:14:41
+  text: |
+    <p>Caro Leandro,</p><p>Eu TINHA o mesmo pensamento que você: "O que diabos matemática discreta/aplicada, álgebra libear, estatística, etc, vão me ajudar em computação ou, de forma mais específica, programação?".</p><p>Pois bem, passei grande parte da Universidade com esse pensamento. Somente nos 3 últimos períodos que fui entender para que aquelas matérias de matemática e física estavam na grande do curso. Depois desse "estalo" e passar a entender o porque da existência delas, fiquei extremamente arrependido por não ter me esforçado mais e aprender, de verdade, aqueles assuntos.</p><p>Matemática aplicada é essencial para o entendimento do porque um método ou parte de código roda mais rápido que outros. Estatística, por exemplo, é extremamente necessários para Aprendizado de Máquina (ou inteligência artificial, como queira). Álgebra Linear é puta importante para Computação Gráfica (não confunda com mexer no Photoshop, estou falando de criar as imagens, ponto a ponto mesmo) e em criação de jogos. Cálculo Integral tem suas serventias em todas essas áreas que citei, além de redes e várias outras.</p><p>O ponto a se levar em conta é: Bacharelado em Ciência da Computação não vai fazer você de um programador, seja de Web, Desktop ou Mobile. Esse curso é destino a transformar você em um cientista, capaz de analisar situações e aplicar o conhecimento matemático adquirido nas soluções para os problemas que, em vários casos, pode-se utilizar programação.</p><p>Por exemplo, quando se quer armazenar dados e é preciso uma capacidade muito rápida de leitura desses dados, o que é melhor se usar, um Vetor ou uma Lista Encadeada? E por que? Aqui aplicamos a matemática aplicada, relacionada à minimização do tempo de funções (de busca, nesse caso). Procure por Big O, Little O, Big Teta, Little Teta notations e achará parte da explicação (prepare-se para a matemática xP)</p><p>Outro exemplo: saber o porque que uma função recursiva é considerada custosa e como criar essa mesma função recursiva de forma que seja otimizada ou ainda criar uma função que obtenha o mesmo resultado, porém, sem a necessidade da recursão e, depois, verificar se ela é mais rápida ou devagar que a original.</p><p>Num ambito geral, quem gosta de praticar otimização de códigos, de banco de dados, de redes, etc, é obrigatório saber essa matemática enfadonha e chata.</p><p>Se alguém pretende fazer mestrado e quer levar para um lado que tenha programação, saber esses conceitos é requisito básico, além de estrutura de dados e métodos de busca (que são extremamente ligados aos conceitos matemáticos estudados).</p><p>Hoje, sou aluno especial do Mestrado em Ciência da Computação pela UFPI, espero conseguir minha vaga próximo ano e minha pesquisa é sobre Testes de Usabilidade de Aplicações Web. Garanto a você, sem esses conhecimentos, não conseguiria ajudar a desenvolver essa pesquisa e escrever os artigos necessários para demonstrar ao mundo as descobertas e práticas utilizadas na pesquisa.</p><p>Acredito ter mostrado o outro lado da moeda e espero ter ajudado nessa discussão.</p><p>Abraço,</p>
+
+- author: beeblebrox3
+  date: 2013-03-15T11:59:27
+  text: |
+    <p>Concordo bastante com você.</p><p>Eu fiz Licenciatura em Computação, o curso tem bem menos matemática que Ciência em Computação, mas tem muitas outras coisas não relacionadas com informática, que abrangem a área de pedagogia. Coisas que eu meio que não uso todo dia. E mesmo nas matérias de computação, tem bastante coisa que eu "não uso". O legal da faculdade é que ela te dá uma base para começar a procurar seu caminho sozinho nesse mundo de informações que temos disponíveis em livros e na Internet. Minha graduação não foi excelente, mas tive alguns bons professores e o que eles me ensinaram é que me deram condição de continuar sozinho depois da graduação.</p><p>Lá eu não vi uma vírgula de javascript, css, php e bem, mas bem pouco de html (nem de doctype falamos). Mas teve um trabalho que me despertou para o HTML e resolvi fazer com esta linguagem. A partir daí fui descobrindo o CSS e o JavaScript. E o professor estava ali para dar todo o apoio que eu precisasse. Eu nem sabia que existia o JavaScript, até ele me dizer que essa belezinha poderia resolver meu problema. É um ambiente rico, e às vezes você tem colegas que também tem um grande conhecimento que você também quer ter. Então é outro bom lugar para conviver com essas pessoas, além dos grupos, comunidades e afins.</p><p>Tem também quem não consegue se organizar para estudar sozinho e acaba totalmente perdido, tendo péssima experiência em fóruns e grupos... A faculdade ajuda. Existe um plano do que ele vai aprender e ele abdica da responsabilidade de fazer essa organização. E aí ele vai aprendendo o básico e conforme vai precisando aprender novas coisas, corre atrás.</p><p>Meu maior problema com as graduações, na verdade, são os alunos que estão ali só pelo diploma ou porque acham que computação é mexer no Facebook. Eles atrasam a turma, os professores não podem ir além do básico do programa... é um saco. E tem gente que não leva o menor jeito para a coisa.</p><p>Certa vez contratamos um camarada aqui que, apesar de simpático, não tem cabeça de programador, e é graduando de Ciência da Computação. Não tem um bom raciocínio lógico e isso é o mais importante. Ele poderia se dar bem, quem sabe, fazendo outra coisa dentro da área de TI, mas não programando. Claro que vamos aprimorando nossa lógica conforme estudamos e praticamos, mas tem aquele básico que "nasce" com você, não dá pra ser aprendido. E ele não tinha isso. Muitos que não têm acabam fazendo outra coisa, alguns não se atentam pra isso.</p>
+
+- author: Anonimo
+  date: 2013-03-15T04:44:54
+  text: |
+    <p>Grande Leandro, seu post está muito massa meu querido, eu tenho o mesmo pensamento critico que você, até hoje as 2 faculdades que cursei não me levaram muito longe. Se estou onde estou é graças as dezenas de livros que li, os eventos que fui os profissionais que conheci e as comunidades que participo. Para não dizer a totalidade mas na minha faculdade 95% da turma esta fardada a continuar sem emprego ou continuar no emprego que esta, ganhando um salário miserável e trabalhando horas e horas. Se você chegou a esse ponto posso te considerar um profissional completo, pois quando passei a pensar assim como você as portas se abriram, oportunidades começaram a cair do Céu. Ser autodidata também não é para qualquer um precisa ser fodinha haha. Uma braço até seu próximo post.</p>
+
+- author: Ricardo Arrigoni
+  date: 2013-03-15T04:34:04
+  text: |
+    <p>Muito bom o post, parabéns!</p>
+
 
 ---
 

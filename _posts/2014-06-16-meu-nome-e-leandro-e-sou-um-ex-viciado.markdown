@@ -5,7 +5,97 @@ description: "Comecei meu vício a aproximadamente 8 anos. No início parecia le
 tags: social media, general
 image_thumb: "/media/vicio-no-facebook-thumb.jpg"
 image_highlight: "/media/vicio-no-facebook.jpg"
-comments: [comment]
+comments: 
+- author: Luiz Gustavo Martins
+  date: 2015-07-11T20:24:10
+  text: |
+    <p>Destaco também perda de tempo com outros vícios: fumo, bebida, pornografia... A última, então, exponencio pois está intimamente ligado à internet.</p>
+
+- author: Luiz Gustavo Martins
+  date: 2015-07-11T20:14:09
+  text: |
+    <p>Venho fazendo isso há 2 anos e minha produtividade aumentou bastante!<br>Chego ao final do dia e fica aquela sensação de dever cumprido!<br>Olha que eu ainda fico 1 hora no Facebook e 3 horas jogando videogame.<br>Mas antes, eram 2 horas no facebook e 6, 7 horas no videogame.</p>
+
+- author: David Correa
+  date: 2015-03-30T14:30:43
+  text: |
+    <p>Cara, uma ferramenta online que me ajudou a me livrar de muita tranqueira online foi o <a href="http://unroll.me" rel="nofollow">unroll.me</a><br>demorava vinte minutos por dia somente pra jogar emails fora e separar o que valia a pena, agora me toma 5 minutos pra ler o que vale a pena, hehehe</p>
+
+- author: Marcelo Lynx
+  date: 2015-01-29T21:11:25
+  text: |
+    <p>Boas dicas! ultimamente tenho feito muito em favor do meu tempo, uma parte das dicas do blog já venho aplicando aos meus emails e contas sociais, parabéns pelo post.</p>
+
+- author: Joao Paulo Fricks
+  date: 2015-01-21T14:36:59
+  text: |
+    <p>Ótimas dicas hein +1</p>
+
+- author: Arnaldo Alves
+  date: 2015-01-20T13:22:41
+  text: |
+    <p>Excelente artigo, sigo esse ritual há anos e tenho aumentado cada vez mais minha produtividade.</p>
+
+- author: José Lopes
+  date: 2014-11-14T18:02:11
+  text: |
+    <p>Uma coisa que eu faço quando preciso usar a internet pra estudos é separar as coisas que faço em navegadores, eu só uso o Chrome pra acessar o meu Facebook e outras futilidades mas nunca uso Firefox pra isso</p>
+
+- author: Rodrigo Ianibelli
+  date: 2014-09-10T21:58:59
+  text: |
+    <p>Ainda não exclui meu facebook por esta ser a ferramenta mais rapida de comunicação com grupo da faculdade e alguns amigos que se quer respondem mensagens no whatsapp... Realmente é importante saber regrar esses minutinhos que no final do dia viram horas perdidas na frente do computador. Já tive problemas de rendimento no trabalho justamente por causa dessas notificações infinitas que parecem te pertubar justamente na hora que você mais precisa se concentrar. Ótimo artigo, parabéns.</p>
+
+- author: Jammerson
+  date: 2014-08-10T02:17:24
+  text: |
+    <p>Muito bom, Parabéns. Já favoritei seu blog.</p>
+
+- author: Davidson Fellipe
+  date: 2014-07-21T04:08:59
+  text: |
+    <p>MODO AVIÃO do celular quando estou dormindo nunca farei! Sei que nunca acordo com celular durante a madrugada. =)</p>
+
+- author: Hendrew Hélio
+  date: 2014-06-20T21:01:25
+  text: |
+    <p>Bela postagem cara. Eu me identifiquei bastante. E a parte do amigo que te liga de madrugada foi phoda hahahahahaha :D</p>
+
+- author: Leandro Oriente
+  date: 2014-06-20T15:46:17
+  text: |
+    <p>Opa <a data-dsq-mention="felipefialho:disqus" href="https://disqus.com/by/felipefialho/" rel="nofollow">Felipe Fialho</a>.</p><p>Aprendi muita coisa bacana com o Facebook e fiz um networking legal também.</p><p>Mas ultimamente estou com dificuldades em ambos os sentidos. Senti que estou perdendo mais do que ganhando e resolvi me ausentar por um período.</p><p>Gosto muito de contribuir com os grupos e com quem está começando mas ultimamente anda bem complicado =/</p><p>Por esse e mais alguns motivos optei por me manter extremamente focado e resolvi compartilhar o que tem funcionado comigo =)</p>
+
+- author: Felipe Fialho
+  date: 2014-06-20T10:00:34
+  text: |
+    <p>Fala Leandro, curti boa parte das ideias e concordo.</p><p>Especialmente em épocas que preciso estar muito focado nas minhas tarefas, me distancio das redes sociais. Mas acredito que todas elas, inclusive o Facebook, podem contribuir de forma positiva em vários aspectos.</p><p>Estou curtindo muito esses últimos posts mais abrangentes ; )</p>
+
+- author: Enio
+  date: 2014-06-18T12:43:21
+  text: |
+    <p>As pessoas se deixam viciar. Acredito que, quando caem na realidade do sentido produtivo e evolutivo de si mesmo, talvez deixe a ferramenta em desuso. Triste é ver o ser humano desumanizado pelos seus dispositivos móveis e se tornarem antissociais. Antes das sete da manhã a criatura checa seu status no Fb para espiar a vida alheia ou checar quantas curtidas aquela foto sem noção possui. Lamentável. A inclusão digital deveria nos ajudar a crescer mentalmente mas se tornou um instrumento de involução da nossa raça. E os estudos no inglês, como estão? Abraço, Leandro.</p>
+
+- author: Victor Kurauchi
+  date: 2014-06-16T21:22:35
+  text: |
+    <p>Extensão já instalada aqui! Uma questão muito boa é essa de filtrarmos apenas o conteúdo que nos convém e quando nos convém, caso contrário, seremos sempre bombardeados de infos que muitas vezes não nos agregam... Muito bom o post!</p>
+
+- author: Leandro Oriente
+  date: 2014-06-16T21:04:45
+  text: |
+    <p>Eu acabei separando o notebook para assuntos relacionados a trabalho e o smartphone para coisas mais sociais.</p><p>Uma das razões para não abrir mão do facebook é o contato que mantenho com algumas pessoas mais distantes. Principalmente com a galera da comunidade que é espalhada pelo Brasil e pelo mundo.</p>
+
+- author: Eduardo Shiota Yasuda
+  date: 2014-06-16T20:42:48
+  text: |
+    <p>O que me deixa com receio de me afastar do FB é perder contato com a galera do Brasil. Mas a ideia de esconder totalmente o Newsfeed, ao menos durante o trabalho, é muito boa! Vou experimentar essa extensão.</p><p>Abraço, cara!</p>
+
+- author: Rodrigo Muniz
+  date: 2014-06-16T20:28:55
+  text: |
+    <p>De águia dos andes a oráculo da montanha. Essa amizade tá me rendendo mais que ótimas interfaces gráficas :)</p><p>Muito obrigado pela confiança, jovem. Mais um grande post!</p>
+
 
 ---
 
