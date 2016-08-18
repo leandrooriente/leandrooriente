@@ -55,4 +55,9 @@ uncss:
   timeout  : 1000
 
 deploy:
-  type:
+  type: git
+  repo: git@github.com:leandrooriente/leandrooriente.git
+  branch: master
+  message: Deploy
+  name: leandrooriente
+  email: leandroriente@gmail.com
