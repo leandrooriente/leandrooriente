@@ -1,46 +1,58 @@
-name: Leandro Oriente
-markdown: redcarpet
-permalink: /:title
-paginate: 5
-port: 9001
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
-title : Leandro Oriente
-tagline: Desenvolvedor Front End
-author :
-  name : Leandro Oriente
-  email : leandroriente@gmail.com
-  github : http://github.com/leandrooriente
-  facebook : http://facebook.com/leandrooriente
-  googleplus : https://plus.google.com/+LeandroOriente?rel=author
-  500px : http://500px.com/leandrooriente
-  linkedin : http://www.linkedin.com/in/leandrooriente
-  instagram : http://instagram.com/leandrooriente
+# Site
+title: Oriente
+subtitle: Desenvolvedor Front End
+description:
+author: Leandro Oriente
+theme: oriente
 
-markdown: kramdown
-kramdown:
-  enable_coderay: true
-  parse_block_html: true
+url: https://leandrooriente.com
+root: /
 
-highlighter: pygments
+# SEO
+permalink: :title/
+sitemap:
+  path: sitemap.xml
 
-assets:
-  js_compressor:  uglifier
-  css_compressor: sass
+# Directory
+source_dir: source
+public_dir: public
+code_dir: downloads/code
+skip_render:
 
-sass:
-  sass_dir: assets/stylesheet
-  style: :compressed
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
 
-production_url : http://leandrooriente.com
-url : http://leandrooriente.com
+date_format: DD/MM/YYYY
+time_format: HH:mm:ss
 
-theme :
-  comments :
-    provider : disqus
-    disqus :
-      short_name : leandrooriente
+# Pagination
 
-analytics :
-    provider : google 
-    google : 
-        tracking_id : 'UA-25340215-1'
+per_page: 20
+pagination_dir: page
+
+# Deploy
+
+uncss:
+  enable   : false
+  priority : 10
+  timeout  : 1000
+
+deploy:
+  type:

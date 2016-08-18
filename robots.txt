@@ -1,7 +1,0 @@
-User-agent: *
-
-Disallow: /category/
-Disallow: /sample-page/
-Disallow: /blog/
-Disallow: /portfolio/
-Disallow: /labs/seo-business/
