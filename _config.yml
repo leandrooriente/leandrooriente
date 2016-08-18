@@ -57,7 +57,7 @@ uncss:
 deploy:
   type: git
   repo: git@github.com:leandrooriente/leandrooriente.git
-  branch: master
+  branch: dist
   message: Deploy
   name: leandrooriente
   email: leandroriente@gmail.com
