@@ -42,6 +42,8 @@ highlight:
 date_format: DD/MM/YYYY
 time_format: HH:mm:ss
 
+disqus_shortname: leandrooriente
+
 # Pagination
 
 per_page: 20

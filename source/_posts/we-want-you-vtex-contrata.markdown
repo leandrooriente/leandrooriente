@@ -1,5 +1,5 @@
 ---
-title:  "We want you. Vtex Contrata"
+title:  "We want you. VTEX Contrata"
 description: "Pessoal, como costumo comentar e postar com frequencia. Estamos contratando."
 date: 08/20/2013
 ---

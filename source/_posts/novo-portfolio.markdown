@@ -18,7 +18,7 @@ Até agora tem se comportado bem.
 
 O servidor é provido pela [DigitalOcean](http://digitalocean.com). Aliás gostaria aqui de recomendar os serviços deles. A empresa oferece um serviço fora de série pelo preço que cobra (5 doletas/mês por uma VPS totalmente configurável com dezenas de OS disponíveis).
 
-Pretendo escrever sobre meu cotidiano e soluções usadas nas aplicações em que trabalho aqui na [Vtex](http://www.vtex.com.br/) e alguns pitacos sobre a vida e meu novo hobby, a fotografia.
+Pretendo escrever sobre meu cotidiano e soluções usadas nas aplicações em que trabalho aqui na [VTEX](http://www.vtex.com.br/) e alguns pitacos sobre a vida e meu novo hobby, a fotografia.
 
 Aliás, aproveitando a deixa, se você é carioca, manja dos front-end development e está a procura de uma empresa irada para trabalhar não deixe de entrar em contato ~> [leandro.oriente@vtex.com.br](mailto:leandro.oriente@vtex.com.br).
 

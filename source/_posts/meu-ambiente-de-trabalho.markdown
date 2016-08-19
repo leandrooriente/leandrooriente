@@ -22,20 +22,20 @@ Além disso, vasculhando pela internet acabei caindo no ambiente de trabalho do 
 
 ###Software
 
-Atualmente trabalho em dois sistemas operacionais.<br /> Em casa utilizo o [Mac OS X (10.8.2)](http://www.apple.com/br/osx/) e na Vtex o [Ubuntu (13.04)](http://www.ubuntu.com/desktop).<br /> Ambos atendem perfeitamente ao meu workflow de trabalho. A única ferramenta essencial que uso no Mac e que não possuo no Ubuntu é o Adobe Photoshop mas que contorno com [GIMP](http://www.gimp.org/) quando necessário.
+Atualmente trabalho em dois sistemas operacionais.<br /> Em casa utilizo o [Mac OS X (10.8.2)](http://www.apple.com/br/osx/) e na VTEX o [Ubuntu (13.04)](http://www.ubuntu.com/desktop).<br /> Ambos atendem perfeitamente ao meu workflow de trabalho. A única ferramenta essencial que uso no Mac e que não possuo no Ubuntu é o Adobe Photoshop mas que contorno com [GIMP](http://www.gimp.org/) quando necessário.
 
 Para desenvolvimento tenho usado o [Sublime Text](http://www.sublimetext.com/). Cheguei a testar o [WebStorm](http://www.jetbrains.com/webstorm/) da JetBrains mas não me adaptei bem a IDE.<br />
 
 No Sublime uso apenas os plugins essenciais.
 JSHint, [Emmet](http://docs.emmet.io/) e Sidebar Enhancements. Além disso adicionei o Coffee, LESS e Angular syntax highlighting.
 
-Partindo para gestão de arquivos utilizo o [Dropbox](http://www.dropbox.com) para manter meus diversos devices sincronizados e para versionamento nos projetos uso o [Git](http://git-scm.com/). Na Vtex utilizamos [Github](http://github.com) e em casa uso o [Bitbucket](http://bitbucket.org) além do Github quando preciso de repositórios privados.
+Partindo para gestão de arquivos utilizo o [Dropbox](http://www.dropbox.com) para manter meus diversos devices sincronizados e para versionamento nos projetos uso o [Git](http://git-scm.com/). Na VTEX utilizamos [Github](http://github.com) e em casa uso o [Bitbucket](http://bitbucket.org) além do Github quando preciso de repositórios privados.
 
-Para edição de imagens nos projetos utilizo exclusivamente o [Photoshop CS6](http://www.adobe.com/br/products/photoshop.html). Na Vtex não preciso tratar imagens então não uso nada, porém tenho o GIMP instalado para qualquer eventualidade.
+Para edição de imagens nos projetos utilizo exclusivamente o [Photoshop CS6](http://www.adobe.com/br/products/photoshop.html). Na VTEX não preciso tratar imagens então não uso nada, porém tenho o GIMP instalado para qualquer eventualidade.
 
 O Browser padrão em ambos os ambientes é o [Google Chrome](https://www.google.com/intl/pt-BR/chrome/browser/). Utilizo também no Nexus 4 e no iPhone 4 onde testo versões mobile dos meus projetos.
 
-Atualmente uso o [Angular.js](http://angularjs.org) na Vtex como framework JavaScript padrão para as novas aplicações. Anteriormente usei [Knockout](http://knockoutjs.com) que atendeu muito bem. <br />
+Atualmente uso o [Angular.js](http://angularjs.org) na VTEX como framework JavaScript padrão para as novas aplicações. Anteriormente usei [Knockout](http://knockoutjs.com) que atendeu muito bem. <br />
 Para os layouts costumamos usar o [Twitter Bootstrap](http://twitter.github.com/bootstrap/) combinado com o [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 
 Além disso uso [Grunt](http://gruntjs.com) para automatizar alguns projetos e começamos a usar o [Bower](https://github.com/bower/bower) para lidar com dependências. <br />
@@ -45,14 +45,14 @@ O CMS que tenho usado frequentemente, principalmente com clientes externos é o 
 Acho que é a ferramenta ideal para sites e blogs mais simples e o admin é muito simples de ser usado.<br />
 Nos meus projetos particulares comecei a usar o [Jekyll](http://jekyllrb.com) e estou bem satisfeito também. Não é algo viável de disponibilizar para um cliente mas atende muito bem as minhas necessidades. Aliás, falei disso [nesse post](http://leandrooriente.com/novo-portfolio/).
 
-Para gestão de projetos uso o [Trello](http://trello.com) e na Vtex o [Asana](https://app.asana.com). Ambos são excelentes. Caso não precise de algo muito complexo o Trello atende perfeitamente.
+Para gestão de projetos uso o [Trello](http://trello.com) e na VTEX o [Asana](https://app.asana.com). Ambos são excelentes. Caso não precise de algo muito complexo o Trello atende perfeitamente.
 
-Tenho usado os servidores da [DigitalOcean](http://digitalocean.com) para meus projetos particulares e na Vtex usamos [Amazon AWS](http://aws.amazon.com/).
+Tenho usado os servidores da [DigitalOcean](http://digitalocean.com) para meus projetos particulares e na VTEX usamos [Amazon AWS](http://aws.amazon.com/).
 
 ###Hardware
 Em casa utilizo um [MacBook Air 13"](http://www.apple.com/br/macbook-air/) com um monitor adicional [Samsung de 24"](http://www.samsung.com/br/support/model/LS24EMSKUMZD) e um HD externo Samsung de 1TB já que o Mac tem apenas 128GB SSD.
 
-Na Vtex utilizo um [DELL Vostro 3450](http://www.dell.com/br/empresa/p/vostro-3450/pd) com um monitor adicional Samsung de 21".
+Na VTEX utilizo um [DELL Vostro 3450](http://www.dell.com/br/empresa/p/vostro-3450/pd) com um monitor adicional Samsung de 21".
 
 Além disso tenho um [Nexus 4](http://www.google.com/nexus/4/) e um [iPhone 4](http://www.apple.com/br/iphone/compare-iphones/) para testes em dispositivos mobile e um Desktop tunado para games (i5, 8GB DDR3 Corsair Vengeance, ATI Radeon 6870) que anda meio de lado ultimamente.
 

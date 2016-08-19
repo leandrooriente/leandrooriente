@@ -1,1 +1,10 @@
-<%- partial('_partial/archive', {pagination: 2, index: true}) %>
+<ul id="post-list">
+<% page.posts.each(function(post){ %>
+  <li>
+    <div class="inner">
+      <a href="<%= post.path %>"><%= post.title %></a>
+      <%- partial('_partial/post/date', { post: post }) %>
+    </div>
+  </li>
+<% }); %>
+</ul>

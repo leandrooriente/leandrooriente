@@ -114,7 +114,7 @@ Nem tudo está perdido. Da para fazer boas compras na Black Friday e garantir o 
 
 - Selecione os produtos que pretende comprar antes e logo no início do evento comece a correr atrás nas principais lojas. Descontos bons costumam esgotar cedo.
 
-- Alguns sites ficam instáveis devido ao grande fluxo de visitas. Tente acessar por volta das 04:00 ~ 05:00 onde os sites tendem a normalizar já que tem menos tráfego. Isso não acontece com e-commerces que usam a plataforma [Vtex](http://www.vtex.com.br/).
+- Alguns sites ficam instáveis devido ao grande fluxo de visitas. Tente acessar por volta das 04:00 ~ 05:00 onde os sites tendem a normalizar já que tem menos tráfego. Isso não acontece com e-commerces que usam a plataforma [VTEX](http://www.vtex.com.br/).
 
 - Se for comprar em uma loja "estranha" verifique no [ReclameAqui](http://www.reclameaqui.com.br/) se a loja é razoavelmente confiável. Observe também se a loja possui telefone de contato e endereço.
 

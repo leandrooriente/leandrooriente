@@ -284,7 +284,7 @@ Tenho tido contato com diversas pessoas com dúvidas sobre fontes seguras de est
 
 ### Pesquisa sobre o desenvolvimento front end no Brasil. Participe!
 
-Pessoal o Breno Calazans (desenvolvedor na Vtex e aluno na PUC-Rio) está fazendo uma pesquisa bem legal sobre os desenvolvedores front-end brasileiros.
+Pessoal o Breno Calazans (desenvolvedor na VTEX e aluno na PUC-Rio) está fazendo uma pesquisa bem legal sobre os desenvolvedores front-end brasileiros.
 
 A pesquisa é bem curtinha e faz uma mapeamento amplo da área.
 Os dados obviamente vão ser públicos e expostos no final do mês. Provalvemente irei expor aqui no site o resultado também.
