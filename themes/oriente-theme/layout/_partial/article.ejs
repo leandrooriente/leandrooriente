@@ -10,8 +10,10 @@
     <%- post.content %>
     </div>
   </div>
-  <%- partial('post/nav') %>
+  <%- partial('post/author') %>
 </article>
+
+<%- partial('post/nav') %>
 
 <% if (config.disqus_shortname){ %>
   <%- partial('post/comment') %>
