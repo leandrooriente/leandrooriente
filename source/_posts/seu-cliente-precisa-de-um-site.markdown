@@ -1,7 +1,7 @@
 ---
 title:  "Meu cliente realmente precisa de um site?"
 description: "Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvazie a mente, procure um lugar tranquilo e preparesse porque a mensagem não é das mais agradáveis."
-date: 2014-01-12
+date: 01/12/2014
 ---
 
 Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvaziem a mente, procurem um lugar tranquilo e preparem-se, porque a mensagem não é das mais agradáveis.

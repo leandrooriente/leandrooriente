@@ -1,7 +1,7 @@
 ---
 title:  "Faculdade de Informática. Fazer ou não fazer?"
 description: "Quero mostrar minha experiência atual com o mercado de trabalho e com o mundo acadêmico para depois apresentar as conclusões que tirei."
-date: 2013-08-17 
+date: 08/17/2013
 ---
 
 ![Classroom](/images/classroom.jpg)

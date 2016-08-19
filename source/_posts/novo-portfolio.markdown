@@ -1,11 +1,10 @@
 ---
 title: Novo portfólio. Adeus Wordpress e obrigado pelos peixes
 description: Sempre que estou atolado de coisas para fazer e sem tempo para dormir refaço o portfólio para me lembrar que poderia ser pior.
+date: 08/19/2013
 ---
 
 Sempre que estou atolado de coisas para fazer e sem tempo para dormir refaço o portfólio para me lembrar que poderia ser pior. Se estiver realmente muito lotado, paro tudo e estudo um pouco de fotografia. No final das contas tudo se resolve bem.
-
-<!--more-->
 
 Na verdade abandonei um pouco a cara de portfólio, já que pretendo aposentar os freelas (convencionais) e foquei em montar um blog. O código fonte, obviamente é aberto e está disponível nesse [repositório](https://github.com/leandrooriente/leandrooriente).<br />
 A ideia é pegar mais projetos de start-ups ou projetos próprios e menos clientes empresariais.

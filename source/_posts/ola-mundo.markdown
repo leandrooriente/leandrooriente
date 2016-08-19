@@ -1,6 +1,6 @@
 ---
 title:  "Olá mundo"
-date: 2013-08-16
+date: 08/16/2013
 ---
 
 Não curto muito formalidades, mas gostaria de apresentar quem vai manter esse blog ou pelo menos tentar.

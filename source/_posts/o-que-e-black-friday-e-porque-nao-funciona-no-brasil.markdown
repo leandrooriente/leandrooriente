@@ -1,7 +1,7 @@
 ---
-layout: post
 title:  "O que é Black Friday e porque não funciona no Brasil"
 description: ""
+date: 12/01/2013
 ---
 
 Resumidamente Black Friday é um dia próximo as festas de final de ano em que as lojas oferecem mega descontos para limpar os estoques e se preparar para o Natal. <br>

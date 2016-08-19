@@ -1,8 +1,7 @@
 ---
-layout: post
 title:  "We want you. Vtex Contrata"
 description: "Pessoal, como costumo comentar e postar com frequencia. Estamos contratando."
-
+date: 08/20/2013
 ---
 
 Pessoal, como costumo comentar e postar com frequencia. Estamos contratando.
@@ -10,11 +9,11 @@ Pessoal, como costumo comentar e postar com frequencia. Estamos contratando.
 Acabamos de abrir duas vagas para estagio. Perfil: **o seu**.
 
 
-##Front End
+## Front End
 * Trabalhe com Angular.js, CoffeeScript, Grunt e Bower
 * Bonus points se você se incomoda com Comic Sans ;)
 
-##Back End
+## Back End
 * Vanguarda em C#, .NET MVC 4
 * Continuous Delivery, TeamCity e Amazon AWS
 
