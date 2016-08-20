@@ -6,10 +6,10 @@
       <% comments = site.data.comments[_post] %>
       <% if (comments) { %>
         <% comments.forEach(function(comment) { %>
-          <div class="comment">
-            <p class="author"><%= comment.author %></p>
-            <%- partial('date', { post: { date: comment.date }} ) %>
-            <p class="comment"><%= comment.message %></p>
+          <div class="comment" itemscope itemtype="http://schema.org/UserComments">
+            <p class="author" itemprop="creator"><%= comment.author %></p>
+            <%- partial('date', { prop: 'commentTime', post: { date: comment.date }} ) %>
+            <p class="comment" itemprop="commentText"><%= comment.message %></p>
           </div>
         <% }) %>
       <% } %>

@@ -1,16 +1,18 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="inner">
 
-    <header class="article-header">
+    <header class="article-header" itemprop="headline">
       <%- partial('post/title') %>
-      <%- partial('post/date') %>
+      <%- partial('post/date', { prop: 'datePublished' }) %>
     </header>
 
     <div class="article-entry" itemprop="articleBody">
     <%- post.content %>
     </div>
   </div>
-  <%- partial('post/author') %>
+  <footer>
+    <%- partial('post/author') %>
+  </footer>
 </article>
 
 <%- partial('post/nav') %>

@@ -1,9 +1,9 @@
 <ul id="post-list">
 <% page.posts.each(function(post){ %>
-  <li>
+  <li itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="inner">
-      <a href="<%= post.path %>"><%= post.title %></a>
-      <%- partial('_partial/post/date', { post: post }) %>
+      <a itemprop="headline" href="<%= post.path %>"><%= post.title %></a>
+      <%- partial('_partial/post/date', { prop: 'datePublished', post: post }) %>
     </div>
   </li>
 <% }); %>

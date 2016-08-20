@@ -1,10 +1,10 @@
 <% if (config.author){ %>
-<section id="author-post">
+<section id="author-post" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <div class="inner">
-    <img src="/images/author.jpg" class="author-picture" />
+    <img itemprop="image" src="/images/author.jpg" class="author-picture" />
     <div class="author-details">
-      <h2 class="author-name">Leandro Oriente</h2>
-      <p class="author-work">Desenvolvedor Front End</p>
+      <h2 class="author-name" itemprop="name">Leandro Oriente</h2>
+      <p class="author-work" itemprop="jobTitle">Desenvolvedor Front End</p>
     </div>
   </div>
 </section>
