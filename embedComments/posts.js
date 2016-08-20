@@ -21,14 +21,8 @@ function getPosts() {
 
 function writeComments (files, posts) {
   let obj = {};
-
-  console.log('FILES', files);
-  console.log('POSTS', posts);
-
   for (const file of files) {
-    console.log('FILE', file);
     for (const post of posts) {
-      console.log('POST', post);
       if (post[0].thread === file) {
         obj[file] = post[0].comments;
       }

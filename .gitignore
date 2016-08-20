@@ -6,3 +6,4 @@ db.json
 public/
 embedComments/.env
 embedComments/node_modules
+npm-debug.log
