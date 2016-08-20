@@ -20,5 +20,10 @@
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "hexo-uncss": "^0.1.4"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "lodash": "^4.15.0",
+    "promise": "^7.1.1"
   }
 }

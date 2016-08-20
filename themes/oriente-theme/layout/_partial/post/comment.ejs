@@ -2,6 +2,17 @@
   <div class="inner">
     <h2>Comentários</h2>
     <div id="disqus_thread">
+      <% _post = post.path.slice(0, -1) %>
+      <% comments = site.data.comments[_post] %>
+      <% if (comments) { %>
+        <% comments.forEach(function(comment) { %>
+          <div class="comment">
+            <p class="author"><%= comment.author %></p>
+            <%- partial('date', { post: { date: comment.date }} ) %>
+            <p class="comment"><%= comment.message %></p>
+          </div>
+        <% }) %>
+      <% } %>
       <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
   </div>
