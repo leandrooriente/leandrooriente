@@ -25,7 +25,6 @@ sitemap:
 source_dir: source
 public_dir: public
 code_dir: downloads/code
-skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -54,11 +53,10 @@ per_page: 20
 pagination_dir: page
 
 # Deploy
-
-uncss:
-  enable   : false
-  priority : 10
-  timeout  : 1000
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
 
 deploy:
   type: git
