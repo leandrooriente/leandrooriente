@@ -14,13 +14,9 @@ Peguei algumas ferramentas interessantes nos setups do [Bernard de Luna](http://
 
 Além disso, vasculhando pela internet acabei caindo no ambiente de trabalho do [Zeno Rocha](http://zenorocha.com/meu-ambiente-de-trabalho-em-7-itens/) e do [Davidson Fellipe (globo.com)](http://fellipe.com/blog/meu-ambiente-de-trabalho-em-7-itens/).
 
-##Quem é você e o que faz?
+## Desenvolvimento
 
-[Esse sou eu ](/about) e [isso é o que eu faço](http://www.linkedin.com/in/leandrooriente).
-
-##Desenvolvimento
-
-###Software
+### Software
 
 Atualmente trabalho em dois sistemas operacionais.<br /> Em casa utilizo o [Mac OS X (10.8.2)](http://www.apple.com/br/osx/) e na VTEX o [Ubuntu (13.04)](http://www.ubuntu.com/desktop).<br /> Ambos atendem perfeitamente ao meu workflow de trabalho. A única ferramenta essencial que uso no Mac e que não possuo no Ubuntu é o Adobe Photoshop mas que contorno com [GIMP](http://www.gimp.org/) quando necessário.
 
@@ -49,16 +45,16 @@ Para gestão de projetos uso o [Trello](http://trello.com) e na VTEX o [Asana](h
 
 Tenho usado os servidores da [DigitalOcean](http://digitalocean.com) para meus projetos particulares e na VTEX usamos [Amazon AWS](http://aws.amazon.com/).
 
-###Hardware
+### Hardware
 Em casa utilizo um [MacBook Air 13"](http://www.apple.com/br/macbook-air/) com um monitor adicional [Samsung de 24"](http://www.samsung.com/br/support/model/LS24EMSKUMZD) e um HD externo Samsung de 1TB já que o Mac tem apenas 128GB SSD.
 
 Na VTEX utilizo um [DELL Vostro 3450](http://www.dell.com/br/empresa/p/vostro-3450/pd) com um monitor adicional Samsung de 21".
 
 Além disso tenho um [Nexus 4](http://www.google.com/nexus/4/) e um [iPhone 4](http://www.apple.com/br/iphone/compare-iphones/) para testes em dispositivos mobile e um Desktop tunado para games (i5, 8GB DDR3 Corsair Vengeance, ATI Radeon 6870) que anda meio de lado ultimamente.
 
-##Fotografia
+## Fotografia
 
-###Software
+### Software
 
 Para edição de imagens tenho usado o combo [Lightroom 4](http://www.adobe.com/br/products/photoshop-lightroom.html) e Photoshop CS6. <br />
 Utilizo muito mais o Lightroom e só abro o Photoshop mesmo quando é algo muito específico.
@@ -67,7 +63,7 @@ Estou hospedando as imagens no [500px](http://500px.com/leandrooriente) e utiliz
 
 Trabalho exclusivamente com o Mac OS X. Para fotografia o Ubuntu não me atende bem.
 
-###Hardware
+### Hardware
 
 Uso uma [Canon T3i (600D)](http://www.usa.canon.com/cusa/consumer/products/cameras/slr_cameras/eos_rebel_t3i_18_55mm_is_ii_kit) como câmera principal. Ainda estou em fase de estudos e ela tem atendido muito bem. Não penso em trocar por um modelo superior tão cedo.
 
@@ -82,7 +78,7 @@ Além disso estou com um rebatedor prata/dourado, um tripé (genérico porém be
 
 Utilizo o Macbook Air para gerenciar e editar as fotos.
 
-##O que te motiva a fazer o que você faz?
+## O que te motiva a fazer o que você faz?
 
 Acho que a pergunta mais simples de responder seria, o que não te motiva a fazer o que você faz. <br />
 Gosto muito do meu trabalho e acho impressionante que me paguem para fazer algo que realmente me agrada.

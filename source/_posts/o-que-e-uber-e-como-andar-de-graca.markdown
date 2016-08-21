@@ -4,14 +4,14 @@ date: 03/08/2015
 ---
 
 
-Caso tenha interesse apenas no cupom de desconto, se cadastre no [Uber através desse link](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} ou informe esse código de desconto no aplicativo: uber20pratas . Esse cupom permite que você ande de graça na primeira viagem <small>(até R$ 20,00)</small>.
+Caso tenha interesse apenas no cupom de desconto, se cadastre no [Uber através desse link](https://www.uber.com/invite/uber20pratas) ou informe esse código de desconto no aplicativo: uber20pratas . Esse cupom permite que você ande de graça na primeira viagem <small>(até R$ 20,00)</small>.
 
 ## O que é Uber?
 
-Recentemente a [Uber, startup americana](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'}, entrou de cabeça no Brasil para revolucionar o serviço de transporte privado até então dominado pelos táxis.
+Recentemente a [Uber, startup americana](https://www.uber.com/invite/uber20pratas), entrou de cabeça no Brasil para revolucionar o serviço de transporte privado até então dominado pelos táxis.
 Seu modelo de negócios é bem similar ao dos táxis cobrando a bandeirada e uma taxa por quilometragem percorrida e tempo de percurso.
 
-O grande diferencial é que tudo é gerenciado através de um [aplicativo de celular](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'}. Com ele você chama [o Uber](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'}, realiza pagamentos através de cartão de crédito ou Paypal e avalia o motorista no final da corrida.
+O grande diferencial é que tudo é gerenciado através de um [aplicativo de celular](https://www.uber.com/invite/uber20pratas). Com ele você chama [o Uber](https://www.uber.com/invite/uber20pratas), realiza pagamentos através de cartão de crédito ou Paypal e avalia o motorista no final da corrida.
 
 A avaliação é essencial pro bom funcionamento do serviço. Ela permite que o Uber remova rapidamente motoristas ruins da frota e garante uma experiência excelente na maioria dos casos. O que difere muito do táxi, onde uma experiência ruim, geralmente fica por isso mesmo e o taxista continua a prestar um serviço ruim.
 
@@ -23,17 +23,17 @@ O serviço dispõe de 2 categorias diferentes. O UberBlack que só trabalha com 
 
 Ambos os serviços são excelentes. Os motoristas oferecem água e carregadores de celular além de serem muito educados e prestativos. Essa qualidade é garantida através do aplicativo que exige a avaliação do motorista e do passageiro no final da viagem. Caso a média comece a ficar baixa o próprio sistema remove a permissão do motorista.
 
-Além disso para se tornar um motorista [da Uber](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} é necessário enviar uma série de documentos incluindo o seguro do carro com cobertura para passageiro e atestado de antecedentes criminais. O que garante que o motorista é de fato um profissional e que você não está no carro com qualquer um.
+Além disso para se tornar um motorista [da Uber](https://www.uber.com/invite/uber20pratas) é necessário enviar uma série de documentos incluindo o seguro do carro com cobertura para passageiro e atestado de antecedentes criminais. O que garante que o motorista é de fato um profissional e que você não está no carro com qualquer um.
 
-Outro ponto interessante é que os motoristas da [Uber](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} são orientados a usar o Wazze (GPS com dados reais do trânsito). Isso permite que as viagens sejam mais econômicas e que o motorista não fique dando voltas para aumentar o valor a ser pago.
+Outro ponto interessante é que os motoristas da [Uber](https://www.uber.com/invite/uber20pratas) são orientados a usar o Wazze (GPS com dados reais do trânsito). Isso permite que as viagens sejam mais econômicas e que o motorista não fique dando voltas para aumentar o valor a ser pago.
 
 No final da viagem você verifica o valor total e após a confirmação do motorista o valor é pago automaticamente através do cartão cadastrado (ou do crédito disponível na sua conta Uber caso tenha). Além disso é possível dividir o valor entre mais pessoas, caso esteja viajando com mais pessoas.
 
 ## Como se cadastrar
 
-### Usando o cupom de desconto [uber20pratas](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'}
+### Usando o cupom de desconto [uber20pratas](https://www.uber.com/invite/uber20pratas)
 
-Se estiver curioso sobre o serviço e quiser experimentar, basta usar esse [código de desconto: uber20pratas](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} ou se cadastrar [através desse link](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} para ganhar a primeira viagem de graça. <small>(até R$ 20,00)</small>.
+Se estiver curioso sobre o serviço e quiser experimentar, basta usar esse [código de desconto: uber20pratas](https://www.uber.com/invite/uber20pratas) ou se cadastrar [através desse link](https://www.uber.com/invite/uber20pratas) para ganhar a primeira viagem de graça. <small>(até R$ 20,00)</small>.
 
 ### Criando uma conta
 
@@ -41,6 +41,6 @@ Se estiver curioso sobre o serviço e quiser experimentar, basta usar esse [cód
 
 Após isso você vai ser orientado a baixar o aplicativo para o seu celular (Apple Store ou Google Playstore). Com o aplicativo em mãos, siga o passo a passo. Ele vai precisar confirmar seu número de celular e de um cartão de crédito para realizar as futuras cobranças.
 
-Caso você tenha feito o cadastro usando o código de desconto (uber20pratas) ou [através do link](https://www.uber.com/invite/uber20pratas){:rel='nofollow'}{:class='uber-external-link'} fique tranquilo que você não vai ser cobrado enquanto não ultrapassar os R$ 20,00 de desconto. Além disso a Uber faz uma pequena cobrança de R$ 3,00 para validar o cartão mas logo em seguida estorna o valor.
+Caso você tenha feito o cadastro usando o código de desconto (uber20pratas) ou [através do link](https://www.uber.com/invite/uber20pratas) fique tranquilo que você não vai ser cobrado enquanto não ultrapassar os R$ 20,00 de desconto. Além disso a Uber faz uma pequena cobrança de R$ 3,00 para validar o cartão mas logo em seguida estorna o valor.
 
 Depois de se cadastrar e informar o método de pagamento, basta chamar o Uber pelo próprio aplicativo e aguardar seu motorista particular.

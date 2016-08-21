@@ -41,7 +41,7 @@ Meu celular parou de roncar o dia todo na mesa e passou a me alertar duas ou tr�
 
 Meu facebook não apita. Sério! Quando alguém comenta na foto do churrasco do final de semana enquanto estou lendo algum artigo ele simplesmente adiciona um número (1) na abinha e pronto. Às vezes eu noto na hora, outras levo alguns minutos, em alguns casos só vejo horas depois, mas não vou perder a linha de raciocínio por conta de um comentário.
 
-### *Lixeira*{:.not} Feed do facebook
+### ~~Lixeira~~ Feed do facebook
 
 Morreu. O feed do meu facebook não existe mais. Instalei [essa extensão no Chrome](https://chrome.google.com/webstore/detail/kill-news-feed/hjobfcedfgohjkaieocljfcppjbkglfd) e ele simplesmente não aparece mais.
 
