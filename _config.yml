@@ -21,6 +21,11 @@ permalink: :title/
 sitemap:
   path: sitemap.xml
 
+social:
+  linkedin: https://www.linkedin.com/in/leandrooriente
+  github: https://github.com/leandrooriente/
+  rss: /atom.xml
+
 # Directory
 source_dir: source
 public_dir: public
