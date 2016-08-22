@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "hexo": "^3.2.0",
+    "hexo-admin": "^2.1.0",
     "hexo-auto-canonical": "^0.1.0",
     "hexo-browsersync": "^0.2.0",
     "hexo-clean-css": "0.0.2",
