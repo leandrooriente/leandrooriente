@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server",
-    "build": "cd ./embedComments && node server.js && cd ../ && hexo generate && hexo deploy"
+    "deploy": "cd ./embedComments && node server.js && cd ../ && hexo generate && hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.2.0",
