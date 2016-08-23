@@ -4,6 +4,8 @@ description: "Ano novo, layout novo, e ads espalhados por ai. Duas breves explic
 date: 01/11/2014
 ---
 
+## Deprecated
+
 Ano novo, layout novo, e ads espalhados por ai. Duas breves explicações.
 
 *Obs: Vou me alongar em algumas explicações que fogem um pouco do foco do post. Se não estiver afim de ler, basta pular para a seção "Sem mais enrolações vamos ao Adsense responsivo".*
