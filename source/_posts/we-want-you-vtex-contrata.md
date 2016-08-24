@@ -2,7 +2,7 @@ title:  "We want you. VTEX Contrata"
 author: Leandro Oriente
 date: 2013-08-20
 description: "Pessoal, como costumo comentar e postar com frequencia. Estamos contratando."
-thumbnail: /assets/we-want-you-thumb.jpg
+thumbnail: /images/we-want-you-thumb.jpg
 ---
 
 ## Atualizado em 24 de agosto de 2016

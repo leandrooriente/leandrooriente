@@ -2,7 +2,7 @@ title: Criando sites estáticos extremamente performáticos
 author: Leandro Oriente
 date: 2016-08-23 22:18:30
 description: Como chegar ao máximo de performance usando static generators e NGINX
-thumbnail: images/webperformance-thumb.png
+thumbnail: /images/webperformance-thumb.png
 ---
 Faz tanto tempo que não escrevo aqui no blog que nem sei por onde começar. Então resolvi começar explicando que não sei por onde começar. Me pareceu uma boa introdução.
 
