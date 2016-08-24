@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://leandrooriente.com/criando-sites-estaticos-extremamente-performaticos/</loc>
+    
+    <lastmod>2016-08-24T01:18:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://leandrooriente.com/favicons/manifest.json</loc>
     
     <lastmod>2016-08-23T00:37:34.000Z</lastmod>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://leandrooriente.com/we-want-you-vtex-contrata/</loc>
+    <loc>https://leandrooriente.com/novo-portfolio/</loc>
     
     <lastmod>2016-08-19T05:22:01.000Z</lastmod>
     
@@ -51,16 +58,9 @@
   </url>
   
   <url>
-    <loc>https://leandrooriente.com/novo-portfolio/</loc>
+    <loc>https://leandrooriente.com/we-want-you-vtex-contrata/</loc>
     
     <lastmod>2016-08-19T05:22:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://leandrooriente.com/ola-mundo/</loc>
-    
-    <lastmod>2016-08-19T05:21:30.000Z</lastmod>
     
   </url>
   
@@ -73,6 +73,13 @@
   
   <url>
     <loc>https://leandrooriente.com/faculdade-de-informatica-fazer-ou-nao-fazer/</loc>
+    
+    <lastmod>2016-08-19T05:21:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://leandrooriente.com/ola-mundo/</loc>
     
     <lastmod>2016-08-19T05:21:30.000Z</lastmod>
     
