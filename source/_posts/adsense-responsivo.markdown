@@ -6,6 +6,8 @@ date: 01/11/2014
 
 ## Deprecated
 
+O Gooogle passou a oferecer o [recurso nativamente](https://support.google.com/adsense/answer/3213689?hl=pt-BR). Não existe motivo para usar qualquer outra solução.
+
 Ano novo, layout novo, e ads espalhados por ai. Duas breves explicações.
 
 *Obs: Vou me alongar em algumas explicações que fogem um pouco do foco do post. Se não estiver afim de ler, basta pular para a seção "Sem mais enrolações vamos ao Adsense responsivo".*
