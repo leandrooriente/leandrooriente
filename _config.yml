@@ -26,6 +26,8 @@ social:
   github: https://github.com/leandrooriente/
   rss: /atom.xml
 
+fb_app: 235902153193497
+
 # Directory
 source_dir: source
 public_dir: public
