@@ -32,14 +32,14 @@
 
   <!-- FB METAS -->
   <meta property="fb:pages"           content="<%= config.social.fb_app %>" />
-  <meta property="og:url"             content="<%- autoCanonical(config, page) %>" />
+  <meta property="og:url"             content="<%= page.permalink || config.url %>" />
   <meta property="og:type"            content="article" />
   <meta property="og:title"           content="<%= title %>" />
   <meta property="og:description"     content="<%= description %>" />
   <meta property="og:image"           content="<%= config.url + thumbnail %>" />
 
   <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" title="Atom feed" href="<%= config.url + config.root + config.feed.path %>">
+  <link rel="alternate" type="application/atom+xml" title="Atom feed" href="<%= config.url + config.root + config.feed.path %>" />
 
   <%- autoCanonical(config, page) %>
   <%- staticVersion('/css/style.css') %>
