@@ -1,7 +1,8 @@
----
 title:  "We want you. VTEX Contrata"
+author: Leandro Oriente
+date: 2013-08-20
 description: "Pessoal, como costumo comentar e postar com frequencia. Estamos contratando."
-date: 08/20/2013
+thumbnail: /assets/we-want-you-thumb.jpg
 ---
 
 ## Atualizado em 24 de agosto de 2016
@@ -10,7 +11,7 @@ Me despedi da VTEX nesse mês para me aventurar em novos desafios, porém a empr
 
 Se você tem interesse, dê uma olhadinha na [página de carreiras deles](http://lab.vtex.com/careers/).
 
-## Post original 20 de agosto de 2013 - 
+## Post original 20 de agosto de 2013 -
 
 Pessoal, como costumo comentar e postar com frequencia. Estamos contratando.
 

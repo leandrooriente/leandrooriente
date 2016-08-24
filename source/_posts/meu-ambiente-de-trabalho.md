@@ -1,7 +1,8 @@
----
 title:  "Meu ambiente de trabalho"
+author: Leandro Oriente
+date: 2013-08-20
 description: "Seguindo a onda do Loop Infinito, resolvi fazer um post com o meu ambiente de trabalho. Tanto para desenvolvimento quanto para fotografia."
-date: 08/20/2013
+thumbnail: /images/workstation-thumb.jpg
 ---
 
 ![Workstation](/images/workstation.jpg)

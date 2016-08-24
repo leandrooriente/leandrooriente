@@ -1,7 +1,8 @@
----
 title:  "Não consigo clientes porque não tenho portfólio"
+author: Leandro Oriente
+date: 2014-01-19
 description: "Não consigo clientes porque não tenho portfólio, não tenho portfólio porque não consigo clientes"
-date: 01/19/2014
+thumbnail: /images/nao-tenho-portfolio-thumb.jpg
 ---
 
 Uma das maiores dificuldades para quem está começando a carreira é em relação ao portfólio. Você se esforça, faz um layout lindo, coloca em prática tudo o que aprendeu mas na hora de trocar as imagens de placeholder pelos seus trabalhos... Nada. Você não tem nenhum trabalho para exibir.

@@ -1,7 +1,8 @@
----
 title:  "Não seja um mendigo virtual"
+author: Leandro Oriente
 description: "Ultimamente tenho me deparado com uma situação deprimente nessa tal de internet. Conseguiram levar o conceito de mendicância para o virtual com uma perfeição impressionante."
-date: 08/26/2013
+date: 2013-08-26
+thumbnail: /images/mendigo-facebook-thumb.jpg
 ---
 
 Ultimamente tenho me deparado com uma situação deprimente nessa tal de internet. Conseguiram levar o conceito de mendicância para o virtual com uma perfeição impressionante.

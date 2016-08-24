@@ -1,7 +1,8 @@
----
 title:  "Olá. Meu nome é Leandro e sou um ex-viciado"
+author: Leandro Oriente
+date: 2014-06-16
 description: "Comecei meu vício a aproximadamente 8 anos. No início parecia legal, todos os meus amigos estavam usando e achei que não me faria muito mal. Estava enganado."
-date: 06/16/2014
+thumbnail: /images/vicio-no-facebook-thumb.jpg
 ---
 
 Comecei meu vício há aproximadamente 8 anos. No início parecia legal, todos os meus amigos estavam usando e achei que não me faria muito mal. Estava enganado.

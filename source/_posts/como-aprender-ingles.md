@@ -1,7 +1,8 @@
----
 title:  "Como aprender inglês"
+author: Leandro Oriente
+date: 2014-03-09
 description: "Tracei uma nova meta de vida. Aprender inglês de verdade em 1 ano. Tenho uma base razoavel a bastante tempo que me permite ler artigos, posts, documentações em inglês e compreender boa parte delas mas que não é o suficiente para conversar por 5 minutos com alguém fluente sem parecer um idiota."
-date: 03/09/2014
+thumbnail: /images/joel-santana-thumb.jpg
 ---
 
 Tracei uma nova meta de vida. Aprender inglês de verdade em 1 ano. Tenho uma base razoavel a bastante tempo que me permite ler artigos, posts, documentações em inglês e compreender boa parte delas mas que não é o suficiente para conversar por 5 minutos com alguém fluente sem parecer um idiota.

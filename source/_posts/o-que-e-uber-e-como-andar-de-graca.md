@@ -1,6 +1,8 @@
----
 title: "O que é Uber e como ganhar uma viagem grátis"
-date: 03/08/2015
+author: Leandro Oriente
+date: 2015-03-08
+description: "Caso tenha interesse apenas no cupom de desconto, se cadastre no Uber e informe esse código de desconto no aplicativo uber20pratas"
+thumbnail: /images/uber3.png
 ---
 
 

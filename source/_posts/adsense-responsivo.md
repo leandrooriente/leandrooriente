@@ -1,7 +1,8 @@
----
 title:  "Adsense responsivo e algumas notas"
+author: Leandro Oriente
+date: 2014/01/11
 description: "Ano novo, layout novo, e ads espalhados por ai. Duas breves explicações."
-date: 01/11/2014
+thumbnail: /images/adsense-responsivo-thumb.jpg
 ---
 
 ## Deprecated

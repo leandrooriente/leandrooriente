@@ -1,7 +1,8 @@
----
 title: Novo portfólio. Adeus Wordpress e obrigado pelos peixes
+author: Leandro Oriente
+date: 2013-08-19
 description: Sempre que estou atolado de coisas para fazer e sem tempo para dormir refaço o portfólio para me lembrar que poderia ser pior.
-date: 08/19/2013
+thumbnail: /images/thanks-all-the-fish-thumb.jpg
 ---
 
 Sempre que estou atolado de coisas para fazer e sem tempo para dormir refaço o portfólio para me lembrar que poderia ser pior. Se estiver realmente muito lotado, paro tudo e estudo um pouco de fotografia. No final das contas tudo se resolve bem.

@@ -1,7 +1,8 @@
----
 title:  "Um comovente guia de estudo para desenvolvedores front end"
-description: ""
-date: 10/15/2013
+author: Leandro Oriente
+date: 2013-10-15
+description: "O foco do post é atender a galera iniciante e encurtar alguns caminhos, porém se você é mais cascudo e quiser colaborar, fique a vontade."
+thumbnail: /images/guia-comovente-thumb.jpg
 ---
 
 Em agosto escrevi um post com um breve [guia para se tornar um profissional front end](/como-me-tornar-um-desenvolvedor-front-end/).
