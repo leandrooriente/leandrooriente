@@ -24,7 +24,7 @@ sitemap:
 social:
   linkedin: https://www.linkedin.com/in/leandrooriente
   github: https://github.com/leandrooriente/
-  rss: /atom.xml
+  rss: /rss2.xml
 
 fb_app: 235902153193497
 
@@ -62,8 +62,8 @@ pagination_dir: page
 
 # Deploy
 feed:
-  type: atom
-  path: atom.xml
+  type: rss2
+  path: rss2.xml
   limit: 0
 
 html_minifier:
