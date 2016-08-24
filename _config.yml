@@ -6,6 +6,7 @@
 title: Leandro Oriente
 subtitle: Desenvolvedor Front End
 description: Desenvolvimento Front End e alguns pitacos sobre a profissão
+thumbnail: /images/seja-bem-vindo-thumb.jpg
 author: Leandro Oriente
 theme: oriente-theme
 
@@ -25,7 +26,7 @@ social:
   linkedin: https://www.linkedin.com/in/leandrooriente
   github: https://github.com/leandrooriente/
   rss: /rss2.xml
-  fb_app_id: 479584285400462 
+  fb_app_id: 479584285400462
   fb_page_id: 235902153193497
   twitter_account: "@leandrooriente"
 
