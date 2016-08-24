@@ -4,6 +4,14 @@ description: "Pessoal, como costumo comentar e postar com frequencia. Estamos co
 date: 08/20/2013
 ---
 
+## Atualizado em 24 de agosto de 2016
+
+Me despedi da VTEX nesse mês para me aventurar em novos desafios, porém a empresa continua sendo sensacional e estão sempre a procura de novos talentos.
+
+Se você tem interesse, dê uma olhadinha na [página de carreiras deles](http://lab.vtex.com/careers/).
+
+## Post original 20 de agosto de 2013 - 
+
 Pessoal, como costumo comentar e postar com frequencia. Estamos contratando.
 
 Acabamos de abrir duas vagas para estagio. Perfil: **o seu**.
@@ -28,9 +36,6 @@ Eu citei que temos **Playstation 3**? (Bônus se você trouxer mais um controle)
 **R$ 1600,00** + VT + VR
 
 Botafogo - Rio de Janeiro - RJ
-
-Front end: [guilherme@vtex.com.br](mailto:guilherme@vtex.com.br)<br />
-Back end: [gabriel.arrais@vtex.com.br](mailto:gabriel.arrais@vtex.com.br)
 
 PS: Você **não precisa** saber essas tecnologias. <br />
 Você **precisa** querer aprendê-las… e muitas outras!
