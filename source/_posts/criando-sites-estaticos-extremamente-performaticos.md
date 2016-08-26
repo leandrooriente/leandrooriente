@@ -96,9 +96,9 @@ Se você lida com uma aplicação grande é fácil chegar nos 60, 80 requests po
 
 No HTTP/2 a magia é outra. Resumidamente, ele cria uma conexão única e transfere uma tonelada de arquivos simultâneamente. Isso fica restrito a cada host obviamente o que de certa forma, remove uma dos maiores benefícios de usar uma CDN, ampliar os requests simultâneos. Se você usava uma CDN somente para isso, pode cancelar e economizar seu dinheiro.
 
-Mas, nem tudo são flores e para utilizar o HTTP/2 você precisa que seu site tráfegue apenas com SSL (https). E todo mundo sabe que um certificado SSL não é a coisa mais barata do mundo.
+Porém nem tudo são flores e para utilizar o HTTP/2 você precisa que seu site tráfegue apenas com SSL (https). E um certificado SSL não é a coisa mais barata do mundo.
 
-Mas, a comunidade nunca falha e surgiu a iniciativa do [Let's Encrypt](https://letsencrypt.org/) que permite que você gere certificados SSL válidos de graça. Site seguro, rápido e de graça. Quero mais nada da vida.
+Eis que surge a iniciativa [Let's Encrypt](https://letsencrypt.org/) que permite que você gere certificados SSL válidos de graça. Site seguro, rápido e de graça. 
 
 **Duas observações:**
 
