@@ -11,7 +11,8 @@
     "lint": "eslint './**/*.js' --color",
     "markdown-compiler": "node ./articles/markdown-compiler.js",
     "start": "next start",
-    "test": "NODE_ENV=test jest -c ./test/jest.config.js"
+    "test": "NODE_ENV=test jest -c ./test/jest.config.js",
+    "coverage": "npm run test && open ./coverage/lcov-report/index.html"
   },
   "husky": {
     "hooks": {
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^7.8.2",
     "husky": "^1.0.0-rc.8",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "open": "0.0.5"
   }
 }
