@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Main from 'components/Main';
 import Section from 'components/Section';
 import Headline from 'components/Headline';
@@ -11,6 +12,10 @@ import articles from 'data/articles';
 
 export default () => (
   <Main>
+    <Head>
+      <title>Leandro Oriente - Front End Developer</title>
+    </Head>
+
     <Headline />
 
     <Section>
