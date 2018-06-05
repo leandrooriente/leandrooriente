@@ -25,6 +25,7 @@ module.exports = {
       'imports': 'always-multiline',
       'exports': 'always-multiline',
     }],
+    'jsx-a11y/anchor-is-valid': 0,
     'react/jsx-filename-extension': 0,
     'import/no-named-as-default-member': 0,
     'import/no-named-as-default': 0,

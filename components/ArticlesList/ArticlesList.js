@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
 import sortByDate from 'helpers/sortByDate';
 import Subtitle from 'components/Subtitle';
-import ArticleShape from './propTypes/article';
+import ArticleShape from 'propTypes/article';
 import ArticleItem from './components/ArticleItem';
 import css from './ArticlesList.css';
 
@@ -15,7 +15,7 @@ const ArticlesList = ({ articles }) => {
   const sortedByDateArticles = articles.sort(sortByDate);
 
   return (
-    <section className={css.wrapper}>
+    <section className={css.wrapper} id="articles">
       <Flex flexDirection={['column', 'row']}>
         <Box w={[1, 1 / 4]}>
           <Subtitle>Articles</Subtitle>

@@ -5,7 +5,7 @@ import Button from 'components/Button';
 import css from './GetInTouch.css';
 
 const GetInTouch = () => (
-  <div className={css.container}>
+  <div className={css.container} id="get-in-touch">
     <Subtitle>Get in touch</Subtitle>
     <div className={css.links}>
       {social.map(link => (

@@ -12,7 +12,7 @@ const Experiences = ({ experiences }) => {
   }
 
   return (
-    <section className={css.wrapper}>
+    <section className={css.wrapper} id="experiences">
       <Flex flexDirection={['column', 'row']}>
         <Box w={[1, 1 / 4]}>
           <Subtitle>Experience</Subtitle>

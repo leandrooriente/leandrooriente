@@ -20,7 +20,7 @@ const Button = ({
 
   if (href) {
     return (
-      <Link href={href}>
+      <Link>
         <a className={classes} href={href}>{ children }</a>
       </Link>
     );
