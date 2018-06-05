@@ -10,7 +10,7 @@ const GetInTouch = () => (
     <div className={css.links}>
       {social.map(link => (
         <Button
-          className={css.links}
+          className={css.link}
           href={link.url}
           key={link.description}
         >

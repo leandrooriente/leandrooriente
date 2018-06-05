@@ -1,7 +1,18 @@
-.links {
-  margin-right: 10px;
+.link {
+  margin: 0 10px 10px 0;
 }
 
-.links:last-child {
+.link:last-child {
   margin: 0;
+}
+
+@media screen and (max-width: 468px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link, .link:last-child {
+    margin: 0 auto 10px 0;
+  }
 }

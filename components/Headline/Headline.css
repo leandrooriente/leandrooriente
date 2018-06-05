@@ -24,3 +24,9 @@
   font-size: var(--headline-font-size);
   line-height: 1.6;
 }
+
+@media screen and (max-width: 468px) {
+  .title {
+    font-size: var(--headline-font-size-mobile);
+  }
+}

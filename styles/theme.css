@@ -3,6 +3,7 @@
   --paragraph-font-family: 'Source Sans Pro', sans-serif;
 
   --headline-font-size: 40px;
+  --headline-font-size-mobile: 28px;
   --paragraph-font-size: 18px;
 
   --primary-color: #2a2a33;
@@ -15,8 +16,17 @@
   --fast-transition: 0.135s;
 }
 
+::selection {
+  background: var(--primary-color);
+  color: var(--light-gray);
+}
+
 body {
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   color: var(--base-color);
+}
+
+* {
+  box-sizing: border-box;
 }
