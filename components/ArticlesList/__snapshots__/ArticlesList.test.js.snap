@@ -99,7 +99,6 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
 <p>E a gente fica por aqui. São otimizações simples, mas se você trabalha em agência ou tem alguns clientes onde um gerador de estáticos resolveria da para otimizar bem o carregamento com essas dicas.</p>
 <p>Também tive resultados interessantes com dois sites em Wordpress nesse mesmo servidor usando NGINX em conjunto com o plugin <a href=\\"https://www.w3-edge.com/products/w3-total-cache/\\">W3 Total Cache</a>.</p>
 ",
-        "id": 1528095816456,
         "lang": "pt-BR",
         "slug": "criando-sites-estaticos-extremamente-performaticos",
         "thumbnail": "/images/webperformance-thumb.png",
@@ -179,7 +178,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>Caso precise de mais dinheiro, invista mais em você e procure evoluir no seu emprego ou no seu negócio.</p>
 <p><img src=\\"/images/rich-bitch.gif\\" alt=\\"Rich bitch\\"></p>
 ",
-        "id": 1528095816462,
         "lang": "pt-BR",
         "slug": "freelancer-como-cobrar-por-um-freelance",
         "thumbnail": "/images/clientes-cobrar-thumb.jpg",
@@ -226,7 +224,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>Considero que estou evoluindo bem rápido e com um investimento bem razoável. Como tenho algumas particularidades como o horário quebrado, timidez e prazo curto procurei por métodos alternativos.</p>
 <p>Pretendo juntar uma graninha para passar cerca de 1 mês no final do ano em um país com inglês como lingua oficial. Talvez fazer um curso para concretizar o que aprendi durante o ano. Não tenho como usuar como forma oficial de estudo já que o investimento é grande, mas posso tentar fechar esse primeiro ciclo assim.</p>
 ",
-        "id": 1528095816442,
         "lang": "pt-BR",
         "slug": "como-aprender-ingles",
         "thumbnail": "/images/joel-santana-thumb.jpg",
@@ -265,7 +262,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <h2 id=\\"concluindo\\">Concluindo</h2>
 <p>Procure formas de mostrar o seu trabalho. Não se preocupe se isso significa ter um cliente ou criar um <a href=\\"http://bernarddeluna.com/project/pure-css3-homer/\\">Homer Simpson animado</a>. Seus clientes vão saber valorizar o seu trabalho se ele for realmente bom e não seus contratos fechados.</p>
 ",
-        "id": 1528095816469,
         "lang": "pt-BR",
         "slug": "nao-tenho-portfolio-porque-nao-tenho-clientes",
         "thumbnail": "/images/nao-tenho-portfolio-thumb.jpg",
@@ -342,7 +338,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>É justo cobrar cinco mil em um site, sabendo que o cliente não vai ter o retorno do seu dinheiro?</p>
 <p>Obviamente que o conteúdo desse post são conclusões que eu tirei ao longo do tempo e que alguns profissionais com quem converso compartilham, mas e você? O que acha? O post é sensacionalista e exagerado ou tem um pingo de verdade?</p>
 ",
-        "id": 1528095816473,
         "lang": "pt-BR",
         "slug": "seu-cliente-precisa-de-um-site",
         "thumbnail": "/images/cliente-nao-precisa-site-thumb.jpg",
@@ -603,7 +598,6 @@ Os dados obviamente vão ser públicos e expostos no final do mês. Provalvement
 <p>Segue o link para a pesquisa: <a href=\\"https://breno.typeform.com/to/DCy9FS\\">breno.typeform.com/to/DCy9FS</a>.
 Não deixem de colaborar.</p>
 ",
-        "id": 1528095816467,
         "lang": "pt-BR",
         "slug": "guia-de-estudo-front-end",
         "thumbnail": "/images/guia-comovente-thumb.jpg",
@@ -747,7 +741,6 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
 <p>Caso tenha notado algum deslize, tenha alguma sugestão diferente ou alguma dúvida, não deixe de comentar.</p>
 <p>Quanto mais enriquecedora a página, maiores as chances de pintarem alguns bons novos profissionais em breve.</p>
 ",
-        "id": 1528095816454,
         "lang": "pt-BR",
         "slug": "como-me-tornar-um-desenvolvedor-front-end",
         "thumbnail": "/images/developer-thumb.jpg",
@@ -852,7 +845,6 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
 </li>
 </ul>
 ",
-        "id": 1528095816459,
         "lang": "pt-BR",
         "slug": "faculdade-de-informatica-fazer-ou-nao-fazer",
         "thumbnail": "/images/classroom-thumb.jpg",
@@ -1503,7 +1495,6 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
 <p>E a gente fica por aqui. São otimizações simples, mas se você trabalha em agência ou tem alguns clientes onde um gerador de estáticos resolveria da para otimizar bem o carregamento com essas dicas.</p>
 <p>Também tive resultados interessantes com dois sites em Wordpress nesse mesmo servidor usando NGINX em conjunto com o plugin <a href=\\"https://www.w3-edge.com/products/w3-total-cache/\\">W3 Total Cache</a>.</p>
 ",
-                      "id": 1528095816456,
                       "lang": "pt-BR",
                       "slug": "criando-sites-estaticos-extremamente-performaticos",
                       "thumbnail": "/images/webperformance-thumb.png",
@@ -1628,7 +1619,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>Caso precise de mais dinheiro, invista mais em você e procure evoluir no seu emprego ou no seu negócio.</p>
 <p><img src=\\"/images/rich-bitch.gif\\" alt=\\"Rich bitch\\"></p>
 ",
-                      "id": 1528095816462,
                       "lang": "pt-BR",
                       "slug": "freelancer-como-cobrar-por-um-freelance",
                       "thumbnail": "/images/clientes-cobrar-thumb.jpg",
@@ -1720,7 +1710,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>Considero que estou evoluindo bem rápido e com um investimento bem razoável. Como tenho algumas particularidades como o horário quebrado, timidez e prazo curto procurei por métodos alternativos.</p>
 <p>Pretendo juntar uma graninha para passar cerca de 1 mês no final do ano em um país com inglês como lingua oficial. Talvez fazer um curso para concretizar o que aprendi durante o ano. Não tenho como usuar como forma oficial de estudo já que o investimento é grande, mas posso tentar fechar esse primeiro ciclo assim.</p>
 ",
-                      "id": 1528095816442,
                       "lang": "pt-BR",
                       "slug": "como-aprender-ingles",
                       "thumbnail": "/images/joel-santana-thumb.jpg",
@@ -1804,7 +1793,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <h2 id=\\"concluindo\\">Concluindo</h2>
 <p>Procure formas de mostrar o seu trabalho. Não se preocupe se isso significa ter um cliente ou criar um <a href=\\"http://bernarddeluna.com/project/pure-css3-homer/\\">Homer Simpson animado</a>. Seus clientes vão saber valorizar o seu trabalho se ele for realmente bom e não seus contratos fechados.</p>
 ",
-                      "id": 1528095816469,
                       "lang": "pt-BR",
                       "slug": "nao-tenho-portfolio-porque-nao-tenho-clientes",
                       "thumbnail": "/images/nao-tenho-portfolio-thumb.jpg",
@@ -1926,7 +1914,6 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
 <p>É justo cobrar cinco mil em um site, sabendo que o cliente não vai ter o retorno do seu dinheiro?</p>
 <p>Obviamente que o conteúdo desse post são conclusões que eu tirei ao longo do tempo e que alguns profissionais com quem converso compartilham, mas e você? O que acha? O post é sensacionalista e exagerado ou tem um pingo de verdade?</p>
 ",
-                      "id": 1528095816473,
                       "lang": "pt-BR",
                       "slug": "seu-cliente-precisa-de-um-site",
                       "thumbnail": "/images/cliente-nao-precisa-site-thumb.jpg",
@@ -2232,7 +2219,6 @@ Os dados obviamente vão ser públicos e expostos no final do mês. Provalvement
 <p>Segue o link para a pesquisa: <a href=\\"https://breno.typeform.com/to/DCy9FS\\">breno.typeform.com/to/DCy9FS</a>.
 Não deixem de colaborar.</p>
 ",
-                      "id": 1528095816467,
                       "lang": "pt-BR",
                       "slug": "guia-de-estudo-front-end",
                       "thumbnail": "/images/guia-comovente-thumb.jpg",
@@ -2421,7 +2407,6 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
 <p>Caso tenha notado algum deslize, tenha alguma sugestão diferente ou alguma dúvida, não deixe de comentar.</p>
 <p>Quanto mais enriquecedora a página, maiores as chances de pintarem alguns bons novos profissionais em breve.</p>
 ",
-                      "id": 1528095816454,
                       "lang": "pt-BR",
                       "slug": "como-me-tornar-um-desenvolvedor-front-end",
                       "thumbnail": "/images/developer-thumb.jpg",
@@ -2571,7 +2556,6 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
 </li>
 </ul>
 ",
-                      "id": 1528095816459,
                       "lang": "pt-BR",
                       "slug": "faculdade-de-informatica-fazer-ou-nao-fazer",
                       "thumbnail": "/images/classroom-thumb.jpg",
