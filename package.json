@@ -11,8 +11,9 @@
     "lint": "eslint './**/*.js' --color",
     "markdown-compiler": "node ./articles/markdown-compiler.js",
     "start": "NODE_ENV=production node server.js",
-    "server": "pm2 start npm --name 'next' -- start",
+    "server": "pm2 start server.js",
     "restart": "pm2 restart all",
+    "stop": "pm2 stop all",
     "test": "NODE_ENV=test jest -c ./test/jest.config.js",
     "coverage": "npm run test && open ./coverage/lcov-report/index.html"
   },
