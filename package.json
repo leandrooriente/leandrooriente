@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "lint": "eslint '{pages,components}/**/*.js' --color",
+    "lint": "eslint './**/*.js' --color",
     "start": "next start",
     "test": "NODE_ENV=test jest -c ./test/jest.config.js"
   },

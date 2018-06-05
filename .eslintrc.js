@@ -1,17 +1,27 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: 'airbnb',
-  env: {
-    browser: true,
-    jest: true
-  },
   settings: {
     'import/extensions': ['.js'],
   },
+  env: {
+    jest: true,
+    browser: true,
+    node: true,
+    es6: true,
+  },
   plugins: ['react', 'jsx-a11y', 'import'],
   rules: {
+    'comma-dangle': ['error', {
+      'functions': 'ignore',
+      'arrays': 'always-multiline',
+      'objects': 'always-multiline',
+      'imports': 'always-multiline',
+      'exports': 'always-multiline',
+    }],
     'react/jsx-filename-extension': 0,
     'import/no-named-as-default-member': 0,
     'import/no-named-as-default': 0,
+    'function-paren-newline': ['error', 'consistent']
   }
 }

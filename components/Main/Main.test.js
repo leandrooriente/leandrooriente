@@ -4,7 +4,11 @@ import Main from './Main';
 
 describe('<Main />', () => {
   it('should render <Header /> component', () => {
-    const wrapper = mount(<Main />);
+    const wrapper = mount(
+      <Main>
+        <span>Children</span>
+      </Main>
+    );
 
     expect(wrapper).toMatchSnapshot();
   });

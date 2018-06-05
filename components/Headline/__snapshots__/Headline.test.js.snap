@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Headline /> should render <Header /> component 1`] = `
+<Headline>
+  <section
+    className="headline"
+  >
+    <h1
+      className="title"
+    >
+      Hi, I‘m Leandro Oriente, a front end developer at Travix in Amsterdam.
+    </h1>
+  </section>
+</Headline>
+`;
