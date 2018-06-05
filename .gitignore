@@ -1,10 +1,20 @@
-_site
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/.next
+
+# misc
 .DS_Store
-node_modules
-db.json
-.deploy_git/
-public/
-embedComments/.env
-embedComments/node_modules
-npm-debug.log
-debug.log
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.out

@@ -1,0 +1,35 @@
+{
+  "name": "leandrooriente",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "NODE_ENV=test jest -c ./test/jest.config.js"
+  },
+  "reository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrooriente/leandrooriente.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrooriente/leandrooriente/issues"
+  },
+  "homepage": "https://github.com/leandrooriente/leandrooriente#readme",
+  "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "next": "^6.0.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.1.0"
+  }
+}
