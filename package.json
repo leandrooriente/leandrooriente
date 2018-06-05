@@ -6,15 +6,15 @@
   "scripts": {
     "dev": "node server.js",
     "predev": "npm run markdown-compiler",
-    "build": "NODE_ENV=production next build",
+    "build": "cross-env NODE_ENV=production next build",
     "prebuild": "npm run markdown-compiler",
     "lint": "eslint './**/*.js' --color",
     "markdown-compiler": "node ./articles/markdown-compiler.js",
-    "start": "NODE_ENV=production node server.js",
-    "server": "pm2 start server.js",
-    "restart": "pm2 restart all",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "server": "cross-env NODE_ENV=production pm2 start server.js",
+    "restart": "cross-env NODE_ENV=production pm2 restart server",
     "stop": "pm2 stop all",
-    "test": "NODE_ENV=test jest -c ./test/jest.config.js",
+    "test": "cross-env NODE_ENV=test jest -c ./test/jest.config.js",
     "coverage": "npm run test && open ./coverage/lcov-report/index.html"
   },
   "husky": {
@@ -52,6 +52,7 @@
     "styled-components": "^3.3.0"
   },
   "devDependencies": {
+    "cross-env": "^5.1.6",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
