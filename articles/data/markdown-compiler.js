@@ -5,8 +5,8 @@ const path = require('path');
 
 const articlesDir = path.resolve(__dirname, '..');
 
-const consoleLog = () => console.log(arguments); // eslint-disable-line
-const consoleError = () => console.error(arguments); // eslint-disable-line
+const consoleLog = console.log; // eslint-disable-line
+const consoleError = console.error; // eslint-disable-line
 
 const getHeading = (yamlContent) => {
   try {
@@ -42,8 +42,8 @@ const convertMarkdownToHTML = (dir) => {
 
   consoleLog('Writting articles map');
   const content = `/* eslint-disable */
-    ${JSON.stringify(articles)}
-  `;
+export default ${JSON.stringify(articles)}`;
+
   return fs.writeFileSync(
     path.resolve(__dirname, 'articles.js'),
     content
