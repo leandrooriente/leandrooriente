@@ -5,98 +5,31 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
   articles={
     Array [
       Object {
-        "author": "Leandro Oriente",
-        "date": "2016-08-23T22:18:30.000Z",
-        "description": "Como chegar ao máximo de performance usando static generators e NGINX",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "criando-sites-estaticos-extremamente-performaticos",
-        "thumbnail": "/images/webperformance-thumb.png",
-        "title": "Criando sites estáticos extremamente performáticos",
-        "url": "/criando-sites-estaticos-extremamente-performaticos",
+        "author": "Foo Bar",
+        "date": "12/12/2012",
+        "html": "<p>Foo Bar</p>",
+        "lang": "pt-br",
+        "slug": "foo-bar",
+        "thumbnail": "foo.png",
+        "title": "Foo Bar",
+        "url": "/foo/bar",
       },
       Object {
-        "author": "Leandro Oriente",
-        "date": "2014-07-29T00:00:00.000Z",
-        "description": "Uma dúvida recorrente que vejo em grupos ou que recebo por e-mail é sobre como cobrar por um freela. Particularmente não faço freelas tem muito tempo e não pretendo fazer mais, porém aprendi alguns métodos bem eficazes no período em que fazia e que funcionaram muito bem.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "freelancer-como-cobrar-por-um-freelance",
-        "thumbnail": "/images/clientes-cobrar-thumb.jpg",
-        "title": "Como cobrar por um freelance",
-        "url": "/freelancer-como-cobrar-por-um-freelance",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2014-03-09T00:00:00.000Z",
-        "description": "Tracei uma nova meta de vida. Aprender inglês de verdade em 1 ano. Tenho uma base razoavel a bastante tempo que me permite ler artigos, posts, documentações em inglês e compreender boa parte delas mas que não é o suficiente para conversar por 5 minutos com alguém fluente sem parecer um idiota.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "como-aprender-ingles",
-        "thumbnail": "/images/joel-santana-thumb.jpg",
-        "title": "Como aprender inglês",
-        "url": "/como-aprender-ingles",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2014-01-19T00:00:00.000Z",
-        "description": "Não consigo clientes porque não tenho portfólio, não tenho portfólio porque não consigo clientes",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "nao-tenho-portfolio-porque-nao-tenho-clientes",
-        "thumbnail": "/images/nao-tenho-portfolio-thumb.jpg",
-        "title": "Não consigo clientes porque não tenho portfólio",
-        "url": "/nao-tenho-portfolio-porque-nao-tenho-clientes",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2014-01-12T00:00:00.000Z",
-        "description": "Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvazie a mente, procure um lugar tranquilo e preparesse porque a mensagem não é das mais agradáveis.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "seu-cliente-precisa-de-um-site",
-        "thumbnail": "/images/cliente-nao-precisa-site-thumb.jpg",
-        "title": "Meu cliente realmente precisa de um site?",
-        "url": "/seu-cliente-precisa-de-um-site",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2013-10-15T00:00:00.000Z",
-        "description": "O foco do post é atender a galera iniciante e encurtar alguns caminhos, porém se você é mais cascudo e quiser colaborar, fique a vontade.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "guia-de-estudo-front-end",
-        "thumbnail": "/images/guia-comovente-thumb.jpg",
-        "title": "Um comovente guia de estudo para desenvolvedores front end",
-        "url": "/guia-de-estudo-front-end",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2013-08-21T00:00:00.000Z",
-        "description": "Minha visão de obrigações e diferenciais de desenvolvedores front end e algumas pequenas dicas a respeito.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "como-me-tornar-um-desenvolvedor-front-end",
-        "thumbnail": "/images/developer-thumb.jpg",
-        "title": "Como me tornar um Desenvolvedor Front End",
-        "url": "/como-me-tornar-um-desenvolvedor-front-end",
-      },
-      Object {
-        "author": "Leandro Oriente",
-        "date": "2013-08-17T00:00:00.000Z",
-        "description": "Quero mostrar minha experiência atual com o mercado de trabalho e com o mundo acadêmico para depois apresentar as conclusões que tirei.",
-        "html": null,
-        "lang": "pt-BR",
-        "slug": "faculdade-de-informatica-fazer-ou-nao-fazer",
-        "thumbnail": "/images/classroom-thumb.jpg",
-        "title": "Faculdade de Informática. Fazer ou não fazer?",
-        "url": "/faculdade-de-informatica-fazer-ou-nao-fazer",
+        "author": "Test",
+        "date": "10/10/2010",
+        "html": "<p>Test</p>",
+        "lang": "pt-br",
+        "slug": "test-test",
+        "thumbnail": "test.png",
+        "title": "Test",
+        "url": "/test/test",
       },
     ]
   }
 >
   <section
     className="wrapper"
+    id="articles"
   >
     <Flex
       flexDirection={
@@ -642,18 +575,17 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                 <ArticleItem
                   article={
                     Object {
-                      "author": "Leandro Oriente",
-                      "date": "2016-08-23T22:18:30.000Z",
-                      "description": "Como chegar ao máximo de performance usando static generators e NGINX",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "criando-sites-estaticos-extremamente-performaticos",
-                      "thumbnail": "/images/webperformance-thumb.png",
-                      "title": "Criando sites estáticos extremamente performáticos",
-                      "url": "/criando-sites-estaticos-extremamente-performaticos",
+                      "author": "Foo Bar",
+                      "date": "12/12/2012",
+                      "html": "<p>Foo Bar</p>",
+                      "lang": "pt-br",
+                      "slug": "foo-bar",
+                      "thumbnail": "foo.png",
+                      "title": "Foo Bar",
+                      "url": "/foo/bar",
                     }
                   }
-                  key="criando-sites-estaticos-extremamente-performaticos"
+                  key="foo-bar"
                 >
                   <div
                     className="wrapper"
@@ -662,14 +594,14 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                       className="title"
                     >
                       <Link
-                        href="/criando-sites-estaticos-extremamente-performaticos"
+                        href="/article/foo/bar"
                       >
                         <a
                           className="link"
-                          href="/criando-sites-estaticos-extremamente-performaticos"
+                          href="/article/foo/bar"
                           onClick={[Function]}
                         >
-                          Criando sites estáticos extremamente performáticos
+                          Foo Bar
                         </a>
                       </Link>
                     </p>
@@ -680,7 +612,7 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                         <span
                           className="badge badge"
                         >
-                          August 2016
+                          Dezember 2012
                         </span>
                       </Badge>
                       <Badge
@@ -689,7 +621,7 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                         <span
                           className="badge badge"
                         >
-                          pt-BR
+                          pt-br
                         </span>
                       </Badge>
                     </div>
@@ -698,18 +630,17 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                 <ArticleItem
                   article={
                     Object {
-                      "author": "Leandro Oriente",
-                      "date": "2014-07-29T00:00:00.000Z",
-                      "description": "Uma dúvida recorrente que vejo em grupos ou que recebo por e-mail é sobre como cobrar por um freela. Particularmente não faço freelas tem muito tempo e não pretendo fazer mais, porém aprendi alguns métodos bem eficazes no período em que fazia e que funcionaram muito bem.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "freelancer-como-cobrar-por-um-freelance",
-                      "thumbnail": "/images/clientes-cobrar-thumb.jpg",
-                      "title": "Como cobrar por um freelance",
-                      "url": "/freelancer-como-cobrar-por-um-freelance",
+                      "author": "Test",
+                      "date": "10/10/2010",
+                      "html": "<p>Test</p>",
+                      "lang": "pt-br",
+                      "slug": "test-test",
+                      "thumbnail": "test.png",
+                      "title": "Test",
+                      "url": "/test/test",
                     }
                   }
-                  key="freelancer-como-cobrar-por-um-freelance"
+                  key="test-test"
                 >
                   <div
                     className="wrapper"
@@ -718,14 +649,14 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                       className="title"
                     >
                       <Link
-                        href="/freelancer-como-cobrar-por-um-freelance"
+                        href="/article/test/test"
                       >
                         <a
                           className="link"
-                          href="/freelancer-como-cobrar-por-um-freelance"
+                          href="/article/test/test"
                           onClick={[Function]}
                         >
-                          Como cobrar por um freelance
+                          Test
                         </a>
                       </Link>
                     </p>
@@ -736,7 +667,7 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                         <span
                           className="badge badge"
                         >
-                          July 2014
+                          October 2010
                         </span>
                       </Badge>
                       <Badge
@@ -745,343 +676,7 @@ exports[`<ArticlesList /> should render <ArticlesList /> component 1`] = `
                         <span
                           className="badge badge"
                         >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2014-03-09T00:00:00.000Z",
-                      "description": "Tracei uma nova meta de vida. Aprender inglês de verdade em 1 ano. Tenho uma base razoavel a bastante tempo que me permite ler artigos, posts, documentações em inglês e compreender boa parte delas mas que não é o suficiente para conversar por 5 minutos com alguém fluente sem parecer um idiota.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "como-aprender-ingles",
-                      "thumbnail": "/images/joel-santana-thumb.jpg",
-                      "title": "Como aprender inglês",
-                      "url": "/como-aprender-ingles",
-                    }
-                  }
-                  key="como-aprender-ingles"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/como-aprender-ingles"
-                      >
-                        <a
-                          className="link"
-                          href="/como-aprender-ingles"
-                          onClick={[Function]}
-                        >
-                          Como aprender inglês
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          March 2014
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2014-01-19T00:00:00.000Z",
-                      "description": "Não consigo clientes porque não tenho portfólio, não tenho portfólio porque não consigo clientes",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "nao-tenho-portfolio-porque-nao-tenho-clientes",
-                      "thumbnail": "/images/nao-tenho-portfolio-thumb.jpg",
-                      "title": "Não consigo clientes porque não tenho portfólio",
-                      "url": "/nao-tenho-portfolio-porque-nao-tenho-clientes",
-                    }
-                  }
-                  key="nao-tenho-portfolio-porque-nao-tenho-clientes"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/nao-tenho-portfolio-porque-nao-tenho-clientes"
-                      >
-                        <a
-                          className="link"
-                          href="/nao-tenho-portfolio-porque-nao-tenho-clientes"
-                          onClick={[Function]}
-                        >
-                          Não consigo clientes porque não tenho portfólio
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          January 2014
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2014-01-12T00:00:00.000Z",
-                      "description": "Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvazie a mente, procure um lugar tranquilo e preparesse porque a mensagem não é das mais agradáveis.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "seu-cliente-precisa-de-um-site",
-                      "thumbnail": "/images/cliente-nao-precisa-site-thumb.jpg",
-                      "title": "Meu cliente realmente precisa de um site?",
-                      "url": "/seu-cliente-precisa-de-um-site",
-                    }
-                  }
-                  key="seu-cliente-precisa-de-um-site"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/seu-cliente-precisa-de-um-site"
-                      >
-                        <a
-                          className="link"
-                          href="/seu-cliente-precisa-de-um-site"
-                          onClick={[Function]}
-                        >
-                          Meu cliente realmente precisa de um site?
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          January 2014
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2013-10-15T00:00:00.000Z",
-                      "description": "O foco do post é atender a galera iniciante e encurtar alguns caminhos, porém se você é mais cascudo e quiser colaborar, fique a vontade.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "guia-de-estudo-front-end",
-                      "thumbnail": "/images/guia-comovente-thumb.jpg",
-                      "title": "Um comovente guia de estudo para desenvolvedores front end",
-                      "url": "/guia-de-estudo-front-end",
-                    }
-                  }
-                  key="guia-de-estudo-front-end"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/guia-de-estudo-front-end"
-                      >
-                        <a
-                          className="link"
-                          href="/guia-de-estudo-front-end"
-                          onClick={[Function]}
-                        >
-                          Um comovente guia de estudo para desenvolvedores front end
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          October 2013
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2013-08-21T00:00:00.000Z",
-                      "description": "Minha visão de obrigações e diferenciais de desenvolvedores front end e algumas pequenas dicas a respeito.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "como-me-tornar-um-desenvolvedor-front-end",
-                      "thumbnail": "/images/developer-thumb.jpg",
-                      "title": "Como me tornar um Desenvolvedor Front End",
-                      "url": "/como-me-tornar-um-desenvolvedor-front-end",
-                    }
-                  }
-                  key="como-me-tornar-um-desenvolvedor-front-end"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/como-me-tornar-um-desenvolvedor-front-end"
-                      >
-                        <a
-                          className="link"
-                          href="/como-me-tornar-um-desenvolvedor-front-end"
-                          onClick={[Function]}
-                        >
-                          Como me tornar um Desenvolvedor Front End
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          August 2013
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
-                        </span>
-                      </Badge>
-                    </div>
-                  </div>
-                </ArticleItem>
-                <ArticleItem
-                  article={
-                    Object {
-                      "author": "Leandro Oriente",
-                      "date": "2013-08-17T00:00:00.000Z",
-                      "description": "Quero mostrar minha experiência atual com o mercado de trabalho e com o mundo acadêmico para depois apresentar as conclusões que tirei.",
-                      "html": null,
-                      "lang": "pt-BR",
-                      "slug": "faculdade-de-informatica-fazer-ou-nao-fazer",
-                      "thumbnail": "/images/classroom-thumb.jpg",
-                      "title": "Faculdade de Informática. Fazer ou não fazer?",
-                      "url": "/faculdade-de-informatica-fazer-ou-nao-fazer",
-                    }
-                  }
-                  key="faculdade-de-informatica-fazer-ou-nao-fazer"
-                >
-                  <div
-                    className="wrapper"
-                  >
-                    <p
-                      className="title"
-                    >
-                      <Link
-                        href="/faculdade-de-informatica-fazer-ou-nao-fazer"
-                      >
-                        <a
-                          className="link"
-                          href="/faculdade-de-informatica-fazer-ou-nao-fazer"
-                          onClick={[Function]}
-                        >
-                          Faculdade de Informática. Fazer ou não fazer?
-                        </a>
-                      </Link>
-                    </p>
-                    <div>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          August 2013
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          pt-BR
+                          pt-br
                         </span>
                       </Badge>
                     </div>

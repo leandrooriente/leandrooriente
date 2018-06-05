@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import articles from 'data/articles';
+import articlesMock from '__mocks__/articles';
 import ArticlesList from './ArticlesList';
 
 describe('<ArticlesList />', () => {
   it('should render <ArticlesList /> component', () => {
     const wrapper = mount(
-      <ArticlesList articles={articles} />
+      <ArticlesList articles={articlesMock} />
     );
 
     expect(wrapper).toMatchSnapshot();

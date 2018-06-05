@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Back /> should render <Back /> component 1`] = `
+<Back>
+  <Link
+    href="/"
+  >
+    <a
+      className="link"
+      href="/"
+      onClick={[Function]}
+    >
+      ↤ Articles
+    </a>
+  </Link>
+</Back>
+`;

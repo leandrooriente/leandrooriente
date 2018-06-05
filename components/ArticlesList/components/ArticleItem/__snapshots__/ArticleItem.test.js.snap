@@ -4,15 +4,14 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
 <ArticleItem
   article={
     Object {
-      "author": "Leandro Oriente",
-      "date": "2014-03-09T00:00:00.000Z",
-      "description": "Tracei uma nova meta de vida. Aprender inglês de verdade em 1 ano. Tenho uma base razoavel a bastante tempo que me permite ler artigos, posts, documentações em inglês e compreender boa parte delas mas que não é o suficiente para conversar por 5 minutos com alguém fluente sem parecer um idiota.",
-      "html": null,
-      "lang": "pt-BR",
-      "slug": "como-aprender-ingles",
-      "thumbnail": "/images/joel-santana-thumb.jpg",
-      "title": "Como aprender inglês",
-      "url": "/como-aprender-ingles",
+      "author": "Test",
+      "date": "10/10/2010",
+      "html": "<p>Test</p>",
+      "lang": "pt-br",
+      "slug": "test-test",
+      "thumbnail": "test.png",
+      "title": "Test",
+      "url": "/test/test",
     }
   }
 >
@@ -23,14 +22,14 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
       className="title"
     >
       <Link
-        href="/como-aprender-ingles"
+        href="/article/test/test"
       >
         <a
           className="link"
-          href="/como-aprender-ingles"
+          href="/article/test/test"
           onClick={[Function]}
         >
-          Como aprender inglês
+          Test
         </a>
       </Link>
     </p>
@@ -41,7 +40,7 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
         <span
           className="badge badge"
         >
-          March 2014
+          October 2010
         </span>
       </Badge>
       <Badge
@@ -50,7 +49,7 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
         <span
           className="badge badge"
         >
-          pt-BR
+          pt-br
         </span>
       </Badge>
     </div>

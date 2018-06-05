@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Notification /> should render <Notification /> component if article is older than 2 years 1`] = `
+<Notification
+  date="10/10/2015"
+>
+  <div
+    className="notification"
+  >
+    Este artigo possui mais de 
+    3
+     anos de existência. O seu conteúdo pode estar desatualizado ou pode não representar mais minha opinião.
+  </div>
+</Notification>
+`;

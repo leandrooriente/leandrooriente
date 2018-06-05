@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> should render <Title /> component 1`] = `
+<Title>
+  <h1
+    className="title"
+  >
+    Test
+  </h1>
+</Title>
+`;

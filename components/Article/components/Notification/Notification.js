@@ -4,6 +4,11 @@ import css from './Notification.css';
 
 const Notification = ({ date }) => {
   const articleDate = new Date(date);
+
+  if (Number.isNaN(articleDate.getTime())) {
+    return null;
+  }
+
   const actualDate = new Date();
   const articleAge = actualDate.getFullYear() - articleDate.getFullYear();
 

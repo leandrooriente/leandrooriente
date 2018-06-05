@@ -19,6 +19,6 @@ app.prepare()
 
     server.listen(port, (err) => {
       if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
+      console.log(`> Ready on http://localhost:${port}`); // eslint-disable-line
     });
   });

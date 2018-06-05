@@ -5,17 +5,19 @@ exports[`<Headline /> should render <Headline /> component 1`] = `
   <section
     className="headline"
   >
-    <h1
-      className="title"
-    >
-      Hi, I‘m Leandro Oriente, a front end developer at 
-      <a
-        href="https://www.travix.com/"
+    <Title>
+      <h1
+        className="title"
       >
-        Travix
-      </a>
-       in Amsterdam.
-    </h1>
+        Hi, I‘m Leandro Oriente, a front end developer at 
+        <a
+          href="https://www.travix.com/"
+        >
+          Travix
+        </a>
+         in Amsterdam.
+      </h1>
+    </Title>
   </section>
 </Headline>
 `;

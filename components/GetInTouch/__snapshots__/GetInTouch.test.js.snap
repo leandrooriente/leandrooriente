@@ -4,6 +4,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
 <GetInTouch>
   <div
     className="container"
+    id="get-in-touch"
   >
     <Subtitle>
       <h3
