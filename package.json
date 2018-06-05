@@ -9,7 +9,7 @@
     "build": "next build",
     "prebuild": "npm run markdown-compiler",
     "lint": "eslint './**/*.js' --color",
-    "markdown-compiler": "node markdown-compiler.js",
+    "markdown-compiler": "node ./articles/data/markdown-compiler.js",
     "start": "next start",
     "test": "NODE_ENV=test jest -c ./test/jest.config.js"
   },

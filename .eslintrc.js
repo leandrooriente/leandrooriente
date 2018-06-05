@@ -4,6 +4,7 @@ module.exports = {
   settings: {
     'import/extensions': ['.js'],
     'import/resolver': {
+      node: {},
       'babel-module': {
         root: ['./']
       }
