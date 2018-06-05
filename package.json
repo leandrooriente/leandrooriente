@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "predev": "npm run markdown-compiler",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "prebuild": "npm run markdown-compiler",
     "lint": "eslint './**/*.js' --color",
     "markdown-compiler": "node ./articles/markdown-compiler.js",
