@@ -8,5 +8,5 @@ export default {
   lang: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired,
+  html: PropTypes.string,
 };
