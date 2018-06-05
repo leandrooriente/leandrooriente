@@ -9,8 +9,8 @@ import css from './ArticleItem.css';
 const ArticleItem = ({ article }) => (
   <div className={css.wrapper}>
     <p className={css.title}>
-      <Link>
-        <a className={css.link} href={`/article${article.url}`}>
+      <Link href={`/article${article.url}`}>
+        <a className={css.link}>
           {article.title}
         </a>
       </Link>

@@ -3,10 +3,10 @@ author: Leandro Oriente
 lang: pt-BR
 date: 2013-08-17
 description: "Quero mostrar minha experiência atual com o mercado de trabalho e com o mundo acadêmico para depois apresentar as conclusões que tirei."
-thumbnail: /images/classroom-thumb.jpg
+thumbnail: /static/images/classroom-thumb.jpg
 ---
 
-![Classroom](/images/classroom.jpg)
+![Classroom](/static/images/classroom.jpg)
 
 Ontem (15/03/13)  postei um texto sobre a minha opinião a respeito das faculdades de Informática no Brasil e o mercado de trabalho e hoje resolvi reescrever com base em tudo que aprendi nessas 24 horas. Recebi feedbacks incríveis e evoluí muito minha opinião.
 

@@ -3,7 +3,7 @@ author: Leandro Oriente
 lang: pt-BR
 date: 2013-08-21
 description: "Minha visão de obrigações e diferenciais de desenvolvedores front end e algumas pequenas dicas a respeito."
-thumbnail: /images/developer-thumb.jpg
+thumbnail: /static/images/developer-thumb.jpg
 ---
 
 Minha visão de obrigações e diferenciais de desenvolvedores front end e algumas pequenas dicas a respeito.

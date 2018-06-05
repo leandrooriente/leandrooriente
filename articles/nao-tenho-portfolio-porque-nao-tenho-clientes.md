@@ -3,7 +3,7 @@ author: Leandro Oriente
 lang: pt-BR
 date: 2014-01-19
 description: "Não consigo clientes porque não tenho portfólio, não tenho portfólio porque não consigo clientes"
-thumbnail: /images/nao-tenho-portfolio-thumb.jpg
+thumbnail: /static/images/nao-tenho-portfolio-thumb.jpg
 ---
 
 Uma das maiores dificuldades para quem está começando a carreira é em relação ao portfólio. Você se esforça, faz um layout lindo, coloca em prática tudo o que aprendeu mas na hora de trocar as imagens de placeholder pelos seus trabalhos... Nada. Você não tem nenhum trabalho para exibir.
@@ -28,7 +28,7 @@ Além disso você pode entrar em contato com o dono do site original e oferecer 
 
 Outra opção interessante é trabalhar com o oposto. Um site que tenha uma interface fantástica e muito bem desenvolvida e tentar melhorar pequenos pontos. Nesse caso você pode usar qualquer aplicação do Google, Facebook, Linkedin entre outros. Obviamente comentando sobre o porque você alterou esse ponto e porque isso melhoraria o produto.
 
-![Facebook Redesign](/images/facebook-redesign.jpg)
+![Facebook Redesign](/static/images/facebook-redesign.jpg)
 
 ### Experimentos
 

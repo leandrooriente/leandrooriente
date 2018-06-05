@@ -3,7 +3,7 @@ author: Leandro Oriente
 lang: pt-BR
 date: 2014-07-29
 description: "Uma dúvida recorrente que vejo em grupos ou que recebo por e-mail é sobre como cobrar por um freela. Particularmente não faço freelas tem muito tempo e não pretendo fazer mais, porém aprendi alguns métodos bem eficazes no período em que fazia e que funcionaram muito bem."
-thumbnail: /images/clientes-cobrar-thumb.jpg
+thumbnail: /static/images/clientes-cobrar-thumb.jpg
 ---
 
 Uma dúvida recorrente que vejo em grupos ou que recebo por e-mail é sobre como cobrar por um freela.
@@ -64,7 +64,7 @@ Esse ponto é onde as pessoas costumam errar feio. Cobrar metade no início e me
 
 Se você já fez freelas e cobra assim, provavelmente já passou por algumas das situações anteriores. Conheço um cara, que conhece um cara que terminou um serviço e **3 (TRÊS) anos** depois recebeu a resposta do cliente que devia os 50% restantes perguntando sobre o andamento do projeto. Quando questionou sobre os valores pendentes o cliente sumiu para sempre como se nada tivesse acontecido. Esse cara ficou muito chateado com isso. Sério, amigo de um amigo meu.
 
-![Esse cara sou eu](/images/esse-cara-sou-eu.jpg)
+![Esse cara sou eu](/static/images/esse-cara-sou-eu.jpg)
 
 ## OK, mas como cobrar?
 
@@ -116,4 +116,4 @@ Quando você toca um projeto seu, não tem pressões externas, pode investir em 
 
 Caso precise de mais dinheiro, invista mais em você e procure evoluir no seu emprego ou no seu negócio.
 
-![Rich bitch](/images/rich-bitch.gif)
+![Rich bitch](/static/images/rich-bitch.gif)

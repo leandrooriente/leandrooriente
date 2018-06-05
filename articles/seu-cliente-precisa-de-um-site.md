@@ -3,7 +3,7 @@ author: Leandro Oriente
 lang: pt-BR
 date: 2014-01-12
 description: "Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvazie a mente, procure um lugar tranquilo e preparesse porque a mensagem não é das mais agradáveis."
-thumbnail: /images/cliente-nao-precisa-site-thumb.jpg
+thumbnail: /static/images/cliente-nao-precisa-site-thumb.jpg
 ---
 
 Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvaziem a mente, procurem um lugar tranquilo e preparem-se, porque a mensagem não é das mais agradáveis.
@@ -32,7 +32,7 @@ OPA! Perae, parece que um jovem levantou a mão lá na última fileira.
 
 Então amigo, provavelmente você achou algo semelhante a imagem a seguir, e assim damos início a segunda parte desse post polêmico.
 
-![SERP padaria](/images/busca-padaria.jpg)
+![SERP padaria](/static/images/busca-padaria.jpg)
 
 ## O que posso fazer pelo meu cliente
 
@@ -89,7 +89,7 @@ Segue um pequeno guia do que não pode faltar.
 - E-mail de contato.
 - Descrição enxuta e objetiva. Caso o negócio tenha um diferencial legal, foque nele. Vale mais um "70% de desconto no corte de cabelo aos domingos" do que um "o melhor cabelereiro de Taubaté".
 
-![PUB em Ipanema no Google Plus](/images/pub-ipanema-gplus.jpg)
+![PUB em Ipanema no Google Plus](/static/images/pub-ipanema-gplus.jpg)
 
 Quer página melhor para pequenas e médias empresas que essa? Fotos, reviews dos clientes, endereço, telefone, layout arrumado e bem ranqueado.
 

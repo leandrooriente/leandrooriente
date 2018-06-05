@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ArticleShape from 'propTypes/article';
 import Title from 'components/Title';
-import Link from 'next/link';
+import Back from './components/Back';
+import Notification from './components/Notification';
 import css from './Article.css';
-
-const Back = () => (
-  <Link>
-    <a className={css.link} href="/">↤ Articles</a>
-  </Link>
-);
 
 const Article = ({ article }) => (
   <article className={css.article}>
@@ -19,9 +14,13 @@ const Article = ({ article }) => (
         { article.title }
       </Title>
     </header>
+
+    <Notification date={article.date} />
+
     <div
       dangerouslySetInnerHTML={{__html: article.html}}  // eslint-disable-line
     />
+
     <Back />
   </article>
 );

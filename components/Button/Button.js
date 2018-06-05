@@ -20,8 +20,8 @@ const Button = ({
 
   if (href) {
     return (
-      <Link>
-        <a className={classes} href={href}>{ children }</a>
+      <Link href={href}>
+        <a className={classes}>{ children }</a>
       </Link>
     );
   }
