@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
+<GetInTouch>
+  <div
+    className="container"
+  >
+    <Subtitle>
+      <h3
+        className="title"
+      >
+        Get in touch
+      </h3>
+    </Subtitle>
+    <div
+      className="links"
+    >
+      <Button
+        className="links"
+        href="https://www.linkedin.com/in/leandrooriente/"
+        key="Linkedin"
+        onClick={null}
+      >
+        <Link
+          href="https://www.linkedin.com/in/leandrooriente/"
+        >
+          <a
+            className="button links"
+            href="https://www.linkedin.com/in/leandrooriente/"
+            onClick={[Function]}
+          >
+            linkedin.com/in/leandrooriente
+          </a>
+        </Link>
+      </Button>
+      <Button
+        className="links"
+        href="https://github.com/leandrooriente"
+        key="Github"
+        onClick={null}
+      >
+        <Link
+          href="https://github.com/leandrooriente"
+        >
+          <a
+            className="button links"
+            href="https://github.com/leandrooriente"
+            onClick={[Function]}
+          >
+            github.com/leandrooriente
+          </a>
+        </Link>
+      </Button>
+      <Button
+        className="links"
+        href="mailto:leandroriente@gmail.com"
+        key="Email"
+        onClick={null}
+      >
+        <Link
+          href="mailto:leandroriente@gmail.com"
+        >
+          <a
+            className="button links"
+            href="mailto:leandroriente@gmail.com"
+            onClick={[Function]}
+          >
+            leandroriente@gmail.com
+          </a>
+        </Link>
+      </Button>
+      <Button
+        className="links"
+        href="#"
+        key="Resume"
+        onClick={null}
+      >
+        <Link
+          href="#"
+        >
+          <a
+            className="button links"
+            href="#"
+            onClick={[Function]}
+          >
+            resume
+          </a>
+        </Link>
+      </Button>
+    </div>
+  </div>
+</GetInTouch>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section /> should render <Section /> component 1`] = `
+<Section>
+  <section
+    className="wrapper"
+  >
+    Test
+  </section>
+</Section>
+`;

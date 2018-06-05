@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
+<Experience
+  experience={
+    Object {
+      "companyName": "Travix",
+      "companyUrl": "https://www.travix.com",
+      "description": "
+    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+
+    <ul>
+      <li>
+        Frontend Team Leader responsible for flights results and seat maps. 
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+      </li>
+    </ul>
+  ",
+      "endDate": "Current",
+      "role": "Front End Developer",
+      "stack": Array [
+        "React",
+        "SASS",
+        "CSS Modules",
+        "Webpack",
+        "Jest",
+        "Enzyme",
+        "Webdriver.io",
+        "Express",
+        "Frint.js",
+        "SSR",
+      ],
+      "startDate": "September 2017",
+    }
+  }
+>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="headline"
+    >
+      <strong>
+        Travix
+      </strong>
+       | 
+      <span>
+        September 2017
+      </span>
+       - 
+      <span>
+        Current
+      </span>
+    </div>
+    <div
+      className="description"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+
+    <ul>
+      <li>
+        Frontend Team Leader responsible for flights results and seat maps. 
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+      </li>
+    </ul>
+  ",
+        }
+      }
+    />
+    <div
+      className="stack"
+    >
+      <Badge
+        className="badge"
+        key="React"
+      >
+        <span
+          className="badge badge"
+        >
+          React
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="SASS"
+      >
+        <span
+          className="badge badge"
+        >
+          SASS
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="CSS Modules"
+      >
+        <span
+          className="badge badge"
+        >
+          CSS Modules
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Webpack"
+      >
+        <span
+          className="badge badge"
+        >
+          Webpack
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Jest"
+      >
+        <span
+          className="badge badge"
+        >
+          Jest
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Enzyme"
+      >
+        <span
+          className="badge badge"
+        >
+          Enzyme
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Webdriver.io"
+      >
+        <span
+          className="badge badge"
+        >
+          Webdriver.io
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Express"
+      >
+        <span
+          className="badge badge"
+        >
+          Express
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Frint.js"
+      >
+        <span
+          className="badge badge"
+        >
+          Frint.js
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="SSR"
+      >
+        <span
+          className="badge badge"
+        >
+          SSR
+        </span>
+      </Badge>
+    </div>
+  </div>
+</Experience>
+`;

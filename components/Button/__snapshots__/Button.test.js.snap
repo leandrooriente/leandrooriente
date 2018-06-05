@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render <Button /> component as button when receive onClick prop 1`] = `
+<Button
+  className={null}
+  href={null}
+  onClick={[MockFunction]}
+>
+  <button
+    className="button"
+    onClick={[MockFunction]}
+  >
+    submit
+  </button>
+</Button>
+`;
+
+exports[`<Button /> should render <Button /> component as link when receive href prop 1`] = `
+<Button
+  className={null}
+  href="https://test.com"
+  onClick={null}
+>
+  <Link
+    href="https://test.com"
+  >
+    <a
+      className="button"
+      href="https://test.com"
+      onClick={[Function]}
+    >
+      test.com
+    </a>
+  </Link>
+</Button>
+`;

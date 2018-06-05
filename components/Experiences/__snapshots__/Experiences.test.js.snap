@@ -1,0 +1,1240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Experiences /> should render <Experiences /> component 1`] = `
+<Experiences
+  experiences={
+    Array [
+      Object {
+        "companyName": "Travix",
+        "companyUrl": "https://www.travix.com",
+        "description": "
+    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+
+    <ul>
+      <li>
+        Frontend Team Leader responsible for flights results and seat maps. 
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+      </li>
+    </ul>
+  ",
+        "endDate": "Current",
+        "role": "Front End Developer",
+        "stack": Array [
+          "React",
+          "SASS",
+          "CSS Modules",
+          "Webpack",
+          "Jest",
+          "Enzyme",
+          "Webdriver.io",
+          "Express",
+          "Frint.js",
+          "SSR",
+        ],
+        "startDate": "September 2017",
+      },
+      Object {
+        "companyName": "OLX Brasil",
+        "companyUrl": "https://www.storiaimoveis.com.br",
+        "description": "  
+    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+
+    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+
+    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+  ",
+        "endDate": "October 2017",
+        "role": "Front End Developer",
+        "stack": Array [
+          "React",
+          "PostCSS",
+          "CSS Modules",
+          "Webpack",
+          "Express",
+          "Redux",
+          "Redux-Saga",
+          "SSR",
+          "AWS",
+          "Google SDK",
+        ],
+        "startDate": "August 2016",
+      },
+      Object {
+        "companyName": "VTEX",
+        "companyUrl": "http://www.vtex.com",
+        "description": "  
+    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+
+    <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
+    
+    <p>I was the front end lead developer of the authentication experience, payment gateway and notification center. </p>
+    
+    <p>I also improved the hiring process of VTEX and I was part of the team responsible for the company's technology events.</p>
+  ",
+        "endDate": "October 2016",
+        "role": "Front End Developer",
+        "stack": Array [
+          "Javascript",
+          "Node.js",
+          "React",
+          "Angular",
+          "SASS",
+          "Less",
+        ],
+        "startDate": "November 2012",
+      },
+      Object {
+        "companyName": "Peixe Urbano",
+        "companyUrl": "https://www.peixeurbano.com.br",
+        "description": "  
+    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+
+    <p>Focus on usability, semantic and performative code.</p>
+  ",
+        "endDate": "October 2012",
+        "role": "Front End Developer",
+        "stack": Array [
+          "Javascript",
+          "CSS3",
+          "SASS",
+          "jQuery",
+        ],
+        "startDate": "February 2012",
+      },
+    ]
+  }
+>
+  <section
+    className="wrapper"
+  >
+    <Flex
+      flexDirection={
+        Array [
+          "column",
+          "row",
+        ]
+      }
+      theme={
+        Object {
+          "breakpoints": Array [
+            "40em",
+            "52em",
+            "64em",
+          ],
+          "fontSizes": Array [
+            12,
+            14,
+            16,
+            20,
+            24,
+            32,
+            48,
+            64,
+            96,
+            128,
+          ],
+          "space": Array [
+            0,
+            4,
+            8,
+            16,
+            32,
+            64,
+            128,
+            256,
+            512,
+          ],
+        }
+      }
+    >
+      <Clean.div
+        blacklist={
+          Array [
+            "m",
+            "mt",
+            "mr",
+            "mb",
+            "ml",
+            "mx",
+            "my",
+            "p",
+            "pt",
+            "pr",
+            "pb",
+            "pl",
+            "px",
+            "py",
+            "width",
+            "w",
+            "fontSize",
+            "f",
+            "color",
+            "bg",
+            "fontFamily",
+            "font",
+            "textAlign",
+            "align",
+            "lineHeight",
+            "fontWeight",
+            "letterSpacing",
+            "display",
+            "maxWidth",
+            "minWidth",
+            "height",
+            "maxHeight",
+            "minHeight",
+            "size",
+            "ratio",
+            "alignItems",
+            "alignContent",
+            "justifyContent",
+            "justify",
+            "flexWrap",
+            "wrap",
+            "flexBasis",
+            "flexDirection",
+            "flex",
+            "justifySelf",
+            "alignSelf",
+            "order",
+            "gridGap",
+            "gridColumnGap",
+            "gridRowGap",
+            "gridColumn",
+            "gridRow",
+            "gridAutoFlow",
+            "gridAutoColumns",
+            "gridAutoRows",
+            "gridTemplateColumns",
+            "gridTemplateRows",
+            "border",
+            "borderTop",
+            "borderRight",
+            "borderBottom",
+            "borderLeft",
+            "borderColor",
+            "borderRadius",
+            "boxShadow",
+            "background",
+            "backgroundImage",
+            "bgImage",
+            "backgroundSize",
+            "bgSize",
+            "backgroundPosition",
+            "bgPosition",
+            "backgroundRepeat",
+            "bgRepeat",
+            "position",
+            "zIndex",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "hover",
+            "focus",
+            "active",
+            "disabledStyle",
+            "textStyle",
+            "colors",
+            "buttonStyle",
+            "borderWidth",
+          ]
+        }
+        className="sc-bwzfXH jyiNXZ"
+        flexDirection={
+          Array [
+            "column",
+            "row",
+          ]
+        }
+        is="div"
+        theme={
+          Object {
+            "breakpoints": Array [
+              "40em",
+              "52em",
+              "64em",
+            ],
+            "fontSizes": Array [
+              12,
+              14,
+              16,
+              20,
+              24,
+              32,
+              48,
+              64,
+              96,
+              128,
+            ],
+            "space": Array [
+              0,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+            ],
+          }
+        }
+      >
+        <div
+          className="sc-bwzfXH jyiNXZ"
+        >
+          <Box
+            theme={
+              Object {
+                "breakpoints": Array [
+                  "40em",
+                  "52em",
+                  "64em",
+                ],
+                "fontSizes": Array [
+                  12,
+                  14,
+                  16,
+                  20,
+                  24,
+                  32,
+                  48,
+                  64,
+                  96,
+                  128,
+                ],
+                "space": Array [
+                  0,
+                  4,
+                  8,
+                  16,
+                  32,
+                  64,
+                  128,
+                  256,
+                  512,
+                ],
+              }
+            }
+            w={
+              Array [
+                1,
+                0.25,
+              ]
+            }
+          >
+            <Clean.div
+              blacklist={
+                Array [
+                  "m",
+                  "mt",
+                  "mr",
+                  "mb",
+                  "ml",
+                  "mx",
+                  "my",
+                  "p",
+                  "pt",
+                  "pr",
+                  "pb",
+                  "pl",
+                  "px",
+                  "py",
+                  "width",
+                  "w",
+                  "fontSize",
+                  "f",
+                  "color",
+                  "bg",
+                  "fontFamily",
+                  "font",
+                  "textAlign",
+                  "align",
+                  "lineHeight",
+                  "fontWeight",
+                  "letterSpacing",
+                  "display",
+                  "maxWidth",
+                  "minWidth",
+                  "height",
+                  "maxHeight",
+                  "minHeight",
+                  "size",
+                  "ratio",
+                  "alignItems",
+                  "alignContent",
+                  "justifyContent",
+                  "justify",
+                  "flexWrap",
+                  "wrap",
+                  "flexBasis",
+                  "flexDirection",
+                  "flex",
+                  "justifySelf",
+                  "alignSelf",
+                  "order",
+                  "gridGap",
+                  "gridColumnGap",
+                  "gridRowGap",
+                  "gridColumn",
+                  "gridRow",
+                  "gridAutoFlow",
+                  "gridAutoColumns",
+                  "gridAutoRows",
+                  "gridTemplateColumns",
+                  "gridTemplateRows",
+                  "border",
+                  "borderTop",
+                  "borderRight",
+                  "borderBottom",
+                  "borderLeft",
+                  "borderColor",
+                  "borderRadius",
+                  "boxShadow",
+                  "background",
+                  "backgroundImage",
+                  "bgImage",
+                  "backgroundSize",
+                  "bgSize",
+                  "backgroundPosition",
+                  "bgPosition",
+                  "backgroundRepeat",
+                  "bgRepeat",
+                  "position",
+                  "zIndex",
+                  "top",
+                  "right",
+                  "bottom",
+                  "left",
+                  "hover",
+                  "focus",
+                  "active",
+                  "disabledStyle",
+                  "textStyle",
+                  "colors",
+                  "buttonStyle",
+                  "borderWidth",
+                ]
+              }
+              className="sc-bdVaJa eyHDoe"
+              is="div"
+              theme={
+                Object {
+                  "breakpoints": Array [
+                    "40em",
+                    "52em",
+                    "64em",
+                  ],
+                  "fontSizes": Array [
+                    12,
+                    14,
+                    16,
+                    20,
+                    24,
+                    32,
+                    48,
+                    64,
+                    96,
+                    128,
+                  ],
+                  "space": Array [
+                    0,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                  ],
+                }
+              }
+              w={
+                Array [
+                  1,
+                  0.25,
+                ]
+              }
+            >
+              <div
+                className="sc-bdVaJa eyHDoe"
+              >
+                <Subtitle>
+                  <h3
+                    className="title"
+                  >
+                    Experience
+                  </h3>
+                </Subtitle>
+              </div>
+            </Clean.div>
+          </Box>
+          <Box
+            theme={
+              Object {
+                "breakpoints": Array [
+                  "40em",
+                  "52em",
+                  "64em",
+                ],
+                "fontSizes": Array [
+                  12,
+                  14,
+                  16,
+                  20,
+                  24,
+                  32,
+                  48,
+                  64,
+                  96,
+                  128,
+                ],
+                "space": Array [
+                  0,
+                  4,
+                  8,
+                  16,
+                  32,
+                  64,
+                  128,
+                  256,
+                  512,
+                ],
+              }
+            }
+            w={
+              Array [
+                1,
+                0.75,
+              ]
+            }
+          >
+            <Clean.div
+              blacklist={
+                Array [
+                  "m",
+                  "mt",
+                  "mr",
+                  "mb",
+                  "ml",
+                  "mx",
+                  "my",
+                  "p",
+                  "pt",
+                  "pr",
+                  "pb",
+                  "pl",
+                  "px",
+                  "py",
+                  "width",
+                  "w",
+                  "fontSize",
+                  "f",
+                  "color",
+                  "bg",
+                  "fontFamily",
+                  "font",
+                  "textAlign",
+                  "align",
+                  "lineHeight",
+                  "fontWeight",
+                  "letterSpacing",
+                  "display",
+                  "maxWidth",
+                  "minWidth",
+                  "height",
+                  "maxHeight",
+                  "minHeight",
+                  "size",
+                  "ratio",
+                  "alignItems",
+                  "alignContent",
+                  "justifyContent",
+                  "justify",
+                  "flexWrap",
+                  "wrap",
+                  "flexBasis",
+                  "flexDirection",
+                  "flex",
+                  "justifySelf",
+                  "alignSelf",
+                  "order",
+                  "gridGap",
+                  "gridColumnGap",
+                  "gridRowGap",
+                  "gridColumn",
+                  "gridRow",
+                  "gridAutoFlow",
+                  "gridAutoColumns",
+                  "gridAutoRows",
+                  "gridTemplateColumns",
+                  "gridTemplateRows",
+                  "border",
+                  "borderTop",
+                  "borderRight",
+                  "borderBottom",
+                  "borderLeft",
+                  "borderColor",
+                  "borderRadius",
+                  "boxShadow",
+                  "background",
+                  "backgroundImage",
+                  "bgImage",
+                  "backgroundSize",
+                  "bgSize",
+                  "backgroundPosition",
+                  "bgPosition",
+                  "backgroundRepeat",
+                  "bgRepeat",
+                  "position",
+                  "zIndex",
+                  "top",
+                  "right",
+                  "bottom",
+                  "left",
+                  "hover",
+                  "focus",
+                  "active",
+                  "disabledStyle",
+                  "textStyle",
+                  "colors",
+                  "buttonStyle",
+                  "borderWidth",
+                ]
+              }
+              className="sc-bdVaJa biKVss"
+              is="div"
+              theme={
+                Object {
+                  "breakpoints": Array [
+                    "40em",
+                    "52em",
+                    "64em",
+                  ],
+                  "fontSizes": Array [
+                    12,
+                    14,
+                    16,
+                    20,
+                    24,
+                    32,
+                    48,
+                    64,
+                    96,
+                    128,
+                  ],
+                  "space": Array [
+                    0,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                  ],
+                }
+              }
+              w={
+                Array [
+                  1,
+                  0.75,
+                ]
+              }
+            >
+              <div
+                className="sc-bdVaJa biKVss"
+              >
+                <Experience
+                  experience={
+                    Object {
+                      "companyName": "Travix",
+                      "companyUrl": "https://www.travix.com",
+                      "description": "
+    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+
+    <ul>
+      <li>
+        Frontend Team Leader responsible for flights results and seat maps. 
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+      </li>
+    </ul>
+  ",
+                      "endDate": "Current",
+                      "role": "Front End Developer",
+                      "stack": Array [
+                        "React",
+                        "SASS",
+                        "CSS Modules",
+                        "Webpack",
+                        "Jest",
+                        "Enzyme",
+                        "Webdriver.io",
+                        "Express",
+                        "Frint.js",
+                        "SSR",
+                      ],
+                      "startDate": "September 2017",
+                    }
+                  }
+                  key="Travix"
+                >
+                  <div
+                    className="wrapper"
+                  >
+                    <div
+                      className="headline"
+                    >
+                      <strong>
+                        Travix
+                      </strong>
+                       | 
+                      <span>
+                        September 2017
+                      </span>
+                       - 
+                      <span>
+                        Current
+                      </span>
+                    </div>
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "
+    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+
+    <ul>
+      <li>
+        Frontend Team Leader responsible for flights results and seat maps. 
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+      </li>
+    </ul>
+  ",
+                        }
+                      }
+                    />
+                    <div
+                      className="stack"
+                    >
+                      <Badge
+                        className="badge"
+                        key="React"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          React
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SASS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SASS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="CSS Modules"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          CSS Modules
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Webpack"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Webpack
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Jest"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Jest
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Enzyme"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Enzyme
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Webdriver.io"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Webdriver.io
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Express"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Express
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Frint.js"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Frint.js
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SSR"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SSR
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
+                </Experience>
+                <Experience
+                  experience={
+                    Object {
+                      "companyName": "OLX Brasil",
+                      "companyUrl": "https://www.storiaimoveis.com.br",
+                      "description": "  
+    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+
+    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+
+    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+  ",
+                      "endDate": "October 2017",
+                      "role": "Front End Developer",
+                      "stack": Array [
+                        "React",
+                        "PostCSS",
+                        "CSS Modules",
+                        "Webpack",
+                        "Express",
+                        "Redux",
+                        "Redux-Saga",
+                        "SSR",
+                        "AWS",
+                        "Google SDK",
+                      ],
+                      "startDate": "August 2016",
+                    }
+                  }
+                  key="OLX Brasil"
+                >
+                  <div
+                    className="wrapper"
+                  >
+                    <div
+                      className="headline"
+                    >
+                      <strong>
+                        OLX Brasil
+                      </strong>
+                       | 
+                      <span>
+                        August 2016
+                      </span>
+                       - 
+                      <span>
+                        October 2017
+                      </span>
+                    </div>
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  
+    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+
+    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+
+    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+  ",
+                        }
+                      }
+                    />
+                    <div
+                      className="stack"
+                    >
+                      <Badge
+                        className="badge"
+                        key="React"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          React
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="PostCSS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          PostCSS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="CSS Modules"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          CSS Modules
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Webpack"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Webpack
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Express"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Express
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Redux"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Redux
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Redux-Saga"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Redux-Saga
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SSR"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SSR
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="AWS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          AWS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Google SDK"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Google SDK
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
+                </Experience>
+                <Experience
+                  experience={
+                    Object {
+                      "companyName": "VTEX",
+                      "companyUrl": "http://www.vtex.com",
+                      "description": "  
+    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+
+    <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
+    
+    <p>I was the front end lead developer of the authentication experience, payment gateway and notification center. </p>
+    
+    <p>I also improved the hiring process of VTEX and I was part of the team responsible for the company's technology events.</p>
+  ",
+                      "endDate": "October 2016",
+                      "role": "Front End Developer",
+                      "stack": Array [
+                        "Javascript",
+                        "Node.js",
+                        "React",
+                        "Angular",
+                        "SASS",
+                        "Less",
+                      ],
+                      "startDate": "November 2012",
+                    }
+                  }
+                  key="VTEX"
+                >
+                  <div
+                    className="wrapper"
+                  >
+                    <div
+                      className="headline"
+                    >
+                      <strong>
+                        VTEX
+                      </strong>
+                       | 
+                      <span>
+                        November 2012
+                      </span>
+                       - 
+                      <span>
+                        October 2016
+                      </span>
+                    </div>
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  
+    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+
+    <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
+    
+    <p>I was the front end lead developer of the authentication experience, payment gateway and notification center. </p>
+    
+    <p>I also improved the hiring process of VTEX and I was part of the team responsible for the company's technology events.</p>
+  ",
+                        }
+                      }
+                    />
+                    <div
+                      className="stack"
+                    >
+                      <Badge
+                        className="badge"
+                        key="Javascript"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Javascript
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Node.js"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Node.js
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="React"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          React
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Angular"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Angular
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SASS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SASS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Less"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Less
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
+                </Experience>
+                <Experience
+                  experience={
+                    Object {
+                      "companyName": "Peixe Urbano",
+                      "companyUrl": "https://www.peixeurbano.com.br",
+                      "description": "  
+    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+
+    <p>Focus on usability, semantic and performative code.</p>
+  ",
+                      "endDate": "October 2012",
+                      "role": "Front End Developer",
+                      "stack": Array [
+                        "Javascript",
+                        "CSS3",
+                        "SASS",
+                        "jQuery",
+                      ],
+                      "startDate": "February 2012",
+                    }
+                  }
+                  key="Peixe Urbano"
+                >
+                  <div
+                    className="wrapper"
+                  >
+                    <div
+                      className="headline"
+                    >
+                      <strong>
+                        Peixe Urbano
+                      </strong>
+                       | 
+                      <span>
+                        February 2012
+                      </span>
+                       - 
+                      <span>
+                        October 2012
+                      </span>
+                    </div>
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  
+    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+
+    <p>Focus on usability, semantic and performative code.</p>
+  ",
+                        }
+                      }
+                    />
+                    <div
+                      className="stack"
+                    >
+                      <Badge
+                        className="badge"
+                        key="Javascript"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Javascript
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="CSS3"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          CSS3
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SASS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SASS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="jQuery"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          jQuery
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
+                </Experience>
+              </div>
+            </Clean.div>
+          </Box>
+        </div>
+      </Clean.div>
+    </Flex>
+  </section>
+</Experiences>
+`;
