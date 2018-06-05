@@ -4,6 +4,10 @@ exports[`<Main /> should render <Header /> component 1`] = `
 <Main>
   <section
     className="wrapper"
-  />
+  >
+    <span>
+      Children
+    </span>
+  </section>
 </Main>
 `;
