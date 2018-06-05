@@ -10,7 +10,8 @@
     "start": "next start",
     "test": "NODE_ENV=test jest -c ./test/jest.config.js"
   },
-  "reository": {
+  "prepush": "npm run lint && npm test",
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/leandrooriente/leandrooriente.git"
   },
@@ -35,6 +36,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
+    "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.1.0"
   }
