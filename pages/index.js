@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react';
+import Main from '../components/Main';
 import Header from '../components/Header';
+import Headline from '../components/Headline';
 
 export default () => (
   <Fragment>
     <Header />
-    <div>Welcome to next.js!</div>
+    <Main>
+      <Headline />
+    </Main>
   </Fragment>
 );
