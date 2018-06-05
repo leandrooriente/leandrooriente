@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 export default {
-  id: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

@@ -40,7 +40,6 @@ const getArticles = dir => fs
       ...heading,
       slug,
       url: `/${slug}`,
-      id: Number(new Date()),
       html,
     };
   });
