@@ -3,9 +3,11 @@
   --paragraph-font-family: 'Source Sans Pro', sans-serif;
 
   --headline-font-size: 40px;
+  --paragraph-font-size: 18px;
 
   --primary-color: #2a2a33;
   --secondary-color: #919199;
+  --base-color: #333;
 
   --highlight-color: #2963ff;
   --light-gray: #f7f5f5;
@@ -15,4 +17,6 @@
 
 body {
   font-family: var(--paragraph-font-family);
+  font-size: var(--paragraph-font-size);
+  color: var(--base-color);
 }

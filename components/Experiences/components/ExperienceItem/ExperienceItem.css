@@ -1,0 +1,23 @@
+.wrapper {
+  margin-bottom: 75px;
+}
+
+.wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.headline {
+  line-height: 1.6;
+}
+
+.description {
+  line-height: 1.4;
+}
+
+.badge {
+  margin: 0 5px 5px 0;
+}
+
+.badge:last-child {
+  margin: 0;
+}

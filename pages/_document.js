@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
           <link href="https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro:400,700" rel="stylesheet" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
         <body>
           <Main />
