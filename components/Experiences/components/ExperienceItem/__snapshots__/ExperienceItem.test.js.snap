@@ -23,13 +23,13 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       "role": "Front End Developer",
       "stack": Array [
         "React",
-        "SASS",
-        "CSS Modules",
-        "Webpack",
         "Jest",
         "Enzyme",
-        "Webdriver.io",
         "Express",
+        "Webpack",
+        "CSS Modules",
+        "SASS",
+        "Webdriver.io",
         "Frint.js",
         "SSR",
       ],
@@ -90,36 +90,6 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       </Badge>
       <Badge
         className="badge"
-        key="SASS"
-      >
-        <span
-          className="badge badge"
-        >
-          SASS
-        </span>
-      </Badge>
-      <Badge
-        className="badge"
-        key="CSS Modules"
-      >
-        <span
-          className="badge badge"
-        >
-          CSS Modules
-        </span>
-      </Badge>
-      <Badge
-        className="badge"
-        key="Webpack"
-      >
-        <span
-          className="badge badge"
-        >
-          Webpack
-        </span>
-      </Badge>
-      <Badge
-        className="badge"
         key="Jest"
       >
         <span
@@ -140,22 +110,52 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       </Badge>
       <Badge
         className="badge"
-        key="Webdriver.io"
-      >
-        <span
-          className="badge badge"
-        >
-          Webdriver.io
-        </span>
-      </Badge>
-      <Badge
-        className="badge"
         key="Express"
       >
         <span
           className="badge badge"
         >
           Express
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Webpack"
+      >
+        <span
+          className="badge badge"
+        >
+          Webpack
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="CSS Modules"
+      >
+        <span
+          className="badge badge"
+        >
+          CSS Modules
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="SASS"
+      >
+        <span
+          className="badge badge"
+        >
+          SASS
+        </span>
+      </Badge>
+      <Badge
+        className="badge"
+        key="Webdriver.io"
+      >
+        <span
+          className="badge badge"
+        >
+          Webdriver.io
         </span>
       </Badge>
       <Badge

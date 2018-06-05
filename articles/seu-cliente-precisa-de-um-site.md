@@ -1,5 +1,6 @@
 title:  "Meu cliente realmente precisa de um site?"
 author: Leandro Oriente
+lang: pt-BR
 date: 2014-01-12
 description: "Atenção, esse é um post polêmico. Antes de iniciar o processo de leitura, esvazie a mente, procure um lugar tranquilo e preparesse porque a mensagem não é das mais agradáveis."
 thumbnail: /images/cliente-nao-precisa-site-thumb.jpg

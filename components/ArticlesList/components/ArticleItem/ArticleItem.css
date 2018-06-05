@@ -1,0 +1,35 @@
+.wrapper {
+  margin-bottom: 25px;
+}
+
+.wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.title {
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.link {
+  margin: 0 -5px;
+  padding: 0 5px;
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--light-gray);
+  transition: all var(--fast-transition) ease-in;  
+}
+
+.link:hover {
+  background: var(--primary-color);
+  color: var(--light-gray);
+}
+
+.badge {
+  margin: 0 10px 10px 0;
+}
+
+.badge:last-child {
+  margin: 0;
+}

@@ -24,13 +24,13 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "role": "Front End Developer",
         "stack": Array [
           "React",
-          "SASS",
-          "CSS Modules",
-          "Webpack",
           "Jest",
           "Enzyme",
-          "Webdriver.io",
           "Express",
+          "Webpack",
+          "CSS Modules",
+          "SASS",
+          "Webdriver.io",
           "Frint.js",
           "SSR",
         ],
@@ -50,12 +50,12 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "role": "Front End Developer",
         "stack": Array [
           "React",
-          "PostCSS",
-          "CSS Modules",
-          "Webpack",
-          "Express",
           "Redux",
           "Redux-Saga",
+          "Webpack",
+          "Express",
+          "PostCSS",
+          "CSS Modules",
           "SSR",
           "AWS",
           "Google SDK",
@@ -77,9 +77,9 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "endDate": "October 2016",
         "role": "Front End Developer",
         "stack": Array [
-          "Javascript",
-          "Node.js",
           "React",
+          "Node.js",
+          "Javascript",
           "Angular",
           "SASS",
           "Less",
@@ -673,13 +673,13 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "role": "Front End Developer",
                       "stack": Array [
                         "React",
-                        "SASS",
-                        "CSS Modules",
-                        "Webpack",
                         "Jest",
                         "Enzyme",
-                        "Webdriver.io",
                         "Express",
+                        "Webpack",
+                        "CSS Modules",
+                        "SASS",
+                        "Webdriver.io",
                         "Frint.js",
                         "SSR",
                       ],
@@ -741,36 +741,6 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       </Badge>
                       <Badge
                         className="badge"
-                        key="SASS"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          SASS
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                        key="CSS Modules"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          CSS Modules
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
-                        key="Webpack"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          Webpack
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
                         key="Jest"
                       >
                         <span
@@ -791,22 +761,52 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       </Badge>
                       <Badge
                         className="badge"
-                        key="Webdriver.io"
-                      >
-                        <span
-                          className="badge badge"
-                        >
-                          Webdriver.io
-                        </span>
-                      </Badge>
-                      <Badge
-                        className="badge"
                         key="Express"
                       >
                         <span
                           className="badge badge"
                         >
                           Express
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Webpack"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Webpack
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="CSS Modules"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          CSS Modules
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="SASS"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          SASS
+                        </span>
+                      </Badge>
+                      <Badge
+                        className="badge"
+                        key="Webdriver.io"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Webdriver.io
                         </span>
                       </Badge>
                       <Badge
@@ -848,12 +848,12 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "role": "Front End Developer",
                       "stack": Array [
                         "React",
-                        "PostCSS",
-                        "CSS Modules",
-                        "Webpack",
-                        "Express",
                         "Redux",
                         "Redux-Saga",
+                        "Webpack",
+                        "Express",
+                        "PostCSS",
+                        "CSS Modules",
                         "SSR",
                         "AWS",
                         "Google SDK",
@@ -910,22 +910,22 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       </Badge>
                       <Badge
                         className="badge"
-                        key="PostCSS"
+                        key="Redux"
                       >
                         <span
                           className="badge badge"
                         >
-                          PostCSS
+                          Redux
                         </span>
                       </Badge>
                       <Badge
                         className="badge"
-                        key="CSS Modules"
+                        key="Redux-Saga"
                       >
                         <span
                           className="badge badge"
                         >
-                          CSS Modules
+                          Redux-Saga
                         </span>
                       </Badge>
                       <Badge
@@ -950,22 +950,22 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       </Badge>
                       <Badge
                         className="badge"
-                        key="Redux"
+                        key="PostCSS"
                       >
                         <span
                           className="badge badge"
                         >
-                          Redux
+                          PostCSS
                         </span>
                       </Badge>
                       <Badge
                         className="badge"
-                        key="Redux-Saga"
+                        key="CSS Modules"
                       >
                         <span
                           className="badge badge"
                         >
-                          Redux-Saga
+                          CSS Modules
                         </span>
                       </Badge>
                       <Badge
@@ -1018,9 +1018,9 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "endDate": "October 2016",
                       "role": "Front End Developer",
                       "stack": Array [
-                        "Javascript",
-                        "Node.js",
                         "React",
+                        "Node.js",
+                        "Javascript",
                         "Angular",
                         "SASS",
                         "Less",
@@ -1069,12 +1069,12 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     >
                       <Badge
                         className="badge"
-                        key="Javascript"
+                        key="React"
                       >
                         <span
                           className="badge badge"
                         >
-                          Javascript
+                          React
                         </span>
                       </Badge>
                       <Badge
@@ -1089,12 +1089,12 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       </Badge>
                       <Badge
                         className="badge"
-                        key="React"
+                        key="Javascript"
                       >
                         <span
                           className="badge badge"
                         >
-                          React
+                          Javascript
                         </span>
                       </Badge>
                       <Badge

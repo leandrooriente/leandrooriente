@@ -3,7 +3,8 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
-const articlesDir = path.resolve(__dirname, '..');
+const articlesDir = __dirname;
+const outputPath = path.resolve(__dirname, '../data', 'articles.js');
 
 const consoleLog = console.log; // eslint-disable-line
 const consoleError = console.error; // eslint-disable-line
@@ -15,6 +16,9 @@ const getHeading = (yamlContent) => {
     throw error;
   }
 };
+
+const writeArticleFile = (dir, content) =>
+  fs.writeFileSync(dir, content);
 
 const getArticles = dir => fs
   .readdirSync(dir)
@@ -30,9 +34,13 @@ const getArticles = dir => fs
     consoleLog(`Converting file: ${filename}`);
 
     const html = marked(content);
+    const slug = filename.replace('.md', '');
 
     return {
       ...heading,
+      slug,
+      url: `/${slug}`,
+      id: Number(new Date()),
       html,
     };
   });
@@ -44,8 +52,8 @@ const convertMarkdownToHTML = (dir) => {
   const content = `/* eslint-disable */
 export default ${JSON.stringify(articles)}`;
 
-  return fs.writeFileSync(
-    path.resolve(__dirname, 'articles.js'),
+  return writeArticleFile(
+    outputPath,
     content
   );
 };
@@ -53,6 +61,11 @@ export default ${JSON.stringify(articles)}`;
 try {
   convertMarkdownToHTML(articlesDir);
 } catch (error) {
+  writeArticleFile(
+    outputPath,
+    'export default [];'
+  );
+
   consoleError('We couldn\'t generate articles, skipping step', error);
 }
 

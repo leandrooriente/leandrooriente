@@ -16,7 +16,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
       className="links"
     >
       <Button
-        className="links"
+        className="link"
         href="https://www.linkedin.com/in/leandrooriente/"
         key="Linkedin"
         onClick={null}
@@ -25,7 +25,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
           href="https://www.linkedin.com/in/leandrooriente/"
         >
           <a
-            className="button links"
+            className="button link"
             href="https://www.linkedin.com/in/leandrooriente/"
             onClick={[Function]}
           >
@@ -34,7 +34,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
         </Link>
       </Button>
       <Button
-        className="links"
+        className="link"
         href="https://github.com/leandrooriente"
         key="Github"
         onClick={null}
@@ -43,7 +43,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
           href="https://github.com/leandrooriente"
         >
           <a
-            className="button links"
+            className="button link"
             href="https://github.com/leandrooriente"
             onClick={[Function]}
           >
@@ -52,7 +52,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
         </Link>
       </Button>
       <Button
-        className="links"
+        className="link"
         href="mailto:leandroriente@gmail.com"
         key="Email"
         onClick={null}
@@ -61,7 +61,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
           href="mailto:leandroriente@gmail.com"
         >
           <a
-            className="button links"
+            className="button link"
             href="mailto:leandroriente@gmail.com"
             onClick={[Function]}
           >
@@ -70,7 +70,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
         </Link>
       </Button>
       <Button
-        className="links"
+        className="link"
         href="#"
         key="Resume"
         onClick={null}
@@ -79,7 +79,7 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
           href="#"
         >
           <a
-            className="button links"
+            className="button link"
             href="#"
             onClick={[Function]}
           >
