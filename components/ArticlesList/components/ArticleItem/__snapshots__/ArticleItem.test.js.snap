@@ -72,19 +72,19 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
     </p>
     <div>
       <Badge
-        className={null}
+        className="badge"
       >
         <span
-          className="badge"
+          className="badge badge"
         >
           March 2014
         </span>
       </Badge>
       <Badge
-        className={null}
+        className="badge"
       >
         <span
-          className="badge"
+          className="badge badge"
         >
           pt-BR
         </span>

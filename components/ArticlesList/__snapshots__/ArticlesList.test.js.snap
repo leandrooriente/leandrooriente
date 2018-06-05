@@ -1533,19 +1533,19 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           August 2016
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -1658,19 +1658,19 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           July 2014
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -1750,19 +1750,19 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           March 2014
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -1834,19 +1834,19 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           January 2014
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -1956,19 +1956,19 @@ Você separou seu projeto em pequenas partes para orçar correto? Então cobre e
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           January 2014
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -2262,19 +2262,19 @@ Não deixem de colaborar.</p>
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           October 2013
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -2451,19 +2451,19 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           August 2013
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
@@ -2601,19 +2601,19 @@ Alguns ficaram omitidos em alguns tópicos, outros eu esqueci de comentar mesmo.
                     </p>
                     <div>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           August 2013
                         </span>
                       </Badge>
                       <Badge
-                        className={null}
+                        className="badge"
                       >
                         <span
-                          className="badge"
+                          className="badge badge"
                         >
                           pt-BR
                         </span>
