@@ -22,7 +22,7 @@ const ArticlesList = ({ articles }) => {
         </Box>
         <Box w={[1, 3 / 4]}>
           {sortedByDateArticles.map(article => (
-            <ArticleItem article={article} key={article.id} />
+            <ArticleItem article={article} key={article.slug} />
           ))}
         </Box>
       </Flex>
