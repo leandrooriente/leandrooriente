@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
+          <link href="https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro:400,700" rel="stylesheet" />
         </Head>
         <body>
           <Main />

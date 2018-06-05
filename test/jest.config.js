@@ -1,9 +1,9 @@
 module.exports = {
-  rootDir: "../",
+  rootDir: '../',
   setupFiles: ['<rootDir>/test/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleNameMapper: {
-    "\\.css$": "identity-obj-proxy"
+    '\\.css$': 'identity-obj-proxy',
   },
-  snapshotSerializers: ["enzyme-to-json/serializer"],
-}
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+};
