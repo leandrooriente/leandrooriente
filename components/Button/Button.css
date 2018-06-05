@@ -9,7 +9,7 @@
 }
 
 .button:hover {
-  background: var(--primary-color);
+  background: var(--highlight-color);
   color: var(--light-gray);
   transition: all var(--fast-transition) ease-in;
 }

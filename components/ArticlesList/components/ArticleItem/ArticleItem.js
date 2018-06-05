@@ -16,8 +16,10 @@ const ArticleItem = ({ article }) => (
       </Link>
     </p>
     <div>
-      <Badge>{formatArticleDate(article.date)}</Badge>
-      <Badge>{article.lang}</Badge>
+      <Badge className={css.badge}>
+        {formatArticleDate(article.date)}
+      </Badge>
+      <Badge className={css.badge}>{article.lang}</Badge>
     </div>
   </div>
 );
