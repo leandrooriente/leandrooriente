@@ -10,7 +10,11 @@
     "start": "next start",
     "test": "NODE_ENV=test jest -c ./test/jest.config.js"
   },
-  "prepush": "npm run lint && npm test",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leandrooriente/leandrooriente.git"
