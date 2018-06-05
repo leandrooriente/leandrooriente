@@ -3,6 +3,11 @@ module.exports = {
   extends: 'airbnb',
   settings: {
     'import/extensions': ['.js'],
+    'import/resolver': {
+      'babel-module': {
+        root: ['./']
+      }
+    }
   },
   env: {
     jest: true,

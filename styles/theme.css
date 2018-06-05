@@ -2,6 +2,17 @@
   --headline-font-family: 'Lora', serif;
   --paragraph-font-family: 'Source Sans Pro', sans-serif;
 
+  --headline-font-size: 40px;
+
   --primary-color: #2a2a33;
   --secondary-color: #919199;
+
+  --highlight-color: #2963ff;
+  --light-gray: #f7f5f5;
+
+  --fast-transition: 0.135s;
+}
+
+body {
+  font-family: var(--paragraph-font-family);
 }

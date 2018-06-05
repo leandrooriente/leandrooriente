@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
-import Main from '../components/Main';
-import Header from '../components/Header';
-import Headline from '../components/Headline';
+import React from 'react';
+import Main from 'components/Main';
+import Headline from 'components/Headline';
+import Experiences from 'components/Experiences';
+import GetInTouch from 'components/GetInTouch';
 
 export default () => (
-  <Fragment>
-    <Header />
-    <Main>
-      <Headline />
-    </Main>
-  </Fragment>
+  <Main>
+    <Headline />
+    <Experiences />
+    <GetInTouch />
+  </Main>
 );
