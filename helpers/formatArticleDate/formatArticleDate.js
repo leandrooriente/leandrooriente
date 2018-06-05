@@ -15,8 +15,8 @@ const months = [
 
 const formatArticleDate = (value) => {
   const date = new Date(value);
-  if ((date === 'Invalid Date')) {
-    return value;
+  if (Number.isNaN(date.getTime())) {
+    return null;
   }
 
   return `${months[date.getMonth()]} ${date.getFullYear()}`;
