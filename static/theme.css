@@ -10,7 +10,7 @@
   --secondary-color: #919199;
   --base-color: #333;
 
-  --highlight-color: #2963ff;
+  --highlight-color: #1E30BC;
   --light-gray: #f7f5f5;
 
   --fast-transition: 0.135s;
@@ -25,6 +25,16 @@ body {
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   color: var(--base-color);
+  padding-top: 8px;
+}
+
+body:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 100%;
+  height: 8px;
+  background:  linear-gradient(to right, #1E30BC 0%, #847ADE 50%, #1E30BC 100%);
 }
 
 * {
