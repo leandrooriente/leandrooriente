@@ -46,15 +46,28 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       <strong>
         Travix
       </strong>
-       | 
-      <span>
-        September 2017
-      </span>
-       - 
-      <span>
-        Current
-      </span>
     </div>
+    <Date
+      className={null}
+      date={
+        Array [
+          "September 2017",
+          "Current",
+        ]
+      }
+    >
+      <div
+        className="details"
+      >
+        September 2017
+        <span
+          className="separator"
+        >
+          -
+        </span>
+        Current
+      </div>
+    </Date>
     <div
       className="description"
       dangerouslySetInnerHTML={

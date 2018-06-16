@@ -1,8 +1,8 @@
 import formatArticleDate from './formatArticleDate';
 
 describe('helpers - formatArticleDate', () => {
-  it('should return null when receiving a non compatible string Date', () => {
-    expect(formatArticleDate('foo.bar')).toBeFalsy();
+  it('should return original value when receiving a non compatible string Date', () => {
+    expect(formatArticleDate('foo.bar')).toBe('foo.bar');
   });
 
   it('should return a formated date using Month YYYY notation', () => {

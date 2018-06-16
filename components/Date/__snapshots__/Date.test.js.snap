@@ -1,6 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Date /> should render <Date /> component 1`] = `
+exports[`<Date /> should render a Date component showing beginning date and ending date 1`] = `
+<Date
+  className={null}
+  date={
+    Array [
+      "10/10/2010",
+      "10/10/2012",
+    ]
+  }
+>
+  <div
+    className="details"
+  >
+    October 2010
+    <span
+      className="separator"
+    >
+      -
+    </span>
+    October 2012
+  </div>
+</Date>
+`;
+
+exports[`<Date /> should render a Date component showing date and language 1`] = `
 <Date
   className={null}
   date="10/10/2010"

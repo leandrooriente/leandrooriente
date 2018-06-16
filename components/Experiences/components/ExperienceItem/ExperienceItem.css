@@ -8,10 +8,15 @@
 
 .headline {
   line-height: 1.6;
+  font-size: 28px;
 }
 
 .description {
   line-height: 1.4;
+}
+
+.description li {
+  margin-bottom: 10px;
 }
 
 .stack {
