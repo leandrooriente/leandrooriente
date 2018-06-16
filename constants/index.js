@@ -18,7 +18,7 @@ export const email = {
 
 export const resume = {
   description: 'Resume',
-  url: '#',
+  url: '/static/Resume.pdf',
   name: 'resume',
 };
 
