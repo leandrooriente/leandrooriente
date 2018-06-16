@@ -81,6 +81,22 @@ exports[`<Article /> should render <Article /> component 1`] = `
         }
       }
     />
+    <Comments>
+      <div
+        className="wrapper"
+      >
+        <Subtitle>
+          <h3
+            className="title"
+          >
+            Comments
+          </h3>
+        </Subtitle>
+        <div
+          id="disqus_thread"
+        />
+      </div>
+    </Comments>
     <Back>
       <Link
         href="/"

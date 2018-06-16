@@ -202,7 +202,7 @@ Uma ferramenta boa para **ajudar** nessa organização do código são os pré-c
 Eles abrem um leque de opções bem maior para o desenvolvimento do seu CSS. <br />
 Os mais populares são [LESS](http://lesscss.org/) e [SASS](http://sass-lang.com/) e ambos são *nice to have*.
 
-###Conhecimento regular em alguma(s) linguagem(ns) Server Side.
+### Conhecimento regular em alguma(s) linguagem(ns) Server Side.
 
 Obviamente não é um quesito obrigatório para desenvolvedores front end, porém boa parte das grandes empresas cobram.
 
