@@ -33,26 +33,25 @@ exports[`<ArticleItem /> should render <ArticleItem /> component 1`] = `
         </a>
       </Link>
     </p>
-    <div>
-      <Badge
-        className="badge"
+    <Date
+      className={null}
+      date="10/10/2010"
+      lang="pt-br"
+    >
+      <div
+        className="details"
       >
+        October 2010
+         
         <span
-          className="badge badge"
+          className="separator"
         >
-          October 2010
+          -
         </span>
-      </Badge>
-      <Badge
-        className="badge"
-      >
-        <span
-          className="badge badge"
-        >
-          pt-br
-        </span>
-      </Badge>
-    </div>
+         
+        pt-br
+      </div>
+    </Date>
   </div>
 </ArticleItem>
 `;

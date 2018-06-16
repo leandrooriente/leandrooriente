@@ -1,6 +1,6 @@
 title:  "Como cobrar por um freelance"
 author: Leandro Oriente
-lang: pt-BR
+lang: portuguese
 date: 2014-07-29
 description: "Uma dúvida recorrente que vejo em grupos ou que recebo por e-mail é sobre como cobrar por um freela. Particularmente não faço freelas tem muito tempo e não pretendo fazer mais, porém aprendi alguns métodos bem eficazes no período em que fazia e que funcionaram muito bem."
 thumbnail: /static/images/clientes-cobrar-thumb.jpg

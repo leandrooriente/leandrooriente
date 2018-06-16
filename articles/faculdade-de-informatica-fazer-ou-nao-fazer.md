@@ -1,6 +1,6 @@
 title:  "Faculdade de Informática. Fazer ou não fazer?"
 author: Leandro Oriente
-lang: pt-BR
+lang: portuguese
 date: 2013-08-17
 description: "Quero mostrar minha experiência atual com o mercado de trabalho e com o mundo acadêmico para depois apresentar as conclusões que tirei."
 thumbnail: /static/images/classroom-thumb.jpg

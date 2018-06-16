@@ -17,3 +17,11 @@
 .article a:hover {
   border-bottom: 1px solid var(--highlight-color);
 }
+
+.title {
+  margin-bottom: 10px;
+}
+
+.header {
+  margin-bottom: 40px;
+}

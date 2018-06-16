@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Date /> should render <Date /> component 1`] = `
+<Date
+  className={null}
+  date="10/10/2010"
+  lang="portuguese"
+>
+  <div
+    className="details"
+  >
+    October 2010
+     
+    <span
+      className="separator"
+    >
+      -
+    </span>
+     
+    portuguese
+  </div>
+</Date>
+`;

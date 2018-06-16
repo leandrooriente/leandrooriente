@@ -1,6 +1,6 @@
 title:  "Um comovente guia de estudo para desenvolvedores front end"
 author: Leandro Oriente
-lang: pt-BR
+lang: portuguese
 date: 2013-10-15
 description: "O foco do post é atender a galera iniciante e encurtar alguns caminhos, porém se você é mais cascudo e quiser colaborar, fique a vontade."
 thumbnail: /static/images/guia-comovente-thumb.jpg

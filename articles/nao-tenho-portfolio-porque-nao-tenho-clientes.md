@@ -1,6 +1,6 @@
 title:  "Não consigo clientes porque não tenho portfólio"
 author: Leandro Oriente
-lang: pt-BR
+lang: portuguese
 date: 2014-01-19
 description: "Não consigo clientes porque não tenho portfólio, não tenho portfólio porque não consigo clientes"
 thumbnail: /static/images/nao-tenho-portfolio-thumb.jpg

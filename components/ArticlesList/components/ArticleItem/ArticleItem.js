@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formatArticleDate from 'helpers/formatArticleDate';
-import Badge from 'components/Badge';
 import Link from 'next/link';
+import Date from 'components/Date';
 import ArticleShape from 'propTypes/article';
 import css from './ArticleItem.css';
 
@@ -15,12 +14,7 @@ const ArticleItem = ({ article }) => (
         </a>
       </Link>
     </p>
-    <div>
-      <Badge className={css.badge}>
-        {formatArticleDate(article.date)}
-      </Badge>
-      <Badge className={css.badge}>{article.lang}</Badge>
-    </div>
+    <Date lang={article.lang} date={article.date} />
   </div>
 );
 

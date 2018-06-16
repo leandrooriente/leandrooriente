@@ -5,7 +5,9 @@ exports[`<Headline /> should render <Headline /> component 1`] = `
   <section
     className="headline"
   >
-    <Title>
+    <Title
+      className={null}
+    >
       <h1
         className="title"
       >

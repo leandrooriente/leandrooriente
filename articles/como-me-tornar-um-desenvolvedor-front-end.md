@@ -1,6 +1,6 @@
 title:  "Como me tornar um Desenvolvedor Front End"
 author: Leandro Oriente
-lang: pt-BR
+lang: portuguese
 date: 2013-08-21
 description: "Minha visão de obrigações e diferenciais de desenvolvedores front end e algumas pequenas dicas a respeito."
 thumbnail: /static/images/developer-thumb.jpg

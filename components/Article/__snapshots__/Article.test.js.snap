@@ -18,7 +18,9 @@ exports[`<Article /> should render <Article /> component 1`] = `
   <article
     className="article"
   >
-    <header>
+    <header
+      className="header"
+    >
       <Back>
         <Link
           href="/"
@@ -36,11 +38,30 @@ exports[`<Article /> should render <Article /> component 1`] = `
         className="title"
       >
         <h1
-          className="title"
+          className="title title"
         >
           Test
         </h1>
       </Title>
+      <Date
+        className={null}
+        date="10/10/2010"
+        lang="pt-br"
+      >
+        <div
+          className="details"
+        >
+          October 2010
+           
+          <span
+            className="separator"
+          >
+            -
+          </span>
+           
+          pt-br
+        </div>
+      </Date>
     </header>
     <Notification
       date="10/10/2010"

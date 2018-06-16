@@ -2,17 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ArticleShape from 'propTypes/article';
 import Title from 'components/Title';
+import Date from 'components/Date';
 import Back from './components/Back';
 import Notification from './components/Notification';
 import css from './Article.css';
 
 const Article = ({ article }) => (
   <article className={css.article}>
-    <header>
+    <header className={css.header}>
       <Back />
       <Title className={css.title}>
         { article.title }
       </Title>
+      <Date
+        lang={article.lang}
+        date={article.date}
+      />
     </header>
 
     <Notification date={article.date} />
