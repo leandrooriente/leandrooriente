@@ -7,6 +7,10 @@
 }
 
 .headline {
+  /* Compensating line height to align top content
+  ** with Experiences Headline
+  */
+  margin-top: -6px;
   line-height: 1.6;
   font-size: 28px;
 }
