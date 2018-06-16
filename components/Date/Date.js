@@ -7,7 +7,6 @@ const Date = ({ date, lang, className }) => {
   const classes = `${css.details}${className ? ` ${className}` : ''}`;
 
   if (Array.isArray(date)) {
-    console.log('date', date);
     return (
       <div className={classes}>
         {formatArticleDate(date[0])}
