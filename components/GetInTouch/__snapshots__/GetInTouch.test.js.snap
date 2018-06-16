@@ -72,16 +72,16 @@ exports[`<GetInTouch /> should render <GetInTouch /> component 1`] = `
       </Button>
       <Button
         className="link"
-        href="#"
+        href="/static/Resume.pdf"
         key="Resume"
         onClick={null}
       >
         <Link
-          href="#"
+          href="/static/Resume.pdf"
         >
           <a
             className="button link"
-            href="#"
+            href="/static/Resume.pdf"
             onClick={[Function]}
           >
             resume
