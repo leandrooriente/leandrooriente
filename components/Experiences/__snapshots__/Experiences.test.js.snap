@@ -20,13 +20,14 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
         "endDate": "Current",
         "role": "Front End Developer",
         "stack": Array [
+          "Scrum",
           "React",
           "Jest",
           "Enzyme",
@@ -55,6 +56,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "endDate": "October 2017",
         "role": "Front End Developer",
         "stack": Array [
+          "Kanban",
           "React",
           "Redux",
           "Redux-Saga",
@@ -83,6 +85,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "endDate": "October 2016",
         "role": "Front End Developer",
         "stack": Array [
+          "Kanban",
           "React",
           "Node.js",
           "Javascript",
@@ -103,6 +106,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "endDate": "October 2012",
         "role": "Front End Developer",
         "stack": Array [
+          "Scrum",
           "Javascript",
           "CSS3",
           "SASS",
@@ -676,13 +680,14 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
                       "endDate": "Current",
                       "role": "Front End Developer",
                       "stack": Array [
+                        "Scrum",
                         "React",
                         "Jest",
                         "Enzyme",
@@ -747,7 +752,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -757,6 +762,16 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     <div
                       className="stack"
                     >
+                      <Badge
+                        className="badge"
+                        key="Scrum"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Scrum
+                        </span>
+                      </Badge>
                       <Badge
                         className="badge"
                         key="React"
@@ -877,6 +892,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "endDate": "October 2017",
                       "role": "Front End Developer",
                       "stack": Array [
+                        "Kanban",
                         "React",
                         "Redux",
                         "Redux-Saga",
@@ -943,6 +959,16 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     <div
                       className="stack"
                     >
+                      <Badge
+                        className="badge"
+                        key="Kanban"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Kanban
+                        </span>
+                      </Badge>
                       <Badge
                         className="badge"
                         key="React"
@@ -1063,6 +1089,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "endDate": "October 2016",
                       "role": "Front End Developer",
                       "stack": Array [
+                        "Kanban",
                         "React",
                         "Node.js",
                         "Javascript",
@@ -1125,6 +1152,16 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     <div
                       className="stack"
                     >
+                      <Badge
+                        className="badge"
+                        key="Kanban"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Kanban
+                        </span>
+                      </Badge>
                       <Badge
                         className="badge"
                         key="React"
@@ -1201,6 +1238,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "endDate": "October 2012",
                       "role": "Front End Developer",
                       "stack": Array [
+                        "Scrum",
                         "Javascript",
                         "CSS3",
                         "SASS",
@@ -1257,6 +1295,16 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     <div
                       className="stack"
                     >
+                      <Badge
+                        className="badge"
+                        key="Scrum"
+                      >
+                        <span
+                          className="badge badge"
+                        >
+                          Scrum
+                        </span>
+                      </Badge>
                       <Badge
                         className="badge"
                         key="Javascript"

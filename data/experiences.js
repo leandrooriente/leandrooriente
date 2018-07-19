@@ -17,11 +17,12 @@ export default [{
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   `,
   stack: [
+    'Scrum',
     'React',
     'Jest',
     'Enzyme',
@@ -49,6 +50,7 @@ export default [{
     <p>I was also responsible for all the properties search experience (listing and map) and for hiring most of ours developers.</p>
   `,
   stack: [
+    'Kanban',
     'React',
     'Redux',
     'Redux-Saga',
@@ -76,6 +78,7 @@ export default [{
     <p>I also improved the hiring process of VTEX and I was part of the team responsible for the company's technology events.</p>
   `,
   stack: [
+    'Kanban',
     'React',
     'Node.js',
     'Javascript',
@@ -95,6 +98,7 @@ export default [{
     <p>At Peixe Urbano I worked as a front end developer for the main platform and the local delivery product.</p>
   `,
   stack: [
+    'Scrum',
     'Javascript',
     'CSS3',
     'SASS',

@@ -19,13 +19,14 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
       "endDate": "Current",
       "role": "Front End Developer",
       "stack": Array [
+        "Scrum",
         "React",
         "Jest",
         "Enzyme",
@@ -89,7 +90,7 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io. With that we tested more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -99,6 +100,16 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
     <div
       className="stack"
     >
+      <Badge
+        className="badge"
+        key="Scrum"
+      >
+        <span
+          className="badge badge"
+        >
+          Scrum
+        </span>
+      </Badge>
       <Badge
         className="badge"
         key="React"
