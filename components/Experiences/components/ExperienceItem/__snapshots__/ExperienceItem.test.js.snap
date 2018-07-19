@@ -7,15 +7,19 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       "companyName": "Travix",
       "companyUrl": "https://www.travix.com",
       "description": "
-    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+    <p><a href=\\"https://www.travix.com/\\">Travix</a> is one of the leading global online travel agencies operating five brands in 39 countries.</p>
 
     <ul>
       <li>
-        Frontend Team Leader responsible for flights results and seat maps. 
+        Frontend Team Leader responsible for flights results page and seat map widget. 
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+        Responsible for researching and implement a new project architecture for our next platform so we can scale it to more than 100 affiliates.
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -73,15 +77,19 @@ exports[`<ExperienceItem /> should render <ExperienceItem /> component 1`] = `
       dangerouslySetInnerHTML={
         Object {
           "__html": "
-    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+    <p><a href=\\"https://www.travix.com/\\">Travix</a> is one of the leading global online travel agencies operating five brands in 39 countries.</p>
 
     <ul>
       <li>
-        Frontend Team Leader responsible for flights results and seat maps. 
+        Frontend Team Leader responsible for flights results page and seat map widget. 
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+        Responsible for researching and implement a new project architecture for our next platform so we can scale it to more than 100 affiliates.
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",

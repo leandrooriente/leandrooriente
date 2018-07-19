@@ -8,15 +8,19 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "companyName": "Travix",
         "companyUrl": "https://www.travix.com",
         "description": "
-    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+    <p><a href=\\"https://www.travix.com/\\">Travix</a> is one of the leading global online travel agencies operating five brands in 39 countries.</p>
 
     <ul>
       <li>
-        Frontend Team Leader responsible for flights results and seat maps. 
+        Frontend Team Leader responsible for flights results page and seat map widget. 
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+        Responsible for researching and implement a new project architecture for our next platform so we can scale it to more than 100 affiliates.
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -39,12 +43,14 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
       Object {
         "companyName": "OLX Brasil",
         "companyUrl": "https://www.storiaimoveis.com.br",
-        "description": "  
-    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+        "description": "
+    <p><a href=\\"https://www.storiaimoveis.com.br/\\">Storia Imóveis</a> is the real estate vertical product of OLX Brazil, the biggest tradding platfom in South America. The product was created to compete directly with the top 3 real estate products in Brazil.</p>
 
-    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+    <p>We had a small and agile team of 10 developers to build a Progressive Web App in React and Node.js</p>
 
-    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+    <p>We decided to use Redux and Redux Saga to deal with business logic and side effects and to keep our components as pure as possible.</p>
+
+    <p>I was also responsible for all the properties search experience (listing and map) and for hiring most of ours developers.</p>
   ",
         "endDate": "October 2017",
         "role": "Front End Developer",
@@ -66,7 +72,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
         "companyName": "VTEX",
         "companyUrl": "http://www.vtex.com",
         "description": "  
-    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+    <p><a href=\\"http://www.vtex.com/\\">VTEX</a> is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
 
     <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
     
@@ -89,10 +95,10 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
       Object {
         "companyName": "Peixe Urbano",
         "companyUrl": "https://www.peixeurbano.com.br",
-        "description": "  
-    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+        "description": "
+    <p><a href=\\"https://www.peixeurbano.com.br/\\">Peixe Urbano</a> is the biggest local commerce product in Brazil.</p>
 
-    <p>Focus on usability, semantic and performative code.</p>
+    <p>At Peixe Urbano I worked as a front end developer for the main platform and the local delivery product.</p>
   ",
         "endDate": "October 2012",
         "role": "Front End Developer",
@@ -658,15 +664,19 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "companyName": "Travix",
                       "companyUrl": "https://www.travix.com",
                       "description": "
-    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+    <p><a href=\\"https://www.travix.com/\\">Travix</a> is one of the leading global online travel agencies operating five brands in 39 countries.</p>
 
     <ul>
       <li>
-        Frontend Team Leader responsible for flights results and seat maps. 
+        Frontend Team Leader responsible for flights results page and seat map widget. 
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+        Responsible for researching and implement a new project architecture for our next platform so we can scale it to more than 100 affiliates.
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -725,15 +735,19 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "
-    <p>Travix is one of the leading global online travel agencies operating five brands in 35 countries, employing more than 500 people with over 45 different nationalities worldwide.</p>
+    <p><a href=\\"https://www.travix.com/\\">Travix</a> is one of the leading global online travel agencies operating five brands in 39 countries.</p>
 
     <ul>
       <li>
-        Frontend Team Leader responsible for flights results and seat maps. 
+        Frontend Team Leader responsible for flights results page and seat map widget. 
       </li>
 
       <li>
-        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 affiliates.
+        Responsible for researching and implement a new project architecture for our next platform so we can scale it to more than 100 affiliates.
+      </li>
+
+      <li>
+        Responsible for the migration of our current E2E implementation to a new one using Webdriver.io testing more than 40 sites with different features and configurations.
       </li>
     </ul>
   ",
@@ -851,12 +865,14 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     Object {
                       "companyName": "OLX Brasil",
                       "companyUrl": "https://www.storiaimoveis.com.br",
-                      "description": "  
-    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+                      "description": "
+    <p><a href=\\"https://www.storiaimoveis.com.br/\\">Storia Imóveis</a> is the real estate vertical product of OLX Brazil, the biggest tradding platfom in South America. The product was created to compete directly with the top 3 real estate products in Brazil.</p>
 
-    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+    <p>We had a small and agile team of 10 developers to build a Progressive Web App in React and Node.js</p>
 
-    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+    <p>We decided to use Redux and Redux Saga to deal with business logic and side effects and to keep our components as pure as possible.</p>
+
+    <p>I was also responsible for all the properties search experience (listing and map) and for hiring most of ours developers.</p>
   ",
                       "endDate": "October 2017",
                       "role": "Front End Developer",
@@ -912,12 +928,14 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       className="description"
                       dangerouslySetInnerHTML={
                         Object {
-                          "__html": "  
-    <p>Responsible for the front-end of the real estate product of OLX, Storia Imóveis.</p>
+                          "__html": "
+    <p><a href=\\"https://www.storiaimoveis.com.br/\\">Storia Imóveis</a> is the real estate vertical product of OLX Brazil, the biggest tradding platfom in South America. The product was created to compete directly with the top 3 real estate products in Brazil.</p>
 
-    <p>We developed the product from scratch. It's a Progressive Web App built with React and Nodejs, with a lot of fun stuff, like Server Side Rendering, Redux (and Redux Saga), offline support and Google Maps deep integration.</p>
+    <p>We had a small and agile team of 10 developers to build a Progressive Web App in React and Node.js</p>
 
-    <p>I'm also responsible for all the properties search experience and for hiring most of ours developers.</p>
+    <p>We decided to use Redux and Redux Saga to deal with business logic and side effects and to keep our components as pure as possible.</p>
+
+    <p>I was also responsible for all the properties search experience (listing and map) and for hiring most of ours developers.</p>
   ",
                         }
                       }
@@ -1034,7 +1052,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       "companyName": "VTEX",
                       "companyUrl": "http://www.vtex.com",
                       "description": "  
-    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+    <p><a href=\\"http://www.vtex.com/\\">VTEX</a> is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
 
     <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
     
@@ -1093,7 +1111,7 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "  
-    <p>VTEX is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
+    <p><a href=\\"http://www.vtex.com/\\">VTEX</a> is the biggest E-commerce Platform on the South America and one of the top AWS cases in Brazil. They handle thousands of sales everyday with a great performance.</p>
 
     <p>I worked at VTEX focused on developing applications that allows the client to have full control of their shop.</p>
     
@@ -1175,10 +1193,10 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                     Object {
                       "companyName": "Peixe Urbano",
                       "companyUrl": "https://www.peixeurbano.com.br",
-                      "description": "  
-    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+                      "description": "
+    <p><a href=\\"https://www.peixeurbano.com.br/\\">Peixe Urbano</a> is the biggest local commerce product in Brazil.</p>
 
-    <p>Focus on usability, semantic and performative code.</p>
+    <p>At Peixe Urbano I worked as a front end developer for the main platform and the local delivery product.</p>
   ",
                       "endDate": "October 2012",
                       "role": "Front End Developer",
@@ -1228,10 +1246,10 @@ exports[`<Experiences /> should render <Experiences /> component 1`] = `
                       className="description"
                       dangerouslySetInnerHTML={
                         Object {
-                          "__html": "  
-    <p>Front End development for the local commerce Startup Peixe Urbano and other products (Delivery Peixe Urbano).</p>
+                          "__html": "
+    <p><a href=\\"https://www.peixeurbano.com.br/\\">Peixe Urbano</a> is the biggest local commerce product in Brazil.</p>
 
-    <p>Focus on usability, semantic and performative code.</p>
+    <p>At Peixe Urbano I worked as a front end developer for the main platform and the local delivery product.</p>
   ",
                         }
                       }
