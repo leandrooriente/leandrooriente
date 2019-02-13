@@ -2,7 +2,7 @@
 
 exports[`<Notification /> should render <Notification /> component if article is older than 2 years 1`] = `
 <Notification
-  date="10/10/2015"
+  date="10/10/2016"
 >
   <div
     className="notification"

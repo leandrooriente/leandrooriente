@@ -70,7 +70,7 @@ exports[`<Article /> should render <Article /> component 1`] = `
         className="notification"
       >
         Este artigo possui mais de 
-        8
+        9
          anos de existência. O seu conteúdo pode estar desatualizado ou pode não representar mais minha opinião.
       </div>
     </Notification>

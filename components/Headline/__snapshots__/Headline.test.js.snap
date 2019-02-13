@@ -13,9 +13,9 @@ exports[`<Headline /> should render <Headline /> component 1`] = `
       >
         Hi, I‘m Leandro Oriente, a front end developer at 
         <a
-          href="https://www.travix.com/"
+          href="https://www.dazn.com/"
         >
-          Travix
+          DAZN
         </a>
          in Amsterdam.
       </h1>
