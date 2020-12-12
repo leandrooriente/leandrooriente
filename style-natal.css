@@ -1,0 +1,131 @@
+body {
+    background: #a3c0aa;
+    padding: 25px;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #671712;
+    font-family: 'Mountains of Christmas', serif;
+}
+
+.header p {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Open Sans', serif;
+}
+
+.failed {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.failed h1 {
+    font-family: 'Mountains of Christmas', serif;
+}
+
+.failed-content {
+    box-sizing: border-box;
+    background: #FFF;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-wrapper {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.instructions {
+    background: #c7342a;
+    padding: 15px;
+    color: #FFF;
+}
+
+.timer {
+    font-family: 'Orbitron', serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    z-index: 9;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.instructions button {
+    background: #FFF;
+    color: #c7342a;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.photo {
+    max-width: 500px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.photo img {
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 5px solid #294f38;
+}
+
+.photo .challenge {
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #671712;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    left: 0;
+    top: 0;
+}
+
+.photo .challenge label span {
+    color: #d9b49b;
+    font-family: 'Mountains of Christmas', serif;
+    font-size: 32px;
+}
+
+.photo .challenge input {
+    font-family: 'Cutive Mono', serif;
+    display: block;
+    width: 100%;
+    font-size: 32px;
+    margin: 50px auto 0;
+    background: none;
+    text-align: center;
+    color: #d9b49b;
+    border: 0;
+    border-bottom: 3px solid #d9b49b;
+    outline: 0;
+}
