@@ -145,7 +145,7 @@
         });
 
         document.querySelector('#input2').addEventListener('keyup', (event) => {
-            if (typeof event.target.value === 'string' && event.target.value.indexOf('tesla') !== -1) {
+            if (typeof event.target.value === 'string' && event.target.value.toLowerCase().indexOf('tesla') !== -1) {
                 correctAnswers[1] = true;
                 document.querySelector('#challenge2').remove();
                 niceAudio.play();
