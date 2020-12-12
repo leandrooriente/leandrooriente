@@ -109,10 +109,10 @@
 
             if (isFinished) {
                 clockAudio.pause();
-                window.setTimeout(() => {
-                    playTiger();
-                }, 1200);
+                playTiger();
                 clearInterval(interval);
+            } else {
+                niceAudio.play();
             }
         }
 
@@ -139,7 +139,6 @@
             if (typeof event.target.value === 'string' && acceptableAnswers.find(answer => answer === event.target.value.toLowerCase())) {
                 correctAnswers[0] = true;
                 document.querySelector('#challenge1').remove();
-                niceAudio.play();
                 checkAnswers();
             }
         });
@@ -148,7 +147,6 @@
             if (typeof event.target.value === 'string' && event.target.value.toLowerCase().indexOf('tesla') !== -1) {
                 correctAnswers[1] = true;
                 document.querySelector('#challenge2').remove();
-                niceAudio.play();
                 checkAnswers();
             }
         });
@@ -157,7 +155,6 @@
             if (typeof event.target.value === 'string' && event.target.value.trim() === '35') {
                 correctAnswers[2] = true;
                 document.querySelector('#challenge3').remove();
-                niceAudio.play();
                 checkAnswers();
             }
         })
