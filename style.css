@@ -59,6 +59,7 @@ a {
 .wrapper h1 {
   font-family: var(--headline-font-family);
   font-size: var(--headline-font-size);
+  font-weight: normal;
   margin: 100px 0 42px;
   line-height: 1.4;
 }
@@ -97,6 +98,7 @@ a {
 .get-in-touch h3 {
 	font-family: var(--headline-font-family);
 	font-size: 28px;
+  font-weight: normal;
 	font-weight: 400;
 	margin: 0 0 16px
 }
