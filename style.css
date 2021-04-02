@@ -83,6 +83,21 @@ a {
   transition: all var(--fast-transition) ease-in;
 }
 
+.wrapper img, .wrapper figure {
+  padding: 0;
+  max-width: 100%;;
+}
+
+.wrapper figure {
+  margin: 20px 0 60px;
+}
+
+.wrapper figcaption {
+  text-align: center;
+  font-size: 14px;
+  padding: 7px 0;
+}
+
 .main {
   height: 100%;
   max-width: 610px;
