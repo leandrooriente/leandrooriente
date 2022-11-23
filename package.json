@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/leandrooriente/leandrooriente#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.14"
+    "browser-sync": "^2.27.10"
   }
 }
