@@ -5,8 +5,6 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-    auto-merge:
-      enabled: true
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
