@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Diagrams"
+  short_description: "Editorial architecture diagrams with flowing data"
+  default_prompt: "Use $site-diagrams to build an architecture diagram in my site’s art style, with a looping desktop flow and a compact static mobile layout."
