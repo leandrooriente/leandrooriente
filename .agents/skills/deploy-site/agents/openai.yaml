@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy Leandro Oriente Site"
+  short_description: "Deploy production and isolated feature previews"
+  default_prompt: "Use $deploy-site to publish this feature to its own Cloudflare preview URL."

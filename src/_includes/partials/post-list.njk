@@ -1,0 +1,16 @@
+<ol class="article-list" role="list">
+  {% for post in collections.posts %}
+  <li class="article-entry">
+    <a class="post-link illustrated-post-link" href="{{ post.url }}">
+      <div class="article-artwork">
+        <img src="{{ post.data.illustration }}" width="{{ post.data.illustrationWidth }}" height="{{ post.data.illustrationHeight }}" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="article-content">
+        <h{{ headingLevel }} class="post-title">{{ post.data.title }}</h{{ headingLevel }}>
+        <p class="post-summary">{{ post.data.summary }}</p>
+        <span class="read-cue" aria-hidden="true">Read article →</span>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

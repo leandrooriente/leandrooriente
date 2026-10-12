@@ -1,0 +1,74 @@
+Asset provenance
+
+illustrations/paint-stains.png
+Rejected transparent forest-paint/terracotta exploration, generated with the
+built-in image tool. Original RGBA output retained unchanged but no longer
+referenced by the site. Its exact prompt is in illustrations/PROMPTS.md.
+
+illustrations/paper-traces.png
+Earlier transparent coffee-ring/water/ink exploration, generated with the
+built-in image tool. Original RGBA output retained unchanged but no longer
+referenced by the site. Its exact prompt is in illustrations/PROMPTS.md.
+
+The supplied photograph, Instrument Sans fonts, and regular Newsreader font were
+copied unchanged from leandro-site-handoff.zip.
+
+cycling-switzerland.jpg
+Original 1600 x 1066 photograph used by Leandro Oriente's existing site.
+Source: https://leandrooriente.com/photo-sepia.jpg
+Caption: Cycling in Switzerland.
+Suggested alt text: Cycling on a mountain road in Switzerland.
+No separate photograph license was supplied in the handoff.
+
+fonts/instrument-sans-400.woff
+fonts/instrument-sans-500.woff
+Instrument Sans regular and medium.
+Project: https://github.com/Instrument/instrument-sans
+License: SIL Open Font License 1.1; retained in fonts/instrument-sans-OFL.txt.
+License source: https://github.com/google/fonts/blob/main/ofl/instrumentsans/OFL.txt
+
+fonts/newsreader-400.woff
+Newsreader regular.
+Project: https://github.com/productiontype/Newsreader
+License: SIL Open Font License 1.1; retained in fonts/newsreader-OFL.txt.
+License source: https://github.com/google/fonts/blob/main/ofl/newsreader/OFL.txt
+
+fonts/newsreader-400-italic.woff
+Newsreader genuine italic, version 1.003, static weight 400 and optical size 16pt,
+matching the supplied regular font. Downloaded unchanged from Google Fonts:
+https://fonts.gstatic.com/s/newsreader/v26/cY9kfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLP4obnf7fTXglsMwoT9ZHFjKShVCj_SU.woff
+SHA-256: ab00ea8fdff77ad93c0c1e71ec9404366e166ff26346064605cbfba34b9b46bc
+Project: https://github.com/productiontype/Newsreader
+License: SIL Open Font License 1.1; retained in fonts/newsreader-OFL.txt.
+License source: https://github.com/google/fonts/blob/main/ofl/newsreader/OFL.txt
+Used for the closing article question instead of a browser-synthesized italic.
+
+forest-sprig.svg
+Original SVG drawn for this exploration. An asymmetric stem with five broad,
+tapered leaves, informed by the foliage silhouettes in the editorial illustrations.
+Rendered as a forest-ink CSS mask in the shared header; no image generation.
+
+logos/
+Company trademark assets for the career timeline. Original files are copied
+unchanged, with proportions retained and a CSS filter displaying them in white.
+Exact sources, variants, file hashes, and usage notes are recorded in
+logos/SOURCES.json. These marks are not covered by the site's font licenses.
+Peixe Urbano uses a surviving later mark from a third-party logo archive;
+Midas Software retains its text name pending a verified company asset.
+
+logos/olx-supplied.png
+logos/storia-imoveis-supplied.png
+Updated company marks supplied directly by the user. Original PNG files retained
+unchanged. The OLX tile is retained as a visual reference for logos/olx.svg.
+CSS crops the combined lockup to its Storia Imóveis half; grayscale/inversion and
+screen blending display that mark in white. These replace the earlier OLX and
+Romanian Storia assets in the career timeline.
+
+logos/olx.svg
+OLX Brasil vector letter paths from the company's 2019 artwork, archived at
+https://commons.wikimedia.org/wiki/File:OLX_Brasil_logo.svg.
+Original company asset URL and archive download are recorded in logos/SOURCES.json.
+Paths are unchanged, filled white, and uniformly scaled/positioned on a 180 x 180
+transparent canvas to match the supplied tile's lettering and existing CSS crop.
+There is no background, filter, or blend mode in the SVG; transparency works
+without the screen-compositing effect that left a black matte in iOS Safari.

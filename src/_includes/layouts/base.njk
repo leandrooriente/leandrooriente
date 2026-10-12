@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1e7d2">
+    <meta name="description" content="{{ description }}">
+    <title>{{ title }}{% if bodyClass == "article-page" %} — Leandro Oriente{% endif %}</title>
+    {% if preloadFonts %}
+    <link rel="preload" href="/assets/fonts/instrument-sans-400.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/fonts/newsreader-400.woff" as="font" type="font/woff" crossorigin>
+    {% endif %}
+    <link rel="stylesheet" href="/styles.css?v={{ stylesheetVersion }}">
+  </head>
+  <body class="{{ bodyClass }}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% include "partials/ink-effects.njk" %}
+    {% include "partials/header.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

@@ -1,0 +1,105 @@
+[
+  {
+    "company": "Shopify",
+    "path": "shopify.svg",
+    "sourcePage": "https://www.shopify.com/brand-assets",
+    "sourceAsset": "https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-monotone-white-7edf88561b256e005e9b9d003c283c39dcbd74ec844dfc9a3912edeec39b4d7e.svg",
+    "viewBox": "0 0 304.2 86.75",
+    "appearance": "Official monotone white full shopping bag + wordmark. Original asset unchanged.",
+    "usageNotes": "Trademark asset, not an open license. Official guidelines request express written authorization; retain full bag+wordmark, preserve proportions and clearspace, minimum80px width; hyperlink to shopify.com.",
+    "sha256": "7edf88561b256e005e9b9d003c283c39dcbd74ec844dfc9a3912edeec39b4d7e"
+  },
+  {
+    "company": "DAZN",
+    "path": "dazn.png",
+    "sourcePage": "https://dazngroup.com/assets-kit/",
+    "sourceArchive": "https://dazngroup.com/wp-content/uploads/2025/11/DAZN_MasterLogo_02-01-attachments.zip",
+    "dimensions": [
+      400,
+      401
+    ],
+    "appearance": "Official Master Logo White. Transparent PNG, visible pixel RGB249/250/250. Original asset unchanged.",
+    "usageNotes": "Official press-kit download; no separate open license found on kit page. Generic site terms reserve intellectual property and request written consent for modification or reuse on another website: https://dazngroup.com/terms-conditions/.",
+    "sha256": "3e90bfd01b5dbc3dac279fc12d75ee3d0123108e397f63f03d92acdd3d9051a0"
+  },
+  {
+    "source_asset_url": "https://www.vtex.com/brand-guidelines/VTEXLogo.zip",
+    "source_page_url": "https://www.vtex.com/en-us/brand-guidelines/logo/",
+    "viewBox": "0 0 800 284",
+    "variant": "Official all-white icon plus wordmark",
+    "usage_notes": "Official guidelines prefer Rebel Pink; provide approved white variant for dark backgrounds. Keep clearspace, icon with wordmark, proportions, no effects. Minimum digital width 60px. Brand copyright all rights reserved; no permissive license stated.",
+    "company": "VTEX",
+    "path": "vtex.svg",
+    "sha256": "204e777ca8f513d329024ab7e54414d18e6c5400ab383752a12e80efb95aa521"
+  },
+  {
+    "company": "Travix",
+    "path": "travix.png",
+    "source_page_url": "https://www.travix.com/",
+    "source_asset_url": "https://www.travix.com/wp-content/uploads/2015/09/travix-logo_white.png",
+    "dimensions": [
+      200,
+      82
+    ],
+    "variant": "Official white homepage PNG, unchanged.",
+    "usage_notes": "Trademark asset; no separate permissive license identified.",
+    "sha256": "5afdce322a46d7079355bc62f90586697a96ceb124612a50153bdda134413986"
+  },
+  {
+    "company": "Peixe Urbano",
+    "path": "peixe-urbano.png",
+    "source_page_url": "https://seeklogo.com/vector-logo/367181/peixe-urbano",
+    "source_asset_url": "https://seeklogo.com/images/P/peixe-urbano-logo-353DAAEDE9-seeklogo.com.png",
+    "dimensions": [
+      300,
+      129
+    ],
+    "variant": "Surviving later logo from a third-party archive, displayed monochrome white using CSS; original transparent PNG unchanged.",
+    "usage_notes": "Temporary local exploration asset. Original company site is unavailable; this is a later mark rather than the 2012-era fish/city logo. Trademark asset; no permissive license identified.",
+    "sha256": "ed7d23ac571c9cc25e69a01eed8d9e027339de994530827b95290bb69a4dbaa3"
+  },
+  {
+    "company": "DevMedia",
+    "path": "devmedia.svg",
+    "source_page_url": "https://www.devmedia.com.br/",
+    "viewBox": "0 0 584.52 132.87",
+    "variant": "Current official inline header SVG, original glyphs/markup retained; whitespace compacted during extraction. Original fills came from page CSS; displayed white through shared site CSS.",
+    "usage_notes": "Extracted from homepage link labelled DevMedia - Plataforma para Programadores. Original rendered emblem was rgb(201,243,29), wordmark white. Trademark asset; no separate permissive license identified.",
+    "sha256": "40b43bf3ea667ab2a56a4afe5f45da02ce26271980f9e3008dcab25ffc5218d3"
+  },
+  {
+    "company": "OLX",
+    "path": "olx-supplied.png",
+    "source": "User attachment: /Users/oriente/Downloads/id00RzEG0O_1791741332255.png",
+    "dimensions": [
+      180,
+      180
+    ],
+    "variant": "User-supplied modern colored OLX tile, copied unchanged. Retained as a visual reference; the career timeline now uses olx.svg with a transparent background.",
+    "usage_notes": "Company trademark; no separate license provided with attachment.",
+    "sha256": "54264f33f19f1b96f80d349510ba282670f04e562e6cbb9e3a5a0461bfffd26d"
+  },
+  {
+    "company": "OLX",
+    "path": "olx.svg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:OLX_Brasil_logo.svg",
+    "source_asset_url": "https://d9hhrg4mnvzow.cloudfront.net/cfg-unbouce.olx.com.br/vender/1119c3c5-a-brand-colored.svg",
+    "archive_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/OLX_Brasil_logo.svg",
+    "viewBox": "0 0 180 180",
+    "variant": "Original OLX Brasil vector letter paths, filled white and uniformly scaled/positioned to match the supplied tile. Transparent SVG background; no filters or screen blending.",
+    "usage_notes": "Company trademark. Archived company artwork consists of simple geometric shapes; preserve letter paths and proportions.",
+    "sha256": "97a8768c80c67dc432ea456781fc11a074e9d5f27f435d96feea64f0709e3144"
+  },
+  {
+    "company": "Storia Imóveis",
+    "path": "storia-imoveis-supplied.png",
+    "source": "User attachment: /Users/oriente/Downloads/9d7abf5e-logo-olx-final.png",
+    "dimensions": [
+      280,
+      213
+    ],
+    "variant": "User-supplied OLX Imóveis / Storia Imóveis lockup, copied unchanged. CSS frames the Storia half and uses grayscale inversion/brightness with screen blending for white display.",
+    "usage_notes": "Company trademark; no separate license provided with attachment.",
+    "sha256": "c724cec2cc7b58c2478e4ad73d7b7c7f537749aec0b4dbc87f0ae040508fed55"
+  }
+]
