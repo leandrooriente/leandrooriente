@@ -11,8 +11,9 @@ its own `workers.dev` URL. Use a feature preview when no target is specified.
 Deploy production when the user requests production or `leandrooriente.com`.
 
 Normal production changes are published by merging a pull request into protected
-`main` and following the resulting GitHub Actions deployment. The local commands
-below remain available for feature previews and explicitly requested local
+`main` and following the resulting GitHub Actions deployment. Branches with open
+pull requests receive automatic feature previews. The local commands below remain
+available for features without a pull request and explicitly requested local
 production deployments.
 
 ## Repository setup
@@ -24,6 +25,8 @@ and the working-tree status before deploying.
 
 Read `.github/workflows/deploy.yml` when working on automatic production
 deployments.
+Read `.github/workflows/preview.yml` and `.github/scripts/pr-preview.mjs` when
+working on automatic pull request previews.
 
 - Worker: `leandrooriente-site`.
 - Redirect Worker: `leandrooriente-site-redirect`, configured separately in
@@ -91,6 +94,38 @@ repository root or reuse stale output. Resolve build or dry-run failures before
 uploading.
 
 ## Deploy a feature preview
+
+### Automatic pull request previews
+
+For a branch with an open pull request in this repository, use the existing
+GitHub Actions preview instead of creating a second environment. The preview
+workflow runs when the pull request is opened, reopened, or updated by a push,
+including draft pull requests. Fork and Dependabot pull requests are excluded.
+It uses the native preview name `pr-<pull-request-number>` under
+`leandrooriente-site`.
+
+The prepare job obtains the preview's returned `workers.dev` origin before
+building. The build checks out the exact pull request head commit and runs
+without Cloudflare credentials or a writable GitHub token. Its generated files
+are uploaded as an artifact. The publishing job uses a fixed assets-only preview
+configuration with no custom build, Worker entrypoint, bindings, or production
+routes. It never runs the branch's build scripts with deployment credentials.
+Canonical metadata and sharing images use the preview origin through `SITE_URL`.
+
+After verifying a successful deployment, the workflow creates or updates one
+Actions-authored **Cloudflare preview** comment with the stable URL, deployed
+commit, and workflow link. Use that URL to test. Runs are serialized per pull
+request; stale commits are skipped. Closing or merging the pull request removes
+its preview and marks the existing comment as closed. Reopening recreates it.
+Use the existing repository `CLOUDFLARE_API_TOKEN` secret, not the `production`
+environment, whose branch policy permits only `main`.
+
+When changing this automation, verify preview creation and the comment, a later
+push updating the same URL and comment, and cleanup on close. Compare production
+Worker versions and domain/route settings around preview operations. A successful
+preview must leave production and the separate `www` redirect unchanged.
+
+### Local feature previews
 
 Use the current feature branch as the preview name; reuse that name on later
 deployments. An explicit feature name also works for detached checkouts. Confirm
