@@ -34,6 +34,7 @@ npm run preview
 - `assets/`: active source artwork, fonts, logos, videos, browser scripts, and provenance records.
 - `src/_headers`: cache rules copied into the public output.
 - `.github/workflows/deploy.yml`: automatic production deployment from `main`.
+- `.github/workflows/preview.yml` and `.github/scripts/pr-preview.mjs`: per-PR preview deployment, comment updates, and cleanup.
 - `wrangler.jsonc`: production static assets Worker; `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`: the `www` hostname redirect.
 
 ## Articles and public URLs
@@ -73,7 +74,9 @@ WOFF2 conversion is a preparation step when a font changes, not part of the norm
 
 ## Cloudflare deployment
 
-The canonical origin is `https://leandrooriente.com`, configured in `src/_data/site.js`. `wrangler.jsonc` builds the saved working files, including uncommitted changes, before uploading `dist/` to the assets-only `leandrooriente-site` Worker. The generator runs locally.
+Use GitHub Actions for hosted deployments: commit and push a feature branch, open or update its pull request for a preview, and merge into protected `main` when production is authorized. Actions builds the pushed commit and uploads its generated static files to the assets-only `leandrooriente-site` Worker. Uncommitted local changes are not deployed. Local builds and development servers are for verification.
+
+The canonical production origin is `https://leandrooriente.com`, configured in `src/_data/site.js`. Preview builds set `SITE_URL` to their returned test origin. Preview-only PRs stay open for testing until the user asks to close or merge them.
 
 ### Automatic production deployment
 
@@ -95,35 +98,19 @@ If a new build fails, the previous successful preview remains available. The com
 
 Previews use the existing `CLOUDFLARE_API_TOKEN` repository secret. The build runs without deployment credentials, with `SITE_URL` set to the returned preview origin. A separate job uploads the generated static files using a fixed preview configuration, checks the live preview, and updates the comment. Runs are serialized per pull request and skip outdated commits.
 
-### Local deployment and feature previews
+### Deployment failures and manual operations
 
-Check account access and validate the build and configuration:
+Inspect the failed GitHub Actions job, fix the relevant code or workflow through the PR, and push or retry through Actions. Local Cloudflare login is not needed for the automatic workflows. A failed preview does not authorize a local upload or production deployment.
 
-```sh
-npx --yes wrangler@4.149.0 whoami
-npx --yes wrangler@4.149.0 deploy --dry-run
-```
-
-If authentication is needed, run `npx --yes wrangler@4.149.0 login --scopes account:read user:read workers_scripts:write workers_routes:write zone:read`.
-
-Create or update a feature preview with `npx --yes wrangler@4.149.0 preview --name <feature-name> --ignore-base-config`, using a stable name for that feature.
-
-Use the URL returned by Wrangler. Set `SITE_URL` to that preview's origin when rebuilding or updating it so canonical URLs and sharing images point to the preview. Production builds use the canonical origin when `SITE_URL` is unset. Remove a completed preview with `npx --yes wrangler@4.149.0 preview delete --name <feature-name> --skip-confirmation`.
-
-When a local production deployment is explicitly needed, wait for any active automatic deployment to finish, then run `npx --yes wrangler@4.149.0 deploy`.
+Direct Wrangler publishing, provider administration, and rollback are reserved for explicit requests for those manual operations. They are not part of the standard site workflow.
 
 ### www redirect and recovery
 
 The main Worker has a Custom Domain binding for `leandrooriente.com`. `www.leandrooriente.com` has a proxied CNAME pointing to the apex.
 
-The `leandrooriente-site-redirect` Worker owns `www.leandrooriente.com/*`. That route takes precedence over static assets and returns permanent 301 redirects to the HTTPS apex, preserving paths and query strings. Deploy that Worker separately when its code or routes change:
+The `leandrooriente-site-redirect` Worker owns `www.leandrooriente.com/*`. That route takes precedence over static assets and returns permanent 301 redirects to the HTTPS apex, preserving paths and query strings. The production workflow deploys only the main assets Worker. Redirect Worker and DNS changes require separate infrastructure work with Actions support through a PR, or an explicitly requested manual operation. Keep them unchanged during ordinary site deployments.
 
-```sh
-npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc --dry-run
-npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc
-```
-
-Its configuration has no site build or assets. Verify `www.leandrooriente.com` redirects correctly for `/` and an article path with a query string.
+The redirect configuration has no site build or assets. Verify `www.leandrooriente.com` redirects correctly for `/` and an article path with a query string.
 
 The October 12, 2026 migration retained the four former GitHub Pages apex A records at `previous-site-origin.leandrooriente.com` as a DNS recovery backup. The apex record is now managed by the main Worker's Custom Domain.
 
