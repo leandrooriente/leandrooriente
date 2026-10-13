@@ -10,12 +10,20 @@ Use Cloudflare Workers Static Assets for this repository. Production is
 its own `workers.dev` URL. Use a feature preview when no target is specified.
 Deploy production when the user requests production or `leandrooriente.com`.
 
+Normal production changes are published by merging a pull request into protected
+`main` and following the resulting GitHub Actions deployment. The local commands
+below remain available for feature previews and explicitly requested local
+production deployments.
+
 ## Repository setup
 
 Run commands from the repository root. Read `wrangler.jsonc`,
 `wrangler.redirect.jsonc`, `scripts/redirect-domain.mjs`,
 `eleventy.config.js`, `scripts/build.mjs`, `scripts/assets.mjs`, `scripts/images.mjs`, `scripts/styles.mjs`,
 and the working-tree status before deploying.
+
+Read `.github/workflows/deploy.yml` when working on automatic production
+deployments.
 
 - Worker: `leandrooriente-site`.
 - Redirect Worker: `leandrooriente-site-redirect`, configured separately in
@@ -129,6 +137,39 @@ production deploy; correct the reported problem or report the blocker.
 
 ## Deploy production
 
+### GitHub Actions
+
+`.github/workflows/deploy.yml` runs on pushes to `main`, including pull request
+merges, and supports manual dispatch only for `main`. The deployment job uses the
+GitHub `production` environment at `https://leandrooriente.com`; its deployment
+branch policy must allow only `main`. Keep `CLOUDFLARE_API_TOKEN` in the repository
+secrets or that environment's secrets; the current setup uses a repository secret.
+The account ID comes from `wrangler.jsonc`, so no account-ID
+secret is needed. Token setup requires a scoped Cloudflare API token; local
+Wrangler OAuth credentials are not used by GitHub Actions.
+
+Scope the token to the configured account with Workers Scripts Edit and Account
+Settings Read, and to the `leandrooriente.com` zone with Workers Routes Edit and
+Zone Read. These cover Worker deployment, Custom Domains, and zone lookup;
+unrelated Cloudflare product permissions are not required.
+
+The workflow uses commit-pinned checkout and Node setup actions with read-only
+repository permissions, Node.js 22, `npm ci`, and pinned Wrangler 4.149.0. Wrangler
+invokes the configured clean build before deploying the main assets Worker.
+Runs share a production concurrency group with `cancel-in-progress: false`.
+The verification step checks published and draft page responses and direct
+HTTP/HTTPS `www` redirects, including an article query string. The redirect Worker
+remains separately managed.
+
+After a merge, inspect the **Deploy production** run and its verification result.
+To rerun manually, use `gh workflow run deploy.yml --ref main`, then follow the
+resulting run. A dispatch from another branch skips the deployment job. Report
+the workflow run URL and deployment result; a successful merge alone does not
+confirm a successful production deployment.
+
+### Local production deployment
+
+When explicitly requested, wait for any active automatic deployment to finish.
 After preparation succeeds, publish the intended production checkout:
 
 ```sh

@@ -33,6 +33,7 @@ npm run preview
 - `scripts/`: clean builds, asset fingerprinting, image and stylesheet generation, navigation prefetch, and article diagrams and video markup.
 - `assets/`: active source artwork, fonts, logos, videos, browser scripts, and provenance records.
 - `src/_headers`: cache rules copied into the public output.
+- `.github/workflows/deploy.yml`: automatic production deployment from `main`.
 - `wrangler.jsonc`: production static assets Worker; `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`: the `www` hostname redirect.
 
 ## Articles and public URLs
@@ -74,6 +75,18 @@ WOFF2 conversion is a preparation step when a font changes, not part of the norm
 
 The canonical origin is `https://leandrooriente.com`, configured in `src/_data/site.js`. `wrangler.jsonc` builds the saved working files, including uncommitted changes, before uploading `dist/` to the assets-only `leandrooriente-site` Worker. The generator runs locally.
 
+### Automatic production deployment
+
+Merging a pull request into protected `main` starts [the production workflow](.github/workflows/deploy.yml). It uses Node.js 22, installs the locked dependencies with `npm ci`, and runs pinned Wrangler 4.149.0. Wrangler invokes the existing clean build before uploading the assets. Production runs are serialized, and an active deployment is allowed to finish.
+
+Configure the GitHub `production` environment to allow only the `main` branch. Store the scoped Cloudflare API token as `CLOUDFLARE_API_TOKEN` in the repository secrets or the `production` environment secrets. The current setup uses a repository secret. The account ID is already in `wrangler.jsonc`; no account secret is needed. The workflow has read-only repository access and uses actions pinned to full commit hashes.
+
+Create the token with **Account → Workers Scripts → Edit** and **Account → Account Settings → Read** limited to the configured Cloudflare account, plus **Zone → Workers Routes → Edit** and **Zone → Zone → Read** limited to `leandrooriente.com`. These cover the Worker deployment, Custom Domain, and zone lookup; the workflow does not need credentials for other Cloudflare products.
+
+The workflow verifies published and draft page responses and the HTTP/HTTPS `www` redirects after deployment. It deploys the main assets Worker; the redirect Worker remains separately managed. For a manual rerun, select `main` under **Actions → Deploy production → Run workflow**, or use `gh workflow run deploy.yml --ref main`. Runs requested on other branches skip the deployment job.
+
+### Local deployment and feature previews
+
 Check account access and validate the build and configuration:
 
 ```sh
@@ -87,7 +100,7 @@ Create or update a feature preview with `npx --yes wrangler@4.149.0 preview --na
 
 Use the URL returned by Wrangler. Set `SITE_URL` to that preview's origin when rebuilding or updating it so canonical URLs and sharing images point to the preview. Production builds use the canonical origin when `SITE_URL` is unset. Remove a completed preview with `npx --yes wrangler@4.149.0 preview delete --name <feature-name> --skip-confirmation`.
 
-Publish production separately with `npx --yes wrangler@4.149.0 deploy`.
+When a local production deployment is explicitly needed, wait for any active automatic deployment to finish, then run `npx --yes wrangler@4.149.0 deploy`.
 
 ### www redirect and recovery
 

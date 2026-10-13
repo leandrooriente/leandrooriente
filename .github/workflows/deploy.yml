@@ -1,0 +1,94 @@
+name: Deploy production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://leandrooriente.com
+    steps:
+      - name: Check out the production commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Install the pinned build dependencies
+        run: npm ci
+
+      - name: Build and deploy the site
+        run: |
+          if [[ -z "$CLOUDFLARE_API_TOKEN" ]]; then
+            echo "::error::Add CLOUDFLARE_API_TOKEN to the repository or production environment secrets before deploying."
+            exit 1
+          fi
+          npx --yes wrangler@4.149.0 deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SITE_URL: https://leandrooriente.com
+
+      - name: Verify production pages and www redirects
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, readdirSync } from 'node:fs';
+          import matter from 'gray-matter';
+
+          const origin = 'https://leandrooriente.com';
+          const article = '/writing/an-answer-should-be-easy-to-check';
+          const publishedPaths = ['/', '/writing/', ...readdirSync('dist/writing')
+            .filter(file => file.endsWith('.html') && file !== 'index.html')
+            .map(file => '/writing/' + file.slice(0, -5))];
+          const draftPaths = readdirSync('src/posts')
+            .filter(file => file.endsWith('.md'))
+            .flatMap(file => {
+              const { data } = matter(readFileSync('src/posts/' + file, 'utf8'));
+              return data.draft === true
+                ? [data.permalink, data.permalink.replace(/\.html$/, '')]
+                : [];
+            });
+          const checks = [
+            ...publishedPaths
+              .map(path => ({ url: origin + path, status: 200 })),
+            ...draftPaths
+              .map(path => ({ url: origin + path, status: 404 })),
+            ...['http:', 'https:'].flatMap(protocol =>
+              ['/', article + '?deployment-check=1'].map(path => ({
+                url: protocol + '//www.leandrooriente.com' + path,
+                status: 301,
+                location: origin + path
+              }))
+            )
+          ];
+
+          for (const check of checks) {
+            const response = await fetch(check.url, {
+              method: 'HEAD',
+              redirect: 'manual',
+              signal: AbortSignal.timeout(15000)
+            });
+            if (response.status !== check.status ||
+                (check.location && response.headers.get('location') !== check.location)) {
+              throw new Error('Unexpected response for ' + check.url + ': ' +
+                response.status + ' ' + (response.headers.get('location') || ''));
+            }
+            console.log(response.status + ' ' + check.url);
+          }
+          NODE
