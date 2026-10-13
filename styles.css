@@ -190,6 +190,8 @@ main:focus { outline: none; }
 .reading-body ul { list-style: disc; }
 .reading-body ol { list-style: decimal; }
 .reading-body li + li { margin-top: 8px; }
+.fictional-pr-illustration { width: min(100%, 560px); margin: 32px auto; scroll-margin-top: 24px; }
+.fictional-pr-illustration img { display: block; width: 100%; height: auto; }
 /* Reusable print-style phone; the transparent screen slot belongs to the artwork. */
 .phone-demo { --phone-fade: 180ms; margin-block: 40px; scroll-margin-top: 24px; }
 .phone-demo-device { position: relative; width: min(100%, 330px); aspect-ratio: 866 / 1816; margin-inline: auto; }

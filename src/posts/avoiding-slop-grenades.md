@@ -14,6 +14,8 @@ illustrationAlt: "A grenade explodes into a barrage of pages bearing AI filler p
 
 You give an agent a feature specification. It implements the feature, fixes a bug it finds along the way, refactors some nearby code, and adds optimizations for scenarios you never asked it to support. You send the result for review: 75 files changed, 3,000 lines of code changed.
 
+<figure class="fictional-pr-illustration" id="fictional-pr">{% responsiveImage "/assets/illustrations/slop-grenade-fictional-pr.png", "Fictional pull request titled ‘Do a bunch of stuff’ with a vague description about a game-changing, seamless, future-proof solution. It adds 2,300 lines, removes 700 lines, and changes 75 files.", "article", { loading: "lazy", sizes: "(max-width: 607px) calc(100vw - 48px), 560px" } %}</figure>
+
 Suppose you spent five minutes asking for that work. Your colleague now spends three hours figuring out what happened, which changes belong, and whether the feature works. Those hours are part of delivering the feature. You’ve handed them to someone else.
 
 At work, we’ve started calling this kind of handoff a “[slop grenade](https://fortune.com/2026/09/17/shopify-tobias-lutke-ai-slop-grenades/)”: AI-generated content passed to another person without the author taking the time to read, refine, or verify it.
