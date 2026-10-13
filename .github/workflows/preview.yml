@@ -1,0 +1,118 @@
+name: Pull request preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    outputs:
+      active: ${{ steps.preview.outputs.active }}
+      sha: ${{ steps.preview.outputs.sha }}
+      url: ${{ steps.preview.outputs.url }}
+    steps:
+      - name: Check out the workflow helper
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.action == 'closed' && github.event.repository.default_branch || github.sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Prepare the preview or clean up a closed pull request
+        id: preview
+        run: node .github/scripts/pr-preview.mjs prepare
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  build:
+    needs: prepare
+    if: needs.prepare.outputs.active == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the pull request commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Install the pinned build dependencies
+        run: npm ci
+
+      - name: Build the site for its preview origin
+        run: npm run build
+        env:
+          SITE_URL: ${{ needs.prepare.outputs.url }}
+
+      - name: Save the public site files
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pr-${{ github.event.pull_request.number }}-site-${{ github.run_id }}
+          path: dist/
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 0
+          retention-days: 1
+          overwrite: true
+
+  publish:
+    needs: [prepare, build]
+    if: needs.prepare.outputs.active == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out the workflow helper
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.action == 'closed' && github.event.repository.default_branch || github.sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Download this run's public site files
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pr-${{ github.event.pull_request.number }}-site-${{ github.run_id }}
+          path: ${{ runner.temp }}/pr-preview-artifact
+          digest-mismatch: error
+
+      - name: Publish, verify, and update the preview comment
+        run: node .github/scripts/pr-preview.mjs publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PREVIEW_SHA: ${{ needs.prepare.outputs.sha }}
+          PREVIEW_URL: ${{ needs.prepare.outputs.url }}
+          PREVIEW_ARTIFACT_DIR: ${{ runner.temp }}/pr-preview-artifact

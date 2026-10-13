@@ -85,6 +85,16 @@ Create the token with **Account → Workers Scripts → Edit** and **Account →
 
 The workflow verifies published and draft page responses and the HTTP/HTTPS `www` redirects after deployment. It deploys the main assets Worker; the redirect Worker remains separately managed. For a manual rerun, select `main` under **Actions → Deploy production → Run workflow**, or use `gh workflow run deploy.yml --ref main`. Runs requested on other branches skip the deployment job.
 
+### Automatic pull request previews
+
+Opening or reopening a pull request from a branch in this repository starts [the preview workflow](.github/workflows/preview.yml). Every push to that branch updates the same Cloudflare environment, named `pr-<pull-request-number>`. Draft pull requests are included. Fork and Dependabot pull requests do not use the deployment credential.
+
+After a successful deployment, GitHub Actions adds a **Cloudflare preview** comment with the stable test URL, deployed commit, and workflow link. Later deployments update that comment. Closing or merging the pull request deletes its preview and marks the comment as closed; reopening recreates the environment.
+
+If a new build fails, the previous successful preview remains available. The commit shown in the comment identifies its deployed version. Before the first successful deployment, there is no preview-link comment; check the pull request's **Pull request preview** run for progress or errors.
+
+Previews use the existing `CLOUDFLARE_API_TOKEN` repository secret. The build runs without deployment credentials, with `SITE_URL` set to the returned preview origin. A separate job uploads the generated static files using a fixed preview configuration, checks the live preview, and updates the comment. Runs are serialized per pull request and skip outdated commits.
+
 ### Local deployment and feature previews
 
 Check account access and validate the build and configuration:
