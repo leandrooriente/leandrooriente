@@ -30,14 +30,12 @@ and the working-tree status before deploying.
   before building when they are not already installed.
 - The main site is assets-only: no Worker entrypoint, database, or deployment
   secrets are needed. Cloudflare receives the generated output only.
-- The main Worker retains Custom Domains for `leandrooriente.com` and
-  `site.leandrooriente.com`. The former site binding supplies the proxied DNS
-  beneath the separate redirect Worker's `site.leandrooriente.com/*` route.
-  Keep both bindings in the main configuration. The redirect Worker also owns
-  `www.leandrooriente.com/*`; `www` has a proxied CNAME to the apex.
-- Both alternate hostnames redirect to the HTTPS apex with status 301,
-  preserving paths and query strings. Worker routes take precedence over the
-  underlying Custom Domain. The redirect configuration has no assets or build.
+- The main Worker retains the Custom Domain for `leandrooriente.com`.
+  The redirect Worker owns `www.leandrooriente.com/*`; `www` has a proxied
+  CNAME to the apex.
+- `www.leandrooriente.com` redirects to the HTTPS apex with status 301,
+  preserving paths and query strings. The redirect configuration has no assets
+  or build.
 - `src/_data/site.js` sets the canonical production origin to
   `https://leandrooriente.com`. Ensure `SITE_URL` does not override this origin
   for a production build; feature previews set it to their returned origin.
@@ -151,8 +149,8 @@ npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc
 ```
 
 Confirm it is named `leandrooriente-site-redirect` and owns only
-`site.leandrooriente.com/*` and `www.leandrooriente.com/*`. Its deployment does
-not rebuild or replace the main site's assets.
+`www.leandrooriente.com/*`. Its deployment does not rebuild or replace the main
+site's assets.
 
 The October 12, 2026 domain migration retained the four former GitHub Pages
 apex A records at `previous-site-origin.leandrooriente.com` as a recoverable DNS
@@ -177,9 +175,9 @@ On the returned feature URL or production URL, check:
 - Fingerprinted CSS, fonts, and images send `Cache-Control: public, max-age=31536000, immutable`;
   HTML retains revalidation rather than a long browser-cache lifetime.
 - A nonexistent path returns 404, consistent with `not_found_handling: "none"`.
-- For production, HTTP and HTTPS requests to both `site.leandrooriente.com`
-  and `www.leandrooriente.com` return 301 directly to the HTTPS apex. Verify a
-  root path and an article path with a query string, preserving both exactly.
+- For production, HTTP and HTTPS requests to `www.leandrooriente.com` return
+  301 directly to the HTTPS apex. Verify a root path and an article path with a
+  query string, preserving both exactly.
 
 Check a browser rendering when page content or styling changed. Report the
 deployment target, usable URL, version or deployment identifier, and checks

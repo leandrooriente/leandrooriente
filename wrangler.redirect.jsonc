@@ -7,10 +7,6 @@
   "preview_urls": false,
   "routes": [
     {
-      "pattern": "site.leandrooriente.com/*",
-      "zone_name": "leandrooriente.com"
-    },
-    {
       "pattern": "www.leandrooriente.com/*",
       "zone_name": "leandrooriente.com"
     }

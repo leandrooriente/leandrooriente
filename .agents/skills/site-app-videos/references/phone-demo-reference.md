@@ -81,4 +81,4 @@ Use a unique final ID for each player. The frame and shared player are already r
 
 Mimir’s original recording is `/Users/oriente/Documents/mimir-video.mov`. Its web version uses H.264, AAC, 30fps, and fast-start MP4 playback, with the source preserved. Its first-frame poster was extracted locally with AVFoundation and encoded as JPEG. For future demos, use an available local media tool to inspect and prepare the new recording, rather than depending on that original path or a particular installed converter.
 
-Live example: [Mimir app demo](https://site.leandrooriente.com/writing/an-answer-should-be-easy-to-check#mimir-demo).
+Live example: [Mimir app demo](https://leandrooriente.com/writing/an-answer-should-be-easy-to-check#mimir-demo).
