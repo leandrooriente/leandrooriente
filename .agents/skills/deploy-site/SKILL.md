@@ -142,8 +142,9 @@ production deploy; correct the reported problem or report the blocker.
 `.github/workflows/deploy.yml` runs on pushes to `main`, including pull request
 merges, and supports manual dispatch only for `main`. The deployment job uses the
 GitHub `production` environment at `https://leandrooriente.com`; its deployment
-branch policy must allow only `main`. Keep `CLOUDFLARE_API_TOKEN` as a secret in
-that environment. The account ID comes from `wrangler.jsonc`, so no account-ID
+branch policy must allow only `main`. Keep `CLOUDFLARE_API_TOKEN` in the repository
+secrets or that environment's secrets; the current setup uses a repository secret.
+The account ID comes from `wrangler.jsonc`, so no account-ID
 secret is needed. Token setup requires a scoped Cloudflare API token; local
 Wrangler OAuth credentials are not used by GitHub Actions.
 

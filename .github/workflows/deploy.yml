@@ -37,7 +37,7 @@ jobs:
       - name: Build and deploy the site
         run: |
           if [[ -z "$CLOUDFLARE_API_TOKEN" ]]; then
-            echo "::error::Add CLOUDFLARE_API_TOKEN to the production environment secrets before deploying."
+            echo "::error::Add CLOUDFLARE_API_TOKEN to the repository or production environment secrets before deploying."
             exit 1
           fi
           npx --yes wrangler@4.149.0 deploy

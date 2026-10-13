@@ -79,7 +79,7 @@ The canonical origin is `https://leandrooriente.com`, configured in `src/_data/s
 
 Merging a pull request into protected `main` starts [the production workflow](.github/workflows/deploy.yml). It uses Node.js 22, installs the locked dependencies with `npm ci`, and runs pinned Wrangler 4.149.0. Wrangler invokes the existing clean build before uploading the assets. Production runs are serialized, and an active deployment is allowed to finish.
 
-Configure the GitHub `production` environment to allow only the `main` branch and store its scoped Cloudflare API token as the environment secret `CLOUDFLARE_API_TOKEN`. The account ID is already in `wrangler.jsonc`; no account secret is needed. The workflow has read-only repository access and uses actions pinned to full commit hashes.
+Configure the GitHub `production` environment to allow only the `main` branch. Store the scoped Cloudflare API token as `CLOUDFLARE_API_TOKEN` in the repository secrets or the `production` environment secrets. The current setup uses a repository secret. The account ID is already in `wrangler.jsonc`; no account secret is needed. The workflow has read-only repository access and uses actions pinned to full commit hashes.
 
 Create the token with **Account → Workers Scripts → Edit** and **Account → Account Settings → Read** limited to the configured Cloudflare account, plus **Zone → Workers Routes → Edit** and **Zone → Zone → Read** limited to `leandrooriente.com`. These cover the Worker deployment, Custom Domain, and zone lookup; the workflow does not need credentials for other Cloudflare products.
 
