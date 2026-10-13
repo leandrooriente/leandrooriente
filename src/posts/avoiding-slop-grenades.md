@@ -20,17 +20,13 @@ Suppose you spent five minutes asking for that work. Your colleague now spends t
 
 At work, we’ve started calling this kind of handoff a “[slop grenade](https://fortune.com/2026/09/17/shopify-tobias-lutke-ai-slop-grenades/)”: AI-generated content passed to another person without the author taking the time to read, refine, or verify it.
 
-## The cost of the handoff
+If you work on an established codebase where a team maintains a system with existing users, conventions, and years of decisions behind it, you might already have been a victim of a slop grenade.
 
-That handoff becomes more expensive in an established codebase. A change has to fit existing conventions, preserve behavior that users rely on, and account for years of decisions.
+The reality is that code is becoming cheap. The bottleneck has shifted from writing lines of code to getting people aligned, whether that’s reviewing a PR, discussing a technical design, or coordinating a project across teams.
 
-That’s the setting I’m focusing on here. Personal experiments and greenfield projects can have different constraints.
+That makes optimizing for alignment an essential part of the work. Your job is to prepare each PR, document, or meeting with care, focus, and empathy for the people on the other end.
 
-Generating code is cheap. Understanding, reviewing, and safely integrating it still takes the team’s time and attention.
-
-As the author, I have the requirements and constraints fresh in my mind. My reviewer may need to reconstruct that context before assessing the change.
-
-That makes preparing the PR part of my work on the feature. I can resolve those questions more cheaply before handing it over.
+These are the practices that have helped me get my PRs properly reviewed and merged, and my features shipped to production.
 
 ## Decide what belongs in the feature
 
