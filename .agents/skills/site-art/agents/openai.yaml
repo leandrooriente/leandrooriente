@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Art"
+  short_description: "Create tactile editorial illustrations for the site"
+  default_prompt: "Use $site-art to create an image in the site’s tactile editorial print style."

@@ -1,0 +1,18 @@
+{
+  "name": "leandrooriente-site-redirect",
+  "main": "scripts/redirect-domain.mjs",
+  "account_id": "fb873ce280424623e0e7c2733ec85d0c",
+  "compatibility_date": "2026-10-12",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "site.leandrooriente.com/*",
+      "zone_name": "leandrooriente.com"
+    },
+    {
+      "pattern": "www.leandrooriente.com/*",
+      "zone_name": "leandrooriente.com"
+    }
+  ]
+}

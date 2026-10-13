@@ -1,0 +1,27 @@
+{
+  "name": "leandrooriente-site",
+  "account_id": "fb873ce280424623e0e7c2733ec85d0c",
+  "compatibility_date": "2026-10-11",
+  "workers_dev": false,
+  "preview_urls": true,
+  "previews": {},
+  "routes": [
+    {
+      "pattern": "leandrooriente.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "site.leandrooriente.com",
+      "custom_domain": true
+    }
+  ],
+  "build": {
+    "command": "npm run build",
+    "watch_dir": ["src", "styles.css", "assets", "eleventy.config.js"]
+  },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

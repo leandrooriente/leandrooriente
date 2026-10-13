@@ -1,22 +1,18 @@
 {
-  "name": "leandrooriente",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "leandrooriente-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "start": "browser-sync start --cwd . --server --files '*.html, *.css'"
+    "dev": "eleventy --serve",
+    "build": "node scripts/build.mjs",
+    "preview": "npx --yes wrangler@4.149.0 dev --local"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leandrooriente/leandrooriente.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leandrooriente/leandrooriente/issues"
-  },
-  "homepage": "https://github.com/leandrooriente/leandrooriente#readme",
   "devDependencies": {
-    "browser-sync": "^3.0.4"
+    "@11ty/eleventy": "3.1.6",
+    "@11ty/eleventy-img": "7.0.0",
+    "htmlparser2": "12.0.0"
   }
 }

@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+bodyClass: article-page
+navigation: writing
+---
+<main class="shell article-shell" id="main" tabindex="-1">
+  <article aria-labelledby="article-title">
+    <header class="article-heading">
+      <h1 class="article-title" id="article-title">{{ title }}</h1>
+      <p class="article-deck">{{ deck }}</p>
+      <p class="article-meta">{% if draft %}Draft{% else %}Published in <time datetime="{{ publicationYear }}">{{ publicationYear }}</time>{% endif %} <span aria-hidden="true">—</span> {{ content | readingMinutes(title, deck) }} minute read</p>
+    </header>
+    {% if illustration %}
+    <figure class="article-illustration">
+      {% responsiveImage illustration, illustrationAlt, "article", { loading: "lazy" } %}
+    </figure>
+    {% endif %}
+    <div class="article-reading">
+      <div class="reading-body">
+        {{ content | safe }}
+      </div>
+    </div>
+  </article>
+</main>
+<nav class="shell article-footer" aria-label="Article navigation">
+  <a href="/writing/"><span aria-hidden="true">←</span> Back to writing</a>
+</nav>
