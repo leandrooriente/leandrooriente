@@ -31,7 +31,7 @@ npm run preview
 - `scripts/`: clean builds, asset fingerprinting, image and stylesheet generation, navigation prefetch, and article diagrams and video markup.
 - `assets/`: active source artwork, fonts, logos, videos, browser scripts, and provenance records.
 - `src/_headers`: cache rules copied into the public output.
-- `wrangler.jsonc`: production static assets Worker; `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`: alternate-hostname redirects.
+- `wrangler.jsonc`: production static assets Worker; `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`: the `www` hostname redirect.
 
 ## Articles and public URLs
 
@@ -87,18 +87,18 @@ Use the URL returned by Wrangler. Set `SITE_URL` to that preview's origin when r
 
 Publish production separately with `npx --yes wrangler@4.149.0 deploy`.
 
-### Alternate hostnames and recovery
+### www redirect and recovery
 
-The main Worker has Custom Domain bindings for both `leandrooriente.com` and `site.leandrooriente.com`. Keep the latter binding: it supplies the proxied DNS record beneath the separate redirect route. `www.leandrooriente.com` has a proxied CNAME pointing to the apex.
+The main Worker has a Custom Domain binding for `leandrooriente.com`. `www.leandrooriente.com` has a proxied CNAME pointing to the apex.
 
-The `leandrooriente-site-redirect` Worker owns `site.leandrooriente.com/*` and `www.leandrooriente.com/*`. Those routes take precedence over static assets and return permanent 301 redirects to the HTTPS apex, preserving paths and query strings. Deploy that Worker separately when its code or routes change:
+The `leandrooriente-site-redirect` Worker owns `www.leandrooriente.com/*`. That route takes precedence over static assets and returns permanent 301 redirects to the HTTPS apex, preserving paths and query strings. Deploy that Worker separately when its code or routes change:
 
 ```sh
 npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc --dry-run
 npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc
 ```
 
-Its configuration has no site build or assets. Verify both alternate hostnames redirect correctly for `/` and an article path with a query string.
+Its configuration has no site build or assets. Verify `www.leandrooriente.com` redirects correctly for `/` and an article path with a query string.
 
 The October 12, 2026 migration retained the four former GitHub Pages apex A records at `previous-site-origin.leandrooriente.com` as a DNS recovery backup. The apex record is now managed by the main Worker's Custom Domain.
 

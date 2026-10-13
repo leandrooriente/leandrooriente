@@ -44,6 +44,6 @@ Original site repository: `/Users/oriente/projects/leandrooriente`.
 - Nunjucks registration and controller asset publication in `eleventy.config.js`
 - `{% mimirPipeline "unique-figure-id" %}` in a Nunjucks-enabled post
 
-Live article: [Why I built Mimir for my Proton email and calendar](https://site.leandrooriente.com/writing/an-answer-should-be-easy-to-check#mimir-architecture).
+Live article: [Why I built Mimir for my Proton email and calendar](https://leandrooriente.com/writing/an-answer-should-be-easy-to-check#mimir-architecture).
 
 Use the bundled files when that checkout is unavailable. Inspect the current repository when editing the existing Mimir diagram, because it may have evolved after this snapshot. Keep future changes narrowly scoped to the requested diagram.
