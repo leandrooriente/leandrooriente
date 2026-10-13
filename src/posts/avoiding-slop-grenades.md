@@ -20,7 +20,11 @@ Suppose you spent five minutes asking for that work. Your colleague now spends t
 
 At work, we’ve started calling this kind of handoff a “[slop grenade](https://fortune.com/2026/09/17/shopify-tobias-lutke-ai-slop-grenades/)”: AI-generated content passed to another person without the author taking the time to read, refine, or verify it.
 
-I’m focusing on established codebases, where a team maintains a system with existing users, conventions, and years of decisions behind it. Personal experiments and greenfield projects can have different constraints.
+## The cost of the handoff
+
+That handoff becomes more expensive in an established codebase. A change has to fit existing conventions, preserve behavior that users rely on, and account for years of decisions.
+
+That’s the setting I’m focusing on here. Personal experiments and greenfield projects can have different constraints.
 
 Generating code is cheap. Understanding, reviewing, and safely integrating it still takes the team’s time and attention.
 
