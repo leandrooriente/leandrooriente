@@ -1,10 +1,12 @@
 <ol class="article-list" role="list">
   {% for post in collections.posts %}
   <li class="article-entry">
-    <a class="post-link illustrated-post-link" href="{{ post.url }}">
+    <a class="post-link illustrated-post-link" href="{{ post.url | cleanPageUrl }}">
+      {% if post.data.illustration %}
       <div class="article-artwork">
-        <img src="{{ post.data.illustration }}" width="{{ post.data.illustrationWidth }}" height="{{ post.data.illustrationHeight }}" alt="" loading="lazy" decoding="async">
+        {% responsiveImage post.data.illustration, "", "card", { loading: "lazy" } %}
       </div>
+      {% endif %}
       <div class="article-content">
         <h{{ headingLevel }} class="post-title">{{ post.data.title }}</h{{ headingLevel }}>
         <p class="post-summary">{{ post.data.summary }}</p>

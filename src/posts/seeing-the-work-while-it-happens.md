@@ -1,5 +1,6 @@
 ---
 layout: "layouts/article.njk"
+draft: true
 permalink: "/writing/seeing-the-work-while-it-happens.html"
 title: "Coach: keeping the work in view."
 deck: "A workspace should help me follow the work and know where my judgment is needed."
@@ -9,8 +10,6 @@ publicationYear: 2026
 order: 2
 illustration: "/assets/illustrations/coach-editorial.png"
 illustrationAlt: "A hand places a red marker among connected task sheets."
-illustrationWidth: 1536
-illustrationHeight: 1024
 ---
 
 Work can continue while my attention is elsewhere. A coding agent may be reading a repository, changing a file, or checking an assumption. When I return, I need to understand how that activity relates to the task I gave it. A sequence of events can tell me what happened and still leave me piecing together where the work stands.

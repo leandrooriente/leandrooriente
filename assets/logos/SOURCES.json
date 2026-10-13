@@ -69,18 +69,6 @@
   },
   {
     "company": "OLX",
-    "path": "olx-supplied.png",
-    "source": "User attachment: /Users/oriente/Downloads/id00RzEG0O_1791741332255.png",
-    "dimensions": [
-      180,
-      180
-    ],
-    "variant": "User-supplied modern colored OLX tile, copied unchanged. Retained as a visual reference; the career timeline now uses olx.svg with a transparent background.",
-    "usage_notes": "Company trademark; no separate license provided with attachment.",
-    "sha256": "54264f33f19f1b96f80d349510ba282670f04e562e6cbb9e3a5a0461bfffd26d"
-  },
-  {
-    "company": "OLX",
     "path": "olx.svg",
     "source_page_url": "https://commons.wikimedia.org/wiki/File:OLX_Brasil_logo.svg",
     "source_asset_url": "https://d9hhrg4mnvzow.cloudfront.net/cfg-unbouce.olx.com.br/vender/1119c3c5-a-brand-colored.svg",

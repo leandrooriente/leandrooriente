@@ -1,21 +1,25 @@
 ---
 name: deploy-site
-description: Deploy this repository to production at site.leandrooriente.com or to an isolated Cloudflare Workers preview for each feature; verify deployments and clean up feature previews.
+description: Deploy this repository to production at leandrooriente.com or to an isolated Cloudflare Workers preview for each feature; verify deployments and clean up feature previews.
 ---
 
 # Deploy the site
 
 Use Cloudflare Workers Static Assets for this repository. Production is
-`site.leandrooriente.com`; feature testing uses native Worker Previews, each with
+`leandrooriente.com`; feature testing uses native Worker Previews, each with
 its own `workers.dev` URL. Use a feature preview when no target is specified.
-Deploy production when the user requests production or `site.leandrooriente.com`.
+Deploy production when the user requests production or `leandrooriente.com`.
 
 ## Repository setup
 
 Run commands from the repository root. Read `wrangler.jsonc`,
-`eleventy.config.js`, `scripts/build.mjs`, and the working-tree status before deploying.
+`wrangler.redirect.jsonc`, `scripts/redirect-domain.mjs`,
+`eleventy.config.js`, `scripts/build.mjs`, `scripts/assets.mjs`, `scripts/images.mjs`, `scripts/styles.mjs`,
+and the working-tree status before deploying.
 
 - Worker: `leandrooriente-site`.
+- Redirect Worker: `leandrooriente-site-redirect`, configured separately in
+  `wrangler.redirect.jsonc` with `scripts/redirect-domain.mjs` as its entrypoint.
 - Account: `fb873ce280424623e0e7c2733ec85d0c`.
 - CLI: `npx --yes wrangler@4.149.0` (Node.js 22 or later required).
 - Top-level configuration controls production; `previews: {}` enables the
@@ -24,8 +28,19 @@ Run commands from the repository root. Read `wrangler.jsonc`,
   `preview_urls: true` allows feature URLs on `workers.dev`.
 - Eleventy builds the site locally. Install its pinned dependencies with `npm ci`
   before building when they are not already installed.
-- This is an assets-only site: no Worker entrypoint, database, or deployment
+- The main site is assets-only: no Worker entrypoint, database, or deployment
   secrets are needed. Cloudflare receives the generated output only.
+- The main Worker retains Custom Domains for `leandrooriente.com` and
+  `site.leandrooriente.com`. The former site binding supplies the proxied DNS
+  beneath the separate redirect Worker's `site.leandrooriente.com/*` route.
+  Keep both bindings in the main configuration. The redirect Worker also owns
+  `www.leandrooriente.com/*`; `www` has a proxied CNAME to the apex.
+- Both alternate hostnames redirect to the HTTPS apex with status 301,
+  preserving paths and query strings. Worker routes take precedence over the
+  underlying Custom Domain. The redirect configuration has no assets or build.
+- `src/_data/site.js` sets the canonical production origin to
+  `https://leandrooriente.com`. Ensure `SITE_URL` does not override this origin
+  for a production build; feature previews set it to their returned origin.
 
 Deployments upload saved working files, including uncommitted changes. Preserve
 unrelated changes and check that the intended checkout is being published. The
@@ -56,8 +71,15 @@ npx --yes wrangler@4.149.0 deploy --dry-run
 ```
 
 The build clears and regenerates `dist/` from the Markdown posts and shared
-Eleventy templates in `src/`. The public CSS, images, fonts, and licenses listed
-in `eleventy.config.js` are copied into that output. Source notes, generation
+Eleventy templates in `src/`. The public fonts, logos, SVGs, and generated CSS
+are fingerprinted under `dist/assets/static/`; font licenses retain their public paths.
+The stylesheet is generated locally by `scripts/styles.mjs` with optimized textures
+and masks, then hashed after updating all dependency URLs. Illustrations, textures,
+and masks are generated locally by `scripts/images.mjs` as AVIF/WebP files in
+`dist/assets/images/`, with filenames hashing the final encoded bytes; only current
+derivatives are published from the local image cache. `src/_headers` is copied
+to `dist/_headers` for immutable browser caching of these fingerprinted directories.
+Source notes, generation
 prompts, unused assets, and the skill itself stay out of it. Do not upload the
 repository root or reuse stale output. Resolve build or dry-run failures before
 uploading.
@@ -118,19 +140,46 @@ npx --yes wrangler@4.149.0 deploy
 
 Record the previously active version before uploading so a requested recovery can
 target it. Confirm the deployment output names `leandrooriente-site` and
-`site.leandrooriente.com`. Production publishes the local files; it does not
+`leandrooriente.com`. Production publishes the local files; it does not
 promote a preview automatically.
+
+When creating or changing the redirect Worker, deploy it separately:
+
+```sh
+npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc --dry-run
+npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc
+```
+
+Confirm it is named `leandrooriente-site-redirect` and owns only
+`site.leandrooriente.com/*` and `www.leandrooriente.com/*`. Its deployment does
+not rebuild or replace the main site's assets.
+
+The October 12, 2026 domain migration retained the four former GitHub Pages
+apex A records at `previous-site-origin.leandrooriente.com` as a recoverable DNS
+backup. The new apex record is managed by the main Worker's Custom Domain.
+Do not retarget these backup records during an ordinary site deployment.
+DNS changes require a dashboard session or credentials with DNS permissions;
+the Wrangler OAuth scopes above cover the Workers and their routes.
 
 ## Verify and report
 
 On the returned feature URL or production URL, check:
 
 - `/` and `/writing/` return the intended HTML.
-- `/writing/an-answer-should-be-easy-to-check` and
-  `/writing/seeing-the-work-while-it-happens` load, allowing normal HTML redirects.
-- `/styles.css`, the family illustration, and referenced fonts return their
+- `/writing/an-answer-should-be-easy-to-check` loads, allowing normal HTML
+  redirects. `seeing-the-work-while-it-happens.md` currently has `draft: true`;
+  its extensionless and `.html` URLs must return 404 until it is published.
+- Canonical URLs, `og:url`, and absolute sharing-image URLs use the requested
+  origin: the apex for production or the returned origin for a feature preview.
+- The fingerprinted stylesheet URL in the HTML, generated image URLs in `src` and
+  `srcset`, and referenced fonts return their
   expected content types and match the prepared public files.
+- Fingerprinted CSS, fonts, and images send `Cache-Control: public, max-age=31536000, immutable`;
+  HTML retains revalidation rather than a long browser-cache lifetime.
 - A nonexistent path returns 404, consistent with `not_found_handling: "none"`.
+- For production, HTTP and HTTPS requests to both `site.leandrooriente.com`
+  and `www.leandrooriente.com` return 301 directly to the HTTPS apex. Verify a
+  root path and an article path with a query string, preserving both exactly.
 
 Check a browser rendering when page content or styling changed. Report the
 deployment target, usable URL, version or deployment identifier, and checks

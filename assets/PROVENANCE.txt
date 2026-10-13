@@ -1,24 +1,7 @@
 Asset provenance
 
-illustrations/paint-stains.png
-Rejected transparent forest-paint/terracotta exploration, generated with the
-built-in image tool. Original RGBA output retained unchanged but no longer
-referenced by the site. Its exact prompt is in illustrations/PROMPTS.md.
-
-illustrations/paper-traces.png
-Earlier transparent coffee-ring/water/ink exploration, generated with the
-built-in image tool. Original RGBA output retained unchanged but no longer
-referenced by the site. Its exact prompt is in illustrations/PROMPTS.md.
-
-The supplied photograph, Instrument Sans fonts, and regular Newsreader font were
-copied unchanged from leandro-site-handoff.zip.
-
-cycling-switzerland.jpg
-Original 1600 x 1066 photograph used by Leandro Oriente's existing site.
-Source: https://leandrooriente.com/photo-sepia.jpg
-Caption: Cycling in Switzerland.
-Suggested alt text: Cycling on a mountain road in Switzerland.
-No separate photograph license was supplied in the handoff.
+The Instrument Sans fonts and regular Newsreader font were copied unchanged
+from leandro-site-handoff.zip.
 
 fonts/instrument-sans-400.woff
 fonts/instrument-sans-500.woff
@@ -43,10 +26,38 @@ License: SIL Open Font License 1.1; retained in fonts/newsreader-OFL.txt.
 License source: https://github.com/google/fonts/blob/main/ofl/newsreader/OFL.txt
 Used for the closing article question instead of a browser-synthesized italic.
 
+fonts/instrument-sans-400.woff2
+fonts/instrument-sans-500.woff2
+fonts/newsreader-400.woff2
+fonts/newsreader-400-italic.woff2
+Compressed locally from the corresponding retained WOFF files on 2026-10-12,
+using FontTools 4.66.1 and Brotli 1.2.0. Existing font versions, glyph coverage,
+outlines, metrics, hinting, and shaping are preserved; no text-based subsetting.
+The normal site build publishes these WOFF2 files with content-hashed URLs.
+The original WOFF sources stay local. Both original font licenses are retained
+and published unchanged as fonts/instrument-sans-OFL.txt and fonts/newsreader-OFL.txt.
+WOFF2 SHA-256, in the order listed above:
+0078086945bc1086d4b8fa48aac04c318f89f6c2a5c2b6d18de6d3daf9dcbdf0
+5399bbb64d71b7f807dc03be8c83dff8909c8e324e2c9d3992dc1a475c3b4c81
+afda5eb939ffde5bab99ebdd32c9403d3f3d695ea9d53a5504f5a33455f1b552
+5945aeea0843544ca6a034ab9cad61b12f314c2d4da043c05920f9da7bab3841
+
 forest-sprig.svg
-Original SVG drawn for this exploration. An asymmetric stem with five broad,
+Original SVG drawn for this site. An asymmetric stem with five broad,
 tapered leaves, informed by the foliage silhouettes in the editorial illustrations.
 Rendered as a forest-ink CSS mask in the shared header; no image generation.
+
+favicon.svg
+favicon.ico
+apple-touch-icon.png
+Derived locally from forest-sprig.svg on 2026-10-12, preserving all six paths.
+The favicon uses the site's forest ink (#3e4b44) on warm paper (#f1e7d2).
+The SVG has a rounded paper tile; the ICO contains 16, 32, and 48 pixel renders.
+The 180 pixel Apple touch icon keeps a full paper background and adds breathing
+room around the sprig for the home screen's own corner mask. Raster versions
+were rendered from the SVG with Sharp; no image generation or external artwork.
+All explicit icon links use content-hashed URLs; favicon.ico is also published
+at the site root for browsers that request the conventional location.
 
 logos/
 Company trademark assets for the career timeline. Original files are copied
@@ -56,13 +67,10 @@ logos/SOURCES.json. These marks are not covered by the site's font licenses.
 Peixe Urbano uses a surviving later mark from a third-party logo archive;
 Midas Software retains its text name pending a verified company asset.
 
-logos/olx-supplied.png
 logos/storia-imoveis-supplied.png
-Updated company marks supplied directly by the user. Original PNG files retained
-unchanged. The OLX tile is retained as a visual reference for logos/olx.svg.
+Company mark supplied directly by the user. Original PNG retained unchanged.
 CSS crops the combined lockup to its Storia Imóveis half; grayscale/inversion and
-screen blending display that mark in white. These replace the earlier OLX and
-Romanian Storia assets in the career timeline.
+screen blending display that mark in white.
 
 logos/olx.svg
 OLX Brasil vector letter paths from the company's 2019 artwork, archived at
@@ -72,3 +80,77 @@ Paths are unchanged, filled white, and uniformly scaled/positioned on a 180 x 18
 transparent canvas to match the supplied tile's lettering and existing CSS crop.
 There is no background, filter, or blend mode in the SVG; transparency works
 without the screen-compositing effect that left a black matte in iOS Safari.
+
+
+illustrations/phone-frame-matte-black.png
+Reusable flat print-style phone frame generated with the built-in image tool on
+2026-10-12, then edited with that tool to change the olive ink to matte black at
+the user's request. Original RGBA output copied unchanged; outside background
+and screen opening retain genuine transparency. Dimensions: 866 x 1816 pixels.
+The exact generation and edit prompts and original output paths are recorded in
+illustrations/PROMPTS.md. Reuse is documented in illustrations/PHONE-FRAME.md.
+
+illustrations/mimir-demo-poster.jpg
+First displayed frame of the user-supplied videos/mimir-demo.mp4 at exactly
+0.0 seconds, extracted locally with AVFoundation on 2026-10-12. Encoded as an
+800 x 1739 JPEG (~79 KB) without changing the screen content. This is the active
+poster; the centered play button is supplied separately by the phone component.
+
+videos/mimir-demo.mp4
+User-supplied app demonstration from /Users/oriente/Documents/mimir-video.mov.
+Converted locally with FFmpeg 7.1 to 804 x 1748, 30 fps H.264 video and AAC audio,
+with fast-start MP4 playback. The recording's content is preserved, with a smaller
+web encoding; the original MOV remains untouched. Native video controls, inline
+phone playback, and no autoplay are used. The player preloads its first frame
+behind a paper wash, which fades out over 180 ms when playback starts.
+Only the optimized MP4 is published; the original MOV is not part of the site.
+
+logos/pi-supplied.png
+Pi logo supplied by the user from /Users/oriente/Downloads/Pi_logo.png.
+Original 800 x 740 PNG retained unchanged, including its alpha channel.
+SHA-256: a12372008b3d71c4bc02d828d97be9230702f9098da720caf95f022f5e2b4394
+Published with a content-hashed URL and placed proportionally on the chest of
+the original SVG robot in scripts/mimir-pipeline.mjs. The robot is
+drawn locally as a simplified print-style figure. The supplied robot JPG is a
+visual reference only and is not published.
+
+illustrations/mimir-user-editorial.png
+illustrations/mimir-user-editorial.webp
+Original transparent waist-up editorial user illustration generated and then
+simplified with the built-in image tool on 2026-10-12. Natural proportions,
+flat olive clothing, warm skin planes, and restrained print texture. Original
+1024 x 1536 RGBA output retained unchanged. The public WebP is encoded at
+512 x 768 with its alpha channel preserved, and placed in the desktop SVG.
+Mobile retains its static User node. Exact prompts and output paths are in
+illustrations/MIMIR-USER.md. No supplied photo or identity reference was used.
+
+illustrations/battlestation-editorial-v2.png
+Accepted 1536 x 1024 opaque PNG style-transfer edit generated with the built-in
+image tool on 2026-10-12. The first attempt was edited using mimir-editorial.png
+and coach-editorial.png as style and material references. Copied unchanged from
+the generated output. Flat hand-cut silhouettes, terracotta hand, matte dry ink,
+and warm fibrous paper. Used as the headline, card, and sharing image for the
+battlestation article.
+SHA-256: c45719206317590a3dd4e6bf173aa50b0d0496542ad5c774813fa2ef583adb58
+Exact final prompt and original output path are in illustrations/BATTLESTATION.md.
+
+Battlestation before/after diagrams
+Original static SVG cable maps authored in scripts/battlestation-diagrams.mjs.
+Use the site print palette, hand-cut device silhouettes, and sparse dry-ink marks.
+Each figure has a separate mobile composition and accessible title/description.
+Power annotations distinguish TS4 charging from the Mini's own power connection;
+each computer keeps its own Ethernet, while the monitor and six USB peripherals
+are shared. Integrated inline in the battlestation article.
+
+illustrations/leandro-family-grounded-editorial.png
+illustrations/mimir-editorial.png
+illustrations/coach-editorial.png
+illustrations/forest-lookout-firewatch.png
+illustrations/paper-grain.png
+illustrations/olive-ink.png
+Accepted editorial artwork and surface textures generated with the built-in
+image tool. Original source PNGs are retained unchanged; the build produces
+responsive encodings and optimized texture tiles. Exact prompts, dimensions,
+checksums, and original output paths are recorded in illustrations/PROMPTS.md.
+Coach artwork remains the source for the retained unpublished article draft.
+Superseded illustrations and unused photographs are not part of this repository.

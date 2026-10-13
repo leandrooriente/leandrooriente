@@ -13,7 +13,7 @@ preloadFonts: true
           <h1 class="hero-name" id="home-heading">Leandro Oriente<span class="accent-mark">.</span></h1>
           <p class="hero-introduction">Staff frontend developer at Shopify, working on checkout and Shop Pay.</p>
           <figure class="hero-art">
-            <img src="/assets/illustrations/leandro-family-grounded-editorial.png" width="1086" height="1448" alt="Illustration of Leandro sitting with his child on a patch of grass, holding a stuffed llama." decoding="async" fetchpriority="high">
+            {% responsiveImage "/assets/illustrations/leandro-family-grounded-editorial.png", "Illustration of Leandro sitting with his child on a patch of grass, holding a stuffed llama.", "portrait", { fetchpriority: "high" } %}
           </figure>
           <div class="hero-biography">
             <p>Hey there, I’m a husband and parent from Rio de Janeiro, now living in Amsterdam.</p>
@@ -36,7 +36,7 @@ preloadFonts: true
             <li class="career-entry career-entry-recent">
               <p class="period">2022 – now</p>
               <div class="career-details">
-                <h3 class="career-name"><img class="career-logo logo-shopify" src="/assets/logos/shopify.svg" width="304" height="87" alt="Shopify"></h3>
+                <h3 class="career-name"><img class="career-logo logo-shopify" src="{{ '/assets/logos/shopify.svg' | assetUrl }}" width="304" height="87" alt="Shopify"></h3>
                 <p class="career-role">Staff frontend developer</p>
                 <p class="career-contribution">I work on Shopify’s checkout experience, building the interfaces people use to complete a purchase.</p>
                 <p class="career-contribution">Alongside product work, I mentor developers and look for ways to make development processes clearer and easier to work with.</p>
@@ -45,7 +45,7 @@ preloadFonts: true
             <li class="career-entry career-entry-recent">
               <p class="period">2018 – 2022</p>
               <div class="career-details">
-                <h3 class="career-name"><img class="career-logo logo-dazn" src="/assets/logos/dazn.png" width="400" height="401" alt="DAZN"></h3>
+                <h3 class="career-name"><img class="career-logo logo-dazn" src="{{ '/assets/logos/dazn.png' | assetUrl }}" width="400" height="401" alt="DAZN"></h3>
                 <p class="career-role">Senior, then staff frontend engineer</p>
                 <p class="career-contribution">I worked on independent app releases and shared tooling, progressing from senior to staff frontend engineer.</p>
                 <p class="career-contribution">I also mentored developers as they grew into technical ownership of their work.</p>
@@ -54,7 +54,7 @@ preloadFonts: true
             <li class="career-entry">
               <p class="period">2017 – 2018</p>
               <div class="career-details">
-                <h3 class="career-name"><img class="career-logo logo-travix" src="/assets/logos/travix.png" width="200" height="82" alt="Travix"></h3>
+                <h3 class="career-name"><img class="career-logo logo-travix" src="{{ '/assets/logos/travix.png' | assetUrl }}" width="200" height="82" alt="Travix"></h3>
                 <p class="career-role">Senior frontend developer / tech lead</p>
                 <p class="career-contribution">I worked on a shared UI kit across affiliate brands, alongside flight-search and seat-map interfaces.</p>
               </div>
@@ -63,8 +63,8 @@ preloadFonts: true
               <p class="period">2016 – 2017</p>
               <div class="career-details">
                 <h3 class="career-name career-name-pair" aria-label="OLX / Storia Imóveis">
-                  <img class="career-logo logo-olx" src="/assets/logos/olx.svg" width="180" height="180" alt="">
-                  <span class="storia-logo-window" aria-hidden="true"><img class="career-logo logo-storia" src="/assets/logos/storia-imoveis-supplied.png" width="280" height="213" alt=""></span>
+                  <img class="career-logo logo-olx" src="{{ '/assets/logos/olx.svg' | assetUrl }}" width="180" height="180" alt="">
+                  <span class="storia-logo-window" aria-hidden="true"><img class="career-logo logo-storia" src="{{ '/assets/logos/storia-imoveis-supplied.png' | assetUrl }}" width="280" height="213" alt=""></span>
                 </h3>
                 <p class="career-role">Senior frontend developer</p>
                 <p class="career-contribution">I worked on a property-search progressive web app, including server-side rendering and a map showing the surrounding area.</p>
@@ -73,7 +73,7 @@ preloadFonts: true
             <li class="career-entry">
               <p class="period">2012 – 2016</p>
               <div class="career-details">
-                <h3 class="career-name"><img class="career-logo logo-vtex" src="/assets/logos/vtex.svg" width="800" height="284" alt="VTEX"></h3>
+                <h3 class="career-name"><img class="career-logo logo-vtex" src="{{ '/assets/logos/vtex.svg' | assetUrl }}" width="800" height="284" alt="VTEX"></h3>
                 <p class="career-role">Senior frontend developer</p>
                 <p class="career-contribution">My work included email-token login and merchant-facing tools: how people sign in and the interfaces they use to run their stores.</p>
               </div>
@@ -81,14 +81,14 @@ preloadFonts: true
             <li class="career-entry career-entry-compact">
               <p class="period">2012 – 2012</p>
               <div class="career-details">
-                <h3 class="career-name"><span class="peixe-logo-window"><img class="career-logo logo-peixe" src="/assets/logos/peixe-urbano.png" width="300" height="129" alt="Peixe Urbano"></span></h3>
+                <h3 class="career-name"><span class="peixe-logo-window"><img class="career-logo logo-peixe" src="{{ '/assets/logos/peixe-urbano.png' | assetUrl }}" width="300" height="129" alt="Peixe Urbano"></span></h3>
                 <p class="career-role">Frontend developer, usability and performance.</p>
               </div>
             </li>
             <li class="career-entry career-entry-compact">
               <p class="period">2011 – 2012</p>
               <div class="career-details">
-                <h3 class="career-name"><img class="career-logo logo-devmedia" src="/assets/logos/devmedia.svg" width="585" height="133" alt="DevMedia"></h3>
+                <h3 class="career-name"><img class="career-logo logo-devmedia" src="{{ '/assets/logos/devmedia.svg' | assetUrl }}" width="585" height="133" alt="DevMedia"></h3>
                 <p class="career-role">Frontend developer and SEO analyst.</p>
               </div>
             </li>

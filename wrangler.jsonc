@@ -7,6 +7,10 @@
   "previews": {},
   "routes": [
     {
+      "pattern": "leandrooriente.com",
+      "custom_domain": true
+    },
+    {
       "pattern": "site.leandrooriente.com",
       "custom_domain": true
     }

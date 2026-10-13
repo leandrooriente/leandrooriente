@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site App Videos"
+  short_description: "Phone app demos using the approved Mimir frame"
+  default_prompt: "Use $site-app-videos to present this phone app recording in the approved Mimir frame and player style."

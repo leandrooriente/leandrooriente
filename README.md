@@ -1,102 +1,105 @@
-# Layout v2 exploration
+# Leandro Oriente's personal site
 
-A local exploration of Leandro Oriente's personal site. Eleventy builds Markdown posts and shared templates locally into static HTML. The site uses plain HTML and CSS, self-hosted fonts, and no browser JavaScript.
+Source for [leandrooriente.com](https://leandrooriente.com). Eleventy builds Markdown articles and shared Nunjucks templates into static HTML for Cloudflare Workers Static Assets. The repository's default branch is `master`.
 
-## Preview
+## Local development
 
-From this directory, with Node.js 22 or later installed:
+Use Node.js 22 or later. The build dependencies are pinned in `package.json` and `package-lock.json`: Eleventy 3.1.6, Eleventy Image 7.0.0, and htmlparser2 12.0.0. Preview and deployment commands use Wrangler 4.149.0.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:4173/ in your browser.
-
-To inspect the same output that will be uploaded to Cloudflare:
+The development server is available at http://127.0.0.1:4173/. To inspect the production build with Cloudflare's URL handling and response headers:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-The build recreates `dist/`; the preview serves that directory on the same address. Use one preview server at a time.
+`build` clears and recreates `dist/`. `preview` rebuilds and serves the site locally at http://127.0.0.1:8787/ without uploading it. Use `npm run preview -- --port 4173` to change its port, and run one preview server at a time. Generated output, image caches, local verification files, and dependencies belong in the ignored `dist/`, `tmp/`, `output/`, and `node_modules/` directories.
+
+## Repository structure
+
+- `src/index.njk` and `src/writing.njk`: Home and Writing pages.
+- `src/posts/*.md`: article prose, metadata, and explicit permalinks.
+- `src/_includes/`: shared layouts, navigation, footer, and article previews.
+- `src/_data/`: site identity, canonical URLs, and article sharing metadata.
+- `styles.css`: source stylesheet; edit this file rather than the generated copy.
+- `eleventy.config.js`: collections, draft handling, reading estimates, shortcodes, and the public asset list.
+- `scripts/`: clean builds, asset fingerprinting, image and stylesheet generation, navigation prefetch, and article diagrams and video markup.
+- `assets/`: active source artwork, fonts, logos, videos, browser scripts, and provenance records.
+- `src/_headers`: cache rules copied into the public output.
+- `wrangler.jsonc`: production static assets Worker; `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`: alternate-hostname redirects.
+
+## Articles and public URLs
+
+Keep `.html` permalinks in source front matter. Public links use `/`, `/writing/`, and extensionless article paths without a trailing slash. The `cleanPageUrl` filter applies that convention to article cards, canonical metadata, and navigation prefetch. Cloudflare redirects the legacy `.html` URLs.
+
+Copy an existing article's front matter when adding a post. Set its permalink, `title`, `deck`, `description`, `summary`, `publicationYear`, `order`, `illustration`, and `illustrationAlt`. Lower `order` values appear first in article lists. The shared layout calculates reading time at 200 words per minute, rounded up, and uses the article's publication year. Articles with Nunjucks shortcodes also need `templateEngineOverride: njk,md`.
+
+Set `draft: true` to retain an article's source while excluding its page, listing, and artwork from regular builds. Add `localPreview: true` to include that draft during `npm run dev`; its copy can be reviewed before adding an illustration. Remove `draft` or set it to `false` to include the article in the production build.
+
+The current source builds Home, Writing, and these published articles:
+
+- `/writing/one-battlestation-two-computers`
+- `/writing/an-answer-should-be-easy-to-check`
+
+`seeing-the-work-while-it-happens.md` remains a draft. Its extensionless and `.html` URLs should return 404 in a regular build. Front matter is the authority for publication status.
+
+## Assets, images, and caching
+
+Add ordinary public assets to `staticAssets` in `eleventy.config.js`, then resolve their URLs with the `assetUrl` filter, for example `{{ '/assets/logos/shopify.svg' | assetUrl }}`. CSS asset URLs are rewritten during the build. Only configured public assets, generated images, and font licenses enter `dist/`; source notes and generation prompts stay in the repository.
+
+Portraits and article illustrations use the `responsiveImage` shortcode with a source path, alt text, and the `portrait`, `card`, or `article` profile. It generates responsive AVIF sources and WebP fallbacks with intrinsic dimensions and layout-specific `sizes`. Article layouts use the `illustration` and `illustrationAlt` front matter automatically. Follow [the site art guide](.agents/skills/site-art/SKILL.md) when creating or changing graphics.
+
+Generated images are cached in `tmp/image-cache/` and published to `dist/assets/images/` with filenames hashing their encoded contents. Stop the development server before clearing the cache; the next build regenerates it. The image pipeline also produces centered 1200 × 630 JPEG article sharing images, flattening transparency onto warm paper. Article sharing requires `title`, `description`, `illustration`, and `illustrationAlt`.
+
+`scripts/styles.mjs` generates responsive AVIF/WebP paper and ink texture tiles and builds the stylesheet. Fonts, logos, browser scripts, other configured files, and the completed CSS receive content hashes under `dist/assets/static/`. CSS is hashed after its dependency URLs are replaced, so a changed font or texture also updates the stylesheet URL.
+
+`src/_headers` gives `/assets/static/*` and `/assets/images/*` one-year immutable browser caching. HTML and font licenses retain Cloudflare's default revalidation policy. These headers apply to Wrangler previews and hosted deployments; the Eleventy development server does not apply them.
+
+Navigation prefetch rules are generated from links to pages present in the current build. In supporting browsers, a small inline script enables document prefetch after the window loads and the browser is idle. The Mimir diagram and video player use the separate scripts in `assets/scripts/`.
+
+### Fonts and provenance
+
+The site publishes four self-hosted WOFF2 faces: Instrument Sans 400/500 and Newsreader 400 regular/italic. Keep the original WOFF sources and SIL Open Font Licenses in `assets/fonts/`. The licenses are also copied to the public output. Font sources and conversion details are recorded in [assets/PROVENANCE.txt](assets/PROVENANCE.txt); company logo sources and usage notes are in [assets/logos/SOURCES.json](assets/logos/SOURCES.json).
+
+WOFF2 conversion is a preparation step when a font changes, not part of the normal build. The current files were converted with FontTools 4.66.1 and Brotli 1.2.0. To regenerate a face in a separate environment with `fonttools[woff]` installed, run `python -m fontTools.ttLib.woff2 compress assets/fonts/newsreader-400.woff -o assets/fonts/newsreader-400.woff2`.
 
 ## Cloudflare deployment
 
-Production deploys to https://site.leandrooriente.com using Cloudflare Workers Static Assets. Each feature gets its own Cloudflare Worker Preview on a `workers.dev` URL. Eleventy builds the site locally into `dist/` before Wrangler uploads the output. Cloudflare receives only the static HTML/CSS, configured public assets, and font licenses; the generator does not run on Cloudflare. Source notes, generation prompts, research files, and unused assets stay out of that directory.
+The canonical origin is `https://leandrooriente.com`, configured in `src/_data/site.js`. `wrangler.jsonc` builds the saved working files, including uncommitted changes, before uploading `dist/` to the assets-only `leandrooriente-site` Worker. The generator runs locally.
 
-From this directory, with Node.js 22 or later installed:
+Check account access and validate the build and configuration:
 
 ```sh
 npx --yes wrangler@4.149.0 whoami
 npx --yes wrangler@4.149.0 deploy --dry-run
 ```
 
-If login is needed, run `npx --yes wrangler@4.149.0 login --scopes account:read user:read workers_scripts:write workers_routes:write zone:read`.
+If authentication is needed, run `npx --yes wrangler@4.149.0 login --scopes account:read user:read workers_scripts:write workers_routes:write zone:read`.
 
-For a feature preview, run the following, replacing the example name with your feature branch. Reuse the name to update that feature's environment:
+Create or update a feature preview with `npx --yes wrangler@4.149.0 preview --name <feature-name> --ignore-base-config`, using a stable name for that feature.
+
+Use the URL returned by Wrangler. Set `SITE_URL` to that preview's origin when rebuilding or updating it so canonical URLs and sharing images point to the preview. Production builds use the canonical origin when `SITE_URL` is unset. Remove a completed preview with `npx --yes wrangler@4.149.0 preview delete --name <feature-name> --skip-confirmation`.
+
+Publish production separately with `npx --yes wrangler@4.149.0 deploy`.
+
+### Alternate hostnames and recovery
+
+The main Worker has Custom Domain bindings for both `leandrooriente.com` and `site.leandrooriente.com`. Keep the latter binding: it supplies the proxied DNS record beneath the separate redirect route. `www.leandrooriente.com` has a proxied CNAME pointing to the apex.
+
+The `leandrooriente-site-redirect` Worker owns `site.leandrooriente.com/*` and `www.leandrooriente.com/*`. Those routes take precedence over static assets and return permanent 301 redirects to the HTTPS apex, preserving paths and query strings. Deploy that Worker separately when its code or routes change:
 
 ```sh
-npx --yes wrangler@4.149.0 preview --name layout-v2-explore --ignore-base-config
+npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc --dry-run
+npx --yes wrangler@4.149.0 deploy --config wrangler.redirect.jsonc
 ```
 
-Wrangler returns a URL for the latest version of that feature and a unique URL for the individual deployment. Production is published separately with `npx --yes wrangler@4.149.0 deploy`. Remove a completed feature preview with `npx --yes wrangler@4.149.0 preview delete --name <feature-name>`.
+Its configuration has no site build or assets. Verify both alternate hostnames redirect correctly for `/` and an article path with a query string.
 
-`wrangler.jsonc` controls the hostname and static page routing. Deploy builds from the saved working files, including uncommitted changes. Run `npm run build` to inspect the public files in `dist/` without deploying. `eleventy.config.js` lists the public assets copied into the output.
+The October 12, 2026 migration retained the four former GitHub Pages apex A records at `previous-site-origin.leandrooriente.com` as a DNS recovery backup. The apex record is now managed by the main Worker's Custom Domain.
 
-The repository skill [deploy-site](.agents/skills/deploy-site/SKILL.md) contains the full workflow, verification, and recovery steps. Invoke it in Codex with `$deploy-site`.
-
-## Structure
-
-- `src/index.njk`: Home, with an illustrated personal introduction, career, selected illustrated articles, and contact.
-- `src/writing.njk`: an independent blog index.
-- `src/posts/*.md`: article copy and metadata, including publication year and each article's existing URL.
-- `src/_includes/layouts/`: shared base and article layouts.
-- `src/_includes/`: shared page fragments for consistent navigation, headings, and article previews.
-- `eleventy.config.js`: Markdown, collections, reading estimates, and public asset passthrough configuration.
-- `scripts/build.mjs`: cleans the output and runs the local Eleventy build.
-- `dist/`: generated static pages and public assets; this is the deployment output.
-- `styles.css`: shared typography, palette, navigation, and responsive layouts.
-- `assets/`: the supplied photo, fonts, licenses, and provenance. `assets/illustrations/` holds the original editorial artwork and its generation prompts.
-- `assets/logos/`: sourced company marks for the career timeline, with original files and source/usage records in `SOURCES.json`.
-
-Home and Writing are ordinary pages. There is no section-jump navigation or Personal projects section. Accessibility skip links are the only in-page anchors.
-
-Individual articles use an editorial layout inspired by Henry Desroches's [gallery-wall article](https://henry.codes/writing/using-figma-to-design-gallery-walls/): regular-weight Newsreader titles and section headings, generous section spacing, and a centered 680px reading column. Titles use the available header width and wrap naturally, with the subtitle centered beneath. Illustrations keep their original proportions and fit within the reading column. Sections have no numbering; the shared header navigation and a bottom return link lead back to Writing.
-
-A small serif caption below each article's subtitle shows its publication year and estimated reading time: “Published in 2026 — 3 minute read.” These articles use 2026, the year of this exploration. Reading estimates are calculated centrally during the build, rounded up at 200 words per minute, including the title, subtitle, section headings, body, and closing quotation. Editing the Markdown updates the article caption automatically. Article lists use the metadata in each post's front matter as their single source.
-
-For new posts, copy an existing post's front matter and set its permalink explicitly. Lower numeric `order` values appear first in article lists. Keep article prose in Markdown and reuse the shared article layout. Change common page elements in the shared templates and styling so every page stays consistent. Public assets are copied intentionally by `eleventy.config.js`; add an asset there when a new page needs it. Run the build and inspect the generated page before publishing.
-
-The editorial illustrations guide the visual language throughout the site: warm paper grain, dry forest-green ink in the work section, serif display type, and a fine ledger spine connecting the career entries. A small SVG foliage sprig carries that language into the shared header. The ink texture contributes lightness variation through a CSS luminosity blend and a muted forest glaze. Supporting accents use quieter gray-greens. The colored punctuation accent is reserved for the Home name. Static textures sit behind the content; article illustrations retain their original proportions. The reading surface uses only paper grain; coffee, water, paint marks, and the fold have been removed. Layout and surface treatments use CSS. Article previews show illustration, title, summary, and a Read article link, without tags or status labels.
-
-The shared Newsreader typography follows a balanced hierarchy:
-
-| Role | Desktop | Mobile |
-| --- | --- | --- |
-| Home name and Writing title | Fluid 56–80px | 56px |
-| Career and featured-writing headings | 56px | 42px |
-| Home introduction | 30px | 24px |
-| Small leads: career introduction, Writing introduction, article subtitle | 24px, line-height 1.4 | 24px, line-height 1.4 |
-| Article-card titles | 32px | 32px |
-| Article subsection headings (`h3`) | 32px | 28px |
-| Body prose: biography, career descriptions, card summaries, article body | 21px | 20px |
-
-Instrument Sans remains the utility face. Newsreader regular and genuine italic are self-hosted as `assets/fonts/newsreader-400.woff` and `assets/fonts/newsreader-400-italic.woff`; the closing article question uses the italic face. Font sources and the retained SIL Open Font License are recorded in `assets/PROVENANCE.txt`. The shared palette, page layouts, illustration treatments, and varied career-entry pacing remain unchanged.
-
-## Exploration status
-
-This branch is published at https://site.leandrooriente.com. The articles discuss design intentions and questions, not a list of released features. Review that copy as the exploration develops.
-
-The career uses white company logos in place of visible name headings, retaining accessible company names. Marks come from official company pages or kits and the user-supplied OLX/Storia Imóveis artwork. Peixe Urbano uses a later mark preserved by a third-party logo archive as a temporary exploration asset; Midas Software stays as text until the correct employer mark can be verified. Logo provenance and usage notes are in `assets/logos/SOURCES.json`.
-
-The Home introduction pairs the approved copy with `assets/illustrations/leandro-family-grounded-editorial.png`. At desktop widths, the seated family appears beside the introduction, capped at 440px wide. Below 1024px, the portrait sits between the subtitle and biography, centered and capped at 320px wide. The original 1086 × 1448 RGBA PNG is used unchanged; CSS scales it proportionally, and its transparent surroundings blend into the shared paper surface. The modest grass patch, contact shadows and three autumn leaves anchor the family.
-
-A pale sage radial wash sits behind the portrait as a CSS layer, with a 12px blur and color fading to transparency by 82% of the gradient radius. Below 1024px, both the image and wash are centered. This surface treatment uses the existing PNG without generating or editing artwork.
-
-The introduction begins with the name and the subtitle “Staff frontend developer at Shopify, working on checkout and Shop Pay.” The biography opens with “Hey there,” followed by husband and parent, Rio de Janeiro, and Amsterdam. Its professional paragraph connects the Shopify role, JavaScript and TypeScript, mentoring, and clearer development processes. The next paragraph covers agentic development, processes and systems around it, and using agents to their full potential while shipping software to a high standard of quality. Hobbies close the biography in a separate paragraph. The text follows the shared left edge, with a comfortable line length and the shared body-prose size. Newsreader carries identity, introduction, and body copy at three distinct scales; Instrument Sans is reserved for utility text.
-
-Each page includes the same static SVG filter, giving all page and section headings uneven ink coverage, subtly irregular edges, and a faint ink bleed. Dark headings blend into the paper; light headings on the career surface keep their original contrast. Titles remain ordinary selectable text, with a solid-text fallback in forced-color mode. No JavaScript is needed. Career chronology stays in the timeline.
-
-The Shopify timeline description follows the prior site's checkout, mentoring, and development-process statements. Other career dates, roles, and contribution descriptions follow the supplied design reference. The LinkedIn profile requires sign-in, so no new profile-specific accomplishments, metrics, or responsibilities have been added. The visual composition has evolved from that reference for this exploration.
+The repository [deploy-site skill](.agents/skills/deploy-site/SKILL.md) contains the full deployment, verification, preview cleanup, and recovery workflow. Invoke it in Codex with `$deploy-site`.
