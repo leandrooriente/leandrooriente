@@ -1,6 +1,8 @@
 # Leandro Oriente's personal site
 
-Source for [leandrooriente.com](https://leandrooriente.com). Eleventy builds Markdown articles and shared Nunjucks templates into static HTML for Cloudflare Workers Static Assets. The repository's default branch is `master`.
+Source for [leandrooriente.com](https://leandrooriente.com). Eleventy builds Markdown articles and shared Nunjucks templates into static HTML for Cloudflare Workers Static Assets. The repository's default branch is `main`.
+
+Changes to `main` require a pull request with all review conversations resolved. Direct pushes, force pushes, and branch deletion are blocked for everyone, including administrators. No approving review is required.
 
 ## Local development
 
