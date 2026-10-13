@@ -34,17 +34,7 @@ I start with the behavior we actually need. The specification should make that s
 
 For example, a spec for adding a status filter to an existing orders list could look like this:
 
-> **Feature:** Add a status filter to the existing orders list.
->
-> **Existing behavior:** Orders have `pending`, `completed`, or `cancelled` status. The list uses server-side pagination.
->
-> **Required behavior:** Offer those statuses and “All,” which means no status filter and is the default. Changing the selection resets the list to page 1 and preserves the current sort order.
->
-> **Constraints:** Use the existing list components and query conventions. Apply filtering before pagination, including the pagination totals. Preserve existing access checks.
->
-> **Acceptance checks:** “All” preserves the current results. Each status returns only matching orders, including matches beyond the original first page, with correct totals. Switching filters resets the page without changing the sort. Users still see only orders they are allowed to access.
->
-> **Out of scope:** New statuses, schema changes, a page redesign, or a new caching layer. Report unrelated bugs separately.
+{% include "partials/status-filter-ticket.njk" %}
 
 Reading the diff takes enough understanding to challenge the implementation. If I can’t explain why a piece of code is there, I need to investigate it. AI can help me trace unfamiliar parts of the codebase and walk through a proposed change, but I check those explanations against the code and tests. It’s also a way to build knowledge I’ll need to maintain the result.
 

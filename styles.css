@@ -192,6 +192,34 @@ main:focus { outline: none; }
 .reading-body li + li { margin-top: 8px; }
 .fictional-pr-illustration { width: min(100%, 560px); margin: 32px auto; scroll-margin-top: 24px; }
 .fictional-pr-illustration img { display: block; width: 100%; height: auto; }
+/* A fictional issue card keeps the feature specification readable as text. */
+.tracking-ticket { position: relative; isolation: isolate; width: min(100%, 600px); margin: 32px auto; background: #F3F1E8; color: #22251F; border: 1px solid #596046; border-radius: 2px 4px 3px 1px; box-shadow: 3px 4px 0 rgba(34, 37, 31, .08); font: 400 17px/1.5 var(--sans); scroll-margin-top: 24px; }
+.tracking-ticket::before { content: ""; position: absolute; z-index: -1; inset: 0; background: var(--paper-texture) repeat; background-size: 768px 512px; mix-blend-mode: multiply; opacity: .28; pointer-events: none; }
+.tracking-ticket-header { padding: 22px 24px 20px; border-bottom: 1px solid rgba(89, 96, 70, .35); }
+.tracking-ticket-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.tracking-ticket-key { display: inline-flex; align-items: center; gap: 8px; color: #596046; font: 500 14px/1.4 var(--sans); }
+.tracking-ticket-key svg { width: 18px; height: 18px; fill: none; stroke: #596046; stroke-width: 1.5; }
+.tracking-ticket-type { margin-left: 8px; font-weight: 400; }
+.tracking-ticket-status { background: #C8CBB5; padding: 4px 9px; color: #4C533E; font-size: 13px; white-space: nowrap; clip-path: polygon(1% 0, 99% 1%, 100% 98%, 0 100%); }
+.tracking-ticket h3 { margin: 16px 0; font: 400 30px/1.15 var(--serif); letter-spacing: -.015em; }
+.tracking-ticket-metadata { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; font-size: 13px; }
+.tracking-ticket-metadata div { display: flex; gap: 6px; }
+.tracking-ticket-metadata dt { color: #596046; }
+.tracking-ticket-metadata dd { margin: 0; }
+.tracking-ticket-priority::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 6px; background: #A3372D; transform: rotate(45deg); vertical-align: 1px; }
+.tracking-ticket-body { padding: 22px 24px 24px; }
+.tracking-ticket-body section + section { margin-top: 20px; }
+.tracking-ticket h4 { margin: 0 0 7px; color: #596046; font: 500 13px/1.4 var(--sans); letter-spacing: .025em; }
+.tracking-ticket code { font-size: .9em; }
+.tracking-ticket .tracking-ticket-checklist { margin: 0; padding: 0; list-style: none; }
+.tracking-ticket-checklist li { position: relative; padding-left: 23px; }
+.tracking-ticket-checklist li::before { content: ""; position: absolute; left: 0; top: .4em; width: 12px; height: 12px; border: 1px solid #596046; border-radius: 1px 2px; }
+@media (max-width: 559px) {
+  .tracking-ticket-header, .tracking-ticket-body { padding: 18px; }
+  .tracking-ticket { font-size: 16px; }
+  .tracking-ticket h3 { font-size: 27px; }
+  .tracking-ticket-type { margin-left: 0; }
+}
 /* Reusable print-style phone; the transparent screen slot belongs to the artwork. */
 .phone-demo { --phone-fade: 180ms; margin-block: 40px; scroll-margin-top: 24px; }
 .phone-demo-device { position: relative; width: min(100%, 330px); aspect-ratio: 866 / 1816; margin-inline: auto; }

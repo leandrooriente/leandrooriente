@@ -1,0 +1,37 @@
+<figure class="tracking-ticket" id="status-filter-ticket" aria-labelledby="status-filter-ticket-title">
+  <header class="tracking-ticket-header">
+    <div class="tracking-ticket-topline">
+      <span class="tracking-ticket-key"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 3L17 2.5L17.5 17L2.5 17.5Z"/></svg>ORD-128 <span class="tracking-ticket-type">Feature</span></span>
+      <span class="tracking-ticket-status">To do</span>
+    </div>
+    <h3 id="status-filter-ticket-title">Add a status filter to the existing orders list</h3>
+    <dl class="tracking-ticket-metadata"><div><dt>Created by</dt><dd>Product</dd></div><div><dt>Priority</dt><dd class="tracking-ticket-priority">Medium</dd></div></dl>
+  </header>
+  <div class="tracking-ticket-body">
+    <section>
+      <h4>Existing behavior</h4>
+      <p>Orders have <code>pending</code>, <code>completed</code>, or <code>cancelled</code> status. The list uses server-side pagination.</p>
+    </section>
+    <section>
+      <h4>Required behavior</h4>
+      <p>Offer those statuses and “All,” which means no status filter and is the default. Changing the selection resets the list to page 1 and preserves the current sort order.</p>
+    </section>
+    <section>
+      <h4>Constraints</h4>
+      <p>Use the existing list components and query conventions. Apply filtering before pagination, including the pagination totals. Preserve existing access checks.</p>
+    </section>
+    <section>
+      <h4>Acceptance criteria</h4>
+      <ul class="tracking-ticket-checklist">
+        <li>“All” preserves the current results.</li>
+        <li>Each status returns only matching orders, including matches beyond the original first page, with correct totals.</li>
+        <li>Switching filters resets the page without changing the sort.</li>
+        <li>Users still see only orders they are allowed to access.</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Out of scope</h4>
+      <p>New statuses, schema changes, a page redesign, or a new caching layer. Report unrelated bugs separately.</p>
+    </section>
+  </div>
+</figure>
