@@ -147,6 +147,11 @@ that environment. The account ID comes from `wrangler.jsonc`, so no account-ID
 secret is needed. Token setup requires a scoped Cloudflare API token; local
 Wrangler OAuth credentials are not used by GitHub Actions.
 
+Scope the token to the configured account with Workers Scripts Edit and Account
+Settings Read, and to the `leandrooriente.com` zone with Workers Routes Edit and
+Zone Read. These cover Worker deployment, Custom Domains, and zone lookup;
+unrelated Cloudflare product permissions are not required.
+
 The workflow uses commit-pinned checkout and Node setup actions with read-only
 repository permissions, Node.js 22, `npm ci`, and pinned Wrangler 4.149.0. Wrangler
 invokes the configured clean build before deploying the main assets Worker.

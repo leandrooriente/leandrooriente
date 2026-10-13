@@ -81,6 +81,8 @@ Merging a pull request into protected `main` starts [the production workflow](.g
 
 Configure the GitHub `production` environment to allow only the `main` branch and store its scoped Cloudflare API token as the environment secret `CLOUDFLARE_API_TOKEN`. The account ID is already in `wrangler.jsonc`; no account secret is needed. The workflow has read-only repository access and uses actions pinned to full commit hashes.
 
+Create the token with **Account → Workers Scripts → Edit** and **Account → Account Settings → Read** limited to the configured Cloudflare account, plus **Zone → Workers Routes → Edit** and **Zone → Zone → Read** limited to `leandrooriente.com`. These cover the Worker deployment, Custom Domain, and zone lookup; the workflow does not need credentials for other Cloudflare products.
+
 The workflow verifies published and draft page responses and the HTTP/HTTPS `www` redirects after deployment. It deploys the main assets Worker; the redirect Worker remains separately managed. For a manual rerun, select `main` under **Actions → Deploy production → Run workflow**, or use `gh workflow run deploy.yml --ref main`. Runs requested on other branches skip the deployment job.
 
 ### Local deployment and feature previews
