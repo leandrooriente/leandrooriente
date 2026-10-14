@@ -52,7 +52,11 @@ If the feature depends on the bug fix, I put the fix in a base PR and stack the 
 
 The feature itself may still be too large for one review. I can split it into modules across dependent or parallel PRs, then connect them in a later change. Each intermediate state needs to work and be testable. Keep unfinished behavior behind a feature flag where appropriate, preserve compatibility with existing callers, and maintain a shared explanation of how the pieces fit together.
 
-The same principle helps with broad interface migrations. I can introduce the new interface with compatibility for existing callers and a codemod, a script that updates them. Tests demonstrate the transformation across real usage patterns. Once that rule has been reviewed, I apply it in manageable batches, then remove the old interface and temporary compatibility code. Reviewers can understand the transformation before working through its application across thousands of files.
+The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch 700 files and 30,000 lines. I can introduce the new interface with compatibility for existing callers, then add a codemod, a script that updates them. Tests cover both the interface and the transformation across real usage patterns.
+
+{% codemodBreakdown "codemod-migration" %}
+
+Once the transformation has been reviewed, I apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, I remove the deprecated interface and the codemod.
 
 That might produce five or six PRs for one feature. Smaller reviews give people a manageable piece of work to understand, and let feedback and approvals arrive while the rest is still being built.
 

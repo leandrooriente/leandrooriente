@@ -6,6 +6,7 @@ import { phoneDemo } from "./scripts/phone-media.mjs";
 import { mimirPipeline } from "./scripts/mimir-pipeline.mjs";
 import { battlestationDiagram } from "./scripts/battlestation-diagrams.mjs";
 import { prBreakdown } from "./scripts/pr-breakdown.mjs";
+import { codemodBreakdown } from "./scripts/codemod-breakdown.mjs";
 
 export default function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
@@ -21,11 +22,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("mimirPipeline", mimirPipeline);
   eleventyConfig.addShortcode("battlestationDiagram", battlestationDiagram);
   eleventyConfig.addShortcode("prBreakdown", prBreakdown);
+  eleventyConfig.addShortcode("codemodBreakdown", codemodBreakdown);
   eleventyConfig.addFilter("assetUrl", assetUrl);
   eleventyConfig.addFilter("cleanPageUrl", cleanPageUrl);
   eleventyConfig.addWatchTarget("assets/");
   eleventyConfig.addWatchTarget("scripts/battlestation-diagrams.mjs");
   eleventyConfig.addWatchTarget("scripts/pr-breakdown.mjs");
+  eleventyConfig.addWatchTarget("scripts/codemod-breakdown.mjs");
 
   // Refresh the known routes on every build, including added or removed posts.
   let pageUrls = new Set();
