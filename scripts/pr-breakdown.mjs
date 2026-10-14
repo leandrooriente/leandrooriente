@@ -11,7 +11,7 @@ const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 180, height: 100, added: 200, removed: 50, from: [200, 388], to: [185, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
   { key: "refactor", label: "Class refactor", ink: "ochre", width: 180, height: 100, added: 950, removed: 250, from: [380, 388], to: [395, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
   { key: "foundation", label: "Foundational work", ink: "olive", width: 360, height: 100, added: 780, removed: 170, from: [200, 288], to: [200, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 10.9 },
-  { key: "feature", label: "Feature", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 11.5 }
+  { key: "feature", label: "Feature Implementation", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 11.5 }
 ];
 const breakdownStart = parts[0].reveal;
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
