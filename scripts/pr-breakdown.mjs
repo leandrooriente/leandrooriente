@@ -1,9 +1,10 @@
 import { assetUrl } from "./assets.mjs";
 import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
-const cycle = 22;
 const resetStart = 19.5;
-const resetEnd = 21;
+const resetFadeEnd = resetStart + .2;
+const resetEnd = resetStart + .4;
+const cycle = resetEnd + .7;
 // Apple uses this curve for transform transitions on its MacBook Air page.
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
@@ -29,18 +30,22 @@ function opacity(frames, shiftOpening = true) {
   return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames, shiftOpening)}/>`;
 }
 
+function openingOpacity() {
+  return opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .1, 0], [resetEnd + .5, 1], [cycle, 1]]);
+}
+
 function definitions(prefix) {
   return `<defs>${prCardDefinitions(prefix)}</defs>`;
 }
 
 function connection(route, start, end, tip = "") {
-  const progress = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetEnd, 1], [cycle, 1]];
+  const progress = [[0, 1], [start, 1], [end, 0], [resetFadeEnd + .05, 0], [resetEnd, 1], [cycle, 1]];
   return `<g class="pr-breakdown-connection" opacity="1" aria-hidden="true">
-    ${opacity([[0, 0], [start, 0], [start + .04, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .04, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     <path class="pr-breakdown-flow-line" d="${route}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0" stroke-linecap="round">
       <animate attributeName="stroke-dashoffset" values="${progress.map(([, value]) => value).join(";")}" ${timing(progress)}/>
     </path>
-    ${tip ? `<path class="pr-breakdown-arrow-tip" d="${tip}" opacity="1">${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</path>` : ""}
+    ${tip ? `<path class="pr-breakdown-arrow-tip" d="${tip}" opacity="1">${opacity([[0, 0], [end, 0], [end + .05, 1], [resetFadeEnd, 1], [resetFadeEnd + .05, 0], [cycle, 0]])}</path>` : ""}
   </g>`;
 }
 
@@ -51,7 +56,7 @@ function counts(x, y, added, removed, anchor = "middle", files) {
 function check(part, animated) {
   return `<g class="pr-breakdown-check" transform="translate(${part.width - 18} ${part.height - 19})" opacity="1" aria-hidden="true">
     <circle r="9"/><path d="M-4.5 0L-1 3.5L5-4"/>
-    ${animated ? opacity([[0, 0], [part.approved, 0], [part.approved + .3, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]]) : ""}
+    ${animated ? opacity([[0, 0], [part.approved, 0], [part.approved + .3, 1], [resetFadeEnd, 1], [resetFadeEnd + .05, 0], [cycle, 0]]) : ""}
   </g>`;
 }
 
@@ -64,12 +69,12 @@ function card(prefix, part, compact = false) {
   const title = Array.isArray(part.label) ? part.label.join(" ") : part.label;
   const motion = [
     [0, part.from.join(" ")], [part.start, part.from.join(" ")],
-    [part.end, part.to.join(" ")], [resetStart, part.to.join(" ")],
+    [part.end, part.to.join(" ")], [resetFadeEnd + .05, part.to.join(" ")],
     [resetEnd, part.from.join(" ")], [cycle, part.from.join(" ")]
   ];
   return `<g class="pr-breakdown-card pr-card-art" data-pr-part="${part.key}" transform="translate(${x} ${y})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
-    ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     ${prCardSurface(prefix, part.width, part.height)}
     ${prCardRule(12, ruleY, part.width - 24)}
     ${prCardIcon(12, part.height - 27, 16)}
@@ -100,7 +105,7 @@ function blob(prefix, { x = 234, y = 238, width = 292, height = 190, compact = f
       ${prCardRule(inset, height - 42, width - inset * 2)}
       ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}
     </g>
-    ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
+    ${openingOpacity()}
   </g>`;
 }
 
@@ -113,11 +118,11 @@ function desktop(id) {
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(380, 64, "One huge PR", "pr-breakdown-stage")}
-      ${opacity([[0, 1], [6.3, 1], [6.7, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
+      ${openingOpacity()}
     </g>
     <g class="pr-breakdown-result" opacity="1">
       ${text(380, 64, "Four focused PRs", "pr-breakdown-stage")}
-      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
       ${connection("M284 424V402H380", 10.1, 10.75)}
@@ -146,11 +151,11 @@ function mobile(id) {
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(180, 28, "One huge PR", "pr-breakdown-stage")}
-      ${opacity([[0, 1], [6.3, 1], [6.7, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
+      ${openingOpacity()}
     </g>
     <g class="pr-breakdown-result" opacity="1">
       ${text(180, 28, "Four focused PRs", "pr-breakdown-stage")}
-      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
       ${connection("M94 322V291H180", 10.1, 10.75)}

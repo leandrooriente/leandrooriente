@@ -1,11 +1,12 @@
 import { assetUrl } from "./assets.mjs";
 import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
-const cycle = 26;
 const splitStart = 8.3;
 const splitEnd = 10.5;
 const resetStart = 23;
-const resetEnd = 24.5;
+const resetFadeEnd = resetStart + .2;
+const resetEnd = resetStart + .4;
+const cycle = resetEnd + .7;
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
 // Hold the opening card for four extra seconds after its review marks arrive.
@@ -36,6 +37,10 @@ function opacity(frames, shiftOpening = true) {
   return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames, shiftOpening)}/>`;
 }
 
+function openingOpacity() {
+  return opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .1, 0], [resetEnd + .5, 1], [cycle, 1]]);
+}
+
 function definitions(prefix) {
   return `<defs>
     ${prCardDefinitions(prefix)}
@@ -49,11 +54,11 @@ function card(prefix, part, index, { center, compact }) {
   const band = parts.length - index - 1;
   const from = `${center - width / 2} ${sourceTop + band * cardHeight}`;
   const to = `${destinationCenter - width / 2} ${part.y}`;
-  const motion = [[0, from], [splitStart, from], [splitEnd, to], [resetStart, to], [resetEnd, from], [cycle, from]];
+  const motion = [[0, from], [splitStart, from], [splitEnd, to], [resetFadeEnd + .05, to], [resetEnd, from], [cycle, from]];
   const titleClass = compact ? "pr-card-art-title pr-card-art-mobile-title" : "pr-card-art-title";
   return `<g class="pr-breakdown-card pr-card-art" data-pr-part="${part.key}" transform="translate(${to})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
-    ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     ${prCardSurface(prefix, width, cardHeight)}
     <g class="codemod-card-content">
       ${text(narrow ? 8 : 12, compact ? 22 : 23, narrow ? part.mobileLabel : part.label, titleClass, "start")}
@@ -62,7 +67,7 @@ function card(prefix, part, index, { center, compact }) {
       ${text(narrow ? 26 : 38, 55, narrow ? `${part.changed / 1000}k lines` : `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added", "start", narrow ? 'style="font-size:12px"' : "")}
     </g>
     <g class="pr-breakdown-check" transform="translate(${width - (narrow ? 12 : 22)} 49)" opacity="1" aria-hidden="true"><circle r="${narrow ? 7 : 9.5}"/><path d="${narrow ? "M-3.5 0L-1 2.5L4-3.5" : "M-5 0L-1 4L6-5"}"/>
-      ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetFadeEnd, 1], [resetFadeEnd + .05, 0], [cycle, 0]])}
     </g>
   </g>`;
 }
@@ -80,7 +85,7 @@ function blob(prefix, { x, y, width, height, compact }) {
       ${text(24, 198, "30,000 lines changed", "pr-card-art-count pr-breakdown-added", "start")}
       ${text(24, 221, "700 files changed", "pr-card-art-count pr-breakdown-added", "start")}
     </g>
-    ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
+    ${openingOpacity()}
   </g>`;
 }
 
@@ -98,15 +103,15 @@ function cross(x, y, start) {
 }
 
 function connector({ from, to, path, start, end, tip }) {
-  const draw = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetStart + .1, 1], [cycle, 1]];
+  const draw = [[0, 1], [start, 1], [end, 0], [resetFadeEnd + .05, 0], [resetEnd, 1], [cycle, 1]];
   return `<g class="pr-breakdown-dependency" data-pr-from="${from}" data-pr-to="${to}" opacity="1" aria-hidden="true">
     <path class="pr-breakdown-link" d="${path}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="${draw.map(([, value]) => value).join(";")}" ${timing(draw)}/>
     </path>
     ${tip ? `<path class="pr-breakdown-arrow-tip" d="M${tip.x - 4} ${tip.y + 5}L${tip.x} ${tip.y}L${tip.x + 4} ${tip.y + 5}">
-      ${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [end, 0], [end + .05, 1], [resetFadeEnd, 1], [resetFadeEnd + .05, 0], [cycle, 0]])}
     </path>` : ""}
-    ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
   </g>`;
 }
 
@@ -137,16 +142,16 @@ function drawing(id, compact) {
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}
-      ${opacity([[0, 1], [splitStart - .2, 1], [splitStart + .2, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
+      ${openingOpacity()}
     </g>
     <g class="pr-breakdown-result" opacity="1">${text(center, 28, "Six focused PRs", "pr-breakdown-stage")}
-      ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies">${connectors}</g>
     ${blob(prefix, initialLayout)}${parts.map((part, index) => card(prefix, part, index, layout)).join("")}
     ${decorations}
     <g opacity="1">${text(center, footerY, "Three batches reviewed in parallel", "pr-breakdown-detail")}
-      ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetFadeEnd, 0], [cycle, 0]])}
     </g>
   </svg>`;
 }
