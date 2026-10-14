@@ -43,6 +43,8 @@ Keep `.html` permalinks in source front matter. Public links use `/`, `/writing/
 
 Copy an existing article's front matter when adding a post. Set its permalink, `title`, `deck`, `description`, `summary`, `publicationYear`, `order`, `illustration`, and `illustrationAlt`. Lower `order` values appear first in article lists. The shared layout calculates reading time at 200 words per minute, rounded up, and uses the article's publication year. Articles with Nunjucks shortcodes also need `templateEngineOverride: njk,md`.
 
+Every article automatically includes a personal-opinion disclosure in its footer. The wording lives in `src/_includes/layouts/article.njk`; update it there rather than adding it to individual posts.
+
 Set `draft: true` to retain an article's source while excluding its page, listing, and artwork from regular builds. Add `localPreview: true` to include that draft during `npm run dev`; its copy can be reviewed before adding an illustration. Remove `draft` or set it to `false` to include the article in the production build.
 
 The current source builds Home, Writing, and these published articles:
