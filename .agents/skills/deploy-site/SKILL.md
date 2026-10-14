@@ -40,10 +40,13 @@ uncommitted local changes are not part of an Actions deployment.
    PRs open for testing. Later pushes update the same URL and comment.
 
 The native environment is `pr-<pull-request-number>` under the
-`leandrooriente-site` Worker. Its stable `workers.dev` URL follows successful
-updates. A failed build leaves the previous deployed preview available; the
-comment records the last verified deployment. Before the first successful run,
-there is no preview-link comment.
+`leandrooriente-site` Worker. Its stable URL is
+`https://pr-<pull-request-number>.preview.leandrooriente.com` and follows
+successful updates. The Actions helper ensures the shared preview-only Custom
+Domain before building; Cloudflare manages its wildcard DNS and SSL, so individual
+PR or deployment hostnames need no DNS registration. A failed build leaves the
+previous deployed preview available; the comment records the last verified
+deployment. Before the first successful run, there is no preview-link comment.
 
 When the user closes a PR, or an authorized merge closes it, follow that PR's
 cleanup run. The workflow deletes its native preview and updates the existing
@@ -77,6 +80,8 @@ On the returned preview URL or production origin:
 - Confirm the intended content at `/`, `/writing/`, and the affected article
   paths. Draft source remains unpublished until its front matter permits it.
 - Check canonical URLs, `og:url`, and sharing images use that deployment's origin.
+- For previews, confirm the stable custom hostname and `X-Robots-Tag: noindex`
+  response header. Production must remain indexable.
 - Check the referenced stylesheet, generated images, and fonts load. Fingerprinted
   assets use immutable caching; HTML retains revalidation.
 - Check a nonexistent path returns 404.
@@ -104,6 +109,13 @@ static files from the same run with a fixed preview configuration. Production
 builds the merged `main` commit. Preserve per-PR serialization, current-head/state
 checks, and the bot comment update behavior.
 
+Preview preparation registers or verifies `preview.leandrooriente.com` through
+the Custom Domains API without uploading a production Worker version. Keep that
+domain preview-only (`previews_enabled: true`, `enabled: false`) in
+`wrangler.jsonc`. Builds, canonical URLs, verification, and the bot comment use
+only the stable custom preview URL. The generated preview `_headers` supplies
+`X-Robots-Tag: noindex`; do not add that header to production output.
+
 Use the existing repository `CLOUDFLARE_API_TOKEN` secret. The GitHub `production`
 environment allows only `main`; do not use it for feature previews. The token needs
 Workers Scripts Edit and Account Settings Read for the configured account, plus
@@ -120,16 +132,22 @@ production deployment to work around a failed preview.
 - Main assets Worker: `leandrooriente-site`.
 - Cloudflare account: `fb873ce280424623e0e7c2733ec85d0c`.
 - Production: `https://leandrooriente.com`; `SITE_URL` supplies the preview origin
-  in preview builds. `workers_dev: false` keeps production on its Custom Domain.
+  in preview builds. `workers_dev: false` keeps the Worker off its ordinary
+  `workers.dev` hostname. Keep `preview_urls: true` for deployment debugging.
+- Preview-only Custom Domain: `preview.leandrooriente.com`, managed by the
+  Actions preview helper and shared by native PR environments. Cleanup deletes
+  each closed PR's environment, preserving this shared domain.
 - Redirect Worker: `leandrooriente-site-redirect`, configured by
   `wrangler.redirect.jsonc` and `scripts/redirect-domain.mjs`. It owns only
   `www.leandrooriente.com/*` and returns direct 301 redirects to the HTTPS apex.
 
-The production workflow currently deploys the main assets Worker. Redirect Worker,
-DNS, and route changes are separate infrastructure work; do not assume a normal
-site merge publishes them. Extend the appropriate Actions workflow through a PR
-when such work is requested, or follow an explicit request for a manual operation.
-Do not change these settings during an ordinary site deployment.
+The production workflow currently deploys the main assets Worker and its declared
+Custom Domains. The preview helper also ensures the shared preview-only domain.
+Redirect Worker and other DNS or route changes are separate infrastructure work;
+do not assume a normal site merge publishes them. Extend the appropriate Actions
+workflow through a PR when such work is requested, or follow an explicit request
+for a manual operation. Do not change these settings during an ordinary site
+deployment.
 
 For an explicitly requested manual Cloudflare operation, load the Wrangler skill
 and current provider documentation for the required commands. Manual publishing,

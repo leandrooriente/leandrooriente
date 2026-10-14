@@ -6,10 +6,16 @@ import test from 'node:test';
 import { previewOrigin, run, validateArtifact } from './pr-preview.mjs';
 
 const sha = 'a'.repeat(40);
-const url = 'https://pr-12-leandrooriente-site.example.workers.dev';
+const url = 'https://pr-12.preview.leandrooriente.com';
+const legacyURL = 'https://pr-12-leandrooriente-site.example.workers.dev';
+const deploymentURL = 'https://deployment-pr-12.preview.leandrooriente.com';
 const marker = '<!-- cloudflare-pr-preview -->';
 const pr = { state: 'open', head: { sha, repo: { full_name: 'owner/site' } }, user: { type: 'User', login: 'owner' } };
-const preview = { name: 'pr-12', urls: [url] };
+const preview = { name: 'pr-12', urls: [legacyURL, deploymentURL, url] };
+const domain = {
+  hostname: 'preview.leandrooriente.com', service: 'leandrooriente-site',
+  zone_name: 'leandrooriente.com', enabled: false, previews_enabled: true
+};
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status });
 const cf = result => json({ success: true, result });
 const absent = () => json({ success: false, errors: [{ code: 10025 }] }, 404);
@@ -33,7 +39,10 @@ async function fixture(t) {
     PATH: process.env.PATH, HOME: process.env.HOME
   };
   const calls = [];
-  const state = { pr, preview, comments: [], prReads: 0, uploads: 0, posted: [], deleted: 0 };
+  const state = {
+    pr, preview, domains: [domain], domainWrites: [], comments: [], prReads: 0,
+    uploads: 0, posted: [], deleted: 0, noindex: true
+  };
   const fetchImpl = async (value, options = {}) => {
     const endpoint = new URL(value);
     const method = options.method || 'GET';
@@ -52,6 +61,17 @@ async function fixture(t) {
       }
     }
     if (endpoint.hostname === 'api.cloudflare.com') {
+      if (endpoint.pathname.endsWith('/workers/domains')) {
+        if (method === 'GET') {
+          assert.equal(endpoint.searchParams.get('hostname'), domain.hostname);
+          return cf(state.domains);
+        }
+        assert.equal(method, 'PUT');
+        assert.deepEqual(JSON.parse(options.body), domain);
+        state.domainWrites.push(JSON.parse(options.body));
+        state.domains = [state.createdDomain || domain];
+        return cf(state.createResponse || state.createdDomain || domain);
+      }
       if (method === 'DELETE') {
         state.deleted++;
         return state.preview ? cf(null) : absent();
@@ -67,7 +87,9 @@ async function fixture(t) {
     assert.equal(endpoint.origin, url);
     assert.equal(options.headers, undefined, 'Public probes must not include credentials');
     return pages[endpoint.pathname]
-      ? new Response(pages[endpoint.pathname], { headers: { 'Content-Type': 'text/html' } })
+      ? new Response(pages[endpoint.pathname], { headers: {
+        'Content-Type': 'text/html', ...(state.noindex ? { 'X-Robots-Tag': 'noindex' } : {})
+      } })
       : new Response('Missing', { status: 404 });
   };
   const upload = async (binary, args, options) => {
@@ -78,6 +100,8 @@ async function fixture(t) {
     const config = JSON.parse(await readFile(args[args.indexOf('--config') + 1], 'utf8'));
     assert.equal(config.name, 'leandrooriente-site');
     assert.equal(config.account_id, 'fb873ce280424623e0e7c2733ec85d0c');
+    assert.equal(config.workers_dev, false);
+    assert.equal(config.preview_urls, true);
     assert.deepEqual(config.previews, {});
     assert.deepEqual(config.assets, { directory: artifact, html_handling: 'auto-trailing-slash', not_found_handling: 'none' });
     for (const field of ['build', 'main', 'routes', 'bindings', 'vars']) assert.equal(field in config, false);
@@ -87,8 +111,9 @@ async function fixture(t) {
     assert.notEqual(options.env.NPM_CONFIG_USERCONFIG, options.env.NPM_CONFIG_GLOBALCONFIG);
     assert.equal(await readFile(options.env.NPM_CONFIG_USERCONFIG, 'utf8'), '');
     assert.equal(await readFile(options.env.NPM_CONFIG_GLOBALCONFIG, 'utf8'), '');
+    assert.match(await readFile(join(artifact, '_headers'), 'utf8'), /\/\*\n  X-Robots-Tag: noindex\n/);
     await writeFile(options.env.WRANGLER_OUTPUT_FILE_PATH, JSON.stringify({
-      type: 'preview', worker_name: 'leandrooriente-site', preview_name: 'pr-12', preview_urls: [url],
+      type: 'preview', worker_name: 'leandrooriente-site', preview_name: 'pr-12', preview_urls: preview.urls,
       deployment_urls: ['https://upload-leandrooriente-site.example.workers.dev']
     }) + '\n');
   };
@@ -102,7 +127,81 @@ test('prepare creates metadata once and retains the stable URL on updates', asyn
   await run('prepare', f);
   assert.equal(f.calls.filter(call => call.method === 'POST').length, 1);
   assert.match(await readFile(f.env.GITHUB_OUTPUT, 'utf8'), new RegExp(`active=true\\nsha=${sha}\\nurl=${url}`));
+  assert.equal(f.state.domainWrites.length, 0);
   assert.equal(f.state.uploads, 0);
+});
+
+test('prepare creates the preview-only domain once before preview metadata', async t => {
+  const f = await fixture(t);
+  f.state.domains = [];
+  f.state.preview = null;
+  await run('prepare', f);
+  await run('prepare', f);
+  assert.deepEqual(f.state.domainWrites, [domain]);
+  const mutations = f.calls.filter(call => ['POST', 'PUT'].includes(call.method));
+  assert.deepEqual(mutations.map(call => call.method), ['PUT', 'POST']);
+  assert.ok(mutations[0].url.endsWith('/workers/domains'));
+  assert.match(await readFile(f.env.GITHUB_OUTPUT, 'utf8'), /url=https:\/\/pr-12\.preview\.leandrooriente\.com\n/);
+});
+
+test('prepare accepts an existing production preview-only domain without changing it', async t => {
+  const f = await fixture(t);
+  f.state.domains = [{ ...domain, environment: 'production' }];
+  await run('prepare', f);
+  assert.equal(f.state.domainWrites.length, 0);
+});
+
+test('prepare never overwrites conflicting domain ownership or traffic settings', async t => {
+  for (const conflict of [
+    { service: 'another-worker' }, { zone_name: 'example.com' }, { environment: 'staging' },
+    { enabled: true }, { previews_enabled: false }, { enabled: undefined }, { previews_enabled: undefined }
+  ]) {
+    const f = await fixture(t);
+    f.state.domains = [{ ...domain, ...conflict }];
+    f.state.preview = null;
+    await assert.rejects(() => run('prepare', f), /domain/i);
+    assert.equal(f.state.domainWrites.length, 0);
+    assert.equal(f.calls.some(call => call.method === 'POST'), false);
+  }
+});
+
+test('prepare rejects ambiguous or unexpected domain lookup results', async t => {
+  for (const domains of [[domain, domain], [{ ...domain, hostname: 'elsewhere.leandrooriente.com' }], {}]) {
+    const f = await fixture(t);
+    f.state.domains = domains;
+    await assert.rejects(() => run('prepare', f), /domain/i);
+    assert.equal(f.state.domainWrites.length, 0);
+  }
+});
+
+test('prepare verifies a newly registered domain before creating preview metadata', async t => {
+  const f = await fixture(t);
+  f.state.domains = [];
+  f.state.preview = null;
+  f.state.createdDomain = { ...domain, enabled: true };
+  await assert.rejects(() => run('prepare', f), /domain/i);
+  assert.equal(f.state.domainWrites.length, 1);
+  assert.equal(f.calls.some(call => call.method === 'POST'), false);
+});
+
+test('prepare verifies registration by reading stored state when PUT returns incomplete or old flags', async t => {
+  for (const createResponse of [{}, { ...domain, enabled: true, previews_enabled: false }]) {
+    const f = await fixture(t);
+    f.state.domains = [];
+    f.state.preview = null;
+    f.state.createResponse = createResponse;
+    await run('prepare', f);
+    assert.equal(f.state.domainWrites.length, 1);
+    assert.deepEqual(f.calls.filter(call => call.url.includes('/workers/domains')).map(call => call.method),
+      ['GET', 'PUT', 'GET']);
+    assert.match(await readFile(f.env.GITHUB_OUTPUT, 'utf8'), /active=true/);
+  }
+});
+
+test('prepare fails when the preview has only legacy or deployment-specific URLs', async t => {
+  const f = await fixture(t);
+  f.state.preview = { ...preview, urls: [legacyURL, deploymentURL] };
+  await assert.rejects(() => run('prepare', f), /custom|expected|preview\.leandrooriente\.com/i);
 });
 
 test('fork and Dependabot pull requests never use the Cloudflare API', async t => {
@@ -159,7 +258,9 @@ test('a head change during preparation prevents uploading', async t => {
 
 test('publish uploads only assets and creates one verified preview comment', async t => {
   const f = await fixture(t);
+  await writeFile(join(f.artifact, '_headers'), '/assets/*\n  Cache-Control: public, max-age=31536000\n');
   await run('publish', f);
+  assert.match(await readFile(join(f.artifact, '_headers'), 'utf8'), /^\/assets\/\*\n  Cache-Control: public, max-age=31536000\n/);
   assert.equal(f.state.uploads, 1);
   assert.equal(f.state.posted.length, 1);
   assert.equal(f.state.posted[0].method, 'POST');
@@ -177,9 +278,25 @@ test('verification retries propagation failures without uploading twice', async 
     : f.fetchImpl(value, options);
   await run('publish', { ...f, fetchImpl, pause: async milliseconds => pauses.push(milliseconds) });
   assert.equal(rootRequests, 2);
-  assert.deepEqual(pauses, [5000]);
+  assert.deepEqual(pauses, [10000]);
   assert.equal(f.state.uploads, 1);
   assert.equal(f.state.posted.length, 1);
+});
+
+test('publish requires noindex on every verified page before commenting', async t => {
+  const f = await fixture(t);
+  const pauses = [];
+  const fetchImpl = async (value, options) => {
+    const response = await f.fetchImpl(value, options);
+    if (value === url + '/writing/') response.headers.delete('X-Robots-Tag');
+    return response;
+  };
+  await assert.rejects(() => run('publish', {
+    ...f, fetchImpl, pause: async milliseconds => pauses.push(milliseconds)
+  }), /verification/i);
+  assert.deepEqual(pauses, Array(11).fill(10000));
+  assert.equal(f.state.uploads, 1);
+  assert.equal(f.state.posted.length, 0);
 });
 
 test('comment updates paginate and require the Actions bot plus the exact marker', async t => {
@@ -219,9 +336,12 @@ test('a build with the production origin cannot upload', async t => {
 
 test('bad origins and artifact links are rejected before uploading', async t => {
   for (const bad of ['https://leandrooriente.com', url + '/other', url + '?q=1',
-    url.replace('pr-12-', 'pr-13-'), url.replace('https:', 'http:'), url.replace('https://', 'https://user@')]) {
+    url + '#fragment', url.replace('pr-12.', 'pr-13.'), url.replace('https:', 'http:'),
+    url.replace('https://', 'https://user@'), url.replace('.com', '.com:8443'),
+    url.replace('.com', '.com.evil.example'), legacyURL, deploymentURL]) {
     assert.throws(() => previewOrigin(bad, 'pr-12'));
   }
+  assert.equal(previewOrigin(url, 'pr-12'), url);
   const f = await fixture(t);
   await symlink(join(f.temporary, 'event.json'), join(f.artifact, 'linked.json'));
   await assert.rejects(() => run('publish', f), /symbolic links/);
