@@ -1,5 +1,5 @@
 import { assetUrl } from "./assets.mjs";
-import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule } from "./pr-card-art.mjs";
+import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
 const cycle = 26;
 const splitStart = 8.3;
@@ -8,16 +8,19 @@ const resetStart = 23;
 const resetEnd = 24.5;
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
+// Hold the opening card for four extra seconds after its review marks arrive.
+const openingHold = 4;
+const duration = cycle + openingHold;
 const cardHeight = 66;
 const gap = 26;
 const finalTop = 52;
 const parts = [
-  { key: "interface", label: "1 · Add interface + tests", changed: 600 },
-  { key: "codemod", label: "2 · Add codemod + tests", changed: 400 },
-  { key: "first-batch", label: "3 · First batch", changed: 9600 },
-  { key: "second-batch", label: "4 · Second batch", changed: 9600 },
-  { key: "third-batch", label: "5 · Third batch", changed: 9400 },
-  { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400 }
+  { key: "interface", label: "1 · Add interface + tests", changed: 600, desktopWidth: 252, mobileWidth: 216 },
+  { key: "codemod", label: "2 · Add codemod + tests", changed: 400, desktopWidth: 256, mobileWidth: 224 },
+  { key: "first-batch", label: "3 · First batch", changed: 9600, desktopWidth: 204, mobileWidth: 204 },
+  { key: "second-batch", label: "4 · Second batch", changed: 9600, desktopWidth: 204, mobileWidth: 204 },
+  { key: "third-batch", label: "5 · Third batch", changed: 9400, desktopWidth: 204, mobileWidth: 204 },
+  { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400, desktopWidth: 296, mobileWidth: 256 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * 1.4 }));
 const breakdownStart = parts[0].reveal;
 const sourceTop = finalTop + (parts.length - 1) * gap / 2;
@@ -28,12 +31,12 @@ const drawingHeight = footerY + 11;
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className, anchor = "middle") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}">${value}</text>`;
 
-function timing(frames) {
-  return `keyTimes="${frames.map(([at]) => at / cycle).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${cycle}s" repeatCount="indefinite" begin="indefinite"`;
+function timing(frames, shiftOpening = true) {
+  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? at + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
 }
 
-function opacity(frames) {
-  return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames)}/>`;
+function opacity(frames, shiftOpening = true) {
+  return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames, shiftOpening)}/>`;
 }
 
 function definitions(prefix) {
@@ -42,7 +45,9 @@ function definitions(prefix) {
   </defs>`;
 }
 
-function card(prefix, part, index, { x, width, compact }) {
+function card(prefix, part, index, { center, compact }) {
+  const width = compact ? part.mobileWidth : part.desktopWidth;
+  const x = center - width / 2;
   const band = parts.length - index - 1;
   const from = `${x} ${sourceTop + band * cardHeight}`;
   const to = `${x} ${finalTop + band * (cardHeight + gap)}`;
@@ -64,20 +69,18 @@ function card(prefix, part, index, { x, width, compact }) {
   </g>`;
 }
 
-function blob(prefix, { x, width, compact }) {
-  const height = parts.length * cardHeight;
+function blob(prefix, { x, y, width, height, compact }) {
   const titleClass = compact ? "pr-card-art-title pr-card-art-mobile-title" : "pr-card-art-title";
-  return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${sourceTop})" opacity="0">
+  return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${y})" opacity="0">
     ${prCardSurface(prefix, width, height)}
     <g>
-      ${prCardIcon(24, 92, 34)}
-      ${text(24, 172, "New interface", titleClass, "start")}${text(24, 199, "+ every caller", titleClass, "start")}
-      ${prCardRule(24, 226, width - 48)}
-      ${text(width / 2, 260, "A seamless, future-proof update.", "pr-card-art-copy")}
-      ${text(width / 2, 284, "Modernize the entire codebase.", "pr-card-art-copy")}
-      ${prCardRule(24, height - 78, width - 48)}
-      ${text(24, height - 50, "30,000 lines changed", "pr-card-art-count pr-breakdown-added", "start")}
-      ${text(24, height - 26, "700 files changed", "pr-card-art-count pr-breakdown-added", "start")}
+      ${prCardIcon(24, 20, 28)}
+      ${text(24, 75, "New interface", titleClass, "start")}${text(24, 101, "+ every caller", titleClass, "start")}
+      ${text(24, 128, "A seamless, future-proof update.", "pr-card-art-copy", "start")}
+      ${text(24, 151, "Modernize the entire codebase.", "pr-card-art-copy", "start")}
+      ${prCardRule(24, 173, width - 48)}
+      ${text(24, 198, "30,000 lines changed", "pr-card-art-count pr-breakdown-added", "start")}
+      ${text(24, 221, "700 files changed", "pr-card-art-count pr-breakdown-added", "start")}
     </g>
     ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
   </g>`;
@@ -86,20 +89,21 @@ function blob(prefix, { x, width, compact }) {
 function comment(x, y, start) {
   return `<g class="pr-breakdown-comment" transform="translate(${x} ${y})" opacity="0" aria-hidden="true">
     <path d="M0 0H36V25H18L9 33V25H0Z"/><path class="pr-breakdown-comment-lines" d="M8 8H27M8 16H21"/>
-    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart + openingHold - .3, 1], [breakdownStart + openingHold, 0], [duration, 0]], false)}
   </g>`;
 }
 
 function cross(x, y, start) {
   return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>
-    ${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart + openingHold - .3, 1], [breakdownStart + openingHold, 0], [duration, 0]], false)}
   </g>`;
 }
 
 function drawing(id, compact) {
   const prefix = `${id}-${compact ? "mobile" : "desktop"}`;
-  const layout = { x: compact ? 35 : 180, width: compact ? 290 : 400, compact };
   const center = compact ? 180 : 380;
+  const layout = { center, compact };
+  const initialLayout = { ...layout, x: center - 140, width: 280, height: 242, y: sourceTop + (parts.length * cardHeight - 242) / 2 };
   const width = compact ? 360 : 760;
   const connectors = parts.slice(0, -1).map((part, index) => {
     const lowerTop = finalTop + (parts.length - index - 1) * (cardHeight + gap);
@@ -118,9 +122,7 @@ function drawing(id, compact) {
       ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>`;
   }).join("");
-  const decorations = compact
-    ? `${comment(4, 154, .4)}${comment(320, 292, .9)}${comment(60, 526, 1.4)}${cross(334, 130, .7)}${cross(25, 420, 1.2)}${cross(285, 527, 1.8)}`
-    : `${comment(136, 154, .4)}${comment(588, 292, .9)}${comment(245, 526, 1.4)}${cross(592, 130, .7)}${cross(166, 420, 1.2)}${cross(526, 527, 1.8)}`;
+  const decorations = prCardReviewMarks(initialLayout, comment, cross);
   return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large interface migration becomes six stacked pull requests</title>
     <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts appear from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Each approval starts an upward connector. The next PR is approved after that connector arrives. Counts are illustrative; files can recur between PRs.</desc>
@@ -133,7 +135,7 @@ function drawing(id, compact) {
       ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies">${connectors}</g>
-    ${blob(prefix, layout)}${parts.map((part, index) => card(prefix, part, index, layout)).join("")}
+    ${blob(prefix, initialLayout)}${parts.map((part, index) => card(prefix, part, index, layout)).join("")}
     ${decorations}
     <g opacity="1">${text(center, footerY, "Stack reads bottom to top", "pr-breakdown-detail")}
       ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}

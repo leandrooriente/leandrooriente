@@ -15,3 +15,11 @@ export function prCardIcon(x, y, height = 20) {
 export function prCardRule(x, y, width) {
   return `<path class="pr-card-art-rule" d="M${x} ${y}Q${x + width * .48} ${y - .7} ${x + width} ${y + .3}"/>`;
 }
+
+export function prCardReviewMarks({ x, y, width, height }, comment, cross) {
+  return [
+    comment(x + width - 48, y + 10, .4),
+    comment(x + width - 48, y + height - 38, 1.4),
+    cross(x + width * .52, y + 26, .9)
+  ].join("");
+}

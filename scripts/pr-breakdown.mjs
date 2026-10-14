@@ -1,5 +1,5 @@
 import { assetUrl } from "./assets.mjs";
-import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule } from "./pr-card-art.mjs";
+import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
 const cycle = 22;
 const resetStart = 19.5;
@@ -7,23 +7,26 @@ const resetEnd = 21;
 // Apple uses this curve for transform transitions on its MacBook Air page.
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
+// Hold the opening card for four extra seconds after its review marks arrive.
+const openingHold = 4;
+const duration = cycle + openingHold;
 const parts = [
-  { key: "bug", label: "Bug fix", ink: "pale", width: 180, height: 100, added: 200, removed: 50, from: [200, 388], to: [185, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
-  { key: "refactor", label: "Class refactor", ink: "ochre", width: 180, height: 100, added: 950, removed: 250, from: [380, 388], to: [395, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
-  { key: "foundation", label: "Foundational work", ink: "olive", width: 360, height: 100, added: 780, removed: 170, from: [200, 288], to: [200, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 12.3 },
-  { key: "feature", label: "Feature Implementation", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.7 }
+  { key: "bug", label: "Bug fix", ink: "pale", width: 142, height: 100, added: 200, removed: 50, from: [228, 388], to: [213, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
+  { key: "refactor", label: "Class refactor", ink: "ochre", width: 162, height: 100, added: 950, removed: 250, from: [370, 388], to: [385, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
+  { key: "foundation", label: "Foundational work", ink: "olive", width: 264, height: 100, added: 780, removed: 170, from: [248, 288], to: [248, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 12.3 },
+  { key: "feature", label: "Feature Implementation", ink: "terra", width: 328, height: 110, added: 520, removed: 80, from: [216, 178], to: [216, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.7 }
 ];
 const breakdownStart = parts[0].reveal;
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className = "pr-breakdown-label") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle">${value}</text>`;
 
-function timing(frames) {
-  return `keyTimes="${frames.map(([at]) => at / cycle).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${cycle}s" repeatCount="indefinite" begin="indefinite"`;
+function timing(frames, shiftOpening = true) {
+  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? at + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
 }
 
-function opacity(frames) {
-  return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames)}/>`;
+function opacity(frames, shiftOpening = true) {
+  return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames, shiftOpening)}/>`;
 }
 
 function definitions(prefix) {
@@ -78,22 +81,22 @@ function card(prefix, part, compact = false) {
 function comment(x, y, start) {
   return `<g class="pr-breakdown-comment" transform="translate(${x} ${y})" opacity="0" aria-hidden="true">
     <path d="M0 0H36V25H18L9 33V25H0Z"/><path class="pr-breakdown-comment-lines" d="M8 8H27M8 16H21"/>
-    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart + openingHold - .3, 1], [breakdownStart + openingHold, 0], [duration, 0]], false)}
   </g>`;
 }
 
 function cross(x, y, start) {
-  return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}</g>`;
+  return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart + openingHold - .3, 1], [breakdownStart + openingHold, 0], [duration, 0]], false)}</g>`;
 }
 
-function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = false } = {}) {
-  const inset = compact ? 22 : 28;
+function blob(prefix, { x = 234, y = 238, width = 292, height = 190, compact = false } = {}) {
+  const inset = compact ? 22 : 24;
   return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${y})" opacity="0">
     ${prCardSurface(prefix, width, height)}
     <g class="pr-card-art-draft">
-      ${prCardIcon(inset, compact ? 24 : 30, compact ? 30 : 38)}
-      <text x="${inset}" y="${compact ? 84 : 111}" class="pr-card-art-title" style="font-size:${compact ? 25 : 30}px">Do a bunch of stuff</text>
-      <text x="${inset}" y="${compact ? 119 : 157}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
+      ${prCardIcon(inset, 18, 26)}
+      <text x="${inset}" y="${compact ? 68 : 72}" class="pr-card-art-title" style="font-size:${compact ? 24 : 26}px">Do a bunch of stuff</text>
+      <text x="${inset}" y="${compact ? 98 : 102}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
       ${prCardRule(inset, height - 42, width - inset * 2)}
       ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}
     </g>
@@ -103,6 +106,7 @@ function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = f
 
 function desktop(id) {
   const prefix = `${id}-desktop`;
+  const initialLayout = { x: 234, y: 238, width: 292, height: 190 };
   return `<svg class="pr-breakdown-svg pr-breakdown-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 605" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
     <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature appear one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear. Each base PR is approved, its connector draws upward, and the next PR is approved after the connection arrives. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
@@ -116,25 +120,25 @@ function desktop(id) {
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
-      ${connection("M275 424V402H380", 10.1, 11)}
-      ${connection("M485 424V402H380", 10.7, 11.6)}
+      ${connection("M284 424V402H380", 10.1, 11)}
+      ${connection("M466 424V402H380", 10.7, 11.6)}
       ${connection("M380 402V382", 11.7, 12.2, "M375 388L380 382L385 388")}
       ${connection("M380 258V216", 12.7, 13.6, "M375 222L380 216L385 222")}
     </g>
-    ${blob(prefix)}
+    ${blob(prefix, initialLayout)}
     ${parts.map((part) => card(prefix, part)).join("")}
-    ${comment(156, 202, .4)}${comment(579, 301, .9)}${comment(247, 504, 1.4)}
-    ${cross(584, 184, .7)}${cross(181, 428, 1.2)}${cross(526, 510, 1.8)}
+    ${prCardReviewMarks(initialLayout, comment, cross)}
   </svg>`;
 }
 
 function mobile(id) {
   const prefix = `${id}-mobile`;
+  const initialLayout = { x: 45, y: 140, width: 270, height: 184, compact: true };
   const layouts = {
-    bug: { width: 145, height: 82, from: [35, 258], to: [20, 334] },
-    refactor: { width: 145, height: 82, from: [180, 258], to: [195, 334] },
-    foundation: { width: 290, height: 70, from: [35, 188], to: [35, 181] },
-    feature: { width: 290, height: 64, from: [35, 124], to: [35, 58] }
+    bug: { width: 136, height: 82, from: [41, 258], to: [26, 334] },
+    refactor: { width: 142, height: 82, from: [177, 258], to: [192, 334] },
+    foundation: { width: 216, height: 70, from: [72, 188], to: [72, 181] },
+    feature: { width: 268, height: 64, from: [46, 124], to: [46, 58] }
   };
   return `<svg class="pr-breakdown-svg pr-breakdown-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 470" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
@@ -149,15 +153,14 @@ function mobile(id) {
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
-      ${connection("M92.5 322V291H180", 10.1, 11)}
-      ${connection("M267.5 322V291H180", 10.7, 11.6)}
+      ${connection("M94 322V291H180", 10.1, 11)}
+      ${connection("M263 322V291H180", 10.7, 11.6)}
       ${connection("M180 291V263", 11.7, 12.2, "M175 269L180 263L185 269")}
       ${connection("M180 169V134", 12.7, 13.6, "M175 140L180 134L185 140")}
     </g>
-    ${blob(prefix, { x: 35, y: 124, width: 290, height: 216, compact: true })}
+    ${blob(prefix, initialLayout)}
     ${parts.map((part) => card(prefix, { ...part, ...layouts[part.key] }, true)).join("")}
-    ${comment(4, 146, .4)}${comment(320, 208, .9)}${comment(60, 351, 1.4)}
-    ${cross(334, 130, .7)}${cross(25, 300, 1.2)}${cross(290, 351, 1.8)}
+    ${prCardReviewMarks(initialLayout, comment, cross)}
   </svg>`;
 }
 
