@@ -25,12 +25,18 @@ const parts = [
   { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400, desktopWidth: 296, mobileWidth: 256, y: 74, approved: 15.15 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9 }));
 const breakdownStart = parts[0].reveal;
+const actionEnd = Math.max(...parts.map((part) => part.approved + .25));
+// Quicken the split and review sequence, then keep the extra time as a final hold.
+// Opening, closing fades, and the complete loop duration stay unchanged.
+function actionTime(at) {
+  return at >= splitStart && at <= actionEnd ? splitStart + (at - splitStart) * .7 : at;
+}
 
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className, anchor = "middle", attributes = "") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}" ${attributes}>${value}</text>`;
 
 function timing(frames, shiftOpening = true) {
-  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? at + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
+  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? actionTime(at) + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
 }
 
 function opacity(frames, shiftOpening = true) {

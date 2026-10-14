@@ -18,12 +18,19 @@ const parts = [
   { key: "feature", label: "Feature", ink: "terra", width: 142, height: 110, added: 520, removed: 80, from: [309, 178], to: [309, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
 ];
 const breakdownStart = parts[0].reveal;
+const actionStart = parts[0].start;
+const actionEnd = Math.max(...parts.map((part) => part.approved + .3));
+// Quicken the split and review sequence, then keep the extra time as a final hold.
+// Opening, closing fades, and the complete loop duration stay unchanged.
+function actionTime(at) {
+  return at >= actionStart && at <= actionEnd ? actionStart + (at - actionStart) * .7 : at;
+}
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className = "pr-breakdown-label") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle">${value}</text>`;
 
 function timing(frames, shiftOpening = true) {
-  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? at + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
+  return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? actionTime(at) + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
 }
 
 function opacity(frames, shiftOpening = true) {
