@@ -69,8 +69,8 @@ async function fixture(t) {
         assert.equal(method, 'PUT');
         assert.deepEqual(JSON.parse(options.body), domain);
         state.domainWrites.push(JSON.parse(options.body));
-        state.domains = [domain];
-        return cf(state.createdDomain || domain);
+        state.domains = [state.createdDomain || domain];
+        return cf(state.createResponse || state.createdDomain || domain);
       }
       if (method === 'DELETE') {
         state.deleted++;
@@ -182,6 +182,20 @@ test('prepare verifies a newly registered domain before creating preview metadat
   await assert.rejects(() => run('prepare', f), /domain/i);
   assert.equal(f.state.domainWrites.length, 1);
   assert.equal(f.calls.some(call => call.method === 'POST'), false);
+});
+
+test('prepare verifies registration by reading stored state when PUT returns incomplete or old flags', async t => {
+  for (const createResponse of [{}, { ...domain, enabled: true, previews_enabled: false }]) {
+    const f = await fixture(t);
+    f.state.domains = [];
+    f.state.preview = null;
+    f.state.createResponse = createResponse;
+    await run('prepare', f);
+    assert.equal(f.state.domainWrites.length, 1);
+    assert.deepEqual(f.calls.filter(call => call.url.includes('/workers/domains')).map(call => call.method),
+      ['GET', 'PUT', 'GET']);
+    assert.match(await readFile(f.env.GITHUB_OUTPUT, 'utf8'), /active=true/);
+  }
 });
 
 test('prepare fails when the preview has only legacy or deployment-specific URLs', async t => {

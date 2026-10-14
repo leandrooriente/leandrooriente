@@ -101,10 +101,13 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
   const cloudflare = (path, options) => request('Cloudflare', cloudflarePath + path, options);
   async function ensurePreviewDomain() {
     const path = `/accounts/${account}/workers/domains`;
-    const domains = await request('Cloudflare', `${path}?hostname=${previewDomain}`);
-    if (!Array.isArray(domains) || domains.length > 1 ||
-        domains.some(domain => domain.hostname !== previewDomain)) {
-      throw new Error('Cloudflare returned unexpected preview domain records.');
+    async function lookup() {
+      const domains = await request('Cloudflare', `${path}?hostname=${previewDomain}`);
+      if (!Array.isArray(domains) || domains.length > 1 ||
+          domains.some(domain => domain.hostname !== previewDomain)) {
+        throw new Error('Cloudflare returned unexpected preview domain records.');
+      }
+      return domains;
     }
     const expected = {
       hostname: previewDomain, service: worker, zone_name: 'leandrooriente.com',
@@ -116,11 +119,13 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
         throw new Error('The preview domain conflicts with the expected preview-only configuration.');
       }
     }
+    const domains = await lookup();
     if (domains.length) {
       verify(domains[0]);
     } else {
       // The single-host API provisions wildcard DNS and TLS without deploying production.
-      verify(await request('Cloudflare', path, { method: 'PUT', body: expected }));
+      await request('Cloudflare', path, { method: 'PUT', body: expected });
+      verify((await lookup())[0]);
     }
     console.log(`Verified preview-only domain ${previewDomain}.`);
   }
