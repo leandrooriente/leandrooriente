@@ -4,35 +4,41 @@
 
   document.querySelectorAll("[data-pr-breakdown]").forEach((figure) => {
     if (figure.dataset.prBreakdownReady) return;
-    const drawing = figure.querySelector("svg.pr-breakdown-desktop");
     const button = figure.querySelector("[data-pr-breakdown-toggle]");
-    if (!drawing || !button || typeof drawing.pauseAnimations !== "function") return;
+    const layouts = [
+      { drawing: figure.querySelector("svg.pr-breakdown-desktop"), wide: true, initialized: false },
+      { drawing: figure.querySelector("svg.pr-breakdown-mobile"), wide: false, initialized: false }
+    ].filter(({ drawing }) => drawing && typeof drawing.pauseAnimations === "function");
+    if (!button || !layouts.length) return;
     figure.dataset.prBreakdownReady = "true";
 
     let visible = !window.IntersectionObserver;
     let manualPause;
-    let initialized = false;
-    drawing.pauseAnimations();
+    layouts.forEach(({ drawing }) => drawing.pauseAnimations());
 
     function update() {
       const paused = manualPause ?? reducedMotion.matches;
-      const desktop = wideLayout.matches;
-      const canPlay = desktop && !paused && visible && !document.hidden;
+      const active = layouts.find(({ wide }) => wide === wideLayout.matches);
+      const canPlay = Boolean(active) && !paused && visible && !document.hidden;
 
-      if (canPlay && !initialized) {
-        // Leave the static drawing intact until a visible desktop loop can play.
-        drawing.setCurrentTime(0);
-        drawing.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
-          animation.beginElement();
-        });
-        initialized = true;
-      }
+      layouts.forEach((layout) => {
+        const { drawing } = layout;
+        const playing = layout === active && canPlay;
+        if (playing && !layout.initialized) {
+          // Leave each static drawing intact until its visible layout can play.
+          drawing.setCurrentTime(0);
+          drawing.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
+            animation.beginElement();
+          });
+          layout.initialized = true;
+        }
 
-      if (canPlay) drawing.unpauseAnimations();
-      else drawing.pauseAnimations();
+        if (playing) drawing.unpauseAnimations();
+        else drawing.pauseAnimations();
+      });
 
-      figure.dataset.motion = !desktop || !initialized ? "static" : (paused ? "paused" : (canPlay ? "playing" : "suspended"));
-      button.hidden = !desktop;
+      figure.dataset.motion = !active?.initialized ? "static" : (paused ? "paused" : (canPlay ? "playing" : "suspended"));
+      button.hidden = !active;
       button.textContent = paused ? "Play animation" : "Pause animation";
       button.setAttribute("aria-pressed", String(paused));
     }

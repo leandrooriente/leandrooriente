@@ -46,7 +46,7 @@ function check(part, animated) {
   </g>`;
 }
 
-function card(prefix, part) {
+function card(prefix, part, compact = false) {
   const [x, y] = part.to;
   const shape = contour(part.width, part.height);
   const motion = [
@@ -57,14 +57,14 @@ function card(prefix, part) {
   return `<g class="pr-breakdown-card pr-breakdown-${part.ink}" data-pr-part="${part.key}" transform="translate(${x} ${y})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
     ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
-    <path class="pr-breakdown-shadow" d="${shape}" transform="translate(3 4)"/>
+    <path class="pr-breakdown-shadow" d="${shape}" transform="translate(${compact ? "2 3" : "3 4"})"/>
     <path class="pr-breakdown-tile" d="${shape}"/>
     <path d="${shape}" fill="url(#${prefix}-grain)" aria-hidden="true"/>
     <path class="pr-breakdown-highlight" d="M5 5H${part.width - 6}V${part.height - 6}H5Z" opacity="0" aria-hidden="true">
       ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
     </path>
-    ${text(part.width / 2, 43, part.label, `pr-breakdown-card-title${part.key === "feature" ? " pr-breakdown-feature-title" : ""}`)}
-    <g class="pr-breakdown-part-counts">${counts(part.width / 2, part.height - 20, part.added, part.removed)}${opacity([[0, 0], [8.3, 0], [8.7, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>${check(part, true)}
+    ${(Array.isArray(part.label) ? part.label : [part.label]).map((line, index) => text(part.width / 2, (compact ? 27 : 43) + index * 20, line, compact ? "pr-breakdown-mobile-title" : `pr-breakdown-card-title${part.key === "feature" ? " pr-breakdown-feature-title" : ""}`)).join("")}
+    <g class="pr-breakdown-part-counts">${counts(part.width / 2, part.height - (compact ? 14 : 20), part.added, part.removed)}${opacity([[0, 0], [8.3, 0], [8.7, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>${check(part, true)}
   </g>`;
 }
 
@@ -79,12 +79,12 @@ function cross(x, y, start) {
   return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [6.3, 1], [6.7, 0], [cycle, 0]])}</g>`;
 }
 
-function blob(prefix) {
-  const shape = contour(360, 310);
-  return `<g class="pr-breakdown-blob pr-breakdown-terra" transform="translate(200 178)" opacity="0">
+function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = false } = {}) {
+  const shape = contour(width, height);
+  return `<g class="pr-breakdown-blob pr-breakdown-terra" transform="translate(${x} ${y})" opacity="0">
     <path class="pr-breakdown-shadow" d="${shape}" transform="translate(3 4)"/>
     <path class="pr-breakdown-tile" d="${shape}"/><path d="${shape}" fill="url(#${prefix}-grain)" aria-hidden="true"/>
-    <g>${text(180, 161, "Feature PR", "pr-breakdown-card-title pr-breakdown-feature-title")}${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}</g>
+    <g>${text(width / 2, height / 2 + 6, "Feature PR", compact ? "pr-breakdown-card-title pr-breakdown-mobile-title" : "pr-breakdown-card-title pr-breakdown-feature-title")}${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}</g>
     ${opacity([[0, 1], [6.3, 1], [6.5, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
   </g>`;
 }
@@ -118,31 +118,36 @@ function desktop(id) {
   </svg>`;
 }
 
-function mobileCard(prefix, x, y, width, height, label, ink, added, removed, approved = false) {
-  const shape = contour(width, height);
-  const lines = Array.isArray(label) ? label : [label];
-  return `<g class="pr-breakdown-card pr-breakdown-${ink}" transform="translate(${x} ${y})">
-    <path class="pr-breakdown-shadow" d="${shape}" transform="translate(2 3)"/><path class="pr-breakdown-tile" d="${shape}"/><path d="${shape}" fill="url(#${prefix}-grain)"/>
-    ${lines.map((line, index) => text(width / 2, (added === undefined ? height / 2 - (lines.length - 1) * 10 + 6 : 27) + index * 20, line, "pr-breakdown-mobile-title")).join("")}
-    ${added === undefined ? "" : counts(width / 2, height - 14, added, removed)}
-    ${approved ? check({ width }, false) : ""}
-  </g>`;
-}
-
 function mobile(id) {
   const prefix = `${id}-mobile`;
   const routes = ["M92.5 322V291H180V263", "M267.5 322V291H180", "M180 169V134"];
+  const layouts = {
+    bug: { width: 145, height: 82, from: [35, 258], to: [20, 334] },
+    refactor: { width: 145, height: 82, from: [180, 258], to: [195, 334], label: ["Class", "refactor"] },
+    foundation: { width: 290, height: 70, from: [35, 188], to: [35, 181] },
+    feature: { width: 290, height: 64, from: [35, 124], to: [35, 58] }
+  };
   return `<svg class="pr-breakdown-svg pr-breakdown-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 470" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
-    <title id="${prefix}-title">Four focused pull requests in a stack and parallel reviews</title>
-    <desc id="${prefix}-description">The bug fix and class refactor are reviewed in parallel at the base. Foundational work depends on both, and the feature sits at the top. Each smaller PR shows its individual additions and removals and an approval check.</desc>
+    <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
+    <desc id="${prefix}-description">One undivided PR gathers comments and rejection marks. Its four parts are highlighted, then move apart into a stack: bug fix and class refactor in parallel, foundational work above them, and feature at the top. The combined counter disappears and smaller counts and approval checks appear.</desc>
     ${definitions(prefix)}
-    ${text(180, 28, "Four focused PRs", "pr-breakdown-stage")}
-    <g class="pr-breakdown-dependencies">${routes.map((route, index) => `<path d="${route}"${index === 1 ? "" : ` marker-end="url(#${prefix}-arrow)"`}/>`).join("")}</g>
-    ${mobileCard(prefix, 35, 58, 290, 64, "Feature", "terra", 520, 80, true)}
-    ${mobileCard(prefix, 35, 181, 290, 70, "Foundational work", "olive", 780, 170, true)}
-    ${mobileCard(prefix, 15, 334, 155, 82, "Bug fix", "pale", 200, 50, true)}
-    ${mobileCard(prefix, 190, 334, 155, 82, ["Class", "refactor"], "ochre", 950, 250, true)}
-    ${text(180, 452, "Review these two in parallel", "pr-breakdown-detail")}
+    <g class="pr-breakdown-total" opacity="0">
+      ${text(180, 28, "One huge PR", "pr-breakdown-stage")}${counts(180, 82, totals.added, totals.removed)}
+      ${opacity([[0, 1], [6.3, 1], [6.7, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
+    </g>
+    <g class="pr-breakdown-result" opacity="1">
+      ${text(180, 28, "Four focused PRs", "pr-breakdown-stage")}
+      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    </g>
+    <g class="pr-breakdown-dependencies" opacity="1">
+      ${routes.map((route, index) => `<path d="${route}"${index === 1 ? "" : ` marker-end="url(#${prefix}-arrow)"`}/>`).join("")}
+      ${text(180, 452, "Review these two in parallel", "pr-breakdown-detail")}
+      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    </g>
+    ${blob(prefix, { x: 35, y: 124, width: 290, height: 216, compact: true })}
+    ${parts.map((part) => card(prefix, { ...part, ...layouts[part.key] }, true)).join("")}
+    ${comment(4, 146, .4)}${comment(320, 208, .9)}${comment(60, 351, 1.4)}
+    ${cross(334, 130, .7)}${cross(25, 300, 1.2)}${cross(290, 351, 1.8)}
   </svg>`;
 }
 

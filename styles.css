@@ -394,7 +394,7 @@ main:focus { outline: none; }
   .pr-breakdown { width: 100%; left: auto; transform: none; margin-block: 36px; }
   .pr-breakdown-toolbar { padding-inline: 0; }
   .pr-breakdown-heading { font-size: 15px; }
-  .pr-breakdown-toggle, .pr-breakdown-desktop { display: none; }
+  .pr-breakdown-desktop { display: none; }
   .pr-breakdown-mobile { display: block; max-width: 360px; margin-inline: auto; }
   .pr-breakdown-stage { font-size: 25px; }
   .pr-breakdown-count { font-size: 16px; }
