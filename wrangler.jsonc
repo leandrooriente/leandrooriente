@@ -9,6 +9,12 @@
     {
       "pattern": "leandrooriente.com",
       "custom_domain": true
+    },
+    {
+      "pattern": "preview.leandrooriente.com",
+      "custom_domain": true,
+      "previews_enabled": true,
+      "enabled": false
     }
   ],
   "build": {

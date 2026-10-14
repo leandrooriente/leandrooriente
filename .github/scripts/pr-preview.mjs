@@ -7,13 +7,14 @@ import { setTimeout as delay } from 'node:timers/promises';
 
 const account = 'fb873ce280424623e0e7c2733ec85d0c';
 const worker = 'leandrooriente-site';
+const previewDomain = 'preview.leandrooriente.com';
 const marker = '<!-- cloudflare-pr-preview -->';
 const execute = promisify(execFile);
 
 export function previewOrigin(value, name) {
   const url = new URL(value);
-  const hostname = new RegExp(`^${name}-${worker}\\.[a-z0-9][a-z0-9-]*\\.workers\\.dev$`);
-  if (url.protocol !== 'https:' || !hostname.test(url.hostname) || url.port ||
+  if (!/^pr-[1-9]\d*$/.test(name) || url.protocol !== 'https:' ||
+      url.hostname !== `${name}.${previewDomain}` || url.port ||
       url.username || url.password || url.pathname !== '/' || url.search || url.hash) {
     throw new Error('Cloudflare returned an unexpected preview origin.');
   }
@@ -25,9 +26,9 @@ function resourceOrigin(preview, name) {
     throw new Error('Cloudflare returned an unexpected preview resource.');
   }
   for (const value of preview.urls) {
-    try { return previewOrigin(value, name); } catch { /* Try the workers.dev URL. */ }
+    try { return previewOrigin(value, name); } catch { /* Try the stable custom-domain URL. */ }
   }
-  throw new Error('The preview has no expected workers.dev URL; enable Worker previews before retrying.');
+  throw new Error('The preview has no expected custom-domain URL; check the preview-only domain configuration.');
 }
 
 export async function validateArtifact(directory, temporaryDirectory) {
@@ -98,6 +99,31 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
 
   const github = (path, options) => request('GitHub', githubPath + path, options);
   const cloudflare = (path, options) => request('Cloudflare', cloudflarePath + path, options);
+  async function ensurePreviewDomain() {
+    const path = `/accounts/${account}/workers/domains`;
+    const domains = await request('Cloudflare', `${path}?hostname=${previewDomain}`);
+    if (!Array.isArray(domains) || domains.length > 1 ||
+        domains.some(domain => domain.hostname !== previewDomain)) {
+      throw new Error('Cloudflare returned unexpected preview domain records.');
+    }
+    const expected = {
+      hostname: previewDomain, service: worker, zone_name: 'leandrooriente.com',
+      enabled: false, previews_enabled: true
+    };
+    function verify(domain) {
+      if (!domain || Object.entries(expected).some(([key, value]) => domain[key] !== value) ||
+          (domain.environment !== undefined && domain.environment !== 'production')) {
+        throw new Error('The preview domain conflicts with the expected preview-only configuration.');
+      }
+    }
+    if (domains.length) {
+      verify(domains[0]);
+    } else {
+      // The single-host API provisions wildcard DNS and TLS without deploying production.
+      verify(await request('Cloudflare', path, { method: 'PUT', body: expected }));
+    }
+    console.log(`Verified preview-only domain ${previewDomain}.`);
+  }
   const currentPR = () => github(`/pulls/${number}`);
   const permitted = pr => pr.head?.repo?.full_name === env.GITHUB_REPOSITORY &&
     pr.user?.login !== 'dependabot[bot]';
@@ -150,6 +176,7 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
     const pr = await activePR();
     if (!pr) return output({ active: false });
     if (!/^[a-f0-9]{40}$/.test(pr.head.sha)) throw new Error('GitHub returned an invalid commit SHA.');
+    await ensurePreviewDomain();
     let preview = await cloudflare(`/${name}`, { allowMissing: true });
     if (!preview) {
       preview = await cloudflare('?ignore_base_config=true', { method: 'POST', body: { name } });
@@ -170,6 +197,8 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
   const preview = await cloudflare(`/${name}`);
   if (resourceOrigin(preview, name) !== url) throw new Error('The prepared preview origin has changed.');
   const directory = await validateArtifact(env.PREVIEW_ARTIFACT_DIR, env.RUNNER_TEMP);
+  // Custom-domain previews do not receive Cloudflare's automatic workers.dev noindex header.
+  await appendFile(join(directory, '_headers'), '\n/*\n  X-Robots-Tag: noindex\n');
   const pages = await Promise.all(['/', '/writing/'].map(async path => {
     const expected = await readFile(join(directory, path === '/' ? 'index.html' : 'writing/index.html'), 'utf8');
     if (!expected.includes(`<link rel="canonical" href="${url}${path}"`)) {
@@ -229,6 +258,7 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
       for (const { path, expected } of pages) {
         const response = await fetchImpl(url + path, { redirect: 'error', signal: AbortSignal.timeout(30000) });
         if (response.status !== 200 || !(response.headers.get('content-type') || '').includes('text/html') ||
+            !/\bnoindex\b/i.test(response.headers.get('x-robots-tag') || '') ||
             await response.text() !== expected) {
           throw new Error(`The uploaded preview failed verification at ${path}.`);
         }
@@ -239,9 +269,9 @@ export async function run(command, { env = process.env, fetchImpl = fetch, uploa
       if (missing.status !== 404) throw new Error('The preview did not return 404 for a nonexistent path.');
       break;
     } catch {
-      if (attempt === 6) throw new Error('The uploaded preview failed verification after six attempts.');
-      console.log(`Preview verification is pending; retrying in 5 seconds (attempt ${attempt}/6).`);
-      await pause(5000);
+      if (attempt === 12) throw new Error('The uploaded preview failed verification after twelve attempts.');
+      console.log(`Preview verification is pending; retrying in 10 seconds (attempt ${attempt}/12).`);
+      await pause(10000);
     }
   }
   if (!(await activePR(sha))) {

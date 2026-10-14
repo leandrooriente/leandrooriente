@@ -36,7 +36,10 @@ jobs:
           node-version: '22'
           package-manager-cache: false
 
-      - name: Prepare the preview or clean up a closed pull request
+      - name: Test the preview automation
+        run: node --test .github/scripts/pr-preview.test.mjs
+
+      - name: Configure the preview domain and prepare or clean up the pull request
         id: preview
         run: node .github/scripts/pr-preview.mjs prepare
         env:
