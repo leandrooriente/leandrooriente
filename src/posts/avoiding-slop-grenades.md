@@ -70,9 +70,7 @@ Once the transformation has been reviewed, apply it in manageable batches. Each 
 
 Agents often fill PR descriptions with generic praise or a detailed narration of the diff. Read the description before requesting review and strip that out. Use the space for context the reviewer would otherwise have to investigate.
 
-Say what you exercised, how you checked it, and what you observed. Show which behaviors your unit, integration, E2E, or contract tests cover and link the relevant results. Add a demo and, where useful, a diagram or supporting document. Make anything still unverified clear.
-
-For the upload API, “tests passed” tells the reviewer very little. Point to the checks for PDF restrictions, size limits, authentication, and the legacy transport. A load or stress test report should include the workload and measurements against the internal SLO.
+Keep only what helps the reviewer judge the solution and isn’t clear from the diff: a constraint behind a decision, a rollout dependency, a relevant validation result, or a known limitation. Link a demo, diagram, test report, or supporting document when it adds context the code and automated checks don’t show.
 
 Doing this consistently builds a trust battery with your reviewers. With one focused problem and evidence they can inspect, they can spend more attention on whether you’re solving the right problem and using the right abstractions. Move forward when you agree on the direction. Otherwise, reassess the solution together.
 
