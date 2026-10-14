@@ -26,7 +26,7 @@ const footerY = finalBottom + 41;
 const drawingHeight = footerY + 11;
 
 const number = (value) => value.toLocaleString("en-US");
-const text = (x, y, value, className, attributes = "") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle" ${attributes}>${value}</text>`;
+const text = (x, y, value, className, anchor = "middle") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}">${value}</text>`;
 
 function timing(frames) {
   return `keyTimes="${frames.map(([at]) => at / cycle).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${cycle}s" repeatCount="indefinite" begin="indefinite"`;
@@ -57,10 +57,10 @@ function card(prefix, part, index, { x, width, compact }) {
       ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
     </path>
     <g class="codemod-card-content">
-      ${text(width / 2, compact ? 22 : 23, part.label, titleClass)}
+      ${text(12, compact ? 22 : 23, part.label, titleClass, "start")}
       ${prCardRule(12, 35, width - 24)}
       ${prCardIcon(13, 42, 17)}
-      <g>${text(width / 2, 55, `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added")}${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>
+      ${text(width / 2, 55, `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added")}
     </g>
     <g class="pr-breakdown-check" transform="translate(${width - 22} 49)" opacity="1" aria-hidden="true"><circle r="9.5"/><path d="M-5 0L-1 4L6-5"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
@@ -74,8 +74,8 @@ function blob(prefix, { x, width, compact }) {
   return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${sourceTop})" opacity="0">
     ${prCardSurface(prefix, width, height)}
     <g>
-      ${prCardIcon(width / 2 - 13, 92, 34)}
-      ${text(width / 2, 172, "New interface", titleClass)}${text(width / 2, 199, "+ every caller", titleClass)}
+      ${prCardIcon(24, 92, 34)}
+      ${text(24, 172, "New interface", titleClass, "start")}${text(24, 199, "+ every caller", titleClass, "start")}
       ${prCardRule(24, 226, width - 48)}
       ${text(width / 2, 260, "A seamless, future-proof update.", "pr-card-art-copy")}
       ${text(width / 2, 284, "Modernize the entire codebase.", "pr-card-art-copy")}

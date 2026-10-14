@@ -65,8 +65,8 @@ function card(prefix, part, compact = false) {
     <path class="pr-breakdown-highlight" d="M5 5H${part.width - 6}V${part.height - 6}H5Z" opacity="0" aria-hidden="true">
       ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
     </path>
-    <text x="${part.width / 2}" y="${titleY}" class="pr-card-art-title" text-anchor="middle" dominant-baseline="central" style="font-size:${titleSize}px">${title}</text>
-    <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(part.width / 2, part.height - 12, part.added, part.removed)}${opacity([[0, 0], [8.3, 0], [8.7, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>${check(part, true)}
+    <text x="12" y="${titleY}" class="pr-card-art-title" text-anchor="start" dominant-baseline="central" style="font-size:${titleSize}px">${title}</text>
+    <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(part.width / 2, part.height - 12, part.added, part.removed)}</g>${check(part, true)}
   </g>`;
 }
 
