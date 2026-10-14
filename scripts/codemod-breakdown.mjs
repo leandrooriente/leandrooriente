@@ -7,10 +7,12 @@ const resetStart = 23;
 const resetEnd = 24.5;
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
-const cardHeight = 66;
+const cardHeight = 112;
+const cardPadding = 16;
+const titleLineHeight = 26;
+const titleCountGap = 12;
 const gap = 26;
 const finalTop = 52;
-const sourceTop = 117;
 const parts = [
   { key: "interface", label: ["1 · Add new interface", "+ tests"], ink: "olive", changed: 600 },
   { key: "codemod", label: ["2 · Add codemod", "+ tests"], ink: "ochre", changed: 400 },
@@ -19,9 +21,13 @@ const parts = [
   { key: "third-batch", label: ["5 · Third batch"], ink: "pale", changed: 9400 },
   { key: "cleanup", label: ["6 · Remove codemod", "+ deprecated interface"], ink: "terra", changed: 400 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * .65 }));
+const sourceTop = finalTop + (parts.length - 1) * gap / 2;
+const finalBottom = finalTop + parts.length * cardHeight + (parts.length - 1) * gap;
+const footerY = finalBottom + 41;
+const drawingHeight = footerY + 11;
 
 const number = (value) => value.toLocaleString("en-US");
-const text = (x, y, value, className) => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle">${value}</text>`;
+const text = (x, y, value, className, attributes = "") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle" ${attributes}>${value}</text>`;
 
 function timing(frames) {
   return `keyTimes="${frames.map(([at]) => at / cycle).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${cycle}s" repeatCount="indefinite" begin="indefinite"`;
@@ -49,6 +55,13 @@ function card(prefix, part, index, { x, width, compact }) {
   const shape = contour(width, cardHeight);
   const motion = [[0, from], [splitStart, from], [splitEnd, to], [resetStart, to], [resetEnd, from], [cycle, from]];
   const titleClass = compact ? "pr-breakdown-mobile-title" : "pr-breakdown-card-title";
+  const titleSize = compact ? 21 : 24;
+  const countSize = compact ? 16 : 17;
+  const titleHeight = titleSize + (part.label.length - 1) * titleLineHeight;
+  const contentHeight = titleHeight + titleCountGap + countSize;
+  const contentTop = (cardHeight - contentHeight) / 2;
+  const badgeRadius = 12;
+  const badgeInset = cardPadding + badgeRadius;
   return `<g class="pr-breakdown-card pr-breakdown-${part.ink}" data-pr-part="${part.key}" transform="translate(${to})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
     ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
@@ -57,9 +70,11 @@ function card(prefix, part, index, { x, width, compact }) {
     <path class="pr-breakdown-highlight" d="M5 5H${width - 6}V${cardHeight - 6}H5Z" opacity="0" aria-hidden="true">
       ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
     </path>
-    ${part.label.map((line, lineIndex) => text(width / 2, (part.label.length > 1 ? 23 : 32) + lineIndex * 20, line, titleClass)).join("")}
-    <g>${text(width / 2, 60, `${number(part.changed)} lines changed`, "pr-breakdown-count pr-breakdown-added")}${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>
-    <g class="pr-breakdown-check" transform="translate(${width - 18} 12)" opacity="1" aria-hidden="true"><circle r="15"/><path d="M-7 0L-2 5L8-6"/>
+    <g class="codemod-card-content">
+      ${part.label.map((line, lineIndex) => text(width / 2, contentTop + titleSize / 2 + lineIndex * titleLineHeight, line, titleClass, 'dominant-baseline="central"')).join("")}
+      <g>${text(width / 2, contentTop + titleHeight + titleCountGap + countSize / 2, `${number(part.changed)} lines changed`, "pr-breakdown-count pr-breakdown-added", 'dominant-baseline="central"')}${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>
+    </g>
+    <g class="pr-breakdown-check" transform="translate(${width - badgeInset} ${badgeInset})" opacity="1" aria-hidden="true"><circle r="${badgeRadius}"/><path d="M-7 0L-2 5L8-6"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
   </g>`;
@@ -107,7 +122,7 @@ function drawing(id, compact) {
   const decorations = compact
     ? `${comment(4, 154, .4)}${comment(320, 292, .9)}${comment(60, 526, 1.4)}${cross(334, 130, .7)}${cross(25, 420, 1.2)}${cross(285, 527, 1.8)}`
     : `${comment(136, 154, .4)}${comment(588, 292, .9)}${comment(245, 526, 1.4)}${cross(592, 130, .7)}${cross(166, 420, 1.2)}${cross(526, 527, 1.8)}`;
-  return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 630" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
+  return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large interface migration becomes six stacked pull requests</title>
     <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts are highlighted from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Arrows and approvals appear from the base upward. Counts are illustrative; files can recur between PRs.</desc>
     ${definitions(prefix)}
@@ -122,7 +137,7 @@ function drawing(id, compact) {
     <g class="pr-breakdown-dependencies">${connectors}</g>
     ${blob(prefix, layout)}${parts.map((part, index) => card(prefix, part, index, layout)).join("")}
     ${decorations}
-    <g opacity="1">${text(center, 619, "Stack reads bottom to top", "pr-breakdown-detail")}
+    <g opacity="1">${text(center, footerY, "Stack reads bottom to top", "pr-breakdown-detail")}
       ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
   </svg>`;
