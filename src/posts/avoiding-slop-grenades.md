@@ -66,8 +66,6 @@ The same principle helps with broad interface migrations. Changing the interface
 
 Once the transformation has been reviewed, I apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, I remove the deprecated interface and the codemod.
 
-That might produce five or six PRs for one feature. Smaller reviews give people a manageable piece of work to understand, and let feedback and approvals arrive while the rest is still being built.
-
 ## Verify what you are handing over
 
 Splitting the work makes it easier to follow. I still need evidence that it behaves as intended.
