@@ -109,6 +109,14 @@ static files from the same run with a fixed preview configuration. Production
 builds the merged `main` commit. Preserve per-PR serialization, current-head/state
 checks, and the bot comment update behavior.
 
+Both build workflows persist generated image encodings in `tmp/image-cache`,
+separate from the clean `dist` output. Cache keys isolate the runner OS and
+architecture, Node major, dependency lockfile, and image-processing configuration.
+Restore prefixes must retain that complete namespace so encoder or transform
+changes cannot reuse stale encodings. The final asset and template fingerprint
+lets new image selections save their derivatives while reusing unchanged images.
+Update the Node component of both cache keys when changing the build runtime.
+
 Preview preparation registers or verifies `preview.leandrooriente.com` through
 the Custom Domains API without uploading a production Worker version. Keep that
 domain preview-only (`previews_enabled: true`, `enabled: false`) in
