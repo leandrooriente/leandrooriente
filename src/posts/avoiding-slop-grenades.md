@@ -76,10 +76,12 @@ Review feedback is another opportunity to improve that guidance. When a colleagu
 
 ## Give reviewers confidence in the change
 
-If we’ve done the preparation well, our PR focuses on one problem and comes with reliable evidence that it works. Delivering that consistently builds a trust battery with our reviewers.
+Agents often fill PR descriptions with generic praise or a detailed narration of the diff. Read the description before requesting review and strip that out. Use the space for context the reviewer would otherwise have to investigate.
 
-The PR description shows how we validated the change, the results, and anything still unverified. That includes unit tests and any integration, E2E, contract, load, or stress tests the change needs. A demo shows it working, with diagrams or supporting documentation where the complexity calls for them.
+Say what you exercised, how you checked it, and what you observed. Show which behaviors your unit, integration, E2E, or contract tests cover and link the relevant results. Add a demo and, where useful, a diagram or supporting document. Make anything still unverified clear.
 
-Reviewers can now focus on whether we’re solving the right problem and using the right abstractions. If we agree on that direction, we can move forward. Otherwise, we reassess the solution together.
+For the upload API, “tests passed” tells the reviewer very little. Point to the checks for PDF restrictions, size limits, authentication, and the legacy transport. A load or stress test report should include the workload and measurements against the internal SLO.
+
+Doing this consistently builds a trust battery with your reviewers. With one focused problem and evidence they can inspect, they can spend more attention on whether we’re solving the right problem and using the right abstractions. We can move forward when we agree, or reassess the solution together.
 
 A good chunk of the alignment work is already done.
