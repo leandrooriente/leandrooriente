@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Image from "@11ty/eleventy-img";
@@ -25,14 +26,17 @@ const profiles = {
 };
 
 export async function generateImage(src, widths, options = {}) {
-  // Use the contents as the cache key, including edits that keep the same size.
-  const input = await readFile(path.join(root, src.replace(/^\//, "")));
-  const metadata = await Image(input, {
+  const inputPath = path.join(root, src.replace(/^\//, ""));
+  const input = await readFile(inputPath);
+  // Keep same-size edits fresh without serializing a large Buffer for each lookup.
+  const sourceHash = createHash("sha256").update(input).digest("hex");
+  const metadata = await Image(inputPath, {
     widths,
     formats: ["avif", "webp"],
     sharpAvifOptions: { quality: 65 },
     sharpWebpOptions: { quality: 85 },
     ...options,
+    manualCacheKey: { sourceHash, transform: options.manualCacheKey ?? null },
     outputDir: path.join(root, "tmp/image-cache"),
     urlPath: `/${imageDirectory}/`
   });
