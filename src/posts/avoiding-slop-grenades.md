@@ -40,7 +40,7 @@ For example, a spec for a new internal upload API could look like this:
 
 {% include "partials/upload-api-ticket.njk" %}
 
-Once the agent has finished its first draft, it’s time to turn that rough stone into a diamond.
+Once the agent has a first draft ready, it’s time to review and refine the changes.
 
 As the author, you have the requirements, constraints, and reasons for the change fresh in your mind. This initial review is where you should catch anything that doesn’t belong, while that context is still fresh.
 
