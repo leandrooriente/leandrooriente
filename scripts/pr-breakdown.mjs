@@ -155,6 +155,6 @@ export function prBreakdown(id = "focused-prs") {
   if (!/^[a-z][a-z0-9-]*$/u.test(id)) throw new Error("prBreakdown needs a unique, simple HTML id.");
   return `<figure class="pr-breakdown" id="${id}" data-pr-breakdown aria-labelledby="${id}-heading">
     <div class="pr-breakdown-toolbar"><span id="${id}-heading" class="pr-breakdown-heading">Split the work before review</span><button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-controls="${id}-drawing" hidden>Pause animation</button></div>
-    <div id="${id}-drawing">${desktop(id)}${mobile(id)}</div>
+    <div id="${id}-drawing" data-pr-breakdown-drawing>${desktop(id)}${mobile(id)}</div>
   </figure><script src="${assetUrl("/assets/scripts/pr-breakdown.js")}" defer></script>`.replace(/\n\s*/gu, "");
 }
