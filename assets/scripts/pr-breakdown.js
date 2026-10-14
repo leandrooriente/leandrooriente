@@ -8,24 +8,27 @@
     const button = figure.querySelector("[data-pr-breakdown-toggle]");
     const viewport = figure.querySelector("[data-pr-breakdown-drawing]");
     const layouts = [
-      { drawing: figure.querySelector("svg.pr-breakdown-desktop"), wide: true, initialized: false },
-      { drawing: figure.querySelector("svg.pr-breakdown-mobile"), wide: false, initialized: false }
-    ].filter(({ drawing }) => drawing && typeof drawing.pauseAnimations === "function");
+      { drawing: figure.querySelector("svg.pr-breakdown-desktop"), progress: figure.querySelector('[data-pr-breakdown-progress="desktop"]'), wide: true, initialized: false },
+      { drawing: figure.querySelector("svg.pr-breakdown-mobile"), progress: figure.querySelector('[data-pr-breakdown-progress="mobile"]'), wide: false, initialized: false }
+    ].filter(({ drawing }) => drawing && typeof drawing.pauseAnimations === "function")
+      .map((layout) => ({ ...layout, timelines: [layout.drawing, layout.progress].filter(Boolean) }));
     if (!button || !viewport || !layouts.length) return;
     figure.dataset.prBreakdownReady = "true";
 
     let visible = false;
     let hasEntered = false;
     let manualPause;
-    layouts.forEach(({ drawing }) => drawing.pauseAnimations());
+    layouts.forEach(({ timelines }) => timelines.forEach((timeline) => timeline.pauseAnimations()));
 
     function prepareLayouts() {
       if (reducedMotion.matches && manualPause !== false) return;
       layouts.forEach((layout) => {
         if (layout.initialized) return;
         // Prepare the first frame while paused; viewport changes only resume it.
-        layout.drawing.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
-          animation.beginElement();
+        layout.timelines.forEach((timeline) => {
+          timeline.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
+            animation.beginElement();
+          });
         });
         layout.initialized = true;
       });
@@ -37,15 +40,18 @@
       const canPlay = Boolean(active?.initialized) && !paused && visible && hasEntered && !document.hidden;
 
       layouts.forEach((layout) => {
-        const { drawing } = layout;
         const playing = layout === active && canPlay;
-        if (playing) drawing.unpauseAnimations();
-        else drawing.pauseAnimations();
+        layout.timelines.forEach((timeline) => {
+          if (playing) timeline.unpauseAnimations();
+          else timeline.pauseAnimations();
+        });
       });
 
       figure.dataset.motion = !active?.initialized ? "static" : (paused ? "paused" : (canPlay ? "playing" : "suspended"));
       button.hidden = !active;
-      button.textContent = paused ? "Play animation" : "Pause animation";
+      const label = paused ? "Play animation" : "Pause animation";
+      button.setAttribute("aria-label", label);
+      button.setAttribute("title", label);
       button.setAttribute("aria-pressed", String(paused));
     }
 

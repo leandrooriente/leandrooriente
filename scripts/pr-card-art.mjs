@@ -1,4 +1,12 @@
 // Shared print treatment for the illustrated pull requests in the article.
+export function prBoardProgress(duration) {
+  return ["desktop", "mobile"].map((layout) => `<svg class="pr-breakdown-progress pr-breakdown-progress-${layout}" data-pr-breakdown-progress="${layout}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 3" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="0" height="3"><animate attributeName="width" from="0" to="100" dur="${duration}s" calcMode="linear" repeatCount="indefinite" begin="indefinite"/></rect></svg>`).join("");
+}
+
+export function prBoardToggle(id) {
+  return `<button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-label="Pause animation" title="Pause animation" aria-controls="${id}-drawing" hidden><svg class="pr-breakdown-pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6V18M16 6V18"/></svg><svg class="pr-breakdown-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5L19 12L8 19Z"/></svg></button>`;
+}
+
 export function prCardDefinitions(prefix) {
   return `<pattern id="${prefix}-paper" width="43" height="31" patternUnits="userSpaceOnUse"><path d="M3 5h.6M18 3h.7M35 10h.6M9 20h.8M27 26h.6M40 23h.5" stroke="#596046" stroke-width=".65" opacity=".13"/><path d="M12 9h1M30 17h.8M5 29h.7" stroke="#FFFFFF" stroke-width=".8" opacity=".45"/></pattern>`;
 }

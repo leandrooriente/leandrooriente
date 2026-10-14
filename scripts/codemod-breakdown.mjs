@@ -1,5 +1,5 @@
 import { assetUrl } from "./assets.mjs";
-import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
+import { prBoardProgress, prBoardToggle, prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
 const splitStart = 8.3;
 const splitEnd = 10.5;
@@ -165,7 +165,7 @@ function drawing(id, compact) {
 export function codemodBreakdown(id = "codemod-migration") {
   if (!/^[a-z][a-z0-9-]*$/u.test(id)) throw new Error("codemodBreakdown needs a unique, simple HTML id.");
   return `<figure class="pr-breakdown codemod-breakdown" id="${id}" data-pr-breakdown aria-labelledby="${id}-heading">
-    <div class="pr-breakdown-toolbar"><span id="${id}-heading" class="pr-breakdown-heading">Review the migration in stages</span><button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-controls="${id}-drawing" hidden>Pause animation</button></div>
+    <div class="pr-breakdown-toolbar"><span id="${id}-heading" class="pr-breakdown-heading">Review the migration in stages</span>${prBoardToggle(id)}${prBoardProgress(duration)}</div>
     <div id="${id}-drawing" data-pr-breakdown-drawing>${drawing(id, false)}${drawing(id, true)}</div>
   </figure><script src="${assetUrl("/assets/scripts/pr-breakdown.js")}" defer></script>`.replace(/\n\s*/gu, "");
 }

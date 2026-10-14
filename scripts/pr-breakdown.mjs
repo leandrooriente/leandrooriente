@@ -1,5 +1,5 @@
 import { assetUrl } from "./assets.mjs";
-import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
+import { prBoardProgress, prBoardToggle, prCardDefinitions, prCardSurface, prCardIcon, prCardRule, prCardReviewMarks } from "./pr-card-art.mjs";
 
 const resetStart = 19.5;
 const resetFadeEnd = resetStart + .2;
@@ -8,8 +8,8 @@ const cycle = resetEnd + .7;
 // Apple uses this curve for transform transitions on its MacBook Air page.
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
-// Hold the opening card for four extra seconds after its review marks arrive.
-const openingHold = 4;
+// Leave more reading time on the opening card after its review marks arrive.
+const openingHold = 7;
 const duration = cycle + openingHold;
 const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 142, height: 100, added: 200, removed: 50, from: [228, 388], to: [213, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
@@ -28,6 +28,30 @@ function actionTime(at) {
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className = "pr-breakdown-label") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle">${value}</text>`;
+const draftDescription = [
+  "Let’s delve into this game-changing update!",
+  "src/upload.ts: implemented a robust, seamless solution.",
+  "Attempt 1 failed. Attempt 2: rewrote the whole module.",
+  "auth.ts: proactively fixed an unrelated bug.",
+  "UploadService.ts: refactored for limitless scalability.",
+  "transport.ts: added a future-proof abstraction layer.",
+  "Also optimized for millions of hypothetical users.",
+  "Tests not run. All concerns holistically addressed!"
+];
+const compactDraftDescription = [
+  draftDescription[0],
+  "src/upload.ts: implemented a robust,",
+  "seamless solution.",
+  "Attempt 1 failed. Attempt 2: rewrote",
+  "the whole module.",
+  draftDescription[3],
+  "UploadService.ts: refactored for",
+  "limitless scalability.",
+  "transport.ts: added a future-proof",
+  "abstraction layer.",
+  draftDescription[6],
+  draftDescription[7]
+];
 
 function timing(frames, shiftOpening = true) {
   return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? actionTime(at) + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
@@ -101,14 +125,17 @@ function cross(x, y, start) {
   return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart + openingHold - .3, 1], [breakdownStart + openingHold, 0], [duration, 0]], false)}</g>`;
 }
 
-function blob(prefix, { x = 234, y = 238, width = 292, height = 190, compact = false } = {}) {
+function blob(prefix, { x = 145, y = 144, width = 470, height = 316, compact = false } = {}) {
   const inset = compact ? 22 : 24;
+  const description = compact ? compactDraftDescription : draftDescription;
+  const copyY = compact ? 94 : 102;
+  const lineHeight = compact ? 17 : 23;
   return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${y})" opacity="0">
     ${prCardSurface(prefix, width, height)}
     <g class="pr-card-art-draft">
       ${prCardIcon(inset, 18, 26)}
       <text x="${inset}" y="${compact ? 68 : 72}" class="pr-card-art-title" style="font-size:${compact ? 24 : 26}px">Do a bunch of stuff</text>
-      <text x="${inset}" y="${compact ? 98 : 102}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
+      <text x="${inset}" y="${copyY}" class="pr-card-art-copy" style="font-size:${compact ? 12.5 : 16}px">${description.map((line, index) => `<tspan x="${inset}" y="${copyY + index * lineHeight}">${line}</tspan>`).join("")}</text>
       ${prCardRule(inset, height - 42, width - inset * 2)}
       ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}
     </g>
@@ -118,7 +145,7 @@ function blob(prefix, { x = 234, y = 238, width = 292, height = 190, compact = f
 
 function desktop(id) {
   const prefix = `${id}-desktop`;
-  const initialLayout = { x: 234, y: 238, width: 292, height: 190 };
+  const initialLayout = { x: 145, y: 144, width: 470, height: 316 };
   return `<svg class="pr-breakdown-svg pr-breakdown-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 605" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
     <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature appear one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear. Each base PR is approved, its connector draws upward, and the next PR is approved after the connection arrives. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
@@ -145,7 +172,7 @@ function desktop(id) {
 
 function mobile(id) {
   const prefix = `${id}-mobile`;
-  const initialLayout = { x: 45, y: 140, width: 270, height: 184, compact: true };
+  const initialLayout = { x: 18, y: 68, width: 324, height: 334, compact: true };
   const layouts = {
     bug: { width: 136, height: 82, from: [41, 258], to: [26, 334] },
     refactor: { width: 142, height: 82, from: [177, 258], to: [192, 334] },
@@ -179,7 +206,7 @@ function mobile(id) {
 export function prBreakdown(id = "focused-prs") {
   if (!/^[a-z][a-z0-9-]*$/u.test(id)) throw new Error("prBreakdown needs a unique, simple HTML id.");
   return `<figure class="pr-breakdown" id="${id}" data-pr-breakdown aria-labelledby="${id}-heading">
-    <div class="pr-breakdown-toolbar"><span id="${id}-heading" class="pr-breakdown-heading">Split the work before review</span><button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-controls="${id}-drawing" hidden>Pause animation</button></div>
+    <div class="pr-breakdown-toolbar"><span id="${id}-heading" class="pr-breakdown-heading">Split the work before review</span>${prBoardToggle(id)}${prBoardProgress(duration)}</div>
     <div id="${id}-drawing" data-pr-breakdown-drawing>${desktop(id)}${mobile(id)}</div>
   </figure><script src="${assetUrl("/assets/scripts/pr-breakdown.js")}" defer></script>`.replace(/\n\s*/gu, "");
 }
