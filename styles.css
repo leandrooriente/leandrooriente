@@ -374,7 +374,6 @@ main:focus { outline: none; }
 .pr-card-art-mobile-title { font-size: 17px; }
 .pr-card-art-copy { fill: #596046; font: 400 16px Georgia, "Times New Roman", serif; }
 .pr-card-art-rule { fill: none; stroke: #596046; stroke-width: 1.3; stroke-linecap: round; filter: url("#ink-on-paper"); }
-.pr-breakdown-highlight { fill: none; stroke: #596046; stroke-width: 2.5; stroke-linejoin: round; }
 .pr-breakdown-count { font: 400 17px ui-monospace, SFMono-Regular, Consolas, monospace; }
 .pr-card-art .pr-card-art-count { font: 400 14px Georgia, "Times New Roman", serif; }
 .pr-card-art-narrow-counts .pr-card-art-count { font-size: 13px; }

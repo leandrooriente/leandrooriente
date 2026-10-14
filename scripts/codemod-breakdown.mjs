@@ -53,9 +53,6 @@ function card(prefix, part, index, { x, width, compact }) {
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
     ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
     ${prCardSurface(prefix, width, cardHeight)}
-    <path class="pr-breakdown-highlight" d="M5 5H${width - 6}V${cardHeight - 6}H5Z" opacity="0" aria-hidden="true">
-      ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
-    </path>
     <g class="codemod-card-content">
       ${text(12, compact ? 22 : 23, part.label, titleClass, "start")}
       ${prCardRule(12, 35, width - 24)}
@@ -115,7 +112,7 @@ function drawing(id, compact) {
     : `${comment(136, 154, .4)}${comment(588, 292, .9)}${comment(245, 526, 1.4)}${cross(592, 130, .7)}${cross(166, 420, 1.2)}${cross(526, 527, 1.8)}`;
   return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large interface migration becomes six stacked pull requests</title>
-    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts are highlighted from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Arrows and approvals appear from the base upward. Counts are illustrative; files can recur between PRs.</desc>
+    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts appear from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Arrows and approvals appear from the base upward. Counts are illustrative; files can recur between PRs.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}

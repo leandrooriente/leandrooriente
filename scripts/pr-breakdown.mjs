@@ -62,9 +62,6 @@ function card(prefix, part, compact = false) {
     ${prCardSurface(prefix, part.width, part.height)}
     ${prCardRule(12, ruleY, part.width - 24)}
     ${prCardIcon(12, part.height - 27, 16)}
-    <path class="pr-breakdown-highlight" d="M5 5H${part.width - 6}V${part.height - 6}H5Z" opacity="0" aria-hidden="true">
-      ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
-    </path>
     <text x="12" y="${titleY}" class="pr-card-art-title" text-anchor="start" dominant-baseline="central" style="font-size:${titleSize}px">${title}</text>
     <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(part.width / 2, part.height - 12, part.added, part.removed)}</g>${check(part, true)}
   </g>`;
@@ -100,7 +97,7 @@ function desktop(id) {
   const prefix = `${id}-desktop`;
   return `<svg class="pr-breakdown-svg pr-breakdown-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 605" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
-    <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature are highlighted one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear; individual line counts and approval checks appear. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
+    <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature appear one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear; individual line counts and approval checks appear. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(380, 64, "One huge PR", "pr-breakdown-stage")}
@@ -136,7 +133,7 @@ function mobile(id) {
   };
   return `<svg class="pr-breakdown-svg pr-breakdown-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 470" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
-    <desc id="${prefix}-description">One undivided PR gathers comments and rejection marks. Its four parts are highlighted, then move apart into a stack: bug fix and class refactor in parallel, foundational work above them, and feature at the top. The combined counter disappears and smaller counts and approval checks appear.</desc>
+    <desc id="${prefix}-description">One undivided PR gathers comments and rejection marks. Its four parts appear one at a time, then move apart into a stack: bug fix and class refactor in parallel, foundational work above them, and feature at the top. The combined counter disappears and smaller counts and approval checks appear.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(180, 28, "One huge PR", "pr-breakdown-stage")}${counts(180, 82, totals.added, totals.removed)}
