@@ -68,9 +68,11 @@ Once the transformation has been reviewed, I apply it in manageable batches. Eac
 
 ## Give reviewers confidence in the change
 
-I use the PR description to explain what’s changing, why, and how it fits into the larger plan. A short demo or diagram can make the behavior or design easier to follow.
+I think of this as building a trust battery with my reviewers. When my PRs consistently arrive with reliable evidence that the implementation works, they can spend more attention on design decisions and whether we’re heading in the right direction.
 
-Then I show how I validated it: tests covering the requirements and possible regressions, plus load or stress test results using realistic workloads when performance matters. I share the relevant results and call out anything still unverified, so reviewers can judge whether the change is ready to ship.
+In the PR description, I show how I validated the implementation, the results, and anything still unverified. Depending on the change, that can include automated tests covering expected behavior and regressions, a demo, a diagram of the flow, or load and stress tests using realistic traffic.
+
+Doing that groundwork means less investigation and manual testing for my peers. It helps us reach alignment and move the work forward without overburdening them.
 
 ## Improve the starting point for the next agent
 
