@@ -10,8 +10,8 @@ const hold = "0 0 1 1";
 const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 180, height: 100, added: 200, removed: 50, from: [200, 388], to: [185, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
   { key: "refactor", label: "Class refactor", ink: "ochre", width: 180, height: 100, added: 950, removed: 250, from: [380, 388], to: [395, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
-  { key: "foundation", label: "Foundational work", ink: "olive", width: 360, height: 100, added: 780, removed: 170, from: [200, 288], to: [200, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 10.9 },
-  { key: "feature", label: "Feature Implementation", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 11.5 }
+  { key: "foundation", label: "Foundational work", ink: "olive", width: 360, height: 100, added: 780, removed: 170, from: [200, 288], to: [200, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 12.3 },
+  { key: "feature", label: "Feature Implementation", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.7 }
 ];
 const breakdownStart = parts[0].reveal;
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
@@ -27,10 +27,18 @@ function opacity(frames) {
 }
 
 function definitions(prefix) {
-  return `<defs>
-    ${prCardDefinitions(prefix)}
-    <marker id="${prefix}-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#596046" stroke-width="1.5"/></marker>
-  </defs>`;
+  return `<defs>${prCardDefinitions(prefix)}</defs>`;
+}
+
+function connection(route, start, end, tip = "") {
+  const progress = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetEnd, 1], [cycle, 1]];
+  return `<g class="pr-breakdown-connection" opacity="1" aria-hidden="true">
+    ${opacity([[0, 0], [start, 0], [start + .04, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    <path class="pr-breakdown-flow-line" d="${route}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0" stroke-linecap="round">
+      <animate attributeName="stroke-dashoffset" values="${progress.map(([, value]) => value).join(";")}" ${timing(progress)}/>
+    </path>
+    ${tip ? `<path class="pr-breakdown-arrow-tip" d="${tip}" opacity="1">${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</path>` : ""}
+  </g>`;
 }
 
 function counts(x, y, added, removed, anchor = "middle", files) {
@@ -98,7 +106,7 @@ function desktop(id) {
   const prefix = `${id}-desktop`;
   return `<svg class="pr-breakdown-svg pr-breakdown-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 605" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
-    <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature appear one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear; individual line counts and approval checks appear. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
+    <desc id="${prefix}-description">One undivided PR block gathers comments and rejection marks. Its bug fix, class refactor, foundational work, and feature appear one at a time, then move apart in place. Bug fix and refactor become parallel base PRs, foundational work sits above them, and the feature sits at the top. The comments and combined counter disappear. Each base PR is approved, its connector draws upward, and the next PR is approved after the connection arrives. Illustrative counts sum to 2,450 additions and 550 removals.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(380, 64, "One huge PR", "pr-breakdown-stage")}
@@ -108,11 +116,11 @@ function desktop(id) {
       ${text(380, 64, "Four focused PRs", "pr-breakdown-stage")}
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
-    <g class="pr-breakdown-dependencies" opacity="1" aria-hidden="true">
-      <path d="M275 424V402H380V382" marker-end="url(#${prefix}-arrow)"/>
-      <path d="M485 424V402H380"/>
-      <path d="M380 258V216" marker-end="url(#${prefix}-arrow)"/>
-      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    <g class="pr-breakdown-dependencies" aria-hidden="true">
+      ${connection("M275 424V402H380", 10.1, 11)}
+      ${connection("M485 424V402H380", 10.7, 11.6)}
+      ${connection("M380 402V382", 11.7, 12.2, "M375 388L380 382L385 388")}
+      ${connection("M380 258V216", 12.7, 13.6, "M375 222L380 216L385 222")}
     </g>
     ${blob(prefix)}
     ${parts.map((part) => card(prefix, part)).join("")}
@@ -123,7 +131,6 @@ function desktop(id) {
 
 function mobile(id) {
   const prefix = `${id}-mobile`;
-  const routes = ["M92.5 322V291H180V263", "M267.5 322V291H180", "M180 169V134"];
   const layouts = {
     bug: { width: 145, height: 82, from: [35, 258], to: [20, 334] },
     refactor: { width: 145, height: 82, from: [180, 258], to: [195, 334] },
@@ -142,9 +149,11 @@ function mobile(id) {
       ${text(180, 28, "Four focused PRs", "pr-breakdown-stage")}
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
-    <g class="pr-breakdown-dependencies" opacity="1">
-      ${routes.map((route, index) => `<path d="${route}"${index === 1 ? "" : ` marker-end="url(#${prefix}-arrow)"`}/>`).join("")}
-      ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    <g class="pr-breakdown-dependencies" aria-hidden="true">
+      ${connection("M92.5 322V291H180", 10.1, 11)}
+      ${connection("M267.5 322V291H180", 10.7, 11.6)}
+      ${connection("M180 291V263", 11.7, 12.2, "M175 269L180 263L185 269")}
+      ${connection("M180 169V134", 12.7, 13.6, "M175 140L180 134L185 140")}
     </g>
     ${blob(prefix, { x: 35, y: 124, width: 290, height: 216, compact: true })}
     ${parts.map((part) => card(prefix, { ...part, ...layouts[part.key] }, true)).join("")}

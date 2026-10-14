@@ -18,7 +18,7 @@ const parts = [
   { key: "second-batch", label: "4 · Second batch", changed: 9600 },
   { key: "third-batch", label: "5 · Third batch", changed: 9400 },
   { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400 }
-].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * .65 }));
+].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * 1.4 }));
 const breakdownStart = parts[0].reveal;
 const sourceTop = finalTop + (parts.length - 1) * gap / 2;
 const finalBottom = finalTop + parts.length * cardHeight + (parts.length - 1) * gap;
@@ -39,7 +39,6 @@ function opacity(frames) {
 function definitions(prefix) {
   return `<defs>
     ${prCardDefinitions(prefix)}
-    <marker id="${prefix}-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#596046" stroke-width="1.5"/></marker>
   </defs>`;
 }
 
@@ -106,8 +105,18 @@ function drawing(id, compact) {
   const connectors = parts.slice(0, -1).map((part, index) => {
     const lowerTop = finalTop + (parts.length - index - 1) * (cardHeight + gap);
     const upperBottom = lowerTop - gap;
-    return `<g opacity="1" aria-hidden="true"><path d="M${center} ${lowerTop - 8}V${upperBottom + 8}" marker-end="url(#${prefix}-arrow)"/>
-      ${opacity([[0, 0], [part.approved + .3, 0], [part.approved + .55, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    const start = part.approved + .35;
+    const end = part.approved + 1.25;
+    const tipY = upperBottom + 8;
+    const draw = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetStart + .1, 1], [cycle, 1]];
+    return `<g class="pr-breakdown-dependency" data-pr-from="${part.key}" data-pr-to="${parts[index + 1].key}" opacity="1" aria-hidden="true">
+      <path class="pr-breakdown-link" d="M${center} ${lowerTop - 8}V${tipY}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0">
+        <animate attributeName="stroke-dashoffset" values="${draw.map(([, value]) => value).join(";")}" ${timing(draw)}/>
+      </path>
+      <path class="pr-breakdown-arrow-tip" d="M${center - 4} ${tipY + 5}L${center} ${tipY}L${center + 4} ${tipY + 5}">
+        ${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+      </path>
+      ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>`;
   }).join("");
   const decorations = compact
@@ -115,7 +124,7 @@ function drawing(id, compact) {
     : `${comment(136, 154, .4)}${comment(588, 292, .9)}${comment(245, 526, 1.4)}${cross(592, 130, .7)}${cross(166, 420, 1.2)}${cross(526, 527, 1.8)}`;
   return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large interface migration becomes six stacked pull requests</title>
-    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts appear from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Arrows and approvals appear from the base upward. Counts are illustrative; files can recur between PRs.</desc>
+    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts appear from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Each approval starts an upward connector. The next PR is approved after that connector arrives. Counts are illustrative; files can recur between PRs.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}
