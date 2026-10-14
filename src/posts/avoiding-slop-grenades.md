@@ -48,7 +48,7 @@ Be your agent’s toughest reviewer. Challenge every design decision, new abstra
 
 Agents often optimize for scenarios that aren’t realistic for the software you’re building. You might be tempted to keep those additions as safeguards for the future, but every addition is more code to maintain, test, and change as your feature evolves. Complexity always comes at a cost.
 
-Before asking for review, verify that the result meets the acceptance criteria. Read the tests as critically as the implementation: an agent can write passing tests that check the wrong behavior. Run the relevant checks, investigate failures, and be explicit about anything still failing or unverified.
+Before asking for review, verify that the result meets the acceptance criteria. Read the tests as critically as the implementation. A passing test that checks the wrong behavior can be worse than no test at all: it can make an incorrect implementation look verified. Run the relevant checks, investigate failures, and be explicit about anything still failing or unverified.
 
 ## Turn the remaining work into smaller reviews
 
