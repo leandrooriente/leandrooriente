@@ -30,7 +30,11 @@ These are the practices that have helped me get my PRs properly reviewed and mer
 
 ## Decide what belongs in the feature
 
-I start with the behavior we actually need. The specification should make that scope clear, including the constraints and what is outside the work. Once the agent has produced a solution, I read the diff against those requirements.
+Now that writing code is no longer the bottleneck, we need to spend more time getting the agent on the right track before it starts. The more care we put into the specification, the better its chances of building what we actually need.
+
+As agents become more capable and autonomous, they can carry a mistaken assumption through more of the work before we review it. An ambiguous or incomplete prompt can leave an entire feature built around an abstraction that doesn’t fit the problem.
+
+Be explicit about what you’re building, who it’s for, and what belongs in the work. Define what is out of scope too. Leave that scope too broad, and a simple bug fix can become a major refactor PR you never wanted.
 
 For example, a spec for a new internal upload API could look like this:
 
