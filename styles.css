@@ -329,6 +329,7 @@ main:focus { outline: none; }
   .mimir-branches { grid-template-columns: 1fr; gap: 16px; }
 }
 .open-question { margin-top: 64px; padding: 8px 0 8px 24px; border-left: 2px solid var(--red); color: var(--forest); font-size: 28px; line-height: 1.4; font-style: italic; }
+.article-disclosure { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--quiet); font: 400 17px/1.5 var(--serif); text-wrap: pretty; }
 .article-footer { max-width: calc(var(--article-width) + 2 * var(--gutter)); padding-bottom: 64px; }
 .article-footer a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
 
