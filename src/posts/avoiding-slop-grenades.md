@@ -68,17 +68,9 @@ Once the transformation has been reviewed, I apply it in manageable batches. Eac
 
 ## Give reviewers confidence in the change
 
-Splitting the work makes the diff easier to follow. I also want reviewers to understand the direction of the change and have enough evidence to judge whether it is safe to move forward.
+I use the PR description to explain what’s changing, why, and how it fits into the larger plan. A short demo or diagram can make the behavior or design easier to follow.
 
-That starts with the PR description. I explain the problem, the intended behavior, and why I chose this approach. If the PR is part of a larger feature or migration, I link the plan and explain where this piece fits.
-
-A short demo or recording can make a change to a user flow easier to understand. A diagram can show how the components interact or how a migration will work. These help reviewers connect the code to the behavior we want, without having to reconstruct the whole design from the diff.
-
-Then I show how I checked it. Reliable test coverage should protect the existing behavior the change could affect and check the feature’s acceptance criteria. I make sure the tests reflect the requirements, especially when the same agent wrote both the implementation and the tests, and include the relevant results in the PR. Formatting, linting, and automated tests can run in CI before another person starts reviewing.
-
-For a change that affects performance or capacity, load and stress test results can give reviewers evidence about how the system behaves under pressure. For the upload API, that could show how it behaves at the expected request rate and concurrency, whether it meets the internal SLO, and what happens as it reaches its limits. Sharing the workload and measurements lets reviewers assess those results.
-
-The evidence should fit the change. I include what helps reviewers assess its behavior and risks, and make any gaps in validation clear. That gives them a concrete basis for questioning the design, suggesting improvements, and deciding whether it is ready to ship.
+Then I show how I validated it: tests covering the requirements and possible regressions, plus load or stress test results using realistic workloads when performance matters. I share the relevant results and call out anything still unverified, so reviewers can judge whether the change is ready to ship.
 
 ## Improve the starting point for the next agent
 
