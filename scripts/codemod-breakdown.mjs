@@ -78,9 +78,8 @@ function blob(prefix, { x, width, compact }) {
       ${prCardRule(24, height - 78, width - 48)}
       ${text(24, height - 50, "30,000 lines changed", "pr-card-art-count pr-breakdown-added", "start")}
       ${text(24, height - 26, "700 files changed", "pr-card-art-count pr-breakdown-added", "start")}
-      ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
     </g>
-    ${opacity([[0, 1], [splitStart - .2, 1], [splitStart, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
+    ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
   </g>`;
 }
 

@@ -96,9 +96,8 @@ function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = f
       <text x="${inset}" y="${compact ? 119 : 157}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
       ${prCardRule(inset, height - 42, width - inset * 2)}
       ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}
-      ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
     </g>
-    ${opacity([[0, 1], [6.3, 1], [6.5, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
+    ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
   </g>`;
 }
 
