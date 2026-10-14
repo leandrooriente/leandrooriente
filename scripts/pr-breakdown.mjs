@@ -112,7 +112,6 @@ function desktop(id) {
       <path d="M275 424V402H380V382" marker-end="url(#${prefix}-arrow)"/>
       <path d="M485 424V402H380"/>
       <path d="M380 258V216" marker-end="url(#${prefix}-arrow)"/>
-      ${text(380, 584, "Bug fix + refactor reviewed in parallel", "pr-breakdown-detail")}
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     ${blob(prefix)}
@@ -145,7 +144,6 @@ function mobile(id) {
     </g>
     <g class="pr-breakdown-dependencies" opacity="1">
       ${routes.map((route, index) => `<path d="${route}"${index === 1 ? "" : ` marker-end="url(#${prefix}-arrow)"`}/>`).join("")}
-      ${text(180, 452, "Review these two in parallel", "pr-breakdown-detail")}
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     ${blob(prefix, { x: 35, y: 124, width: 290, height: 216, compact: true })}
