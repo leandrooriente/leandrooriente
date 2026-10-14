@@ -390,6 +390,8 @@ main:focus { outline: none; }
 .pr-breakdown-cross circle { fill: #F3F1E8; stroke: #A3372D; stroke-width: 1.5; }
 .pr-breakdown-cross path { fill: none; stroke: #A3372D; stroke-width: 2.5; stroke-linecap: round; }
 .pr-breakdown-mobile-title { fill: #22251F; font: 400 21px var(--serif); }
+.codemod-card-content :is(.pr-breakdown-card-title, .pr-breakdown-mobile-title) { font-size: 20px; }
+.codemod-card-content .pr-breakdown-count { font-size: 14px; }
 @media (max-width: 820px) {
   .pr-breakdown { width: 100%; left: auto; transform: none; margin-block: 36px; }
   .pr-breakdown-toolbar { padding-inline: 0; }
@@ -399,6 +401,7 @@ main:focus { outline: none; }
   .pr-breakdown-stage { font-size: 25px; }
   .pr-breakdown-count { font-size: 16px; }
   .pr-breakdown-detail { font-size: 16px; }
+  .codemod-card-content .pr-breakdown-mobile-title { font-size: 18px; }
 }
 .reading-body > blockquote:not(.open-question) { margin-block: 24px; padding-left: 24px; border-left: 2px solid var(--red); font-style: italic; }
 @media (max-width: 559px) {

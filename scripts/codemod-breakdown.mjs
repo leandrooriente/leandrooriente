@@ -7,19 +7,19 @@ const resetStart = 23;
 const resetEnd = 24.5;
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
-const cardHeight = 112;
-const cardPadding = 16;
-const titleLineHeight = 26;
-const titleCountGap = 12;
+const cardHeight = 66;
+const cardPadding = 12;
+const titleLineHeight = 22;
+const titleCountGap = 8;
 const gap = 26;
 const finalTop = 52;
 const parts = [
-  { key: "interface", label: ["1 · Add new interface", "+ tests"], ink: "olive", changed: 600 },
-  { key: "codemod", label: ["2 · Add codemod", "+ tests"], ink: "ochre", changed: 400 },
+  { key: "interface", label: ["1 · Add interface + tests"], ink: "olive", changed: 600 },
+  { key: "codemod", label: ["2 · Add codemod + tests"], ink: "ochre", changed: 400 },
   { key: "first-batch", label: ["3 · First batch"], ink: "pale", changed: 9600 },
   { key: "second-batch", label: ["4 · Second batch"], ink: "pale", changed: 9600 },
   { key: "third-batch", label: ["5 · Third batch"], ink: "pale", changed: 9400 },
-  { key: "cleanup", label: ["6 · Remove codemod", "+ deprecated interface"], ink: "terra", changed: 400 }
+  { key: "cleanup", label: ["6 · Drop codemod + old API"], ink: "terra", changed: 400 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * .65 }));
 const sourceTop = finalTop + (parts.length - 1) * gap / 2;
 const finalBottom = finalTop + parts.length * cardHeight + (parts.length - 1) * gap;
@@ -55,12 +55,12 @@ function card(prefix, part, index, { x, width, compact }) {
   const shape = contour(width, cardHeight);
   const motion = [[0, from], [splitStart, from], [splitEnd, to], [resetStart, to], [resetEnd, from], [cycle, from]];
   const titleClass = compact ? "pr-breakdown-mobile-title" : "pr-breakdown-card-title";
-  const titleSize = compact ? 21 : 24;
-  const countSize = compact ? 16 : 17;
+  const titleSize = compact ? 18 : 20;
+  const countSize = 14;
   const titleHeight = titleSize + (part.label.length - 1) * titleLineHeight;
   const contentHeight = titleHeight + titleCountGap + countSize;
   const contentTop = (cardHeight - contentHeight) / 2;
-  const badgeRadius = 12;
+  const badgeRadius = 10;
   const badgeInset = cardPadding + badgeRadius;
   return `<g class="pr-breakdown-card pr-breakdown-${part.ink}" data-pr-part="${part.key}" transform="translate(${to})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
@@ -74,7 +74,7 @@ function card(prefix, part, index, { x, width, compact }) {
       ${part.label.map((line, lineIndex) => text(width / 2, contentTop + titleSize / 2 + lineIndex * titleLineHeight, line, titleClass, 'dominant-baseline="central"')).join("")}
       <g>${text(width / 2, contentTop + titleHeight + titleCountGap + countSize / 2, `${number(part.changed)} lines changed`, "pr-breakdown-count pr-breakdown-added", 'dominant-baseline="central"')}${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>
     </g>
-    <g class="pr-breakdown-check" transform="translate(${width - badgeInset} ${badgeInset})" opacity="1" aria-hidden="true"><circle r="${badgeRadius}"/><path d="M-7 0L-2 5L8-6"/>
+    <g class="pr-breakdown-check" transform="translate(${width - badgeInset} ${badgeInset})" opacity="1" aria-hidden="true"><circle r="${badgeRadius}"/><path d="M-5 0L-1 4L6-5"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
   </g>`;
