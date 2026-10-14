@@ -28,7 +28,7 @@ That makes optimizing for alignment an essential part of the work. Your job is t
 
 These are the practices that have helped me get my PRs properly reviewed and merged, and my features shipped to production.
 
-## Decide what belongs in the feature
+## If it doesn’t spark joy, toss it away
 
 Now that writing code is no longer the bottleneck, spend more time getting your agent on the right track before it starts. The more care you put into the specification, the better its chances of building what you actually need.
 
