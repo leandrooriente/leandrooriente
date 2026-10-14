@@ -66,14 +66,6 @@ The same principle helps with broad interface migrations. Changing the interface
 
 Once the transformation has been reviewed, I apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, I remove the deprecated interface and the codemod.
 
-## Improve the starting point for the next agent
-
-Preparing a PR can also reveal why the agent needed so much guidance. If the agent chose an outdated pattern or invented an approach that doesn’t fit the codebase, the intended approach may not be clear or discoverable enough.
-
-Architectural decisions, conventions, and workflows belong in repository documentation and reusable skills. During a migration, that guidance needs to distinguish the target pattern from the legacy one and explain intentional exceptions. An agent should be able to find the direction we’re moving in. If that foundation is missing, AI can help build it, with someone checking the result against the system before using it for future features.
-
-Review feedback is another opportunity to improve that guidance. When a colleague explains a convention, update the docs or skills. When a repeatable mistake slips through, improve the checks. Small PRs that capture those lessons give the next agent a better chance to correct its work before another person has to.
-
 ## Give reviewers confidence in the change
 
 Agents often fill PR descriptions with generic praise or a detailed narration of the diff. Read the description before requesting review and strip that out. Use the space for context the reviewer would otherwise have to investigate.
