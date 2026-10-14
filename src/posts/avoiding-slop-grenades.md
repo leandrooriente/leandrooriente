@@ -77,3 +77,5 @@ PR descriptions are a powerful tool, but agents without proper guidance often fi
 Tests help build that confidence, but they shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results can show how it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document can capture prior alignment with leadership.
 
 The more relevant context you provide, the less time reviewers spend finding what’s missing and the more they can focus on whether this is the right way to solve the problem.
+
+A PR is ready to hand over when you understand the change, can justify its scope, and can explain what you checked. The time you saved with an agent shouldn’t become extra work for your reviewer. The agent can write the code. You still own the handoff.
