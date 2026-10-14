@@ -21,6 +21,7 @@ const parts = [
   { key: "third-batch", label: ["5 · Third batch"], ink: "pale", changed: 9400 },
   { key: "cleanup", label: ["6 · Drop codemod + old API"], ink: "terra", changed: 400 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * .65 }));
+const breakdownStart = parts[0].reveal;
 const sourceTop = finalTop + (parts.length - 1) * gap / 2;
 const finalBottom = finalTop + parts.length * cardHeight + (parts.length - 1) * gap;
 const footerY = finalBottom + 41;
@@ -97,13 +98,13 @@ function blob(prefix, { x, width, compact }) {
 function comment(x, y, start) {
   return `<g class="pr-breakdown-comment" transform="translate(${x} ${y})" opacity="0" aria-hidden="true">
     <path d="M0 0H36V25H18L9 33V25H0Z"/><path class="pr-breakdown-comment-lines" d="M8 8H27M8 16H21"/>
-    ${opacity([[0, 0], [start, 0], [start + .3, 1], [splitStart - .2, 1], [splitStart + .2, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
   </g>`;
 }
 
 function cross(x, y, start) {
   return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>
-    ${opacity([[0, 0], [start, 0], [start + .2, 1], [splitStart - .2, 1], [splitStart + .2, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
   </g>`;
 }
 

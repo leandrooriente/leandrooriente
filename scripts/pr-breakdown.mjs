@@ -12,6 +12,7 @@ const parts = [
   { key: "foundation", label: "Foundational work", ink: "olive", width: 360, height: 100, added: 780, removed: 170, from: [200, 288], to: [200, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 10.9 },
   { key: "feature", label: "Feature", ink: "terra", width: 360, height: 110, added: 520, removed: 80, from: [200, 178], to: [200, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 11.5 }
 ];
+const breakdownStart = parts[0].reveal;
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
 const number = (value) => value.toLocaleString("en-US");
 const text = (x, y, value, className = "pr-breakdown-label") => `<text x="${x}" y="${y}" class="${className}" text-anchor="middle">${value}</text>`;
@@ -71,12 +72,12 @@ function card(prefix, part, compact = false) {
 function comment(x, y, start) {
   return `<g class="pr-breakdown-comment" transform="translate(${x} ${y})" opacity="0" aria-hidden="true">
     <path d="M0 0H36V25H18L9 33V25H0Z"/><path class="pr-breakdown-comment-lines" d="M8 8H27M8 16H21"/>
-    ${opacity([[0, 0], [start, 0], [start + .3, 1], [6.3, 1], [6.7, 0], [cycle, 0]])}
+    ${opacity([[0, 0], [start, 0], [start + .3, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}
   </g>`;
 }
 
 function cross(x, y, start) {
-  return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [6.3, 1], [6.7, 0], [cycle, 0]])}</g>`;
+  return `<g class="pr-breakdown-cross" transform="translate(${x} ${y})" opacity="0" aria-hidden="true"><circle r="14"/><path d="M-5-5L5 5M5-5L-5 5"/>${opacity([[0, 0], [start, 0], [start + .2, 1], [breakdownStart - .3, 1], [breakdownStart, 0], [cycle, 0]])}</g>`;
 }
 
 function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = false } = {}) {
