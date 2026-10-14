@@ -60,7 +60,7 @@ The feature itself may still be too large for one review. I can split it into mo
 
 Your agent is more than capable of solving all these issues in a single PR, but remember that we’re optimizing for our current bottleneck: alignment. Reviewers are more likely to understand and approve changes with a narrow scope.
 
-The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch 700 files and 30,000 lines. I can introduce the new interface with compatibility for existing callers, then add a codemod, a script that updates them. Tests cover both the interface and the transformation across real usage patterns.
+The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch 700 files and 30,000 lines. I can introduce the new interface alongside the old one, which stays in place until every caller has migrated. Then I add a codemod, a script that updates callers to use the new interface. Tests cover both the interface and the transformation across real usage patterns.
 
 {% codemodBreakdown "codemod-migration" %}
 
