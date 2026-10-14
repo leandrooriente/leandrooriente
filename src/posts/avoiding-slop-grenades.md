@@ -66,15 +66,19 @@ The same principle helps with broad interface migrations. Changing the interface
 
 Once the transformation has been reviewed, I apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, I remove the deprecated interface and the codemod.
 
-## Verify what you are handing over
+## Give reviewers confidence in the change
 
-Splitting the work makes it easier to follow. I still need evidence that it behaves as intended.
+Splitting the work makes the diff easier to follow. I also want reviewers to understand the direction of the change and have enough evidence to judge whether it is safe to move forward.
 
-I check that the affected functionality has reliable coverage, add checks for the feature’s acceptance criteria, and validate both the intermediate changes and the assembled feature. Automating repeatable API and browser checks avoids making a colleague redo that work manually.
+That starts with the PR description. I explain the problem, the intended behavior, and why I chose this approach. If the PR is part of a larger feature or migration, I link the plan and explain where this piece fits.
 
-Formatting, linting, and CI can resolve other repeatable questions. Give the agent access to those checks so it can catch mistakes and iterate before review. I also check that the tests reflect the requirements, especially when the same agent wrote both the implementation and the tests.
+A short demo or recording can make a change to a user flow easier to understand. A diagram can show how the components interact or how a migration will work. These help reviewers connect the code to the behavior we want, without having to reconstruct the whole design from the diff.
 
-By the time I request review, I can explain the change and show how I checked it. My colleague can bring another perspective, question the design, and catch things I missed, with a focused change and evidence to work from.
+Then I show how I checked it. Reliable test coverage should protect the existing behavior the change could affect and check the feature’s acceptance criteria. I make sure the tests reflect the requirements, especially when the same agent wrote both the implementation and the tests, and include the relevant results in the PR. Formatting, linting, and automated tests can run in CI before another person starts reviewing.
+
+For a change that affects performance or capacity, load and stress test results can give reviewers evidence about how the system behaves under pressure. For the upload API, that could show how it behaves at the expected request rate and concurrency, whether it meets the internal SLO, and what happens as it reaches its limits. Sharing the workload and measurements lets reviewers assess those results.
+
+The evidence should fit the change. I include what helps reviewers assess its behavior and risks, and make any gaps in validation clear. That gives them a concrete basis for questioning the design, suggesting improvements, and deciding whether it is ready to ship.
 
 ## Improve the starting point for the next agent
 
