@@ -4,7 +4,7 @@ templateEngineOverride: njk,md
 permalink: "/writing/avoiding-slop-grenades.html"
 title: "Avoiding slop grenades in AI pull requests"
 deck: "Keeping agent-generated changes reviewable in an established codebase."
-description: "How I prepare AI-generated pull requests in established codebases, using focused changes, reliable checks, and shared context to respect reviewers’ time."
+description: "How to prepare AI-generated pull requests in established codebases, using focused changes, reliable checks, and shared context to respect reviewers’ time."
 summary: "Keeping AI-generated pull requests focused, understandable, and verified before they reach your colleagues."
 publicationYear: 2026
 order: -1
@@ -30,9 +30,9 @@ These are the practices that have helped me get my PRs properly reviewed and mer
 
 ## Decide what belongs in the feature
 
-Now that writing code is no longer the bottleneck, we need to spend more time getting the agent on the right track before it starts. The more care we put into the specification, the better its chances of building what we actually need.
+Now that writing code is no longer the bottleneck, spend more time getting your agent on the right track before it starts. The more care you put into the specification, the better its chances of building what you actually need.
 
-As agents become more capable and autonomous, they can carry a mistaken assumption through more of the work before we review it. An ambiguous or incomplete prompt can leave an entire feature built around an abstraction that doesn’t fit the problem.
+As agents become more capable and autonomous, they can carry a mistaken assumption through more of the work before you review it. An ambiguous or incomplete prompt can leave an entire feature built around an abstraction that doesn’t fit the problem.
 
 Be explicit about what you’re building, who it’s for, and what belongs in the work. Define what is out of scope too. Leave that scope too broad, and a simple bug fix can become a major refactor PR you never wanted.
 
@@ -52,19 +52,19 @@ Agents often optimize for scenarios that aren’t realistic for the software you
 
 After removing unnecessary code, the diff can still contain several useful changes. The bug fix and refactor from the opening example may be worth keeping, but each asks the reviewer to understand something different.
 
-If the feature depends on the bug fix, I put the fix in a base PR and stack the feature on top. A prerequisite refactor can go in another PR. Work that can stand on its own can be reviewed in parallel. This lets the reviewer assess the fix or refactor on its own terms before looking at the product change that uses it.
+If the feature depends on the bug fix, put the fix in a base PR and stack the feature on top. A prerequisite refactor can go in another PR. Work that can stand on its own can be reviewed in parallel. This lets the reviewer assess the fix or refactor on its own terms before looking at the product change that uses it.
 
 {% prBreakdown "focused-prs" %}
 
-The feature itself may still be too large for one review. I can split it into modules across dependent or parallel PRs, then connect them in a later change. Each intermediate state needs to work and be testable. Keep unfinished behavior behind a feature flag where appropriate, preserve compatibility with existing callers, and maintain a shared explanation of how the pieces fit together.
+The feature itself may still be too large for one review. Split it into modules across dependent or parallel PRs, then connect them in a later change. Each intermediate state needs to work and be testable. Keep unfinished behavior behind a feature flag where appropriate, preserve compatibility with existing callers, and maintain a shared explanation of how the pieces fit together.
 
-Your agent is more than capable of solving all these issues in a single PR, but remember that we’re optimizing for our current bottleneck: alignment. Reviewers are more likely to understand and approve changes with a narrow scope.
+Your agent is more than capable of solving all these issues in a single PR, but remember what you’re optimizing for: alignment. Reviewers are more likely to understand and approve changes with a narrow scope.
 
-The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch 700 files and 30,000 lines. I can introduce the new interface alongside the old one, which stays in place until every caller has migrated. Then I add a codemod, a script that updates callers to use the new interface. Tests cover both the interface and the transformation across real usage patterns.
+The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch 700 files and 30,000 lines. Introduce the new interface alongside the old one, keeping the old interface in place until every caller has migrated. Then add a codemod, a script that updates callers to use the new interface. Add tests covering both the interface and the transformation across real usage patterns.
 
 {% codemodBreakdown "codemod-migration" %}
 
-Once the transformation has been reviewed, I apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, I remove the deprecated interface and the codemod.
+Once the transformation has been reviewed, apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, remove the deprecated interface and the codemod.
 
 ## Give reviewers confidence in the change
 
@@ -74,6 +74,6 @@ Say what you exercised, how you checked it, and what you observed. Show which be
 
 For the upload API, “tests passed” tells the reviewer very little. Point to the checks for PDF restrictions, size limits, authentication, and the legacy transport. A load or stress test report should include the workload and measurements against the internal SLO.
 
-Doing this consistently builds a trust battery with your reviewers. With one focused problem and evidence they can inspect, they can spend more attention on whether we’re solving the right problem and using the right abstractions. We can move forward when we agree, or reassess the solution together.
+Doing this consistently builds a trust battery with your reviewers. With one focused problem and evidence they can inspect, they can spend more attention on whether you’re solving the right problem and using the right abstractions. Move forward when you agree on the direction. Otherwise, reassess the solution together.
 
 A good chunk of the alignment work is already done.
