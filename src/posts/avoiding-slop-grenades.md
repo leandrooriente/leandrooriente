@@ -66,7 +66,7 @@ The same principle helps with broad interface migrations. Changing the interface
 
 Once the transformation has been reviewed, apply it in manageable batches. Each batch applies the same reviewed transformation, so reviewers can focus on its application and any exceptions. After all callers have migrated, remove the deprecated interface and the codemod.
 
-## Give reviewers confidence in the change
+## Build trust with your reviewers
 
 You’ve prepared the code and spent time breaking it into focused, reviewable pieces. Now make sure you communicate that work well.
 
