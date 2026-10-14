@@ -15,28 +15,30 @@
     figure.dataset.prBreakdownReady = "true";
 
     let visible = false;
-    let sufficientlyVisible = false;
+    let hasEntered = false;
     let manualPause;
     layouts.forEach(({ drawing }) => drawing.pauseAnimations());
+
+    function prepareLayouts() {
+      if (reducedMotion.matches && manualPause !== false) return;
+      layouts.forEach((layout) => {
+        if (layout.initialized) return;
+        // Prepare the first frame while paused; viewport changes only resume it.
+        layout.drawing.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
+          animation.beginElement();
+        });
+        layout.initialized = true;
+      });
+    }
 
     function update() {
       const paused = manualPause ?? reducedMotion.matches;
       const active = layouts.find(({ wide }) => wide === wideLayout.matches);
-      const canPlay = Boolean(active) && !paused && visible &&
-        (active.initialized || sufficientlyVisible) && !document.hidden;
+      const canPlay = Boolean(active?.initialized) && !paused && visible && hasEntered && !document.hidden;
 
       layouts.forEach((layout) => {
         const { drawing } = layout;
         const playing = layout === active && canPlay;
-        if (playing && !layout.initialized) {
-          // Leave each static drawing intact until its visible layout can play.
-          drawing.setCurrentTime(0);
-          drawing.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
-            animation.beginElement();
-          });
-          layout.initialized = true;
-        }
-
         if (playing) drawing.unpauseAnimations();
         else drawing.pauseAnimations();
       });
@@ -49,19 +51,23 @@
 
     button.addEventListener("click", () => {
       manualPause = !(manualPause ?? reducedMotion.matches);
+      prepareLayouts();
       update();
     });
     reducedMotion.addEventListener("change", () => {
       manualPause = undefined;
+      prepareLayouts();
       update();
     });
     wideLayout.addEventListener("change", () => window.requestAnimationFrame(update));
     document.addEventListener("visibilitychange", update);
 
+    prepareLayouts();
+
     if (window.IntersectionObserver) {
       new IntersectionObserver(([entry]) => {
         visible = entry.isIntersecting && entry.intersectionRatio > 0;
-        sufficientlyVisible = entry.intersectionRatio >= startThreshold;
+        hasEntered ||= entry.intersectionRatio >= startThreshold;
         update();
       }, { threshold: [0, 0.001, startThreshold] }).observe(viewport);
     } else {
@@ -71,7 +77,7 @@
         const height = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
         const ratio = bounds.width > 0 && bounds.height > 0 ? (width * height) / (bounds.width * bounds.height) : 0;
         visible = ratio > 0;
-        sufficientlyVisible = ratio >= startThreshold;
+        hasEntered ||= ratio >= startThreshold;
         update();
       };
       window.addEventListener("scroll", checkViewport, { passive: true });
