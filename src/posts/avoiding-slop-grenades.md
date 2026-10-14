@@ -32,9 +32,9 @@ These are the practices that have helped me get my PRs properly reviewed and mer
 
 I start with the behavior we actually need. The specification should make that scope clear, including the constraints and what is outside the work. Once the agent has produced a solution, I read the diff against those requirements.
 
-For example, a spec for adding a status filter to an existing orders list could look like this:
+For example, a spec for a new internal upload API could look like this:
 
-{% include "partials/status-filter-ticket.njk" %}
+{% include "partials/upload-api-ticket.njk" %}
 
 Reading the diff takes enough understanding to challenge the implementation. If I can’t explain why a piece of code is there, I need to investigate it. AI can help me trace unfamiliar parts of the codebase and walk through a proposed change, but I check those explanations against the code and tests. It’s also a way to build knowledge I’ll need to maintain the result.
 

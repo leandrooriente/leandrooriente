@@ -1,0 +1,38 @@
+<figure class="tracking-ticket" id="upload-api-ticket" aria-labelledby="upload-api-ticket-title">
+  <svg class="tracking-ticket-frame" viewBox="0 0 560 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18 3C170 1 390 5 541 3Q556 2 557 20L556 880Q558 896 541 897C380 899 180 895 19 897Q3 898 3 880L4 20Q2 4 18 3Z" vector-effect="non-scaling-stroke"/></svg>
+  <header class="tracking-ticket-header">
+    <svg class="tracking-ticket-symbol" viewBox="0 0 48 52" aria-hidden="true" focusable="false"><path d="M24 5C35 4 43 14 42 26C43 38 35 47 23 47C12 48 4 38 5 26C4 14 12 5 24 5Z"/><path class="tracking-ticket-symbol-cut" d="M24 13C31 12 35 18 35 26C35 34 31 40 23 39C16 40 12 33 12 26C11 18 17 12 24 13Z"/><path d="M24 21C31 21 31 31 24 31C17 32 17 21 24 21Z"/></svg>
+    <h3 id="upload-api-ticket-title">Implement a new internal upload API</h3>
+  </header>
+  <div class="tracking-ticket-body">
+    <section>
+      <h4>Required behavior</h4>
+      <p>Allow internal clients to upload PDF files up to 15 MB. Reject unsupported files and uploads above the size limit.</p>
+    </section>
+    <section>
+      <h4>Constraints</h4>
+      <p>Reuse the existing authentication middleware. Use the legacy transport layer by default, with transport selection behind a feature toggle so we can enable the new transport when it is ready.</p>
+    </section>
+    <section>
+      <h4>Operating expectations</h4>
+      <p>Include the endpoint in the existing internal SLO. Expect an average of 3,000 requests per minute and a peak of 50 concurrent requests.</p>
+    </section>
+    <section>
+      <h4>Acceptance criteria</h4>
+      <ul class="tracking-ticket-checklist">
+        <li>Valid PDFs within the size limit upload successfully.</li>
+        <li>Unsupported files and oversized uploads are rejected.</li>
+        <li>Authentication runs through the existing middleware.</li>
+        <li>The endpoint uses the legacy transport with the toggle disabled.</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Out of scope</h4>
+      <p>Implementing the new transport layer is a separate ticket. This change prepares its rollout through the feature toggle.</p>
+    </section>
+  </div>
+  <footer class="tracking-ticket-footer">
+    <svg class="tracking-ticket-rule" viewBox="0 0 508 6" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M2 3Q126 1 254 3T506 2" vector-effect="non-scaling-stroke"/></svg>
+    <div class="tracking-ticket-summary"><span class="tracking-ticket-key">API-128 <span class="tracking-ticket-type">Feature · Product</span></span><span class="tracking-ticket-status">To do</span><span class="tracking-ticket-priority">Medium <span>priority</span></span></div>
+  </footer>
+</figure>
