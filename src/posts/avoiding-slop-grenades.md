@@ -76,13 +76,9 @@ Review feedback is another opportunity to improve that guidance. When a colleagu
 
 ## Give reviewers confidence in the change
 
-I think of this as building a trust battery with my reviewers. When my PRs consistently arrive with reliable evidence that the implementation works, they can spend more attention on design decisions and whether we’re heading in the right direction.
+If we’ve done the preparation well, our PR focuses on one problem and comes with reliable evidence that it works. Delivering that consistently builds a trust battery with our reviewers.
 
-In the PR description, I show how I validated the implementation, the results, and anything still unverified. Depending on the change, that can include automated tests covering expected behavior and regressions, a demo, a diagram of the flow, or load and stress tests using realistic traffic.
-
-## Ready for review
-
-If we’ve done the preparation well, our PR focuses on one problem. It has the tests the change needs: unit tests, plus integration, E2E, contract, or stress tests where appropriate. A demo shows it working, with diagrams or supporting documentation where the complexity calls for them.
+The PR description shows how we validated the change, the results, and anything still unverified. That includes unit tests and any integration, E2E, contract, load, or stress tests the change needs. A demo shows it working, with diagrams or supporting documentation where the complexity calls for them.
 
 Reviewers can now focus on whether we’re solving the right problem and using the right abstractions. If we agree on that direction, we can move forward. Otherwise, we reassess the solution together.
 
