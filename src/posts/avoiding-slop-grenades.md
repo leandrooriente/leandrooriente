@@ -70,7 +70,7 @@ Once the transformation has been reviewed, apply it in manageable batches. Each 
 
 You’ve prepared the code and spent time breaking it into focused, reviewable pieces. Now make sure you communicate that work well.
 
-PR descriptions are a powerful tool, but agents without proper guidance often misuse them. Git tools already show what changed. Focus the description on raising reviewers’ confidence without overburdening them.
+PR descriptions are a powerful tool, but agents without proper guidance often fill them with references to what changed and where. That information is already in the diff, so repeating it adds noise. Focus the description on raising reviewers’ confidence without overburdening them.
 
 Tests help build that confidence, but they shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results can show how it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document can capture prior alignment with leadership.
 
