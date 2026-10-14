@@ -13,8 +13,8 @@ const duration = cycle + openingHold;
 const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 142, height: 100, added: 200, removed: 50, from: [228, 388], to: [213, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
   { key: "refactor", label: "Class refactor", ink: "ochre", width: 162, height: 100, added: 950, removed: 250, from: [370, 388], to: [385, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
-  { key: "foundation", label: "Foundational work", ink: "olive", width: 264, height: 100, added: 780, removed: 170, from: [248, 288], to: [248, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 12.3 },
-  { key: "feature", label: "Feature Implementation", ink: "terra", width: 328, height: 110, added: 520, removed: 80, from: [216, 178], to: [216, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.7 }
+  { key: "foundation", label: "Foundational work", ink: "olive", width: 264, height: 100, added: 780, removed: 170, from: [248, 288], to: [248, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 11.9 },
+  { key: "feature", label: "Feature", ink: "terra", width: 142, height: 110, added: 520, removed: 80, from: [309, 178], to: [309, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
 ];
 const breakdownStart = parts[0].reveal;
 const totals = parts.reduce((sum, part) => ({ added: sum.added + part.added, removed: sum.removed + part.removed }), { added: 0, removed: 0 });
@@ -58,7 +58,7 @@ function check(part, animated) {
 function card(prefix, part, compact = false) {
   const [x, y] = part.to;
   const narrow = part.width <= 180;
-  const titleSize = compact ? (narrow ? 16 : 20) : (narrow ? 20 : 25);
+  const titleSize = part.key === "feature" ? (compact ? 20 : 25) : compact ? (narrow ? 16 : 20) : (narrow ? 20 : 25);
   const ruleY = part.height - 32;
   const titleY = (ruleY + titleSize * .7) / 2;
   const title = Array.isArray(part.label) ? part.label.join(" ") : part.label;
@@ -120,10 +120,10 @@ function desktop(id) {
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
-      ${connection("M284 424V402H380", 10.1, 11)}
-      ${connection("M466 424V402H380", 10.7, 11.6)}
-      ${connection("M380 402V382", 11.7, 12.2, "M375 388L380 382L385 388")}
-      ${connection("M380 258V216", 12.7, 13.6, "M375 222L380 216L385 222")}
+      ${connection("M284 424V402H380", 10.1, 10.75)}
+      ${connection("M466 424V402H380", 10.7, 11.35)}
+      ${connection("M380 402V382", 11.45, 11.8, "M375 388L380 382L385 388")}
+      ${connection("M380 258V216", 12.3, 12.95, "M375 222L380 216L385 222")}
     </g>
     ${blob(prefix, initialLayout)}
     ${parts.map((part) => card(prefix, part)).join("")}
@@ -138,7 +138,7 @@ function mobile(id) {
     bug: { width: 136, height: 82, from: [41, 258], to: [26, 334] },
     refactor: { width: 142, height: 82, from: [177, 258], to: [192, 334] },
     foundation: { width: 216, height: 70, from: [72, 188], to: [72, 181] },
-    feature: { width: 268, height: 64, from: [46, 124], to: [46, 58] }
+    feature: { width: 136, height: 64, from: [112, 124], to: [112, 58] }
   };
   return `<svg class="pr-breakdown-svg pr-breakdown-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 470" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
@@ -153,10 +153,10 @@ function mobile(id) {
       ${opacity([[0, 0], [8.5, 0], [8.9, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies" aria-hidden="true">
-      ${connection("M94 322V291H180", 10.1, 11)}
-      ${connection("M263 322V291H180", 10.7, 11.6)}
-      ${connection("M180 291V263", 11.7, 12.2, "M175 269L180 263L185 269")}
-      ${connection("M180 169V134", 12.7, 13.6, "M175 140L180 134L185 140")}
+      ${connection("M94 322V291H180", 10.1, 10.75)}
+      ${connection("M263 322V291H180", 10.7, 11.35)}
+      ${connection("M180 291V263", 11.45, 11.8, "M175 269L180 263L185 269")}
+      ${connection("M180 169V134", 12.3, 12.95, "M175 140L180 134L185 140")}
     </g>
     ${blob(prefix, initialLayout)}
     ${parts.map((part) => card(prefix, { ...part, ...layouts[part.key] }, true)).join("")}

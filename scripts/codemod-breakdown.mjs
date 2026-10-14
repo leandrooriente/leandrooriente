@@ -12,24 +12,21 @@ const hold = "0 0 1 1";
 const openingHold = 4;
 const duration = cycle + openingHold;
 const cardHeight = 66;
-const gap = 26;
-const finalTop = 52;
+const sourceTop = 67;
+const footerY = 516;
+const drawingHeight = 530;
 const parts = [
-  { key: "interface", label: "1 · Add interface + tests", changed: 600, desktopWidth: 252, mobileWidth: 216 },
-  { key: "codemod", label: "2 · Add codemod + tests", changed: 400, desktopWidth: 256, mobileWidth: 224 },
-  { key: "first-batch", label: "3 · First batch", changed: 9600, desktopWidth: 204, mobileWidth: 204 },
-  { key: "second-batch", label: "4 · Second batch", changed: 9600, desktopWidth: 204, mobileWidth: 204 },
-  { key: "third-batch", label: "5 · Third batch", changed: 9400, desktopWidth: 204, mobileWidth: 204 },
-  { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400, desktopWidth: 296, mobileWidth: 256 }
-].map((part, index) => ({ ...part, reveal: 2.6 + index * .9, approved: 11 + index * 1.4 }));
+  { key: "interface", label: "1 · Add interface + tests", changed: 600, desktopWidth: 252, mobileWidth: 216, y: 422, approved: 11 },
+  { key: "codemod", label: "2 · Add codemod + tests", changed: 400, desktopWidth: 256, mobileWidth: 224, y: 306, approved: 12.15 },
+  { key: "first-batch", label: "3 · First batch", mobileLabel: "Batch 1", changed: 9600, desktopWidth: 204, mobileWidth: 104, desktopCenter: 148, mobileCenter: 62, y: 190, approved: 13.65 },
+  { key: "second-batch", label: "4 · Second batch", mobileLabel: "Batch 2", changed: 9600, desktopWidth: 204, mobileWidth: 104, desktopCenter: 380, mobileCenter: 180, y: 190, approved: 13.65 },
+  { key: "third-batch", label: "5 · Third batch", mobileLabel: "Batch 3", changed: 9400, desktopWidth: 204, mobileWidth: 104, desktopCenter: 612, mobileCenter: 298, y: 190, approved: 13.65 },
+  { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400, desktopWidth: 296, mobileWidth: 256, y: 74, approved: 15.15 }
+].map((part, index) => ({ ...part, reveal: 2.6 + index * .9 }));
 const breakdownStart = parts[0].reveal;
-const sourceTop = finalTop + (parts.length - 1) * gap / 2;
-const finalBottom = finalTop + parts.length * cardHeight + (parts.length - 1) * gap;
-const footerY = finalBottom + 41;
-const drawingHeight = footerY + 11;
 
 const number = (value) => value.toLocaleString("en-US");
-const text = (x, y, value, className, anchor = "middle") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}">${value}</text>`;
+const text = (x, y, value, className, anchor = "middle", attributes = "") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}" ${attributes}>${value}</text>`;
 
 function timing(frames, shiftOpening = true) {
   return `keyTimes="${frames.map(([at]) => (shiftOpening && at > 0 ? at + openingHold : at) / duration).join(";")}" keySplines="${frames.slice(1).map((frame, index) => frame[1] === frames[index][1] ? hold : ease).join(";")}" calcMode="spline" dur="${duration}s" repeatCount="indefinite" begin="indefinite"`;
@@ -47,10 +44,11 @@ function definitions(prefix) {
 
 function card(prefix, part, index, { center, compact }) {
   const width = compact ? part.mobileWidth : part.desktopWidth;
-  const x = center - width / 2;
+  const destinationCenter = (compact ? part.mobileCenter : part.desktopCenter) ?? center;
+  const narrow = compact && Boolean(part.mobileLabel);
   const band = parts.length - index - 1;
-  const from = `${x} ${sourceTop + band * cardHeight}`;
-  const to = `${x} ${finalTop + band * (cardHeight + gap)}`;
+  const from = `${center - width / 2} ${sourceTop + band * cardHeight}`;
+  const to = `${destinationCenter - width / 2} ${part.y}`;
   const motion = [[0, from], [splitStart, from], [splitEnd, to], [resetStart, to], [resetEnd, from], [cycle, from]];
   const titleClass = compact ? "pr-card-art-title pr-card-art-mobile-title" : "pr-card-art-title";
   return `<g class="pr-breakdown-card pr-card-art" data-pr-part="${part.key}" transform="translate(${to})">
@@ -58,12 +56,12 @@ function card(prefix, part, index, { center, compact }) {
     ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
     ${prCardSurface(prefix, width, cardHeight)}
     <g class="codemod-card-content">
-      ${text(12, compact ? 22 : 23, part.label, titleClass, "start")}
-      ${prCardRule(12, 35, width - 24)}
-      ${prCardIcon(13, 42, 17)}
-      ${text(38, 55, `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added", "start")}
+      ${text(narrow ? 8 : 12, compact ? 22 : 23, narrow ? part.mobileLabel : part.label, titleClass, "start")}
+      ${prCardRule(narrow ? 8 : 12, 35, width - (narrow ? 16 : 24))}
+      ${prCardIcon(narrow ? 8 : 13, narrow ? 44 : 42, narrow ? 12 : 17)}
+      ${text(narrow ? 26 : 38, 55, narrow ? `${part.changed / 1000}k lines` : `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added", "start", narrow ? 'style="font-size:12px"' : "")}
     </g>
-    <g class="pr-breakdown-check" transform="translate(${width - 22} 49)" opacity="1" aria-hidden="true"><circle r="9.5"/><path d="M-5 0L-1 4L6-5"/>
+    <g class="pr-breakdown-check" transform="translate(${width - (narrow ? 12 : 22)} 49)" opacity="1" aria-hidden="true"><circle r="${narrow ? 7 : 9.5}"/><path d="${narrow ? "M-3.5 0L-1 2.5L4-3.5" : "M-5 0L-1 4L6-5"}"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
   </g>`;
@@ -99,45 +97,55 @@ function cross(x, y, start) {
   </g>`;
 }
 
+function connector({ from, to, path, start, end, tip }) {
+  const draw = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetStart + .1, 1], [cycle, 1]];
+  return `<g class="pr-breakdown-dependency" data-pr-from="${from}" data-pr-to="${to}" opacity="1" aria-hidden="true">
+    <path class="pr-breakdown-link" d="${path}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="${draw.map(([, value]) => value).join(";")}" ${timing(draw)}/>
+    </path>
+    ${tip ? `<path class="pr-breakdown-arrow-tip" d="M${tip.x - 4} ${tip.y + 5}L${tip.x} ${tip.y}L${tip.x + 4} ${tip.y + 5}">
+      ${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+    </path>` : ""}
+    ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
+  </g>`;
+}
+
 function drawing(id, compact) {
   const prefix = `${id}-${compact ? "mobile" : "desktop"}`;
   const center = compact ? 180 : 380;
   const layout = { center, compact };
   const initialLayout = { ...layout, x: center - 140, width: 280, height: 242, y: sourceTop + (parts.length * cardHeight - 242) / 2 };
   const width = compact ? 360 : 760;
-  const connectors = parts.slice(0, -1).map((part, index) => {
-    const lowerTop = finalTop + (parts.length - index - 1) * (cardHeight + gap);
-    const upperBottom = lowerTop - gap;
-    const start = part.approved + .35;
-    const end = part.approved + 1.25;
-    const tipY = upperBottom + 8;
-    const draw = [[0, 1], [start, 1], [end, 0], [resetStart, 0], [resetStart + .1, 1], [cycle, 1]];
-    return `<g class="pr-breakdown-dependency" data-pr-from="${part.key}" data-pr-to="${parts[index + 1].key}" opacity="1" aria-hidden="true">
-      <path class="pr-breakdown-link" d="M${center} ${lowerTop - 8}V${tipY}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" values="${draw.map(([, value]) => value).join(";")}" ${timing(draw)}/>
-      </path>
-      <path class="pr-breakdown-arrow-tip" d="M${center - 4} ${tipY + 5}L${center} ${tipY}L${center + 4} ${tipY + 5}">
-        ${opacity([[0, 0], [end, 0], [end + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
-      </path>
-      ${opacity([[0, 0], [start, 0], [start + .05, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
-    </g>`;
-  }).join("");
+  const batches = parts.filter((part) => part.mobileLabel);
+  const connectors = [
+    { from: "interface", to: "codemod", path: `M${center} 414V380`, start: 11.35, end: 12, tip: { x: center, y: 380 } },
+    { from: "codemod", to: "batch-fork", path: `M${center} 298V282`, start: 12.5, end: 12.75 },
+    ...batches.map((part) => {
+      const targetCenter = compact ? part.mobileCenter : part.desktopCenter;
+      return { from: "batch-fork", to: part.key, path: `M${center} 282H${targetCenter}V264`, start: 12.85, end: 13.5, tip: { x: targetCenter, y: 264 } };
+    }),
+    ...batches.map((part) => {
+      const sourceCenter = compact ? part.mobileCenter : part.desktopCenter;
+      return { from: part.key, to: "batch-join", path: `M${sourceCenter} 182V166H${center}`, start: 14, end: 14.65 };
+    }),
+    { from: "batch-join", to: "cleanup", path: `M${center} 166V148`, start: 14.75, end: 15, tip: { x: center, y: 148 } }
+  ].map(connector).join("");
   const decorations = prCardReviewMarks(initialLayout, comment, cross);
   return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
-    <title id="${prefix}-title">One large interface migration becomes six stacked pull requests</title>
-    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts appear from the bottom, then move apart into a serial stack. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches; remove the codemod and deprecated interface. Individual changed-line counts sum to 30,000. Each approval starts an upward connector. The next PR is approved after that connector arrives. Counts are illustrative; files can recur between PRs.</desc>
+    <title id="${prefix}-title">One large interface migration becomes six focused pull requests</title>
+    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts move into four tiers. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches in parallel; remove the codemod and deprecated interface after all batches finish. Individual changed-line counts sum to 30,000. Approvals send connectors upward, branching into the three parallel batches and joining before cleanup. Counts are illustrative; files can recur between PRs.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}
       ${opacity([[0, 1], [splitStart - .2, 1], [splitStart + .2, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
     </g>
-    <g class="pr-breakdown-result" opacity="1">${text(center, 28, "Six stacked PRs", "pr-breakdown-stage")}
+    <g class="pr-breakdown-result" opacity="1">${text(center, 28, "Six focused PRs", "pr-breakdown-stage")}
       ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
     <g class="pr-breakdown-dependencies">${connectors}</g>
     ${blob(prefix, initialLayout)}${parts.map((part, index) => card(prefix, part, index, layout)).join("")}
     ${decorations}
-    <g opacity="1">${text(center, footerY, "Stack reads bottom to top", "pr-breakdown-detail")}
+    <g opacity="1">${text(center, footerY, "Three batches reviewed in parallel", "pr-breakdown-detail")}
       ${opacity([[0, 0], [splitEnd, 0], [splitEnd + .4, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
     </g>
   </svg>`;
