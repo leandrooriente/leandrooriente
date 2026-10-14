@@ -40,11 +40,13 @@ For example, a spec for a new internal upload API could look like this:
 
 {% include "partials/upload-api-ticket.njk" %}
 
-Reading the diff takes enough understanding to challenge the implementation. If I can’t explain why a piece of code is there, I need to investigate it. AI can help me trace unfamiliar parts of the codebase and walk through a proposed change, but I check those explanations against the code and tests. It’s also a way to build knowledge I’ll need to maintain the result.
+Once the agent has finished its first draft, it’s time to turn that rough stone into a diamond.
 
-With that context, I can question the additions. Does the application need this optimization? Can the edge case happen under our existing rules? An agent may uncover a real scenario I missed, and I want to understand it. An abstraction for a problem we don’t have, however, adds review work now and maintenance work later.
+As the author, you have the requirements, constraints, and reasons for the change fresh in your mind. This initial review is where you should catch anything that doesn’t belong, while that context is still fresh.
 
-I remove those speculative additions. What remains should be the smallest complete implementation of the feature, with a reason for each change.
+Be your agent’s toughest reviewer. Challenge every design decision, new abstraction, and interface change. If something feels odd, it’s on you to understand why it exists and whether it makes sense to keep it.
+
+Agents often optimize for scenarios that aren’t realistic for the software you’re building. You might be tempted to keep those additions as safeguards for the future, but every addition is more code to maintain, test, and change as your feature evolves. Complexity always comes at a cost.
 
 ## Turn the remaining work into smaller reviews
 
