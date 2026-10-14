@@ -1,4 +1,5 @@
 import { assetUrl } from "./assets.mjs";
+import { prCardDefinitions, prCardSurface, prCardIcon, prCardRule } from "./pr-card-art.mjs";
 
 const cycle = 22;
 const resetStart = 19.5;
@@ -25,47 +26,47 @@ function opacity(frames) {
   return `<animate attributeName="opacity" values="${frames.map(([, value]) => value).join(";")}" ${timing(frames)}/>`;
 }
 
-function contour(width, height) {
-  return `M1 1L${width - 2} 0L${width} ${height - 2}L0 ${height}Z`;
-}
-
 function definitions(prefix) {
   return `<defs>
-    <pattern id="${prefix}-grain" width="17" height="13" patternUnits="userSpaceOnUse"><path d="M3 3h.7M12 9h.8" stroke="#F3F1E8" stroke-width=".7" opacity=".18"/></pattern>
+    ${prCardDefinitions(prefix)}
     <marker id="${prefix}-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#596046" stroke-width="1.5"/></marker>
   </defs>`;
 }
 
 function counts(x, y, added, removed) {
-  return `<text x="${x}" y="${y}" class="pr-breakdown-count" text-anchor="middle"><tspan class="pr-breakdown-added">+${number(added)}</tspan><tspan dx="12" class="pr-breakdown-removed">−${number(removed)}</tspan></text>`;
+  return `<text x="${x}" y="${y}" class="pr-breakdown-count pr-card-art-count" text-anchor="middle"><tspan class="pr-breakdown-added">+${number(added)}</tspan><tspan dx="12" class="pr-breakdown-removed">−${number(removed)}</tspan></text>`;
 }
 
 function check(part, animated) {
-  return `<g class="pr-breakdown-check" transform="translate(${part.width - 18} 12)" opacity="1" aria-hidden="true">
-    <circle r="15"/><path d="M-7 0L-2 5L8-6"/>
+  return `<g class="pr-breakdown-check" transform="translate(${part.width - 18} ${part.height - 19})" opacity="1" aria-hidden="true">
+    <circle r="9"/><path d="M-4.5 0L-1 3.5L5-4"/>
     ${animated ? opacity([[0, 0], [part.approved, 0], [part.approved + .3, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]]) : ""}
   </g>`;
 }
 
 function card(prefix, part, compact = false) {
   const [x, y] = part.to;
-  const shape = contour(part.width, part.height);
+  const narrow = part.width <= 180;
+  const titleSize = compact ? (narrow ? 16 : 20) : (narrow ? 20 : 25);
+  const ruleY = part.height - 32;
+  const titleY = (ruleY + titleSize * .7) / 2;
+  const title = Array.isArray(part.label) ? part.label.join(" ") : part.label;
   const motion = [
     [0, part.from.join(" ")], [part.start, part.from.join(" ")],
     [part.end, part.to.join(" ")], [resetStart, part.to.join(" ")],
     [resetEnd, part.from.join(" ")], [cycle, part.from.join(" ")]
   ];
-  return `<g class="pr-breakdown-card pr-breakdown-${part.ink}" data-pr-part="${part.key}" transform="translate(${x} ${y})">
+  return `<g class="pr-breakdown-card pr-card-art" data-pr-part="${part.key}" transform="translate(${x} ${y})">
     <animateTransform attributeName="transform" type="translate" values="${motion.map(([, value]) => value).join(";")}" ${timing(motion)}/>
     ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .25, 1], [resetEnd + .2, 1], [resetEnd + .5, 0], [cycle, 0]])}
-    <path class="pr-breakdown-shadow" d="${shape}" transform="translate(${compact ? "2 3" : "3 4"})"/>
-    <path class="pr-breakdown-tile" d="${shape}"/>
-    <path d="${shape}" fill="url(#${prefix}-grain)" aria-hidden="true"/>
+    ${prCardSurface(prefix, part.width, part.height)}
+    ${prCardRule(12, ruleY, part.width - 24)}
+    ${prCardIcon(12, part.height - 27, 16)}
     <path class="pr-breakdown-highlight" d="M5 5H${part.width - 6}V${part.height - 6}H5Z" opacity="0" aria-hidden="true">
       ${opacity([[0, 0], [part.reveal, 0], [part.reveal + .15, 1], [part.reveal + .65, 1], [part.reveal + .9, 0], [cycle, 0]])}
     </path>
-    ${(Array.isArray(part.label) ? part.label : [part.label]).map((line, index) => text(part.width / 2, (compact ? 27 : 43) + index * 20, line, compact ? "pr-breakdown-mobile-title" : `pr-breakdown-card-title${part.key === "feature" ? " pr-breakdown-feature-title" : ""}`)).join("")}
-    <g class="pr-breakdown-part-counts">${counts(part.width / 2, part.height - (compact ? 14 : 20), part.added, part.removed)}${opacity([[0, 0], [8.3, 0], [8.7, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>${check(part, true)}
+    <text x="${part.width / 2}" y="${titleY}" class="pr-card-art-title" text-anchor="middle" dominant-baseline="central" style="font-size:${titleSize}px">${title}</text>
+    <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(part.width / 2, part.height - 12, part.added, part.removed)}${opacity([[0, 0], [8.3, 0], [8.7, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}</g>${check(part, true)}
   </g>`;
 }
 
@@ -81,11 +82,16 @@ function cross(x, y, start) {
 }
 
 function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = false } = {}) {
-  const shape = contour(width, height);
-  return `<g class="pr-breakdown-blob pr-breakdown-terra" transform="translate(${x} ${y})" opacity="0">
-    <path class="pr-breakdown-shadow" d="${shape}" transform="translate(3 4)"/>
-    <path class="pr-breakdown-tile" d="${shape}"/><path d="${shape}" fill="url(#${prefix}-grain)" aria-hidden="true"/>
-    <g>${text(width / 2, height / 2 + 6, "Feature PR", compact ? "pr-breakdown-card-title pr-breakdown-mobile-title" : "pr-breakdown-card-title pr-breakdown-feature-title")}${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}</g>
+  const inset = compact ? 22 : 28;
+  return `<g class="pr-breakdown-blob pr-card-art" transform="translate(${x} ${y})" opacity="0">
+    ${prCardSurface(prefix, width, height)}
+    <g class="pr-card-art-draft">
+      ${prCardIcon(inset, compact ? 24 : 30, compact ? 30 : 38)}
+      <text x="${inset}" y="${compact ? 84 : 111}" class="pr-card-art-title" style="font-size:${compact ? 25 : 30}px">Do a bunch of stuff</text>
+      <text x="${inset}" y="${compact ? 119 : 157}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
+      ${prCardRule(inset, height - 42, width - inset * 2)}
+      ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
+    </g>
     ${opacity([[0, 1], [6.3, 1], [6.5, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
   </g>`;
 }
@@ -124,7 +130,7 @@ function mobile(id) {
   const routes = ["M92.5 322V291H180V263", "M267.5 322V291H180", "M180 169V134"];
   const layouts = {
     bug: { width: 145, height: 82, from: [35, 258], to: [20, 334] },
-    refactor: { width: 145, height: 82, from: [180, 258], to: [195, 334], label: ["Class", "refactor"] },
+    refactor: { width: 145, height: 82, from: [180, 258], to: [195, 334] },
     foundation: { width: 290, height: 70, from: [35, 188], to: [35, 181] },
     feature: { width: 290, height: 64, from: [35, 124], to: [35, 58] }
   };

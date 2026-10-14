@@ -29,6 +29,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("scripts/battlestation-diagrams.mjs");
   eleventyConfig.addWatchTarget("scripts/pr-breakdown.mjs");
   eleventyConfig.addWatchTarget("scripts/codemod-breakdown.mjs");
+  eleventyConfig.addWatchTarget("scripts/pr-card-art.mjs");
 
   // Refresh the known routes on every build, including added or removed posts.
   let pageUrls = new Set();
