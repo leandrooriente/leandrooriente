@@ -68,10 +68,10 @@ Once the transformation has been reviewed, apply it in manageable batches. Each 
 
 ## Give reviewers confidence in the change
 
-Agents often fill PR descriptions with generic praise or a detailed narration of the diff. Read the description before requesting review and strip that out. Use the space for context the reviewer would otherwise have to investigate.
+You’ve prepared the code and spent time breaking it into focused, reviewable pieces. Now make sure you communicate that work well.
 
-Keep only what helps the reviewer judge the solution and isn’t clear from the diff: a constraint behind a decision, a rollout dependency, a relevant validation result, or a known limitation. Link a demo, diagram, test report, or supporting document when it adds context the code and automated checks don’t show.
+PR descriptions are a powerful tool, but agents without proper guidance often misuse them. Git tools already show what changed. Focus the description on raising reviewers’ confidence without overburdening them.
 
-Doing this consistently builds a trust battery with your reviewers. With one focused problem and evidence they can inspect, they can spend more attention on whether you’re solving the right problem and using the right abstractions. Move forward when you agree on the direction. Otherwise, reassess the solution together.
+Tests help build that confidence, but they shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results can show how it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document can capture prior alignment with leadership.
 
-A good chunk of the alignment work is already done.
+The more relevant context you provide, the less time reviewers spend finding what’s missing and the more they can focus on whether this is the right way to solve the problem.
