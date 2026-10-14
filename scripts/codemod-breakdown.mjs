@@ -57,7 +57,7 @@ function card(prefix, part, index, { x, width, compact }) {
       ${text(12, compact ? 22 : 23, part.label, titleClass, "start")}
       ${prCardRule(12, 35, width - 24)}
       ${prCardIcon(13, 42, 17)}
-      ${text(width / 2, 55, `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added")}
+      ${text(38, 55, `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added", "start")}
     </g>
     <g class="pr-breakdown-check" transform="translate(${width - 22} 49)" opacity="1" aria-hidden="true"><circle r="9.5"/><path d="M-5 0L-1 4L6-5"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetStart - .2, 1], [resetStart, 0], [cycle, 0]])}
@@ -76,6 +76,9 @@ function blob(prefix, { x, width, compact }) {
       ${prCardRule(24, 226, width - 48)}
       ${text(width / 2, 260, "A seamless, future-proof update.", "pr-card-art-copy")}
       ${text(width / 2, 284, "Modernize the entire codebase.", "pr-card-art-copy")}
+      ${prCardRule(24, height - 78, width - 48)}
+      ${text(24, height - 50, "30,000 lines changed", "pr-card-art-count pr-breakdown-added", "start")}
+      ${text(24, height - 26, "700 files changed", "pr-card-art-count pr-breakdown-added", "start")}
       ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
     </g>
     ${opacity([[0, 1], [splitStart - .2, 1], [splitStart, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
@@ -116,7 +119,6 @@ function drawing(id, compact) {
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}
-      ${text(center, 69, "30,000 lines changed", "pr-breakdown-count")}${text(center, 94, "700 files changed", "pr-breakdown-detail")}
       ${opacity([[0, 1], [splitStart - .2, 1], [splitStart + .2, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
     </g>
     <g class="pr-breakdown-result" opacity="1">${text(center, 28, "Six stacked PRs", "pr-breakdown-stage")}

@@ -33,8 +33,8 @@ function definitions(prefix) {
   </defs>`;
 }
 
-function counts(x, y, added, removed) {
-  return `<text x="${x}" y="${y}" class="pr-breakdown-count pr-card-art-count" text-anchor="middle"><tspan class="pr-breakdown-added">+${number(added)}</tspan><tspan dx="12" class="pr-breakdown-removed">−${number(removed)}</tspan></text>`;
+function counts(x, y, added, removed, anchor = "middle", files) {
+  return `<text x="${x}" y="${y}" class="pr-breakdown-count pr-card-art-count" text-anchor="${anchor}"><tspan class="pr-breakdown-added">+${number(added)}</tspan><tspan dx="12" class="pr-breakdown-removed">−${number(removed)}</tspan>${files ? `<tspan dx="16" fill="#22251F">${number(files)} files</tspan>` : ""}</text>`;
 }
 
 function check(part, animated) {
@@ -63,7 +63,7 @@ function card(prefix, part, compact = false) {
     ${prCardRule(12, ruleY, part.width - 24)}
     ${prCardIcon(12, part.height - 27, 16)}
     <text x="12" y="${titleY}" class="pr-card-art-title" text-anchor="start" dominant-baseline="central" style="font-size:${titleSize}px">${title}</text>
-    <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(part.width / 2, part.height - 12, part.added, part.removed)}</g>${check(part, true)}
+    <g class="pr-breakdown-part-counts${compact && narrow ? " pr-card-art-narrow-counts" : ""}">${counts(34, part.height - 12, part.added, part.removed, "start")}</g>${check(part, true)}
   </g>`;
 }
 
@@ -87,6 +87,7 @@ function blob(prefix, { x = 200, y = 178, width = 360, height = 310, compact = f
       <text x="${inset}" y="${compact ? 84 : 111}" class="pr-card-art-title" style="font-size:${compact ? 25 : 30}px">Do a bunch of stuff</text>
       <text x="${inset}" y="${compact ? 119 : 157}" class="pr-card-art-copy"><tspan x="${inset}">A robust, seamless solution.</tspan><tspan x="${inset}" dy="23">Refactor, fix, and future-proof.</tspan></text>
       ${prCardRule(inset, height - 42, width - inset * 2)}
+      ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}
       ${opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .5, 0], [resetEnd + .8, 1], [cycle, 1]])}
     </g>
     ${opacity([[0, 1], [6.3, 1], [6.5, 0], [resetEnd, 0], [resetEnd + .2, 1], [cycle, 1]])}
@@ -101,7 +102,6 @@ function desktop(id) {
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(380, 64, "One huge PR", "pr-breakdown-stage")}
-      ${counts(380, 116, totals.added, totals.removed)}
       ${opacity([[0, 1], [6.3, 1], [6.7, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
     </g>
     <g class="pr-breakdown-result" opacity="1">
@@ -136,7 +136,7 @@ function mobile(id) {
     <desc id="${prefix}-description">One undivided PR gathers comments and rejection marks. Its four parts appear one at a time, then move apart into a stack: bug fix and class refactor in parallel, foundational work above them, and feature at the top. The combined counter disappears and smaller counts and approval checks appear.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
-      ${text(180, 28, "One huge PR", "pr-breakdown-stage")}${counts(180, 82, totals.added, totals.removed)}
+      ${text(180, 28, "One huge PR", "pr-breakdown-stage")}
       ${opacity([[0, 1], [6.3, 1], [6.7, 0], [resetEnd + .2, 0], [resetEnd + .5, 1], [cycle, 1]])}
     </g>
     <g class="pr-breakdown-result" opacity="1">
