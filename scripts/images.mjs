@@ -34,7 +34,8 @@ export async function generateImage(src, widths, options = {}) {
   const metadata = await Image(inputPath, {
     widths,
     formats: ["avif", "webp"],
-    sharpAvifOptions: { quality: 65 },
+    // The faster preset keeps fine grain close to the previous quality 65/effort 4 output.
+    sharpAvifOptions: { quality: 66, effort: 3 },
     sharpWebpOptions: { quality: 85 },
     ...options,
     // Eleventy keys widths, formats, and Sharp options itself. Add the inputs it omits.

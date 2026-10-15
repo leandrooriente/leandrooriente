@@ -82,8 +82,12 @@ export default function (eleventyConfig) {
   let footerArtworkUrl;
   eleventyConfig.on("eleventy.before", async () => {
     await prepareAssets(staticAssets);
-    stylesheetUrl = await buildStylesheet();
-    const footerArtwork = await generateImage("/assets/illustrations/forest-lookout-firewatch.png", [2172]);
+    const [stylesheet, footerArtwork] = await Promise.all([
+      buildStylesheet(),
+      // The footer SVG uses WebP directly; an AVIF would never be requested.
+      generateImage("/assets/illustrations/forest-lookout-firewatch.png", [2172], { formats: ["webp"] })
+    ]);
+    stylesheetUrl = stylesheet;
     footerArtworkUrl = footerArtwork.webp[0].url;
   });
   eleventyConfig.addGlobalData("stylesheetUrl", () => stylesheetUrl);
