@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Image from "@11ty/eleventy-img";
 import { publishAsset } from "./assets.mjs";
+import { imageEncoderFingerprint } from "./image-cache.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const imageDirectory = "assets/images";
@@ -36,7 +37,13 @@ export async function generateImage(src, widths, options = {}) {
     sharpAvifOptions: { quality: 65 },
     sharpWebpOptions: { quality: 85 },
     ...options,
-    manualCacheKey: { sourceHash, transform: options.manualCacheKey ?? null },
+    // Eleventy keys widths, formats, and Sharp options itself. Add the inputs it omits.
+    manualCacheKey: {
+      sourceHash,
+      encoder: imageEncoderFingerprint,
+      transform: options.manualCacheKey ?? null,
+      transformSource: options.transform?.toString() ?? null
+    },
     outputDir: path.join(root, "tmp/image-cache"),
     urlPath: `/${imageDirectory}/`
   });
