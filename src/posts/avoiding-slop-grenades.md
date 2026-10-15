@@ -78,7 +78,7 @@ You’ve prepared the code and spent time breaking it into focused, reviewable p
 
 PR descriptions are a powerful tool, but agents without proper guidance often fill them with references to what changed and where. That information is already in the diff, so repeating it adds noise. Focus the description on raising reviewers’ confidence without overburdening them.
 
-Test coverage shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results prove it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document can capture prior alignment with leadership.
+Test coverage shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results prove it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document captures prior alignment with leadership.
 
 The more relevant context you provide, the less time reviewers spend finding what’s missing and the more they can focus on whether this is the right way to solve the problem.
 
