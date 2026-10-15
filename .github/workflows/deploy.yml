@@ -34,6 +34,22 @@ jobs:
       - name: Install the pinned build dependencies
         run: npm ci
 
+      - name: Test image cache invalidation
+        run: node --test scripts/images.test.mjs
+
+      - name: Identify the image encoder
+        id: image-encoder
+        run: node scripts/image-cache.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Restore generated image encodings
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: tmp/image-cache
+          # Code/content edits save new derivatives without blocking reuse of existing ones.
+          key: images-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.image-encoder.outputs.fingerprint }}-${{ hashFiles('assets/**', 'src/**', 'scripts/**', 'eleventy.config.js', 'package-lock.json') }}
+          restore-keys: |
+            images-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.image-encoder.outputs.fingerprint }}-
+
       - name: Build and deploy the site
         run: |
           if [[ -z "$CLOUDFLARE_API_TOKEN" ]]; then
