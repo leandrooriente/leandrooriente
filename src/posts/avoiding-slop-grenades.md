@@ -44,7 +44,7 @@ Once the agent has a first draft ready, it’s time to review and refine the cha
 
 As the author, you have the requirements, constraints, and reasons for the change fresh in your mind. It’s cheaper for you to catch inconsistencies now than for a reviewer who first has to build that context and understand why the PR exists.
 
-Be your agent’s toughest reviewer. Challenge every design decision, new abstraction, and interface change. If something feels odd, it’s on you to understand why it exists and whether it makes sense to keep it.
+Be your agent’s toughest reviewer. Challenge design decisions, new abstractions, and unrelated interface changes. If something feels out of place, decide whether it belongs in another PR or should be removed. Assume each change is unnecessary until you can justify keeping it.
 
 Agents often optimize for scenarios that aren’t realistic for the software you’re building. You might be tempted to keep those additions as safeguards for the future, but every addition is more code to maintain, test, and change as your feature evolves. Complexity always comes at a cost.
 
