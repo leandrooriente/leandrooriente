@@ -4,7 +4,7 @@ import { prBoardProgress, prBoardToggle, prCardDefinitions, prCardSurface, prCar
 const resetStart = 19.5;
 const resetFadeEnd = resetStart + .2;
 const resetEnd = resetStart + .4;
-const cycle = resetEnd + .7;
+const cycle = resetEnd + .2;
 // Apple uses this curve for transform transitions on its MacBook Air page.
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
@@ -15,7 +15,7 @@ const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 142, height: 100, added: 200, removed: 50, from: [228, 388], to: [213, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
   { key: "refactor", label: "Class refactor", ink: "ochre", width: 162, height: 100, added: 950, removed: 250, from: [370, 388], to: [385, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
   { key: "foundation", label: "Foundational work", ink: "olive", width: 264, height: 100, added: 780, removed: 170, from: [248, 288], to: [248, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 11.9 },
-  { key: "feature", label: "Feature", ink: "terra", width: 142, height: 110, added: 520, removed: 80, from: [309, 178], to: [309, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
+  { key: "feature", label: "Upload API", ink: "terra", width: 156, height: 110, added: 520, removed: 80, from: [302, 178], to: [302, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
 ];
 const breakdownStart = parts[0].reveal;
 const actionStart = parts[0].start;
@@ -62,7 +62,7 @@ function opacity(frames, shiftOpening = true) {
 }
 
 function openingOpacity() {
-  return opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .1, 0], [resetEnd + .5, 1], [cycle, 1]]);
+  return opacity([[0, 0], [.35, 1], [2.4 + openingHold, 1], [2.6 + openingHold, 0], [duration, 0]], false);
 }
 
 function definitions(prefix) {
@@ -134,7 +134,7 @@ function blob(prefix, { x = 145, y = 144, width = 470, height = 316, compact = f
     ${prCardSurface(prefix, width, height)}
     <g class="pr-card-art-draft">
       ${prCardIcon(inset, 18, 26)}
-      <text x="${inset}" y="${compact ? 68 : 72}" class="pr-card-art-title" style="font-size:${compact ? 24 : 26}px">Do a bunch of stuff</text>
+      <text x="${inset}" y="${compact ? 68 : 72}" class="pr-card-art-title" style="font-size:${compact ? 21 : 26}px">Implement new upload API</text>
       <text x="${inset}" y="${copyY}" class="pr-card-art-copy" style="font-size:${compact ? 12.5 : 16}px">${description.map((line, index) => `<tspan x="${inset}" y="${copyY + index * lineHeight}">${line}</tspan>`).join("")}</text>
       ${prCardRule(inset, height - 42, width - inset * 2)}
       ${counts(inset, height - 18, totals.added, totals.removed, "start", 75)}

@@ -6,7 +6,7 @@ const splitEnd = 10.5;
 const resetStart = 23;
 const resetFadeEnd = resetStart + .2;
 const resetEnd = resetStart + .4;
-const cycle = resetEnd + .7;
+const cycle = resetEnd + .2;
 const ease = "0.35 0 0.2 1";
 const hold = "0 0 1 1";
 // Hold the opening card for four extra seconds after its review marks arrive.
@@ -44,7 +44,7 @@ function opacity(frames, shiftOpening = true) {
 }
 
 function openingOpacity() {
-  return opacity([[0, 1], [2.4, 1], [2.6, 0], [resetEnd + .1, 0], [resetEnd + .5, 1], [cycle, 1]]);
+  return opacity([[0, 0], [.35, 1], [2.4 + openingHold, 1], [2.6 + openingHold, 0], [duration, 0]], false);
 }
 
 function definitions(prefix) {

@@ -60,9 +60,13 @@ If the feature depends on the bug fix, put the fix in a base PR and stack the fe
 
 The feature itself may still be too large for one review. Split it into modules across dependent or parallel PRs, then connect them in a later change. Each intermediate state needs to work and be testable. Keep unfinished behavior behind a feature flag where appropriate, preserve compatibility with existing callers, and maintain a shared explanation of how the pieces fit together.
 
+{% uploadApiRollout "upload-api-rollout" %}
+
 Your agent is more than capable of solving all these issues in a single PR, but remember what you’re optimizing for: alignment. Reviewers are more likely to understand and approve changes with a narrow scope.
 
-The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch thousands of lines of code. Introduce the new interface alongside the old one, keeping the old interface in place until every caller has migrated. Then add a codemod, a script that updates callers to use the new interface. Add tests covering both the interface and the transformation across real usage patterns.
+The same principle helps with broad interface migrations. Changing the interface of a heavily used method might touch thousands of lines of code.
+
+Introduce the new interface alongside the old one, keeping the old interface in place until every caller has migrated. Then add a codemod, a script that updates callers to use the new interface. Add tests covering both the interface and the transformation across real usage patterns.
 
 {% codemodBreakdown "codemod-migration" %}
 

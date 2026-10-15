@@ -6,6 +6,7 @@
   document.querySelectorAll("[data-pr-breakdown]").forEach((figure) => {
     if (figure.dataset.prBreakdownReady) return;
     const button = figure.querySelector("[data-pr-breakdown-toggle]");
+    const restart = figure.querySelector("[data-pr-breakdown-restart]");
     const viewport = figure.querySelector("[data-pr-breakdown-drawing]");
     const layouts = [
       { drawing: figure.querySelector("svg.pr-breakdown-desktop"), progress: figure.querySelector('[data-pr-breakdown-progress="desktop"]'), wide: true, initialized: false },
@@ -26,6 +27,7 @@
         if (layout.initialized) return;
         // Prepare the first frame while paused; viewport changes only resume it.
         layout.timelines.forEach((timeline) => {
+          timeline.setCurrentTime(0);
           timeline.querySelectorAll("animate, animateMotion, animateTransform, set").forEach((animation) => {
             animation.beginElement();
           });
@@ -53,11 +55,20 @@
       button.setAttribute("aria-label", label);
       button.setAttribute("title", label);
       button.setAttribute("aria-pressed", String(paused));
+      if (restart) {
+        restart.hidden = !active;
+        restart.disabled = !active?.initialized;
+      }
     }
 
     button.addEventListener("click", () => {
       manualPause = !(manualPause ?? reducedMotion.matches);
       prepareLayouts();
+      update();
+    });
+    restart?.addEventListener("click", () => {
+      layouts.forEach(({ timelines }) => timelines.forEach((timeline) => timeline.pauseAnimations()));
+      layouts.forEach(({ timelines }) => timelines.forEach((timeline) => timeline.setCurrentTime(0)));
       update();
     });
     reducedMotion.addEventListener("change", () => {

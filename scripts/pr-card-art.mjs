@@ -1,10 +1,13 @@
 // Shared print treatment for the illustrated pull requests in the article.
 export function prBoardProgress(duration) {
-  return ["desktop", "mobile"].map((layout) => `<svg class="pr-breakdown-progress pr-breakdown-progress-${layout}" data-pr-breakdown-progress="${layout}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 3" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="0" height="3"><animate attributeName="width" from="0" to="100" dur="${duration}s" calcMode="linear" repeatCount="indefinite" begin="indefinite"/></rect></svg>`).join("");
+  return ["desktop", "mobile"].map((layout) => `<svg class="pr-breakdown-progress pr-breakdown-progress-${layout}" data-pr-breakdown-progress="${layout}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 3" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="0" height="3"><animate attributeName="width" values="0;100;100" keyTimes="0;${(duration - .2) / duration};1" dur="${duration}s" calcMode="linear" repeatCount="indefinite" begin="indefinite"/></rect></svg>`).join("");
 }
 
 export function prBoardToggle(id) {
-  return `<button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-label="Pause animation" title="Pause animation" aria-controls="${id}-drawing" hidden><svg class="pr-breakdown-pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6V18M16 6V18"/></svg><svg class="pr-breakdown-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5L19 12L8 19Z"/></svg></button>`;
+  return `<div class="pr-breakdown-controls">
+    <button class="pr-breakdown-toggle" type="button" data-pr-breakdown-toggle aria-pressed="false" aria-label="Pause animation" title="Pause animation" aria-controls="${id}-drawing" hidden><svg class="pr-breakdown-pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6V18M16 6V18"/></svg><svg class="pr-breakdown-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5L19 12L8 19Z"/></svg></button>
+    <button class="pr-breakdown-toggle pr-breakdown-restart" type="button" data-pr-breakdown-restart aria-label="Restart animation" title="Restart animation" aria-controls="${id}-drawing" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10a9 9 0 1 1 2.7 8.4M3 4v6h6"/></svg></button>
+  </div>`;
 }
 
 export function prCardDefinitions(prefix) {
