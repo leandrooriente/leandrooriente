@@ -5,6 +5,9 @@ import { addNavigationPrefetch, cleanPageUrl } from "./scripts/navigation-prefet
 import { phoneDemo } from "./scripts/phone-media.mjs";
 import { mimirPipeline } from "./scripts/mimir-pipeline.mjs";
 import { battlestationDiagram } from "./scripts/battlestation-diagrams.mjs";
+import { prBreakdown } from "./scripts/pr-breakdown.mjs";
+import { codemodBreakdown } from "./scripts/codemod-breakdown.mjs";
+import { uploadApiRollout } from "./scripts/upload-api-rollout.mjs";
 
 export default function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
@@ -19,10 +22,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("phoneDemo", phoneDemo);
   eleventyConfig.addShortcode("mimirPipeline", mimirPipeline);
   eleventyConfig.addShortcode("battlestationDiagram", battlestationDiagram);
+  eleventyConfig.addShortcode("prBreakdown", prBreakdown);
+  eleventyConfig.addShortcode("codemodBreakdown", codemodBreakdown);
+  eleventyConfig.addShortcode("uploadApiRollout", uploadApiRollout);
   eleventyConfig.addFilter("assetUrl", assetUrl);
   eleventyConfig.addFilter("cleanPageUrl", cleanPageUrl);
   eleventyConfig.addWatchTarget("assets/");
   eleventyConfig.addWatchTarget("scripts/battlestation-diagrams.mjs");
+  eleventyConfig.addWatchTarget("scripts/pr-breakdown.mjs");
+  eleventyConfig.addWatchTarget("scripts/codemod-breakdown.mjs");
+  eleventyConfig.addWatchTarget("scripts/upload-api-rollout.mjs");
+  eleventyConfig.addWatchTarget("scripts/pr-card-art.mjs");
 
   // Refresh the known routes on every build, including added or removed posts.
   let pageUrls = new Set();
@@ -74,7 +84,8 @@ export default function (eleventyConfig) {
     "assets/videos/mimir-demo.mp4",
     "assets/scripts/article-progress.js",
     "assets/scripts/mimir-pipeline.js",
-    "assets/scripts/phone-media.js"
+    "assets/scripts/phone-media.js",
+    "assets/scripts/pr-breakdown.js"
   ];
 
   // Prepare dependencies before hashing CSS, then render pages with current URLs.

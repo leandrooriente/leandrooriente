@@ -51,6 +51,7 @@ The current source builds Home, Writing, and these published articles:
 
 - `/writing/one-battlestation-two-computers`
 - `/writing/an-answer-should-be-easy-to-check`
+- `/writing/avoiding-slop-grenades`
 
 `seeing-the-work-while-it-happens.md` remains a draft. Its extensionless and `.html` URLs should return 404 in a regular build. Front matter is the authority for publication status.
 
