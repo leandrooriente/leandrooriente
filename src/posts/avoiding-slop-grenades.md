@@ -42,7 +42,7 @@ For example, a spec for a new internal upload API could look like this:
 
 Once the agent has a first draft ready, it’s time to review and refine the changes.
 
-As the author, you have the requirements, constraints, and reasons for the change fresh in your mind. This initial review is where you should catch anything that doesn’t belong, while that context is still fresh.
+As the author, you have the requirements, constraints, and reasons for the change fresh in your mind. It’s cheaper for you to catch inconsistencies now than for a reviewer who first has to build that context and understand why the PR exists.
 
 Be your agent’s toughest reviewer. Challenge every design decision, new abstraction, and interface change. If something feels odd, it’s on you to understand why it exists and whether it makes sense to keep it.
 
