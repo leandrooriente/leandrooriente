@@ -22,7 +22,7 @@ At work, we’ve started calling this kind of handoff a “[slop grenade](https:
 
 If you work on an established codebase where a team maintains a system with existing users, conventions, and years of decisions behind it, you might already have been a victim of a slop grenade.
 
-The reality is that code is becoming cheap. The bottleneck has shifted from writing lines of code to getting people aligned, whether that’s reviewing a PR, discussing a technical design, or coordinating a project across teams.
+The reality is that code is becoming cheap. The bottleneck has shifted from writing it to getting people aligned, whether that’s reviewing a PR, discussing a technical design, or coordinating a project across teams.
 
 That makes optimizing for alignment an essential part of the work. Your job is to prepare each PR, document, or meeting with care, focus, and empathy for the people on the other end.
 
