@@ -170,6 +170,10 @@ main:focus { outline: none; }
 
 /* Large, light serif headings give the articles an unhurried editorial rhythm. */
 .article-page { --article-width: 680px; --article-hero-width: 960px; }
+/* The reading indicator takes over the top edge after the article introduction. */
+.article-progress { position: fixed; z-index: 2; inset: 0 0 auto; height: 3px; background: var(--rule); opacity: 0; pointer-events: none; transition: opacity 180ms ease-out; }
+.article-progress.is-visible { opacity: 1; }
+.article-progress-fill { display: block; width: 100%; height: 100%; background: var(--red); transform: scaleX(var(--article-progress, 0)); transform-origin: left center; transition: transform 100ms linear; }
 .article-shell { padding-block: 64px 80px; }
 .article-shell > article { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--article-width)) minmax(0, 1fr); }
 .article-reading { grid-column: 2; min-width: 0; }
@@ -420,6 +424,11 @@ main:focus { outline: none; }
 
 @media (prefers-reduced-motion: reduce) {
   a { transition: none; }
+  .article-progress, .article-progress-fill { transition: none; }
+}
+
+@media print {
+  .article-progress { display: none; }
 }
 
 @media (forced-colors: active) {
