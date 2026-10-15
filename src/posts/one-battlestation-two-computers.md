@@ -7,6 +7,7 @@ deck: "Sharing my desk between two Macs, with a USB switch and DDC to make the m
 description: "How I share one desk between a MacBook Pro and a Mac mini, using a USB switch, a small Swift helper, and DDC/CI to switch the monitor automatically."
 summary: "Making the monitor follow my USB switch so I can share one desk between two computers."
 publicationYear: 2026
+publicationMonth: "2026-10"
 order: 0
 illustration: "/assets/illustrations/battlestation-editorial-v2.png"
 illustrationAlt: "A hand presses one switch to share a monitor, split keyboard, and mouse between a laptop and a small desktop computer."

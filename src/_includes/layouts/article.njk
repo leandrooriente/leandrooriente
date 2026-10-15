@@ -8,7 +8,7 @@ navigation: writing
     <header class="article-heading">
       <h1 class="article-title" id="article-title">{{ title }}</h1>
       <p class="article-deck">{{ deck }}</p>
-      <p class="article-meta">By <a href="/" rel="author">{{ site.author.name }}</a> <span aria-hidden="true">—</span> {% if draft %}Draft{% elif publishedOn %}Published <time datetime="{{ publishedOn }}">{{ publishedOn | displayDate }}</time>{% else %}Published in <time datetime="{{ publicationYear }}">{{ publicationYear }}</time>{% endif %} <span aria-hidden="true">—</span> {{ content | readingMinutes(title, deck) }} minute read</p>
+      <p class="article-meta">By <a href="/" rel="author">{{ site.author.name }}</a> <span aria-hidden="true">—</span> {% if draft %}Draft{% elif publishedOn or publicationMonth %}Published in <time datetime="{{ publishedOn or publicationMonth }}">{{ (publishedOn or publicationMonth) | displayDate }}</time>{% else %}Published in <time datetime="{{ publicationYear }}">{{ publicationYear }}</time>{% endif %} <span aria-hidden="true">—</span> {{ content | readingMinutes(title, deck) }} minute read</p>
     </header>
     {% if illustration %}
     <figure class="article-illustration">

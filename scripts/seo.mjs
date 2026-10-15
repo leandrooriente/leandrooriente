@@ -71,7 +71,8 @@ export const sitemapPages = (pages) => pages.filter(({ url, data }) =>
 ).sort((a, b) => cleanPageUrl(a.url).localeCompare(cleanPageUrl(b.url)));
 
 export function displayDate(value) {
+  const date = /^\d{4}-\d{2}$/u.test(value) ? `${value}-01` : value;
   return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric", month: "long", year: "numeric", timeZone: "UTC"
-  }).format(new Date(`${value}T00:00:00Z`));
+    month: "long", year: "numeric", timeZone: "UTC"
+  }).format(new Date(`${date}T00:00:00Z`));
 }
