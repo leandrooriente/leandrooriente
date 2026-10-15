@@ -17,12 +17,12 @@ const sourceTop = 67;
 const footerY = 516;
 const drawingHeight = 530;
 const parts = [
-  { key: "interface", label: "1 · Add interface + tests", changed: 600, desktopWidth: 252, mobileWidth: 216, y: 422, approved: 11 },
-  { key: "codemod", label: "2 · Add codemod + tests", changed: 400, desktopWidth: 256, mobileWidth: 224, y: 306, approved: 12.15 },
-  { key: "first-batch", label: "3 · First batch", mobileLabel: "Batch 1", changed: 9600, desktopWidth: 204, mobileWidth: 104, desktopCenter: 148, mobileCenter: 62, y: 190, approved: 13.65 },
-  { key: "second-batch", label: "4 · Second batch", mobileLabel: "Batch 2", changed: 9600, desktopWidth: 204, mobileWidth: 104, desktopCenter: 380, mobileCenter: 180, y: 190, approved: 13.65 },
-  { key: "third-batch", label: "5 · Third batch", mobileLabel: "Batch 3", changed: 9400, desktopWidth: 204, mobileWidth: 104, desktopCenter: 612, mobileCenter: 298, y: 190, approved: 13.65 },
-  { key: "cleanup", label: "6 · Drop codemod + old API", changed: 400, desktopWidth: 296, mobileWidth: 256, y: 74, approved: 15.15 }
+  { key: "interface", label: "1 · Add interface + tests", added: 600, removed: 0, desktopWidth: 252, mobileWidth: 216, y: 422, approved: 11 },
+  { key: "codemod", label: "2 · Add codemod + tests", added: 400, removed: 0, desktopWidth: 256, mobileWidth: 224, y: 306, approved: 12.15 },
+  { key: "first-batch", label: "3 · First batch", mobileLabel: "Batch 1", added: 4800, removed: 4800, desktopWidth: 204, mobileWidth: 112, desktopCenter: 148, mobileCenter: 62, y: 190, approved: 13.65 },
+  { key: "second-batch", label: "4 · Second batch", mobileLabel: "Batch 2", added: 4800, removed: 4800, desktopWidth: 204, mobileWidth: 112, desktopCenter: 380, mobileCenter: 180, y: 190, approved: 13.65 },
+  { key: "third-batch", label: "5 · Third batch", mobileLabel: "Batch 3", added: 4700, removed: 4700, desktopWidth: 204, mobileWidth: 112, desktopCenter: 612, mobileCenter: 298, y: 190, approved: 13.65 },
+  { key: "cleanup", label: "6 · Drop codemod + old API", added: 0, removed: 400, desktopWidth: 296, mobileWidth: 256, y: 74, approved: 15.15 }
 ].map((part, index) => ({ ...part, reveal: 2.6 + index * .9 }));
 const breakdownStart = parts[0].reveal;
 const actionEnd = Math.max(...parts.map((part) => part.approved + .25));
@@ -33,6 +33,7 @@ function actionTime(at) {
 }
 
 const number = (value) => value.toLocaleString("en-US");
+const compactNumber = (value) => value >= 1000 ? `${value / 1000}k` : number(value);
 const text = (x, y, value, className, anchor = "middle", attributes = "") => `<text x="${x}" y="${y}" class="${className}" text-anchor="${anchor}" ${attributes}>${value}</text>`;
 
 function timing(frames, shiftOpening = true) {
@@ -70,7 +71,7 @@ function card(prefix, part, index, { center, compact }) {
       ${text(narrow ? 8 : 12, compact ? 22 : 23, narrow ? part.mobileLabel : part.label, titleClass, "start")}
       ${prCardRule(narrow ? 8 : 12, 35, width - (narrow ? 16 : 24))}
       ${prCardIcon(narrow ? 8 : 13, narrow ? 44 : 42, narrow ? 12 : 17)}
-      ${text(narrow ? 26 : 38, 55, narrow ? `${part.changed / 1000}k lines` : `${number(part.changed)} lines changed`, "pr-card-art-count pr-breakdown-added", "start", narrow ? 'style="font-size:12px"' : "")}
+      <text x="${narrow ? 26 : 38}" y="55" class="pr-breakdown-count pr-card-art-count" text-anchor="start"${narrow ? ' style="font-size:11px"' : ""}><tspan class="pr-breakdown-added">+${narrow ? compactNumber(part.added) : number(part.added)}</tspan><tspan dx="${narrow ? 5 : 12}" class="pr-breakdown-removed">−${narrow ? compactNumber(part.removed) : number(part.removed)}</tspan></text>
     </g>
     <g class="pr-breakdown-check" transform="translate(${width - (narrow ? 12 : 22)} 49)" opacity="1" aria-hidden="true"><circle r="${narrow ? 7 : 9.5}"/><path d="${narrow ? "M-3.5 0L-1 2.5L4-3.5" : "M-5 0L-1 4L6-5"}"/>
       ${opacity([[0, 0], [part.approved, 0], [part.approved + .25, 1], [resetFadeEnd, 1], [resetFadeEnd + .05, 0], [cycle, 0]])}
@@ -144,7 +145,7 @@ function drawing(id, compact) {
   const decorations = prCardReviewMarks(initialLayout, comment, cross);
   return `<svg class="pr-breakdown-svg pr-breakdown-${compact ? "mobile" : "desktop"}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${drawingHeight}" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large interface migration becomes six focused pull requests</title>
-    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts move into four tiers. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches in parallel; remove the codemod and deprecated interface after all batches finish. Individual changed-line counts sum to 30,000. Approvals send connectors upward, branching into the three parallel batches and joining before cleanup. Counts are illustrative; files can recur between PRs.</desc>
+    <desc id="${prefix}-description">One undivided pull request changes 30,000 lines across 700 files to introduce a new interface for a widely used method. Its six parts move into four tiers. Read bottom to top: add the new interface and tests; add the codemod and tests; apply first, second, and third batches in parallel; remove the codemod and deprecated interface after all batches finish. The individual additions and removals total 30,000 changed lines. Approvals send connectors upward, branching into the three parallel batches and joining before cleanup. Counts are illustrative; files can recur between PRs.</desc>
     ${definitions(prefix)}
     <g class="pr-breakdown-total" opacity="0">
       ${text(center, 28, "One huge migration PR", "pr-breakdown-stage")}

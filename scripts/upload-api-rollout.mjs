@@ -10,10 +10,10 @@ const flagStart = 9.8;
 const flagEnd = 10.1;
 
 const parts = [
-  { key: "flag", title: "Add API flag", detail: "Off by default", reveal: 0, approved: 2.2 },
-  { key: "validation", title: "PDF validation", detail: "PDF only · up to 15 MB", reveal: 3.2, approved: 4.9 },
-  { key: "handler", title: "Upload handler", detail: "Reuse legacy transport", reveal: 3.2, approved: 4.9 },
-  { key: "endpoint", title: "Connect endpoint", detail: "Existing auth middleware", reveal: 6.05, approved: 8.3 }
+  { key: "flag", title: "Add API flag", detail: "Off by default", added: 65, removed: 0, reveal: 0, approved: 2.2 },
+  { key: "validation", title: "PDF validation", detail: "PDF only · up to 15 MB", added: 180, removed: 12, reveal: 3.2, approved: 4.9 },
+  { key: "handler", title: "Upload handler", detail: "Reuse legacy transport", added: 240, removed: 35, reveal: 3.2, approved: 4.9 },
+  { key: "endpoint", title: "Connect endpoint", detail: "Existing auth middleware", added: 140, removed: 8, reveal: 6.05, approved: 8.3 }
 ];
 
 const layouts = {
@@ -90,7 +90,7 @@ function card(prefix, part, geometry, compact) {
     <text x="12" y="${compact ? 45 : 49}" class="pr-card-art-copy upload-rollout-card-detail" text-anchor="start" style="font-size:${detailSize}px">${part.detail}</text>
     ${prCardRule(12, height - 30, width - 24)}
     ${prCardIcon(12, height - 25, 15)}
-    <text x="34" y="${height - 11}" class="pr-card-art-copy upload-rollout-tests" text-anchor="start" style="font-size:${compact ? 12 : 14}px">Tests included</text>
+    <g class="pr-breakdown-part-counts${narrow ? " pr-card-art-narrow-counts" : ""}"><text x="34" y="${height - 11}" class="pr-breakdown-count pr-card-art-count" text-anchor="start"><tspan class="pr-breakdown-added">+${part.added}</tspan><tspan dx="12" class="pr-breakdown-removed">−${part.removed}</tspan></text></g>
     ${check(part, geometry)}
   </g>`;
 }
