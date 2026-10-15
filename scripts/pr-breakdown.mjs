@@ -15,7 +15,7 @@ const parts = [
   { key: "bug", label: "Bug fix", ink: "pale", width: 142, height: 100, added: 200, removed: 50, from: [228, 388], to: [213, 436], reveal: 2.6, start: 6.5, end: 8.5, approved: 9.7 },
   { key: "refactor", label: "Class refactor", ink: "ochre", width: 162, height: 100, added: 950, removed: 250, from: [370, 388], to: [385, 436], reveal: 3.5, start: 6.5, end: 8.5, approved: 10.3 },
   { key: "foundation", label: "Foundational work", ink: "olive", width: 264, height: 100, added: 780, removed: 170, from: [248, 288], to: [248, 270], reveal: 4.4, start: 6.5, end: 8.5, approved: 11.9 },
-  { key: "feature", label: "Upload API", ink: "terra", width: 156, height: 110, added: 520, removed: 80, from: [302, 178], to: [302, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
+  { key: "feature", label: "Upload API", ink: "terra", width: 166, height: 110, added: 520, removed: 80, from: [297, 178], to: [297, 94], reveal: 5.3, start: 6.5, end: 8.5, approved: 13.05 }
 ];
 const breakdownStart = parts[0].reveal;
 const actionStart = parts[0].start;
@@ -177,7 +177,7 @@ function mobile(id) {
     bug: { width: 136, height: 82, from: [41, 258], to: [26, 334] },
     refactor: { width: 142, height: 82, from: [177, 258], to: [192, 334] },
     foundation: { width: 216, height: 70, from: [72, 188], to: [72, 181] },
-    feature: { width: 136, height: 64, from: [112, 124], to: [112, 58] }
+    feature: { width: 138, height: 64, from: [111, 124], to: [111, 58] }
   };
   return `<svg class="pr-breakdown-svg pr-breakdown-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 470" role="img" aria-labelledby="${prefix}-title ${prefix}-description">
     <title id="${prefix}-title">One large pull request becomes four smaller reviews</title>
