@@ -30,7 +30,7 @@ Let’s focus on how to use agents to prepare pull requests that are easier for 
 
 ## If it doesn’t spark joy, toss it away
 
-Now that writing code is no longer the bottleneck, spend more time getting your agent on the right track before it starts. The more care you put into the specification, the better its chances of building what you actually need.
+Code is cheap, but weak specs are not. Get your agent on the right track from the start. The more care you put into the specification, the better its chances of building what you actually need.
 
 As agents become more capable and autonomous, they can carry a mistaken assumption through more of the work before you review it. An ambiguous or incomplete prompt can leave an entire feature built around an abstraction that doesn’t fit the problem.
 
