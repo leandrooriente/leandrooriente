@@ -18,17 +18,9 @@
       <p>Include the endpoint in the existing internal SLO. Expect an average of 3,000 requests per minute and a peak of 300 concurrent requests.</p>
     </section>
     <section>
-      <h4>Acceptance criteria</h4>
-      <ul class="tracking-ticket-checklist">
-        <li>Valid PDFs within the size limit upload successfully.</li>
-        <li>Unsupported files and oversized uploads are rejected.</li>
-        <li>Authentication runs through the existing middleware.</li>
-        <li>The endpoint uses the legacy transport with the toggle disabled.</li>
-      </ul>
-    </section>
-    <section>
       <h4>Out of scope</h4>
       <p>Implementing the new transport layer is a separate ticket. This change prepares its rollout through the feature toggle.</p>
+      <p>Do not refactor the existing API. We’ll deprecate it in a separate PR once the new API is fully rolled out.</p>
     </section>
   </div>
   <footer class="tracking-ticket-footer">
