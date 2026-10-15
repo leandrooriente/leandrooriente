@@ -7,6 +7,7 @@ deck: "Keeping agent-generated changes reviewable in an established codebase."
 description: "How to prepare AI-generated pull requests in established codebases, using focused changes, reliable checks, and shared context to respect reviewers’ time."
 summary: "Keeping AI-generated pull requests focused, understandable, and verified before they reach your colleagues."
 publicationYear: 2026
+publishedOn: "2026-10-15"
 order: -1
 illustration: "/assets/illustrations/slop-grenades-editorial-v2.png"
 illustrationAlt: "A grenade explodes into a barrage of pages bearing AI filler phrases while a person shields their head in a trench."

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "battlestation-mobile.report.json",
+    "time": "2026-10-15T19:41:30.096Z",
+    "version": "13.5.0",
+    "form": "mobile",
+    "categories": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 1019.781,
+      "largest-contentful-paint": 2219.781,
+      "speed-index": 1019.781,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.011991246667539219
+    },
+    "transfer": 409187
+  },
+  {
+    "name": "home-desktop.report.json",
+    "time": "2026-10-15T19:41:46.685Z",
+    "version": "13.5.0",
+    "form": "desktop",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 348.006,
+      "largest-contentful-paint": 568.0060000000001,
+      "speed-index": 348.006,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0
+    },
+    "transfer": 554728
+  },
+  {
+    "name": "home-mobile.report.json",
+    "time": "2026-10-15T19:40:27.070Z",
+    "version": "13.5.0",
+    "form": "mobile",
+    "categories": {
+      "performance": 0.91,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 998.6569999999999,
+      "largest-contentful-paint": 3447.9855,
+      "speed-index": 998.6569999999999,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0
+    },
+    "transfer": 723864
+  },
+  {
+    "name": "mimir-desktop.report.json",
+    "time": "2026-10-15T19:42:01.492Z",
+    "version": "13.5.0",
+    "form": "desktop",
+    "categories": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 338.807,
+      "largest-contentful-paint": 1018.807,
+      "speed-index": 338.807,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.002624322155094416
+    },
+    "transfer": 1374103
+  },
+  {
+    "name": "mimir-mobile.report.json",
+    "time": "2026-10-15T19:41:01.286Z",
+    "version": "13.5.0",
+    "form": "mobile",
+    "categories": {
+      "performance": 0.93,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 1176.489,
+      "largest-contentful-paint": 3201.489,
+      "speed-index": 1176.489,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.006555532280156921
+    },
+    "transfer": 1358822
+  }
+]
