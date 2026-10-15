@@ -49,6 +49,7 @@ export default function (eleventyConfig) {
   });
 
   // Publish only the public files; source notes and unused art stay local.
+  // Registering a script here must not invalidate unrelated image encodings.
   const staticAssets = [
     "assets/forest-sprig.svg",
     "assets/favicon.svg",

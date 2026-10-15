@@ -110,12 +110,19 @@ builds the merged `main` commit. Preserve per-PR serialization, current-head/sta
 checks, and the bot comment update behavior.
 
 Both build workflows persist generated image encodings in `tmp/image-cache`,
-separate from the clean `dist` output. Cache keys isolate the runner OS and
-architecture, Node major, dependency lockfile, and image-processing configuration.
-Restore prefixes must retain that complete namespace so encoder or transform
-changes cannot reuse stale encodings. The final asset and template fingerprint
-lets new image selections save their derivatives while reusing unchanged images.
-Update the Node component of both cache keys when changing the build runtime.
+separate from the clean `dist` output. Restore compatibility depends only on the
+runner OS, architecture, and the actual Eleventy Image, Sharp, and native encoder
+versions reported by `scripts/image-cache.mjs`. Site configuration, templates,
+scripts, and dependency-lockfile edits rotate the saved archive without blocking
+reuse of compatible images. Keep source and configuration hashes out of the
+restore prefix.
+
+Each encoded image matches its source contents, requested width/format, Sharp
+options, encoder fingerprint, and transform implementation/parameters. Transform
+callbacks must include closed-over values in `manualCacheKey`; the helper also
+fingerprints the callback source. `scripts/images.test.mjs` verifies reuse and
+invalidation with isolated fixtures. The `images-v2` namespace does not restore
+legacy archives that lack encoder identity, so its first build seeds a new cache.
 
 Preview preparation registers or verifies `preview.leandrooriente.com` through
 the Custom Domains API without uploading a production Worker version. Keep that
