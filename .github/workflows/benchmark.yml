@@ -102,7 +102,7 @@ jobs:
         with:
           name: build-tools-${{ matrix.id }}
           path: tmp/benchmark-results/
-          retention-days: 7
+          retention-days: 30
 
   compare:
     needs: measure
@@ -136,4 +136,4 @@ jobs:
         with:
           name: build-tools-report
           path: tmp/benchmark-report/
-          retention-days: 7
+          retention-days: 30

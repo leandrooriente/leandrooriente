@@ -32,6 +32,7 @@ const report = {
   referenceWarmBuild: { status: "skipped", samplesMs: [], trials: [] },
   warmBuild: { status: "skipped", samplesMs: [], trials: [] },
   coldBuild: { status: "skipped", samplesMs: [], trials: [] },
+  referenceColdBuild: { status: "skipped", samplesMs: [], trials: [] },
   imageTests: { status: "skipped" },
   productionImport: { status: "skipped" }
 };
@@ -236,6 +237,25 @@ async function benchmarkWarm(phase, executable, prefix) {
   phase.encodingsUnchanged = phase.trials.every(trial => trial.cacheUnchanged);
 }
 
+async function benchmarkCold(phase, executable, prefix, count) {
+  for (let index = 1; index <= count; index++) {
+    const label = `${prefix}-${index}`;
+    const retainedCache = `tmp/image-cache-retained-${prefix}-${Date.now()}-${process.pid}-${index}`;
+    let retained = null;
+    try {
+      await rename(cacheDirectory, path.join(siteDirectory, retainedCache));
+      retained = retainedCache;
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+    const trial = { ...await build(label, executable), retainedCache: retained };
+    phase.samplesMs.push(trial.wallMs);
+    await verifyManifest(trial, label);
+    phase.trials.push(trial);
+  }
+  summarize(phase);
+}
+
 async function benchmarkBuilds() {
   let seedCacheBefore;
   try { seedCacheBefore = await cacheSnapshot(); } catch (error) {
@@ -262,22 +282,10 @@ async function benchmarkBuilds() {
   await benchmarkWarm(report.warmBuild, runtime, "warm");
 
   const coldCount = ["node22-npm", "node24-npm", "bun-bun"].includes(variant) ? 3 : 1;
-  for (let index = 1; index <= coldCount; index++) {
-    const label = `cold-${index}`;
-    const retainedCache = `tmp/image-cache-retained-${Date.now()}-${process.pid}-${index}`;
-    let retained = null;
-    try {
-      await rename(cacheDirectory, path.join(siteDirectory, retainedCache));
-      retained = retainedCache;
-    } catch (error) {
-      if (error.code !== "ENOENT") throw error;
-    }
-    const trial = { ...await build(label), retainedCache: retained };
-    report.coldBuild.samplesMs.push(trial.wallMs);
-    await verifyManifest(trial, label);
-    report.coldBuild.trials.push(trial);
+  await benchmarkCold(report.coldBuild, runtime, "cold", coldCount);
+  if (["node24-npm", "bun-bun"].includes(variant)) {
+    await benchmarkCold(report.referenceColdBuild, referenceRuntime, "reference-cold", 1);
   }
-  summarize(report.coldBuild);
 }
 
 async function compatibility() {
@@ -324,6 +332,6 @@ try {
   report.status = errors.length ? "failed" : "passed";
   if (errors.length) report.error = errors.map(({ stage, message }) => `${stage}: ${message}`).join("; ");
   await writeJson("runtime.json", report);
-  console.log(`${variant}: reference warm ${report.referenceWarmBuild.medianMs ?? "n/a"}ms, candidate warm ${report.warmBuild.medianMs ?? "n/a"}ms, cold ${report.coldBuild.medianMs ?? "n/a"}ms; output checks ${report.status}; image tests ${report.imageTests.status}; production import ${report.productionImport.status}`);
+  console.log(`${variant}: reference warm ${report.referenceWarmBuild.medianMs ?? "n/a"}ms, candidate warm ${report.warmBuild.medianMs ?? "n/a"}ms, candidate cold ${report.coldBuild.medianMs ?? "n/a"}ms, reference cold ${report.referenceColdBuild.medianMs ?? "n/a"}ms; output checks ${report.status}; image tests ${report.imageTests.status}; production import ${report.productionImport.status}`);
   if (errors.length) process.exitCode = 1;
 }

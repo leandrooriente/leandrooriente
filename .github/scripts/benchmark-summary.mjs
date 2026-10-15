@@ -136,7 +136,9 @@ for (const [variant, label] of variants) {
     warmInstall: installPhase(record, "warm", 5),
     warmBuild: buildPhase(record, "warmBuild", 7),
     referenceWarmBuild: record.runtime?.referenceWarmBuild ? buildPhase(record, "referenceWarmBuild", 7) : null,
-    coldBuild: buildPhase(record, "coldBuild", ["node22-npm", "node24-npm", "bun-bun"].includes(variant) ? 3 : 1)
+    coldBuild: buildPhase(record, "coldBuild", ["node22-npm", "node24-npm", "bun-bun"].includes(variant) ? 3 : 1),
+    referenceColdBuild: record.runtime?.referenceColdBuild && record.runtime.referenceColdBuild.status !== "skipped"
+      ? buildPhase(record, "referenceColdBuild", 1) : null
   };
   const pairedReference = record.timings.referenceWarmBuild?.medianMs;
   const pairedCandidate = record.timings.warmBuild?.medianMs;
@@ -146,6 +148,15 @@ for (const [variant, label] of variants) {
     candidateMedianMs: pairedCandidate,
     candidateToReferenceTimeRatio: pairedCandidate / pairedReference,
     candidateSpeedup: pairedReference / pairedCandidate
+  } : null;
+  const coldReference = record.timings.referenceColdBuild?.medianMs;
+  const coldCandidate = record.timings.coldBuild?.medianMs;
+  record.pairedColdComparison = coldReference > 0 && coldCandidate > 0 ? {
+    referenceRuntime: "Node 22",
+    referenceMedianMs: coldReference,
+    candidateMedianMs: coldCandidate,
+    candidateToReferenceTimeRatio: coldCandidate / coldReference,
+    candidateSpeedup: coldReference / coldCandidate
   } : null;
   if (!validManifest(record.manifest)) issue(record, "Final output manifest is missing, empty, or malformed");
   if (!validManifest(record.runtime?.referenceManifest)) issue(record, "Node reference output manifest is missing, empty, or malformed");
@@ -206,18 +217,19 @@ const report = {
 const markdown = [
   "# Build tools benchmark", "",
   "Each timing cell shows the median, minimum–maximum, and number of successful trials. All timings are wall-clock durations of the actual executable.", "",
-  "| Variant | Cold install | Warm install | Warm build | Paired Node 22 warm build | Candidate / Node 22 time | Cold build | Output | Compatibility |",
-  "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+  "| Variant | Cold install | Warm install | Warm build | Paired Node 22 warm build | Warm candidate / Node 22 time | Cold build | Paired Node 22 cold build | Cold candidate / Node 22 time | Output | Compatibility |",
+  "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
   ...results.map(record => {
     const comparison = record.outputComparison;
     const outputStatus = comparison ? `${comparison.files} files; ${comparison.matches ? "match" : "MISMATCH"}` : "missing";
     const compatibility = `Images: ${status(record.compatibility.imageTests)}; production: ${status(record.compatibility.productionImport)}`;
     const ratio = record.pairedWarmComparison ? `${record.pairedWarmComparison.candidateToReferenceTimeRatio.toFixed(3)}×` : "not measured";
-    return `| ${[record.label, timing(record.timings.coldInstall), timing(record.timings.warmInstall), timing(record.timings.warmBuild), timing(record.timings.referenceWarmBuild), ratio, timing(record.timings.coldBuild), outputStatus, compatibility].map(cell).join(" | ")} |`;
+    const coldRatio = record.pairedColdComparison ? `${record.pairedColdComparison.candidateToReferenceTimeRatio.toFixed(3)}×` : "not measured";
+    return `| ${[record.label, timing(record.timings.coldInstall), timing(record.timings.warmInstall), timing(record.timings.warmBuild), timing(record.timings.referenceWarmBuild), ratio, timing(record.timings.coldBuild), timing(record.timings.referenceColdBuild), coldRatio, outputStatus, compatibility].map(cell).join(" | ")} |`;
   }), "",
   `Output comparison: ${report.referenceFiles === null ? "reference missing" : `${report.referenceFiles} files in the Node 22 + npm reference`}. ${report.status === "passed" ? "Every variant has complete timing data and matching output." : "Missing data, failed build checks, or differing output are listed below."}`, "",
   "Cold installs start with empty package stores; warm installs start with a populated store but a fresh node_modules directory. Warm builds retain generated image encodings and verify that no encodings were added or rewritten. Cold builds start without generated image encodings. The npm install-flags variant adds --prefer-offline, --no-audit, and --no-fund.", "",
-  "Paired Node 22 timings use the same runner and installed dependency tree as the candidate. The candidate / Node 22 time ratio is below 1 when the candidate is faster; report.json also includes the reciprocal speedup. Missing paired results are allowed for older benchmark artifacts.", "",
+  "Paired Node 22 timings use the same runner and installed dependency tree as the candidate. The candidate / Node 22 time ratio is below 1 when the candidate is faster; report.json also includes the reciprocal speedup. The Node 24 and Bun runtime rows have one additional Node 22 cold build to control for runner differences during image encoding; this single control sample has limited precision. Missing paired results and skipped cold controls are allowed for older benchmark artifacts and the other variants.", "",
   "Package-manager setup, cache restoration and transfer, lockfile migration, reference seeding, compatibility checks, and artifact upload/download are outside the inner install/build timings. The extra Node 22 setup used to create paired measurements is benchmark overhead, not an adoption cost. Use Actions step timelines to assess other overhead. Total benchmark job durations include repeated installs and builds and are not estimates of a single deployment.", "",
   "Node 24 includes a different npm version, so that row measures the combined Node/npm update. CPU and runner differences can affect comparisons between jobs. A variant is suitable for adoption only when its output, image tests, and production-import check all pass.", "",
   "## Versions and preparation", "",
