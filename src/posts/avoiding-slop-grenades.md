@@ -81,3 +81,11 @@ PR descriptions are a powerful tool, but agents without proper guidance often fi
 Test coverage shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results prove it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document captures prior alignment with leadership.
 
 The effort you put into providing the right context shortens the feedback loop with your reviewers. Do this consistently and you build their trust in your work. They’re more likely to pick up your PRs, contribute to the discussion, and help move the change forward.
+
+## Does this apply to you?
+
+This article might not be for you. Maybe you’re working on a greenfield project where detailed specs guide a swarm of agents delivering hundreds of PRs a day, with little human review. Or you’re vibe coding an app with a few friends, and getting to market quickly is the priority. In those settings, you can ignore much of this advice.
+
+But many of us still work in large codebases with established boundaries, where alignment is essential to getting changes shipped. That’s the context behind these practices, and where I hope you’ll find them useful.
+
+With how quickly AI is changing, I might be doing parts of this differently in a few months. Right now, these practices are helping me get large refactors and complex features moving in a large organization, with agents involved throughout the workflow.
