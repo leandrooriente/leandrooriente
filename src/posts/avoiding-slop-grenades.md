@@ -26,7 +26,7 @@ The reality is that code is becoming cheap. The bottleneck has shifted from writ
 
 That makes optimizing for alignment an essential part of the work. Your job is to prepare each PR, document, or meeting with care, focus, and empathy for the people on the other end.
 
-These are the practices that have helped me get my PRs properly reviewed and merged, and my features shipped to production.
+Let’s focus on how to use agents to prepare pull requests that are easier for your teammates to understand and review. These practices have helped me get PRs merged and features shipped to production.
 
 ## If it doesn’t spark joy, toss it away
 
