@@ -70,7 +70,7 @@ Introduce the new interface alongside the old one, keeping the old interface in 
 
 {% codemodBreakdown "codemod-migration" %}
 
-Once the transformation has been reviewed, apply it in manageable batches. Each batch applies the same reviewed transformation, with edge cases already tested in the codemod PR. CI should give reviewers enough confidence to approve, with only exceptions needing a closer look. After all callers have migrated, remove the deprecated interface and the codemod.
+Once the transformation has been reviewed, apply it in manageable batches. Each batch applies the same reviewed transformation, with edge cases already tested in the codemod PR. CI should give reviewers enough confidence to approve. After all callers have migrated, remove the deprecated interface and the codemod.
 
 ## Build trust with your reviewers
 
