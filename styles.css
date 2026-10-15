@@ -440,7 +440,9 @@ main:focus { outline: none; }
 .footer-landscape { --scene-width: 1280px; --print-height: calc(1280px / 3); position: relative; height: calc(var(--scene-width) * 564 / 2172); overflow: hidden; pointer-events: none; filter: url("#footer-depth-ink"); }
 .footer-landscape-art { position: absolute; left: 50%; bottom: 0; display: block; width: 100%; height: var(--print-height); transform: translateX(-50%); transform-origin: center bottom; }
 .footer-pigment { flood-color: var(--forest); }
-.footer-ground { position: relative; margin-top: -1px; background: var(--forest); color: var(--paper); }
+/* Safari samples sticky surfaces for its bottom browser color. The enclosing
+   footer keeps this final block in its normal position as the page scrolls. */
+.footer-ground { position: sticky; top: 0; margin-top: -1px; background: var(--forest); color: var(--paper); }
 .footer-inner { display: flex; align-items: center; justify-content: center; gap: 16px; padding-block: 24px; }
 .footer-separator { width: 4px; height: 4px; flex-shrink: 0; border-radius: 50%; background: currentColor; }
 .footer-inner nav { display: flex; flex-wrap: wrap; flex-shrink: 0; gap: 24px; }
