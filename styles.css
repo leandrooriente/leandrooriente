@@ -196,6 +196,8 @@ main:focus { outline: none; }
 .reading-body li + li { margin-top: 8px; }
 .fictional-pr-illustration { width: min(100%, 560px); margin: 32px auto; scroll-margin-top: 24px; }
 .fictional-pr-illustration img { display: block; width: 100%; height: auto; }
+.reviewer-trust-illustration { width: min(100%, 560px); margin: 32px auto; scroll-margin-top: 24px; }
+.reviewer-trust-illustration img { display: block; width: 100%; height: auto; }
 /* A fictional issue card keeps the feature specification readable as text. */
 .tracking-ticket { position: relative; isolation: isolate; width: min(100%, 560px); margin: 32px auto; background: #F3F1E8; color: #22251F; border-radius: 12px 14px 11px 13px; font: 400 18px/1.45 Georgia, "Times New Roman", serif; scroll-margin-top: 24px; }
 .tracking-ticket::before { content: ""; position: absolute; z-index: -1; inset: 0; border-radius: inherit; background: var(--paper-texture) repeat; background-size: 768px 512px; mix-blend-mode: multiply; opacity: .34; pointer-events: none; }

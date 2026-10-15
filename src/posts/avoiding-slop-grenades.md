@@ -80,6 +80,8 @@ PR descriptions are a powerful tool, but agents without proper guidance often fi
 
 Test coverage shouldn’t be your only resource. A demo can save a reviewer from setting up an entire environment to try your feature. Stress test results prove it performs under load. A diagram can show how the feature interacts with the existing system. A supporting document captures prior alignment with leadership.
 
+<figure class="reviewer-trust-illustration" id="reviewer-trust-illustration">{% responsiveImage "/assets/illustrations/slop-grenade-reviewer-trust.png", "Illustrated Upload API pull request with Demo, Diagram, and Load test attachments, followed by three positive review reactions: ‘10/10, would review again.’, ‘LGTM’ with an approval checkmark, and a chef’s kiss GIF.", "article", { loading: "lazy", sizes: "(max-width: 607px) calc(100vw - 48px), 560px" } %}</figure>
+
 The effort you put into providing the right context shortens the feedback loop with your reviewers. Do this consistently and you build their trust in your work. They’re more likely to pick up your PRs, contribute to the discussion, and help move the change forward.
 
 ## Does this apply to you?
