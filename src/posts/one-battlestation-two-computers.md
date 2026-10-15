@@ -2,10 +2,10 @@
 layout: "layouts/article.njk"
 templateEngineOverride: njk,md
 permalink: "/writing/one-battlestation-two-computers.html"
-title: "Two Macs, one monitor: a USB switch and DDC"
+title: "One battlestation, two computers"
 deck: "Sharing my desk between two Macs, with a USB switch and DDC to make the monitor follow."
 description: "How I share one desk between a MacBook Pro and a Mac mini, using a USB switch, a small Swift helper, and DDC/CI to switch the monitor automatically."
-summary: "Sharing a monitor, keyboard, and mouse between two Macs, with automatic monitor input switching through DDC/CI."
+summary: "Making the monitor follow my USB switch so I can share one desk between two computers."
 publicationYear: 2026
 order: 0
 illustration: "/assets/illustrations/battlestation-editorial-v2.png"
