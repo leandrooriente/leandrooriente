@@ -71,6 +71,7 @@ export default function (eleventyConfig) {
     "assets/illustrations/mimir-demo-poster.jpg",
     "assets/illustrations/mimir-user-editorial.webp",
     "assets/videos/mimir-demo.mp4",
+    "assets/scripts/article-progress.js",
     "assets/scripts/mimir-pipeline.js",
     "assets/scripts/phone-media.js"
   ];

@@ -37,6 +37,9 @@
     <a class="skip-link" href="#main">Skip to content</a>
     {% include "partials/ink-effects.njk" %}
     {% include "partials/header.njk" %}
+    {% if bodyClass == "article-page" %}
+    {% include "partials/article-progress.njk" %}
+    {% endif %}
     {{ content | safe }}
     {% include "partials/footer.njk" %}
   </body>
