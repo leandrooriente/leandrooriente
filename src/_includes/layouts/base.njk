@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f1e7d2">
     <meta name="description" content="{{ description }}">
+    <meta name="robots" content="{% if site.isPreview or noindex or draft %}noindex, {% endif %}max-image-preview:large">
     <title>{{ title }}{% if bodyClass == "article-page" %} — Leandro Oriente{% endif %}</title>
     <link rel="canonical" href="{{ canonicalUrl }}">
+    <script type="application/ld+json">{{ { site: site, title: title, description: description, canonicalUrl: canonicalUrl, socialImage: socialImage, tags: tags, publishedOn: publishedOn, updatedOn: updatedOn } | structuredData | jsonLd | safe }}</script>
     <meta property="og:site_name" content="{{ site.name }}">
     <meta property="og:type" content="{% if bodyClass == 'article-page' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ canonicalUrl }}">

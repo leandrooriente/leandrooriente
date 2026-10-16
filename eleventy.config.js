@@ -8,6 +8,7 @@ import { battlestationDiagram } from "./scripts/battlestation-diagrams.mjs";
 import { prBreakdown } from "./scripts/pr-breakdown.mjs";
 import { codemodBreakdown } from "./scripts/codemod-breakdown.mjs";
 import { uploadApiRollout } from "./scripts/upload-api-rollout.mjs";
+import { displayDate, jsonLd, sitemapPages, structuredData } from "./scripts/seo.mjs";
 
 export default function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
@@ -19,7 +20,7 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.setServerOptions({ port: 4173 });
   eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", responsiveImage);
-  eleventyConfig.addShortcode("phoneDemo", phoneDemo);
+  eleventyConfig.addNunjucksAsyncShortcode("phoneDemo", phoneDemo);
   eleventyConfig.addShortcode("mimirPipeline", mimirPipeline);
   eleventyConfig.addShortcode("battlestationDiagram", battlestationDiagram);
   eleventyConfig.addShortcode("prBreakdown", prBreakdown);
@@ -27,6 +28,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("uploadApiRollout", uploadApiRollout);
   eleventyConfig.addFilter("assetUrl", assetUrl);
   eleventyConfig.addFilter("cleanPageUrl", cleanPageUrl);
+  eleventyConfig.addFilter("absoluteUrl", (path, origin) => new URL(path, origin).href);
+  eleventyConfig.addFilter("displayDate", displayDate);
+  eleventyConfig.addFilter("jsonLd", jsonLd);
+  eleventyConfig.addFilter("structuredData", structuredData);
+  eleventyConfig.addCollection("sitemapPages", (collection) => sitemapPages(collection.getAll()));
   eleventyConfig.addWatchTarget("assets/");
   eleventyConfig.addWatchTarget("scripts/battlestation-diagrams.mjs");
   eleventyConfig.addWatchTarget("scripts/pr-breakdown.mjs");
@@ -78,7 +84,6 @@ export default function (eleventyConfig) {
     "assets/logos/peixe-urbano.png",
     "assets/logos/devmedia.svg",
     "assets/logos/pi-supplied.png",
-    "assets/illustrations/phone-frame-matte-black.png",
     "assets/illustrations/mimir-demo-poster.jpg",
     "assets/illustrations/mimir-user-editorial.webp",
     "assets/videos/mimir-demo.mp4",

@@ -1,15 +1,21 @@
 import { assetUrl } from "./assets.mjs";
+import { generateImage } from "./images.mjs";
 
 const escapeHtml = (value) => String(value).replace(/[&<>"']/gu, (character) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
 }[character]));
 
 // A transparent print illustration surrounds any portrait video and poster.
-export function phoneDemo(video, poster, label, caption, id = "phone-demo") {
+export async function phoneDemo(video, poster, label, caption, id = "phone-demo") {
   if (!/^[a-z][a-z0-9-]*$/u.test(id)) throw new Error("phoneDemo needs a unique, simple HTML id.");
   const videoUrl = escapeHtml(assetUrl(video));
   const posterUrl = escapeHtml(assetUrl(poster));
-  const frameUrl = escapeHtml(assetUrl("/assets/illustrations/phone-frame-matte-black.png"));
+  // Preserve every RGBA pixel of the approved frame while reducing its transfer size.
+  const frame = await generateImage("/assets/illustrations/phone-frame-matte-black.png", [866], {
+    formats: ["webp"],
+    sharpWebpOptions: { lossless: true, effort: 6, exact: true }
+  });
+  const frameUrl = escapeHtml(frame.webp[0].url);
   return `<figure class="phone-demo" id="${id}" data-phone-demo aria-labelledby="${id}-caption">
   <div class="phone-demo-device">
     <video class="phone-demo-screen" id="${id}-video" controls playsinline preload="auto" poster="${posterUrl}" aria-label="${escapeHtml(label)}" aria-describedby="${id}-caption">

@@ -7,6 +7,7 @@ deck: "Building a local AI assistant to make my Proton email and calendars easie
 description: "How Proton’s privacy protections shaped its search, and why I built Mimir and Hermes to search my email and calendars locally."
 summary: "Why Proton’s privacy constraints led me to build a local assistant for searching my email and calendars."
 publicationYear: 2026
+publicationMonth: "2026-10"
 order: 1
 illustration: "/assets/illustrations/mimir-editorial.png"
 illustrationAlt: "A magnifying lens reveals a red thread connecting correspondence and a calendar."
